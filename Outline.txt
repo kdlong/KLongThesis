@@ -1,11 +1,39 @@
 Introduction
-Phenomonolgy of Vector Boson Scattering
-The CMS Experiment and CERN LHC
-Event Simulation
+    Introduction to the field of particle physics, and the idea of reductionism 
+    in understanding physical phenomena. The historical development of the SM.
+    The role of this analysis in confirming predictions of the SM and testing possible
+    extensions.
+Vector boson scattering in the Standard Model and Beyond 
+-- The Standard Model
+-- Electroweak Symmetry Breaking
+-- Vector boson scattering as a probe of the electroweak sector of the SM
+-- New Interactions in vector boson scattering
+-- Additional Higgs Bosons and Georgi-Machacek Model
+-- Generalizing New Interactions with Effective Field Theory
+
+The CMS Experiment at the CERN LHC
+-- The Large Hadron Collider
+Differential Predictions and Event Simulation 
+-- Anatomy of an LHC collision
+-- Predictions from Fixed-Order Calculations
+-- Perturbation Calculations and Matrix Element Generators
+-- Parton Distribution Functions
+-- Event Simulation for Experimental Analysis 
+  -- The Parton Shower and matching to Matrix Element Calculations
+  -- Underlying Event, Hadronization, and Decay
+  -- Detector Simulation
 Object Reconstruction
+-- 
 Analysis Strategy
+  -- Background Contributions
+    -- Modeling of the 
+  -- WZjj cross section measurement
+  -- Statistical procedures
+    -- Significance of Electroweak WZ Production
+    -- 
 Results
-- Search for Electroweak Production and Measurement of WZjj
-- Searches for New Physics
+-- WZjj Cross Section Measurements 
+-- Search for Electroweak WZ Production 
+-- Searches for New Physics
 Conclusions
 
