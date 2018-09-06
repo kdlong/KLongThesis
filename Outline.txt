@@ -1,39 +1,102 @@
-Introduction
-    Introduction to the field of particle physics, and the idea of reductionism 
-    in understanding physical phenomena. The historical development of the SM.
-    The role of this analysis in confirming predictions of the SM and testing possible
-    extensions.
-Vector boson scattering in the Standard Model and Beyond 
+1) Introduction
+
+Introduction to the field of particle physics, and the role understanding the simplest
+forms of matter as a means to understanding physical phenomena. 
+The historical development of the SM and the role of this analysis 
+in confirming predictions of the SM and testing possible extensions.
+
+2) Vector boson scattering in the Standard Model and Beyond 
 -- The Standard Model
 -- Electroweak Symmetry Breaking
 -- Vector boson scattering as a probe of the electroweak sector of the SM
 -- New Interactions in vector boson scattering
--- Additional Higgs Bosons and Georgi-Machacek Model
--- Generalizing New Interactions with Effective Field Theory
+  -- Additional Higgs Bosons and the Georgi-Machacek Model
+  -- Generalizing New Interactions with Effective Field Theory
 
-The CMS Experiment at the CERN LHC
+Introduce the essential elements of the standard model as it stands today,
+with particular emphasize on VBS, its role in testing SM predictions,
+and why it is sensitive to new physics effects. Discussion of the
+New Physics models probed in this result.
+
+3) The CMS Experiment at the CERN LHC
 -- The Large Hadron Collider
-Differential Predictions and Event Simulation 
+-- Operation of the LHC in 2016
+-- The Compact Muon Solenoid Experiment
+-- The CMS Magnet
+-- The CMS silicon tracking system
+-- The CMS Electromagnetic Calorimeter
+-- The CMS Hadronic Calorimeter
+-- The CMS Muon System
+  -- Drift Tube System
+  -- Resistive Plate Chamber system
+  -- Cathode Strip Chamber system
+
+Introduce the LHC and the CMS experiment, giving attention
+to the CSC system and the LHC running conditions
+for the dataset used in this thesis.
+
+4) Theoretical Predictions and Event Simulation 
 -- Anatomy of an LHC collision
--- Predictions from Fixed-Order Calculations
 -- Perturbation Calculations and Matrix Element Generators
 -- Parton Distribution Functions
+-- Predictions from Fixed-Order Calculations
 -- Event Simulation for Experimental Analysis 
   -- The Parton Shower and matching to Matrix Element Calculations
   -- Underlying Event, Hadronization, and Decay
   -- Detector Simulation
-Object Reconstruction
--- 
-Analysis Strategy
+
+Discuss calculations for LHC physics in both the comparison/interpretation of results
+context and in the context of using these inputs with full detector simulation
+for analysis. The latter will be primarily emphasized.
+
+5) Event Reconstruction 
+-- Global Event Description via Particle Flow 
+  -- Tracks and Vertices
+  -- Calorimeter Clusters
+  -- Particle Flow Candidates
+-- Physics Objects
+  -- Muons
+  -- Electrons
+  -- Charged and Neutral Hadrons
+  -- Jets
+    -- b-jet Identification
+-- Missing Transverse Momentum
+
+Introduce physics objects used in this analysis. Start with description
+of detector information input to form particle flow objects
+before discussing reconstruction algorithms, ID, and selections for
+physics objects used.
+
+6) Analysis Strategy
+  -- WZ VBS Event Signature and Background Composition
+  -- Event Triggering
+  -- Event Selection
+    -- WZjj Cross Section, EW WZ, and aQGC Search
+    -- Charged Higgs boson search
   -- Background Contributions
-    -- Modeling of the 
-  -- WZjj cross section measurement
+    -- Estimation of Nonprompt backgrounds
+    -- Simulation and Validation of prompt backgrounds
   -- Statistical procedures
+    -- WZjj cross section measurement
     -- Significance of Electroweak WZ Production
-    -- 
-Results
+    -- Limits on Charged Higgs Bosons
+    -- Limits on Anomalous Quartic Gauge Couplings
+
+Overview of analysis procedure, separated by interpretation. Will
+largely draw from SMP-18-001.
+
+7) Results
 -- WZjj Cross Section Measurements 
 -- Search for Electroweak WZ Production 
 -- Searches for New Physics
-Conclusions
+    -- Limits on Charged Higgs Boson Production
+    -- Limits on Anomalous Quartic Gauge Couplings
 
+Results drawn from SMP-18-001, separated by interpretation.
+
+8) Conclusions
+-- Summary of Results
+-- Future Prospects
+
+Summary and discussion of future sensitivity, especially for
+full Run II analysis, HL-LHC, and sensitivity to polarization studies.
