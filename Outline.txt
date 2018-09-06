@@ -1,17 +1,17 @@
 1) Introduction
 
-Introduction to the field of particle physics, and the role understanding the simplest
+Introduction to the field of particle physics, and understanding the simplest
 forms of matter as a means to understanding physical phenomena. 
 The historical development of the SM and the role of this analysis 
 in confirming predictions of the SM and testing possible extensions.
 
-2) Vector boson scattering in the Standard Model and Beyond 
+2) Vector boson scattering in the Standard Model and beyond 
 -- The Standard Model
--- Electroweak Symmetry Breaking
--- Vector boson scattering as a probe of the electroweak sector of the SM
--- New Interactions in vector boson scattering
-  -- Additional Higgs Bosons and the Georgi-Machacek Model
-  -- Generalizing New Interactions with Effective Field Theory
+-- Electroweak symmetry breaking
+-- Probing the electroweak sector through vector boson scattering 
+-- New interactions in vector boson scattering
+  -- Additional Higgs bosons and the Georgi-Machacek model
+  -- Generalizing new interactions with effective field theory
 
 Introduce the essential elements of the standard model as it stands today,
 with particular emphasize on VBS, its role in testing SM predictions,
@@ -35,13 +35,13 @@ Introduce the LHC and the CMS experiment, giving attention
 to the CSC system and the LHC running conditions
 for the dataset used in this thesis.
 
-4) Theoretical Predictions and Event Simulation 
+4) Theoretical predictions and event simulation 
 -- Anatomy of an LHC collision
--- Perturbation Calculations and Matrix Element Generators
--- Parton Distribution Functions
--- Predictions from Fixed-Order Calculations
+-- Perturbative calculations and matrix element generators
+-- Parton distribution functions
+-- Predictions from fixed-order calculations
 -- Event Simulation for Experimental Analysis 
-  -- The Parton Shower and matching to Matrix Element Calculations
+  -- The Parton Shower and matching to matrix element calculations
   -- Underlying Event, Hadronization, and Decay
   -- Detector Simulation
 
@@ -50,37 +50,38 @@ context and in the context of using these inputs with full detector simulation
 for analysis. The latter will be primarily emphasized.
 
 5) Event Reconstruction 
--- Global Event Description via Particle Flow 
-  -- Tracks and Vertices
-  -- Calorimeter Clusters
-  -- Particle Flow Candidates
--- Physics Objects
+-- Global event description via particle flow 
+  -- Tracks and vertices
+  -- Calorimeter clusters
+  -- Particle flow candidates
+-- Physics objects
   -- Muons
   -- Electrons
-  -- Charged and Neutral Hadrons
+  -- Charged and neutral hadrons
   -- Jets
-    -- b-jet Identification
--- Missing Transverse Momentum
+    -- b-jet identification
+-- Missing transverse momentum
 
 Introduce physics objects used in this analysis. Start with description
 of detector information input to form particle flow objects
 before discussing reconstruction algorithms, ID, and selections for
 physics objects used.
 
-6) Analysis Strategy
-  -- WZ VBS Event Signature and Background Composition
-  -- Event Triggering
-  -- Event Selection
-    -- WZjj Cross Section, EW WZ, and aQGC Search
+6) Analysis strategy
+  -- WZ VBS event signature and background composition
+  -- Event triggering
+  -- Event selection
+    -- WZjj cross section, EW WZ and aQGC search
     -- Charged Higgs boson search
-  -- Background Contributions
-    -- Estimation of Nonprompt backgrounds
-    -- Simulation and Validation of prompt backgrounds
+  -- Background contributions
+    -- Estimation of nonprompt backgrounds
+    -- Simulation and validation of prompt backgrounds
   -- Statistical procedures
     -- WZjj cross section measurement
-    -- Significance of Electroweak WZ Production
-    -- Limits on Charged Higgs Bosons
-    -- Limits on Anomalous Quartic Gauge Couplings
+    -- Significance of electroweak WZ Production
+    -- Limits on charged Higgs bosons
+    -- Limits on anomalous quartic gauge couplings
+  -- Systematic uncertainties
 
 Overview of analysis procedure, separated by interpretation. Will
 largely draw from SMP-18-001.
