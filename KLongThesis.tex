@@ -61,6 +61,14 @@
 \cleardoublepage
 
 % Acknowledgements go here if you want to include them.
+\section{Dedication}
+This thesis is dedicated to the memory of Dr. David Murdock, whose
+passion for physics and education helped countless students
+at Tennessee Technological University and far beyond. Your love of
+particle physics spread to me, and your generosity with your time and knowledge
+gave me the tools to be successful beyond the walls of Tennessee Tech.
+\clearpage
+% Acknowledgements go here if you want to include them.
 \section{Acknowledgements}
 This thesis is dedicated to the memory of Dr. David Murdock, whose
 passion for physics and education helped countless students
@@ -80,9 +88,8 @@ gave me the tools to be successful beyond the walls of Tennessee Tech.
 % Tell the memoir class to set up normal pagination, etc. for the main doc
 \mainmatter
 
-\chapter{Introduction}
-\section{Developement of the Standard Model of Particle Physics}
-\chapter{Phenomonolgy of Vector Boson Scattering}
-\chapter{}
-
+\input{introduction}
+\input{phenomenology}
+\bibliographystyle{JHEP}
+\bibliography{bibliography}
 \end{document}

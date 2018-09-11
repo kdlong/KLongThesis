@@ -8,6 +8,7 @@ in confirming predictions of the SM and testing possible extensions.
 2) Vector boson scattering in the Standard Model and beyond 
 -- The Standard Model
 -- Electroweak symmetry breaking
+-- Multi-Vector boson interactions 
 -- Probing the electroweak sector through vector boson scattering 
 -- New interactions in vector boson scattering
   -- Additional Higgs bosons and the Georgi-Machacek model

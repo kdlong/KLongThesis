@@ -3,3 +3,6 @@
 *.synctex.gz
 *.toc
 *.pdf
+*.bbl
+*.bgl
+
