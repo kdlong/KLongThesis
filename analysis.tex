@@ -1,19 +1,12 @@
 \chapter{Analysis Strategy}
-
+A broad introduction
 \section{WZ VBS event signature and background composition}
+Give a cut flow, and the expected background composition. Show Feynman diagrams.
 \section{Event triggering}
+Describe the triggers, the trigger efficiency, and the prefire efficiency. Make some plots!
 \section{Event selection}
-\subsection{WZjj cross section, EW WZ and aQGC search}
-\subsection{Charged Higgs boson search}
-\section{Background contributions}
-\subsection{Estimation of nonprompt backgrounds}
-\subsection{Simulation and validation of prompt backgrounds}
-\section{Statistical procedures}
-\subsection{WZjj cross section measurement}
-\subsection{Significance of electroweak WZ Production}
-\subsection{Limits on charged Higgs bosons}
-\subsection{Limits on anomalous quartic gauge couplings}
-\section{Systematic uncertainties}
+
+Quick overview of the selections. Do you really need a separate section for each? I think not
 
 \begin{table}[!ht]
   \begin{center}
@@ -55,6 +48,182 @@
   \end{center}
 \end{table}
 
+\section{Background contributions}
+Background contributions in this analysis are divided into two categories:
+background processes with prompt isolated leptons, \eg, 
+$\PZ\PZ$, \tZq, $\ttbar\cPZ$;
+and background processes with nonprompt leptons from hadrons decaying to leptons inside jets or
+jets misidentified as isolated leptons, primarily $\ttbar$ and $\cPZ$+jets.
+The background processes with prompt leptons are estimated from MC simulation, while backgrounds
+with nonprompt leptons from hadronic activity are estimated from control samples in data.
+The nonprompt component of the $\cPZ\gamma$ process,
+in which the photon experiences conversion into leptons in the tracker,
+is evaluated using MC simulation. 
+\subsection{Simulation and validation of signal and prompt backgrounds}
+
+Several Monte Carlo (MC) event generators are used to simulate the signal and
+background processes.
+
+The EW-induced production of \WZ boson pairs and two final-state quarks, where the W and Z bosons decay leptonically, 
+is simulated at leading order (LO) in perturbative QCD using 
+\MG v2.4.2~\cite{MGatNLO}. 
+The sample includes all contributions to the four-lepton final state at $\mathcal{O}(\alpha^6)$ and 
+with a resonant W boson propagator, including
+triboson processes, where the \WZ boson pair is accompanied by 
+a third vector boson that decays into jets, as well as diagrams involving the quartic coupling vertex. 
+The resonant W boson is decayed using {\sc MadSpin}~\cite{Artoisenet:2012st}.
+Contributions with an initial-state b quark are excluded from the sample
+as they are considered part of the \tZq process.
+The predictions from this sample are cross-checked with LO predictions from the 
+event generators \VBFNLO~3.0~\cite{VBFNLO} and 
+\Sherpa~v2.2.4~\cite{Gleisberg:2008ta,Gleisberg:2003xi}, 
+and with fixed-order calculations from
+\Moca~\cite{leshouches2017,Recola}. Agreement is obtained when using equivalent configurations
+of input parameters, including couplings, particle masses and widths, and the choice of
+renormalization ($\mu_{R}$) and 
+factorization scales ($\mu_{F}$),
+and differences arising from such configurations are considered when assessing the uncertainty.
+
+Several MC simulations of the \QCDWZ process are considered.
+The simulations are inclusive in the number of jets associated with the 
+leptonically decaying \W and \Z bosons, and therefore include 
+the \WZjj contribution studied in this analysis.
+The primary MC sample is simulated at 
+LO with \MG v2.4.2, with contributions to \WZ production with up to three outgoing partons 
+included in the matrix element calculation. 
+The different jet multiplicities are merged using the MLM scheme~\cite{MLMmerging}.
+A next-to-LO (NLO) sample from \MG v2.3.3 
+with zero or one outgoing partons at Born level, merged using the \FxFx scheme~\cite{Frederix:2012ps},
+and an inclusive NLO sample from \POWHEG2.0~\cite{Melia:2011tj,Nason:2004rx,Frixione:2007vw,powheg:2010}
+are also considered. 
+The LO MC with MLM merging, referred to as the MLM-merged sample, 
+is taken as the central prediction due its inclusion of
+\WZ plus three-parton contributions at tree level, which are relevant
+to \WZjj production.
+The other samples,
+which are used to access the modeling uncertainty in the \QCDWZ process,
+are referred to as the \FxFx-merged
+and the \POWHEG samples, respectively.
+Each sample is scaled to the inclusive NLO cross section from \POWHEG2.0.
+
+In addition to the \EWWZ and \QCDWZ process, which at tree level are 
+$\mathcal{O}(\alpha^4)$ and $\mathcal{O}(\alpha^2\alpha_{S}^2)$ respectively,
+a smaller contribution at $\mathcal{O}(\alpha^3\alpha_{S})$ 
+contributes to the \WZjj state. We refer to this contribution as the 
+interference term. It is evaluated using samples of particle-level
+events generated with \MG v2.6.0. Samples are generated with the dynamic $\mu_{R}$
+and $\mu_{F}$ set to the maximum of the parton transverse momenta per event, and with fixed
+scales $\mu_{R} = \mu_{F} = m_{\mathrm{W}}$, where $m_{\mathrm{W}}$ is the world average value of the 
+W boson mass, taken from Ref.~\cite{Tanabashi:2018oca}.
+
+The associated production of a $\PZ$ boson and a single top quark, referred to as \tZq production,
+is simulated at NLO in the four-flavor scheme using \MG v2.3.3. 
+The sample is scaled using a cross section computed at NLO with \MG in the five-flavor scheme, 
+following the procedure of Ref.~\cite{Sirunyan:2017nbr}.
+
+The production of $\PZ$ boson pairs via $\Pq\Paq$ annihilation is generated at NLO in perturbative QCD with
+\POWHEG2.0 while the $\Pg\Pg \to \ZZ$ process is simulated at LO with \MCFM7.0~\cite{Campbell:2011bn}.
+The $\ZZ$ samples are scaled to the cross section calculated at next-to-NLO
+for $\Pq\Paq \to \ZZ$ \cite{Cascioli:2014yka} ($K$ factor 1.1)
+and at NLO for $\Pg\Pg \to \ZZ$ \cite{Caola:2015psa} ($K$ factor 1.7).
+The $\cPZ\Pgg$, $\ttbar\text{V}$ ($\ttbar\PW$, $\ttbar\PZ$), $\PQt\PZ$, 
+and triboson events VVV (WWZ, WZZ, ZZZ)  
+are generated at NLO with \MG v2.3.3, with the vector bosons generated on-shell
+and decayed via {\sc MadSpin}.
+
+The simulation of the aQGC processes is performed at LO using \MG v2.4.2 and employs matrix element 
+reweighting to obtain a finely spaced grid of parameters for each of the anomalous couplings
+operators probed by the analysis. The configuration of input parameters is equivalent to that used for the 
+\EWWZ sample described previously. 
+The production of charged Higgs bosons in the Georgi-Machacek model
+is simulated using \MG~v2.3.3.
+
+The \PYTHIA~v8.212~\cite{Sjostrand:2006za,Sjostrand:2015} package
+is used for parton showering, hadronization, and
+the underlying event simulation, with parameters set by the CUETP8M1
+tune~\cite{Khachatryan:2015pea} for all simulated samples.
+For the \EWWZ process, comparisons are made at particle-level with the parton shower
+and hadronization 
+of \Sherpa and with \Herwig~v7.1~\cite{Bellm:2015jjp,Bahr:2008pv}.
+For all MC simulations used in this analysis, the NNPDF3.0~\cite{NNPDF2015} set of
+parton distribution functions (PDFs) is used, with PDFs calculated to the same
+order in perturbative QCD as the hard scattering process. 
+
+The detector response is simulated using a detailed
+description of the CMS detector implemented in the \GEANTfour
+package~\cite{GEANT, Geant2}. The simulated events are  reconstructed
+using the same algorithms as used for the data. 
+The simulated samples include additional interactions in the same and neighboring bunch crossings,
+referred to as pileup.
+Simulated events are weighted so that the pileup distribution reproduces that observed in 
+the data, which has an average of about 23 interactions per bunch
+crossing.
+
+\subsection{Estimation of nonprompt backgrounds}
+The contribution from background processes with nonprompt leptons is
+evaluated using control regions of events in data using the 
+technique described in 
+Refs.~\cite{Khachatryan:2016tgp,Sirunyan:2017sbn}.
+Events satisfying the full analysis selection,
+with the exception that one, two, or three leptons pass relaxed identification
+requirements but fail the more stringent requirements applied to signal events,
+are selected to form seven control regions. The control regions are
+mutually independent and additionally independent from the signal selection.
+The small contribution to the control regions from events with three prompt leptons
+is estimated with MC simulation and 
+subtracted from the event samples.
+
+The expected contribution in the signal region is estimated
+using ``loose-to-tight'' efficiency factors
+applied to the lepton candidates failing the analysis requirements 
+in the control region events.
+The efficiency factors are calculated from a
+sample of $\PZ$+$\ell_{\mathrm{candidate}}$ events, where \PZ
+denotes a pair of oppositely charged, same-flavor leptons satisfying the
+full identification requirements and $\left|m_{\ell^{+}\ell^{-}} - m_\PZ\right| < 10\GeV$.
+The loose-to-tight efficiency factors 
+are obtained from ratios of events where the $\ell_{\mathrm{candidate}}$ 
+object satisfies the full identification requirements 
+to events where all identification criteria are not satisfied, and
+is parameterized as a function of \PT and $\eta$. 
+A cross-check of the technique is performed by 
+repeating the procedure with efficiency factors derived from a 
+sample of events dominated by dijet production. The 
+loose-to-tight efficiency factors obtained in the two regions
+agree to within 30\% for the full \PT and $\eta$ range.
+
+This method is validated in nonoverlapping data samples enriched in Drell--Yan and $\ttbar$ contributions.
+The Drell--Yan region is defined by inverting the selection requirement in $\ptmiss$, and
+the $\ttbar$ region is defined by requiring at least one b-tagged jet and rejecting events with $|m_{\ell'\ell'} - m_\PZ| < 5\GeV$
+while keeping all other requirements for the signal region.
+The overall yield predicted agrees with that 
+measured in the control regions to within 20\%.
+
+The event count of the control samples of nonprompt events
+satisfying the EW signal selection limits  
+differential predictions in this region. 
+The combined shape of the nonprompt background for all channels 
+is therefore used for each channel in the \EWWZ signal strength
+measurement and in the extraction of constraints on anomalous quartic
+gauge couplings.
+The normalization of the distribution per channel is taken from the 
+ratio of the nonprompt yield in a single channel to the total nonprompt event yield 
+measured in \WZjj events with no requirements on the dijet system.
+These ratios are found to be consistent within the statistical uncertainty with ratios measured
+when relaxing the jet \PT requirement in \WZjj events, in \WZ events inclusive in the number of jets, 
+and in events satisfying the EW signal and control region selections. 
+
+\section{Statistical procedures}
+Overview of the likelihood and assymptotic formulae
+\subsection{WZjj cross section measurement}
+Briefly describe likelihood
+\subsection{Significance of electroweak WZ Production}
+Briefly describe 2D fit
+\subsection{Limits on charged Higgs bosons}
+Briefly describe fit to MT
+\subsection{Limits on anomalous quartic gauge couplings}
+
+\section{Systematic uncertainties}
 
 \begin{table}[htbp]
      \centering
@@ -90,71 +259,3 @@
      \label{tab:systematics}
 \end{table}
 
-
-\begin{table}[htbp]
-     \centering
-     \caption{ The dominant uncertainty contributions in the fiducial 
-         \WZjj cross section measurement 
-         and their expected contributions to the significance of the
-         \EWWZ signal strength measurement. The impact of each systematic 
-         uncertainty in the \WZjj 
-         cross section measurement is obtained by freezing the set of associated nuisance 
-         parameters to their best fit values and comparing the total uncertainty in the signal strength
-         to the result from the nominal fit. 
-         The effect on the \EWWZ significance, shown in the last column,
-         is defined as the relative increase in the expected significance when
-         freezing the nuisance term to its best fit value.
-           }
-     \begin{tabular}{l|cc}
- \hline %------------------------------------------------------------------------------------------
-     Source of systematic uncertainty & Relative systematic uncertainty [\%] \\
-                                      & $\sigma_{\rm \WZjj}$ \\
- \hline %------------------------------------------------------------------------------------------
- \hline %------------------------------------------------------------------------------------------
- Jet energy scale                     & $+10.7\, /-8.1$ &               \\ %done
- Jet energy resolution                & $+1.9\,/-2.1$   &             \\ %done
- \QCDWZ modeling                      &    N/A          &             \\
- Other background theory              &  $+2.2\,/-2.2$  &             \\ %done
- Nonprompt normalization              &  $+2.5\,/-2.5$  &             \\ %done
- Nonprompt event count                &  $+6.0\,/-5.8$  &               \\ %done
- Lepton energy scale and eff.         &  $+3.5\,/-2.7$  &             \\ %done
- b tagging                            &  $+2.0\,/-1.7$  &             \\ %done
- Integrated luminosity                &  $+3.6\,/-3.0$  &             \\ %done
- \hline %------------------------------------------------------------------------------------------
-      \end{tabular}
-     \label{tab:systematics}
-\end{table}
-
-\begin{table}[htbp]
-     \centering
-     \caption{ The dominant uncertainty contributions in the fiducial 
-         \WZjj cross section measurement 
-         and their expected contributions to the significance of the
-         \EWWZ signal strength measurement. The impact of each systematic 
-         uncertainty in the \WZjj 
-         cross section measurement is obtained by freezing the set of associated nuisance 
-         parameters to their best fit values and comparing the total uncertainty in the signal strength
-         to the result from the nominal fit. 
-         The effect on the \EWWZ significance, shown in the last column,
-         is defined as the relative increase in the expected significance when
-         freezing the nuisance term to its best fit value.
-           }
-     \begin{tabular}{l|cc}
- \hline %------------------------------------------------------------------------------------------
-     Source of systematic uncertainty & Relative systematic uncertainty [\%] \\
-                                      & \EWWZ significance \\
- \hline %------------------------------------------------------------------------------------------
- \hline %------------------------------------------------------------------------------------------
- Jet energy scale                     & $ 7.0 $               \\ %done
- Jet energy resolution                & $< 0.1$             \\ %done
- \QCDWZ modeling                      & $ 2.2 $             \\
- Other background theory              & $ 0.3 $             \\ %done
- Nonprompt normalization              & $ 0.3 $             \\ %done
- Nonprompt event count                & $ 1.7 $               \\ %done
- Lepton energy scale and eff.         & $< 0.1$             \\ %done
- b tagging                            & $< 0.1$             \\ %done
- Integrated luminosity                & $< 0.1$             \\ %done
- \hline %------------------------------------------------------------------------------------------
-      \end{tabular}
-     \label{tab:systematics}
-\end{table}
