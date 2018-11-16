@@ -86,7 +86,7 @@ and differences arising from such configurations are considered when assessing t
 
 Several MC simulations of the \QCDWZ process are considered.
 The simulations are inclusive in the number of jets associated with the 
-leptonically decaying \W and \Z bosons, and therefore include 
+leptonically decaying \PW and \cPZ bosons, and therefore include 
 the \WZjj contribution studied in this analysis.
 The primary MC sample is simulated at 
 LO with \MG v2.4.2, with contributions to \WZ production with up to three outgoing partons 
@@ -121,12 +121,12 @@ is simulated at NLO in the four-flavor scheme using \MG v2.3.3.
 The sample is scaled using a cross section computed at NLO with \MG in the five-flavor scheme, 
 following the procedure of Ref.~\cite{Sirunyan:2017nbr}.
 
-The production of $\PZ$ boson pairs via $\Pq\Paq$ annihilation is generated at NLO in perturbative QCD with
+The production of $\PZ$ boson pairs via $\cPq\cPaq$ annihilation is generated at NLO in perturbative QCD with
 \POWHEG2.0 while the $\Pg\Pg \to \ZZ$ process is simulated at LO with \MCFM7.0~\cite{Campbell:2011bn}.
 The $\ZZ$ samples are scaled to the cross section calculated at next-to-NLO
-for $\Pq\Paq \to \ZZ$ \cite{Cascioli:2014yka} ($K$ factor 1.1)
+for $\cPq\cPaq \to \ZZ$ \cite{Cascioli:2014yka} ($K$ factor 1.1)
 and at NLO for $\Pg\Pg \to \ZZ$ \cite{Caola:2015psa} ($K$ factor 1.7).
-The $\cPZ\Pgg$, $\ttbar\text{V}$ ($\ttbar\PW$, $\ttbar\PZ$), $\PQt\PZ$, 
+The $\cPZ\cPgg$, $\ttbar\text{V}$ ($\ttbar\PW$, $\ttbar\PZ$), $\PQt\PZ$, 
 and triboson events VVV (WWZ, WZZ, ZZZ)  
 are generated at NLO with \MG v2.3.3, with the vector bosons generated on-shell
 and decayed via {\sc MadSpin}.
@@ -160,10 +160,9 @@ the data, which has an average of about 23 interactions per bunch
 crossing.
 
 \subsection{Estimation of nonprompt backgrounds}
+
 The contribution from background processes with nonprompt leptons is
-evaluated using control regions of events in data using the 
-technique described in 
-Refs.~\cite{Khachatryan:2016tgp,Sirunyan:2017sbn}.
+evaluated with control regions of events in data.
 Events satisfying the full analysis selection,
 with the exception that one, two, or three leptons pass relaxed identification
 requirements but fail the more stringent requirements applied to signal events,
@@ -173,45 +172,293 @@ The small contribution to the control regions from events with three prompt lept
 is estimated with MC simulation and 
 subtracted from the event samples.
 
-The expected contribution in the signal region is estimated
-using ``loose-to-tight'' efficiency factors
-applied to the lepton candidates failing the analysis requirements 
+\begin{figure}[htbp]
+  \centering
+   \includegraphics[width=0.45\textwidth]{figures/AnalysisProcedure/mjj_PPF.pdf}
+   \includegraphics[width=0.45\textwidth]{figures/AnalysisProcedure/mjj_PFP.pdf}
+  \caption{
+    The PPF (left) and PFP (right) control regions used in the nonprompt estimation
+    for events satisfying the \WZjj selection.
+    The nonprompt MC simulations are shown for reference, and demonstrate that the
+    PPF region is dominated by Drell--Yan events while the PFP region
+    is dominated by {\ttbar} events.
+        }
+ \label{fig:nonpromptBackgroundCRs}
+\end{figure}
+
+The control regions are defined by the identification
+criteria of the three selected lepton candidates. 
+A lepton candidate is labeled as ``passed'' (P) if it passes the ``tight'' identification
+requirements required for signal events, 
+and ``failed'' (F) if it passes the relaxed lepton identification criteria, 
+but fails the tight identification. The signal region is defined by events 
+with three passing leptons, referred to as PPP events. The PPF region, where the first
+two labels refer to the two leptons which satisfy the tight identification criteria and are
+associated with the \cPZ boson candidate, and the failing lepton is associated with
+the \cPW-candidate, is dominated by {\Zpj} events.
+The $\mjj$ for the observed data compared to the prediction of the MC simulation
+in the \WZjj selection, with $\pt^{\jet} > 30\GeV$, in two illustrative control regions are shown
+in Fig.~\ref{fig:nonpromptBackgroundCRs}. The nonprompt estimation does not depend on the 
+nonprompt MC simulations, including Drell--Yan and $\ttbar$ production, which are shown for reference.
+All possible combinations of P and F objects are listed in Table~\ref{tab:control_regions},
+along with the dominant production mechanisms of such events.
+
+\begin{table}[htbp]
+    \centering
+    \caption{Possible combinations of lepton identification for three-lepton events
+            defining the control regions used to estimate nonprompt backgrounds.}
+    \begin{tabular}{c|ccc} 
+\hline %------------------------------------------------------------------------------------------
+Dominant        & \multicolumn{3}{c}{Combination}                                                  \\
+contribution    & \multicolumn{2}{c}{Z-candidate leptons}   & W-candidate lepton                   \\
+\hline %------------------------------------------------------------------------------------------
+\hline %------------------------------------------------------------------------------------------
+QCD multiet    & F & F & F \\ 
+\hline %----------------------------------------------------------------------------------------- 
+W+jets         & F & F & P \\
+               & P & F & F \\
+               & F & P & F \\
+\hline %----------------------------------------------------------------------------------------- 
+Z+jets         & P & P & F \\
+\hline %----------------------------------------------------------------------------------------- 
+\ttbar, other  & P & F & P \\
+               & F & P & P \\
+     \end{tabular}
+    \label{tab:control_regions}
+\end{table}
+
+The expected contribution from these processes in the signal region is estimated
+using ``loose-to-tight'' efficiency factors, which are
+applied as transfer factors to the lepton candidates failing the analysis requirements 
 in the control region events.
-The efficiency factors are calculated from a
-sample of $\PZ$+$\ell_{\mathrm{candidate}}$ events, where \PZ
-denotes a pair of oppositely charged, same-flavor leptons satisfying the
-full identification requirements and $\left|m_{\ell^{+}\ell^{-}} - m_\PZ\right| < 10\GeV$.
-The loose-to-tight efficiency factors 
-are obtained from ratios of events where the $\ell_{\mathrm{candidate}}$ 
+The efficiency factors, referred to as ``fake rates,'' are 
+evaluated using samples of events dominated by jet activity.
+A sample of $\PZ$+$\lcand$ events is defined by 
+selecting events with exactly three leptons satisfying
+the loose identification criteria, using the same trigger requirements as
+for signal events.
+Two opposite sign, same flavor 
+leptons satisfying the tight identification and consistent with the decay of
+a \PZ boson, specifically $\left|m_{\ell^{+}\ell^{-}} - m_\PZ\right| < 10\GeV$,
+where $m_{\PZ}$ denotes the nominal \PZ boson mass, are required. To reduce contamination
+from \WZ events, the events must additionally have $\ptmiss < 25\GeV$
+and $m_{\rm T}(\ell_{3}, \ptmiss) < 25\GeV$. The lepton not associated with the 
+\PZ boson candidate is taken as the {\lcand} object. 
+
+\begin{figure}[htbp]
+  \centering
+   \includegraphics[width=0.4\textwidth]{figures/AnalysisProcedure/ratio1DPt_allE.pdf}
+   \includegraphics[width=0.4\textwidth]{figures/AnalysisProcedure/ratio1DPt_allMu.pdf}
+   \includegraphics[width=0.4\textwidth]{figures/AnalysisProcedure/ratio1DPt_allE_MC.pdf}
+   \includegraphics[width=0.4\textwidth]{figures/AnalysisProcedure/ratio1DPt_allMu_MC.pdf}
+  \caption{
+    Ratio of events in which the $\ell_{\rm candidate}$ objects passes the tight lepton 
+    identification criteria to candidates passing only the loose lepton identification 
+    criteria in bins of the {\lcand} \PT for the selection of $\PZ$+$\ell_{\mathrm{candidate}}$ 
+    events described in the text.
+    The events in which the $\ell_{\rm candidate}$ object is a electron (muon) are shown in 
+    the left (right) plot. The top plots show events selected in data, with
+    corrections for contamination of true prompt events from MC simulation. The bottom plots
+    show predictions from the {\Zpj} and $\ttbar$ MC samples.
+          }
+ \label{fig:fakeRates1DPt}
+\end{figure}
+
+The fake rates are evaluated 
+using ratios of events where the $\ell_{\mathrm{candidate}}$ 
 object satisfies the full identification requirements 
-to events where all identification criteria are not satisfied, and
-is parameterized as a function of \PT and $\eta$. 
+to events where all identification criteria are not satisfied, defined as
+$\varepsilon_{\text{fake}} = \frac{N_{\text{tight}}}{N_\text{loose}}$,
+is parameterized as a function of the {\lcand} \PT and $\eta$. 
+The expected contribution from true three-prompt-lepton events is
+estimated from MC simulation and subtracted from the event samples.
+The fake rates measured in data, corrected using the prompt MC simulation,
+and the predicted fake rates from the nonprompt MC simulation are shown in
+Fig.~\ref{fig:fakeRates1DPt}, which are seen to be in good agreement.
+The MC simulation prediction is not used in the analysis, but serves as a consistency-check
+of the nonprompt estimation technique.
+The two-dimensional values of the fake rates derived from data which are used for
+the analysis are shown in Fig.~\ref{fig:fakeRates2D}.
+
+\begin{figure}[htbp]
+  \centering
+   \includegraphics[width=0.45\textwidth]{figures/AnalysisProcedure/ratio2D_allE.pdf}
+   \includegraphics[width=0.45\textwidth]{figures/AnalysisProcedure/ratio2D_allMu.pdf}
+  \caption{
+    Ratio of events in data, with corrections for contamination of true prompt events from MC simulation,
+    in which the $\ell_{\rm candidate}$ objects passes the tight lepton 
+    identification criteria to candidates passing only the loose lepton identification 
+    criteria in bins of \PT and $\eta$ for the selection of $\PZ$+$\ell_{\mathrm{candidate}}$ 
+    events described in the text.
+    The events in which the $\ell_{\rm candidate}$ object is a electron (muon) are shown in 
+    the left and right plots respectively. 
+        }
+ \label{fig:fakeRates2D}
+\end{figure}
+
+
 A cross-check of the technique is performed by 
 repeating the procedure with efficiency factors derived from a 
-sample of events dominated by dijet production. The 
-loose-to-tight efficiency factors obtained in the two regions
+sample of events dominated by dijet production. 
+Events passing single lepton triggers are selected, requiring at least one jet and one
+{\lcand} object passing the loose identification. Events with additional loose leptons are not selected.
+The loose lepton must be separated from the jet with highest \pt by $\Delta R(\lcand, \jet) > 1$.
+The contamination of WZ is suppressed by requiring $E_T^{\text{miss}} < 25\,\GeV$  and  $m_T < 25\,\GeV$. 
+The loose-to-tight efficiency factors obtained in the two regions
 agree to within 30\% for the full \PT and $\eta$ range.
+
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|c|c|c| }
+\hline %------------------------------------------------------------------------------------------ 
+Control region &  \multicolumn{7}{c|}{Includes regions}                                                                 \\
+\hline %------------------------------------------------------------------------------------------ 
+FPP & FPP &     &     & FFF & FPF & FFP &        \\
+PFP &     &     & PFP & FFF &     & FFP & PFF    \\
+PPF &     & PPF &     & FFF & FPF &     & PFF    \\
+FPF &     &     &     & FFF & FPF &     &        \\
+FFP &     &     &     & FFF &     & FFP &        \\
+PFF &     &     &     & FFF &     &     & PFF    \\
+FFF &     &     &     & FFF &     &     &        \\
+\hline %------------------------------------------------------------------------------------------ 
+     \end{tabular}
+    \caption{ Possible nonprompt control regions and regions of overlap.}
+    \label{tab:nonpromptRegionOverlap}
+\end{table}
+
+Because control regions with $n_{F}$ failing leptons can contribute to the region with
+$n_{F}-1$ failing leptons,
+the total background contribution in the signal region is not a simple sum of the 
+control region event yields multiplied by the fake rate of each failing leptons. 
+Table~\ref{tab:nonpromptRegionOverlap} shows the possible contributions 
+of control regions with loose leptons into tight lepton regions.
+For example,
+the estimated contribution of events to the signal region $N_{B,FPP+PFP}$ 
+from the FPP and PFP control region, with $N_{FPP}$ and $N_{PFP}$ data events is given by
+
+\begin{multline*}
+N_{B,FPP + PFP} = N_{FPP} \times f_{l1}
+  - \underbrace{N_{FFF} \times f_{11} \times f_{l2} \times f_{l3}}_{\textrm{interference of FPP and FFF}} \\
+  - \underbrace{f_{l1} \times f_{l3} \times (N_{FPF} - N_{FFF} \times f_{l2} )}_{\textrm{interference of FPP and FPF}}
+- \underbrace{f_{l1} \times f_{l2} \times (N_{FFP} - N_{FFF} \times f_{l3})}_{\textrm{interference of FPP and FFP}}\\
+ + N_{PFP} \times f_{l2} -  \underbrace{N_{FFF} \times f_{11} \times f_{l2} \times f_{l3}}_{\textrm{interference of PFP and FFF}}
+ - \underbrace{f_{l1} \times f_{l2} \times (N_{FFP} - N_{FFF}  \times f_{l3})}_{\textrm{interference of PFP and FFP}}\\
+  - \underbrace{f_{l2} \times f_{l3} \times (N_{PFF} -  N_{FFF} \times f_{11} )}_{\textrm{interference of PFP and PFF}} = \\
+  N_{FPP} \times f_{l1} +  N_{PFP} \times f_{l2} - 2 N_{FFF} \times f_{11} \times f_{l2} \times f_{l3}
+   - 2 N_{FFP} \times f_{l1} \times f_{l2} \\ - N_{FPF} \times f_{l1} \times f_{l3} -  N_{PFF} \times f_{l2} \times f_{l3}
+\end{multline*}
+
+where $f_{l1} = \frac{\varepsilon_{\text{fake}}}{1 - \varepsilon_{\text{fake}}}$, 
+computed from the misidentification ratio $\varepsilon_{\text{fake}}$ in the 
+particular $p_{\text{T}}$ and $\eta$ bin.
+
+Combining the yields from all seven control regions in this way yields the following formula
+for the total number of estimated background events from all regions 
+
+\begin{align*}
+N_B = N_{FPP} \times FR_{l1} + N_{PFP} \times FR_{l2} + N_{PPF} \times FR_{13} 
+ + N_{FFF} \times FR_{11} \times FR_{l2} \times FR_{l3}  \\
+- N_{FPF} \times FR_{l1} \times FR_{l3} - N_{FFP} \times FR_{l1} \times FR_{l2} - N_{PFF} \times FR_{l2} \times FR_{l3} \,.
+\label{eqn:fakerate}
+\end{align*}
+
+The characteristics of the control region events
+are used to obtain per-channel differential predictions in the signal region.
+The expected contribution of nonprompt events in the signal region is shown
+in Fig.~\ref{fig:expectedEWSignal}, where the signal and background 
+normalizations are fixed to their expected
+values and the expected sum of signal and background events is treated as the 
+observed data.
+
+
+\begin{figure}[htbp]
+  \centering
+   \includegraphics[width=0.5\textwidth]{figures/AnalysisProcedure/expectedYield_EWSignal.pdf}
+  \caption{
+    Expected composition of signal and background events for the EW signal selection.
+    The expected sum of signal and background contributions are treated as the observed
+    data in a maximum likelihood fit. The uncertainty in the total expected event yield
+    from WZ and non-WZ contributions is shown as a hashed band.
+        }
+ \label{fig:expectedEWSignal}
+\end{figure}
 
 This method is validated in nonoverlapping data samples enriched in Drell--Yan and $\ttbar$ contributions.
 The Drell--Yan region is defined by inverting the selection requirement in $\ptmiss$, and
 the $\ttbar$ region is defined by requiring at least one b-tagged jet and rejecting events with $|m_{\ell'\ell'} - m_\PZ| < 5\GeV$
 while keeping all other requirements for the signal region.
-The overall yield predicted agrees with that 
-measured in the control regions to within 20\%.
+The background prediction and observed data in these regions for events statisfying the {\WZjj} selection are shown in
+Fig.~\ref{fig:nonpromptValidationRegions}, which demonstrates agreement between the two techiques.
+The predictions for large values of $\mjj$ and
+$\etajj$ are limited by the event count of data events used for the nonprompt esitmation.
+
+\begin{figure}[htbp]
+  \centering
+   \includegraphics[width=0.4\textwidth]{figures/AnalysisProcedure/mjj_3lDYControl.pdf}
+   \includegraphics[width=0.4\textwidth]{figures/AnalysisProcedure/mjj_3lDYControl_dijetFRs.pdf}
+   \includegraphics[width=0.4\textwidth]{figures/AnalysisProcedure/dEtajj_3lTTbarControl.pdf}
+   \includegraphics[width=0.4\textwidth]{figures/AnalysisProcedure/dEtajj_3lTTbarControl_dijetFRs.pdf}
+  \caption{
+    $\mjj$ (top) for events in the Drell--Yan control region (top)
+    and $\etajj$ for events in the $\ttbar$ control region(bottom).
+    The events are required to have two $\pt > 30\GeV$
+    jets but no additional kinematic selection is applied to the dijet system.
+        }
+ \label{fig:fakeRates2D}
+\end{figure}
 
 The event count of the control samples of nonprompt events
-satisfying the EW signal selection limits  
-differential predictions in this region. 
+satisfying the EW signal selection severely limits
+differential predictions in this region. This is illustrated in 
+Fig.~\ref{fig:nonpromptdEtajjByChan}, which shows the differential
+prediction from the nonprompt background in the EW signal region.
+The per-channel predictions are severely limited by the event count
+of the control regions.
+
+\begin{figure}[htbp]
+  \centering
+   \includegraphics[width=0.4\textwidth]{figures/AnalysisProcedure/dEtajj_nonprompt.pdf}
+   \includegraphics[width=0.4\textwidth]{figures/AnalysisProcedure/dEtajj_nonprompt_eem.pdf}
+  \caption{
+    Distribution of $\etajj$ for estimated nonprompt events in the EW signal region. The
+    left plot shows the combined contribution for all channels, while the right plot shows
+    the contribution from only the ee$\mu$ channel, which is severally limited by the 
+    control region event count. 
+        }
+ \label{fig:fakeRates2D}
+\end{figure}
+
 The combined shape of the nonprompt background for all channels 
 is therefore used for each channel in the \EWWZ signal strength
 measurement and in the extraction of constraints on anomalous quartic
-gauge couplings.
+gauge couplings. 
 The normalization of the distribution per channel is taken from the 
 ratio of the nonprompt yield in a single channel to the total nonprompt event yield 
 measured in \WZjj events with no requirements on the dijet system.
 These ratios are found to be consistent within the statistical uncertainty with ratios measured
 when relaxing the jet \PT requirement in \WZjj events, in \WZ events inclusive in the number of jets, 
-and in events satisfying the EW signal and control region selections. 
+and in events satisfying the EW signal and control region selections, as demonstrated in
+Table~\ref{tab:nonpromptNorms}.
+
+
+\begin{table}[htbp]
+     \centering
+     \caption{
+       Relative fraction of nonprompt events by channel for different selections of \WZ and \WZjj events.
+           }
+     \begin{tabular}{l|cccc}
+ \hline %------------------------------------------------------------------------------------------
+       Selection           &   \eee           & \eem             &   \emm         &   \mmm  \\	
+ \hline %------------------------------------------------------------------------------------------
+ \hline %------------------------------------------------------------------------------------------
+       \WZ inclusive       & $ 0.06 \pm 0.04$	& $0.18 \pm 0.03$  & $0.21 \pm 0.04	$ & $0.55 \pm 0.04$ \\
+       \WZjj               & $ 0.08 \pm 0.05$	& $0.16 \pm 0.05$  & $0.33 \pm 0.07	$ & $0.44 \pm 0.06$ \\
+       Charged Higgs boson & $ 0.14 \pm 0.14$	& $0.22 \pm 0.14$  & $0.30 \pm 0.21	$ & $0.34 \pm 0.15$ \\
+        EW signal          & $< 0.1 \pm 0.1 $	& $0.23 \pm 0.19$  & $0.57 \pm 0.34 $	& $0.21 \pm 0.16$ \\
+  \hline
+  \end{tabular}
+  \label{tab:nonpromptNorms}
+\end{table}
 
 \section{Statistical procedures}
 Overview of the likelihood and assymptotic formulae
@@ -224,6 +471,112 @@ Briefly describe fit to MT
 \subsection{Limits on anomalous quartic gauge couplings}
 
 \section{Systematic uncertainties}
+
+The dominant uncertainties in both the cross section measurement 
+and new physics searches are those associated with 
+the jet energy scale (JES) and resolution (JER).  The JES and JER 
+uncertainties are applied in simulated events by smearing and 
+scaling the relevant
+observables and propagating the effects to the event selection and 
+the kinematic variables used in the analysis.
+The uncertainty in the event yield in the EW signal selection
+due to the JES and JER 
+is found to be 9\% for \QCDWZ and 5\% for \EWWZ processes.
+The uncertainty additionally depends on the $\pt$ and $\eta$ of the selected
+jets. For the \QCDWZ process, it varies in the range of 5--25\% with
+increasing values of {\mjj} and $\left|\etajj\right|$.
+
+Uncertainties in signal and background processes estimated with
+MC simulation are evaluated from the theoretical uncertainties 
+of the predictions. 
+Event weights in the simulated samples are used to evaluate 
+variations of the central prediction.
+Scale uncertainties are estimated by varying
+$\mu_{\mathrm{R}}$ and $\mu_{\mathrm{F}}$ by a factor of two from their
+nominal values, with the condition that $1/2 \le \mu_{\mathrm{R}}/\mu_{\mathrm{F}} \le 2$.
+The maximal and minimal variations are obtained
+per bin to form a shape-dependent variation band.
+The PDF uncertainties are obtained from the MC replica sets 
+of the NNPDF3.0 PDF. 
+The PDF and scale uncertainties are uncorrelated for different signal and
+background process and 100\% correlated across bins for the distributions
+used to extract results.
+
+The uncertainty in modeling the \EWWZ and \QCDWZ
+processes has a large impact in the \EWWZ signal strength measurement.
+In addition to the uncertainties from PDF and scale choice, 
+comparisons of alternative matrix element and parton shower generators are
+considered.
+The uncertainty in the \QCDWZ process is derived by
+comparing the predictions of the MLM-merged sample and those obtained with the \FxFx-merged sample,
+after fixing the normalization in the control region described in Section~\ref{sec:backgrounds}
+to the observed data yield in this region.
+Differences between the predictions of the MC simulations
+in the signal region and in the ratio
+of the control region to the signal region event yields
+are considered in the comparisons.
+The differences in predictions are generally found to be
+within the scale and PDF uncertainties of the samples,
+and a 10\% normalization uncertainty is assigned to account for
+the observed discrepancies.
+The results obtained using the \POWHEG sample,
+which predicts a slightly softer {\mjj} spectrum, are also largely contained 
+within the theoretical uncertainties considered.
+However, because \WZjj events from this sample arise from
+soft radiation from the parton shower, it is 
+not explicitly considered in the uncertainty evaluation.
+For the \EWWZ process, the samples described in Section~\ref{sec:mc}
+are found to agree within
+the theoretical uncertainties from the PDF and the choice of 
+$\mu_{\mathrm{R}}$ and $\mu_{\mathrm{F}}$ 
+for the kinematic variables considered in the analysis,
+so no additional uncertainty is
+assigned. 
+
+
+The interference term is evaluated on particle-level simulated events
+selected from the samples described in Section~\ref{sec:mc}. 
+It is found to be positive, and amounts to 12\% 
+of the \EWWZ contribution in the control region and 4\% in the signal region
+for both MC samples considered. 
+The ratio of the interference to the \EWWZ 
+decreases with increasing $\mjj$, consistent with the observations of Ref.~\cite{leshouches2017}.
+These values are used as a symmetric shape uncertainty in the 
+signal cross section when performing the 
+\EWWZ signal strength measurement.
+This uncertainty is subdominant with respect to other theoretical uncertainties 
+and has a negligible contribution to the uncertainty 
+on the observed \EWWZ signal strength.
+
+Higher-order EW corrections in VBS processes are known to be negative and at
+the level of tens of percent, with the correction increasing in magnitude 
+with increasing {\mjj}~\cite{Biedermann:2016yds}.
+While this behavior is expected to be a general feature of VBS processes, 
+calculations have not yet been performed for the final state considered 
+in this letter, and they are therefore not applied to the EW WZ MC simulation. 
+However, with the exception of the highest values of {\mjj}, modifications 
+are expected to be contained within the theoretical uncertainties and 
+we have confirmed that the EW WZ signal strength measurement is 
+insensitive to corrections of the shape and magnitude calculated for 
+other EW production processes
+
+Uncertainties related to the finite number of simulated events, or to the limited 
+number of events in data control regions, affect the signal and background predictions. 
+They are uncorrelated 
+across different samples, and across bins of a single distribution. 
+The limited event count in the control regions of the
+nonprompt background estimate is the dominant contribution to this uncertainty.
+
+The nonprompt background estimate is also affected by systematic uncertainties
+from the jet flavor composition of the control regions and loose-to-tight transfer factors.
+The systematic uncertainty in the nonprompt event yield is 30\%
+for both electrons and muons, uncorrelated between channels.
+It covers the largest difference observed
+between the estimated and measured
+numbers of events in data control samples enriched in
+$\ttbar$ and Drell--Yan contributions and the differences between 
+using transfer factors derived in \Zpj and dijet events.
+
 
 \begin{table}[htbp]
      \centering
