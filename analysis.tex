@@ -1,12 +1,142 @@
 \chapter{Analysis Strategy}
-A broad introduction
+
+This analysis selects events with exactly three leptons (electrons or muons), 
+missing transverse momentum, 
+and two jets at high pseudorapidity $\eta$ with large dijet system invariant mass {\mjj},
+characteristic of VBS processes.
+We use selected
+events to make measurements of the \WZjj production cross section, without separating
+by production mechanism, and to extract the component of these events produced
+by the \EWWZ process, using
+kinematic variables of the two forward and high momentum jets, 
+including $\eta$ separation and {\mjj}.
+
+Deviation from the SM prediction in the rate of \EWWZ production, or in differential characteristics 
+of \EWWZ-like events, could indicate the presence of BSM physics. New physics 
+sensitive to the scattering energy of the interaction would modify $m_{\WZ}$.
+The $\mt$ of selected events is used to characterize the consistency of
+the data with the SM prediction and with possible BSM extensions.
+
 \section{WZ VBS event signature and background composition}
 Give a cut flow, and the expected background composition. Show Feynman diagrams.
 \section{Event triggering}
-Describe the triggers, the trigger efficiency, and the prefire efficiency. Make some plots!
-\section{Event selection}
 
-Quick overview of the selections. Do you really need a separate section for each? I think not
+Collision events are selected by triggers that require the presence of
+one or two electrons or muons.
+The \pt threshold for the single lepton trigger is 25 (20)\GeV for the electron (muon) trigger.
+For the dilepton triggers, with the same or different flavors, the minimum \pt of the leading and subleading leptons are 17\,(17) and 12\,(8)\GeV
+for electrons (muons), respectively.
+Partial mistiming of signals in the forward region of the electromagnetic calorimeter (ECAL) endcaps
+($2.5 < \left|\eta\right| < 3.0$) led to a reduction in the level 1 trigger efficiency. 
+A correction for this effect was determined using an unbiased data sample. 
+This loss of efficiency is found to be about 
+1\% for {\mjj} of $200\GeV$ and it increases to about 15\% for $\mjj > 2\TeV$.
+
+\section{Event selection and fiducial cross section regions}
+
+A selected event is required to have three lepton candidates $\ell\ell'\ell'$,
+where $\ell, \ell' = \mathrm{e}$, $\mu$.
+The electrons and muons can be directly produced from a \W or \Z boson decay or from a \W or \Z
+boson with an intermediate $\tau$ lepton decay.
+The $\ell'\ell'$ pair consists of two leptons with opposite charge and the same flavor,
+as expected for a $\PZ$ boson candidate.
+One of the leptons from the $\PZ$ boson candidate is required to have $\pt > 25\GeV$ and the other
+$\pt > 15\GeV$.
+For events with three same-flavor leptons, two opposite charge and same flavor combinations are possible.
+The pair with invariant mass closest to $m_{\PZ} = 91.2\GeV$, the nominal $\cPZ$ boson mass from
+Ref.~\cite{Tanabashi:2018oca}, is selected as the $\cPZ$ boson candidate.
+The lepton not associated the $\cPZ$ boson is associated with the $\PW$ boson and must have $\pt > 20\GeV$. All leptons
+must pass the identification and isolation requirements
+described in Section~\ref{sec:eventreconstruction}.
+Events containing additional isolated leptons with $\pt > 10\GeV$ in the event are rejected.
+Because of the neutrino in the final state, the events are required to have $\ptmiss > 30\GeV$. 
+To reduce contributions from $\ttbar$ events,
+the leptons constituting the $\cPZ$ boson candidate are required to have an invariant mass satisfying
+$\left|m_{\ell'\ell'} - m_\PZ\right| < 15\GeV $ and events with a 
+b tagged jet with $\pt > 30\,\GeV$ and $\abs{\eta} < 2.4$ are vetoed.
+
+The invariant mass of any dilepton
+pair $m_{\ell\ell}$ must be greater than 4\GeV.
+Such a requirement is necessary in theoretical calculations to avoid divergences 
+from collinear emission of same-flavor opposite-sign 
+dilepton pairs, and 4\GeV is chosen to avoid low mass resonances.
+The selection is extended to all dilepton pairs to 
+reduce contributions from backgrounds with soft leptons while having a negligible effect on signal efficiency.
+The trilepton invariant mass, $m_{3\ell}$, is required to be more than 100\GeV
+to exclude a region where production of $\PZ$ bosons with final-state photon radiation
+is expected to contribute.
+
+Furthermore, the event must have at least two jets with $\pt > 50\GeV$ and $|\eta| < 4.7$. 
+The jet with the highest $\pt$ is 
+called the leading jet and the jet with the second-highest $\pt$ the subleading jet. 
+To exploit the unique signature of the VBS process, these two jets are required to have
+$\mjj > 500\GeV$ and $\eta$ separation 
+$\left|\detajj \right| \equiv \left|\etajj \right| > 2.5$.
+The variable $\etas = \zepl$
+of the three-lepton system is additionally required to be between $-2.5$ and 2.5. This selection is
+referred to as the ``EW signal selection." The same set of selections, but with no requirement on 
+{\etas} and with the relaxed requirement $\pt > 30\GeV$, 
+is used for searches for charged Higgs bosons and therefore called the ``Higgs boson selection."
+A summary of these selections is shown in Table~\ref{tab:selections}. 
+
+\begin{table}[!ht]
+  \begin{center}
+  \caption{Summary of event selections and fiducial region definitions for the analysis. 
+    The selections labeled ``EW signal'' and ``Higgs boson'' are applied to data and reconstructed 
+    simulated events.
+    The EW signal selection is used for all measurements except for the charged Higgs boson search,
+    which uses the selection indicated in the column labeled ``Higgs boson.''
+    The \WZjj cross section is reported in the fiducial regions defined by the selections specified in 
+    the last two columns, which are applied to simulated events. The variables
+    $n_{\jet}$, $n_{\mathrm{b}}$, and $\pt^{\mathrm{b}}$ refer to the number of
+    anti-\kt jets, the number of anti-\kt b-tagged jets, and the b jet 
+    \pt threshold, respectively. Other variables are defined in the text.
+    }
+  \begin{tabular}{c|c|c|c|c}
+  \hline
+                                    & EW signal & Higgs boson & Tight fiducial & Loose fiducial\\
+    \hline\hline
+    $  \PT^{\ell'_{1}}   $ [GeV]    & $> 25$    & $> 25$        & $ > 25 $       & $ > 20 $ \\
+    $  \PT^{\ell'_{2}}   $ [GeV]    & $> 15$    & $> 15$        & $ > 15 $       & $ > 20 $ \\
+    $  \PT^{\ell}     $ [GeV]       & $> 20$    & $> 20$        & $ > 20 $       & $ > 20 $ \\
+  $\left|\eta^{\mu}\right|   $      & $< 2.4$   & $< 2.4$       & $ < 2.5$       & $ < 2.5$ \\
+    $\left|\eta^{\mathrm{e}}\right|$      & $< 2.5$   & $< 2.5$       & $ < 2.5$       & $ < 2.5$ \\
+  $\left|m_{\ell'\ell'}-m_{\Z}\right|$ [GeV] & $ < 15 $ & $ < 15 $ & $ < 15 $ & $ < 15 $ \\
+  $m_{3\ell}                $ [GeV] & $> 100$   & $> 100$       & $> 100$        & $> 100$    \\
+  $m_{\ell\ell}           $ [GeV]   & $> 4$     & $> 4$         & $>4$           & $>4$    \\
+  $\ptmiss                  $ [GeV] & $> 30$       & $> 30$     &   -            &   -     \\
+  $\left|\eta^{\jet}\right|  $      & $< 4.7$   & $< 4.7$       & $< 4.7$        & $< 4.7$ \\
+    $\PT^{\jet}                $ [GeV] & $ > 50$   & $> 30$        & $> 50$         & $> 30$  \\
+  $\left|\Delta R(\jet, \ell)\right|$            & $ > 0.4$  & $> 0.4$       & $> 0.4$        & $> 0.4$ \\
+  $n_{\mathrm{\jet}}           $    & $\ge 2$   & $\ge 2$       & $\ge 2$        & $\ge 2$    \\
+  $\PT^{\mathrm{b}}         $ [GeV] & $ > 30$   & $ > 30$       &   -            &   -     \\
+    $\left|\eta^{\mathrm{b}}\right|  $      & $< 2.4$   & $< 2.4$ &   -            &   -     \\
+  $n_{\text{b}}       $         & $= 0$     & $= 0$         &   -            &   -     \\
+  $\mjj             $               & $> 500$   & $> 500$       & $> 500$        & $> 500$ \\
+  $\left|\etajj \right|$            &$> 2.5$         & $> 2.5$ & $> 2.5$ & $> 2.5$ \\
+  $\left| \zepl \right|$            & $< 2.5$ & - & $< 2.5$ & - \\
+  \end{tabular}
+  \label{tab:selections}
+  \end{center}
+\end{table}
+
+To reduce the dependence on theoretical predictions, 
+measurements are reported in two fiducial regions, defined in Table~\ref{tab:selections}.
+The ``tight fiducial region'' is defined to be as close as possible to the measurement phase space,
+while the ``loose fiducial region'' is designed to simplify comparisons with theoretical predictions.
+The fiducial predictions are defined through selections on particle-level
+simulated events using the \Rivet~\cite{Buckley:2010ar} framework, which 
+provides a toolkit for analyzing simulated events in a model-independent way.
+Electrons and muons are required to be prompt (i.e., not from hadron decays), 
+and those produced in the decay of $\tau$ lepton
+are not considered in the definition
+of the fiducial phase space.
+The momenta of prompt photons located within a cone of radius $\Delta R = 0.1$ are added to the lepton
+momentum to account for final-state photon radiation, referred to as ``dressing.''
+The three leading \pt leptons are selected and associated with the \W and \Z
+bosons with the same procedure as described for the analysis selection.
+Theoretical predictions are evaluated using \MG at LO interfaced to \PYTHIA with the samples
+described in Section~\ref{sec:simulation}.
 
 \begin{table}[!ht]
   \begin{center}
@@ -370,19 +500,6 @@ normalizations are fixed to their expected
 values and the expected sum of signal and background events is treated as the 
 observed data.
 
-
-\begin{figure}[htbp]
-  \centering
-   \includegraphics[width=0.5\textwidth]{figures/AnalysisProcedure/expectedYield_EWSignal.pdf}
-  \caption{
-    Expected composition of signal and background events for the EW signal selection.
-    The expected sum of signal and background contributions are treated as the observed
-    data in a maximum likelihood fit. The uncertainty in the total expected event yield
-    from WZ and non-WZ contributions is shown as a hashed band.
-        }
- \label{fig:expectedEWSignal}
-\end{figure}
-
 This method is validated in nonoverlapping data samples enriched in Drell--Yan and $\ttbar$ contributions.
 The Drell--Yan region is defined by inverting the selection requirement in $\ptmiss$, and
 the $\ttbar$ region is defined by requiring at least one b-tagged jet and rejecting events with $|m_{\ell'\ell'} - m_\PZ| < 5\GeV$
@@ -461,9 +578,72 @@ Table~\ref{tab:nonpromptNorms}.
 \end{table}
 
 \section{Statistical procedures}
-Overview of the likelihood and assymptotic formulae
-\subsection{WZjj cross section measurement}
-Briefly describe likelihood
+
+The distribution of data events in a quantum process are fundamentally stochastic 
+in nature. For scattering experiments with a low expected number of events,
+the probability $f(n, \nu)$ for an experiment to observe $n$ events
+when measuring a quantity with an expected event count $\nu$ is given 
+by the Poisson distribution,
+
+\begin{equation}
+  f(n, \nu) = e^{-\nu}\frac{\nu^{n}}{n!} \,.
+\end{equation}
+
+The expected event counts arise from both signal and background
+processes, that is, $\nu = \nu_{b} + \nu_{s}$, where $\nu_{b}$ and $\nu_s$
+represent the expected event yields from background and signal processes
+respectively. As this analysis seeks to extract information from the data about the signal
+processes -- which may differ from the expectation --
+the two contributions are not treated on equal footing. 
+The uncertainty about the signal prediction can be quantified by 
+introducing a rate modifier $\mu$ for the expected signal event yields, which
+is referred to as the ``signal strength'' for the signal process.
+
+Given this relationship, an observation of observation of $n$ events
+combined with an estimation of $\nu_{b}$ can be used to derive an
+observed value for $\mu$, and equivalently for the signal process
+production cross section $\sigma_{s}$, given the relationship 
+between the lumionsity of the scattering process, the cross section,
+and the expected event yield, $\nu_s = \mathcal{L}\sigma_{s}$.
+
+The probability distribution in terms of the 
+observed and expected event yields can therefore be expressed as
+
+\begin{equation}
+  f(n, \nu) = e^{-(\nu_{b} + \mu\sigma_{s}\mathcal{L})}\frac{\nu^{n}}{n!} \,.
+\end{equation}
+
+However, given the stochastic nature of the observation $n$, the 
+true value $\mu$ from which the data are drawn can only be estimated.
+Furthermore, the distribution the 
+from the knowledge of this distribution. Furthermore, the 
+
+The interpretation of data in terms of the SM predictions and BSM extensions 
+is carried out via maximum likelihood fits of the predicted yields and distributions
+to the observed data.  
+The likelihood is a function of the expected probability distributions for the
+outcome of an experiment, and estimating the model predicting this expected 
+distribution forms the central challenge of this analysis.
+
+The likelihood function is built from the expected probability 
+distributions of the signal and background processes.
+
+\subsection{\WZjj cross section measurement}
+For the extraction of the \WZjj cross section, the likelihood function is built
+from the predicted yields 
+
+\begin{figure}[htbp]
+  \centering
+   \includegraphics[width=0.5\textwidth]{figures/AnalysisProcedure/expectedYield_EWSignal.pdf}
+  \caption{
+    Expected composition of signal and background events for the EW signal selection.
+    The expected sum of signal and background contributions are treated as the observed
+    data in a maximum likelihood fit. The uncertainty in the total expected event yield
+    from WZ and non-WZ contributions is shown as a hashed band.
+        }
+ \label{fig:expectedEWSignal}
+\end{figure}
+
 \subsection{Significance of electroweak WZ Production}
 Briefly describe 2D fit
 \subsection{Limits on charged Higgs bosons}
@@ -532,7 +712,6 @@ $\mu_{\mathrm{R}}$ and $\mu_{\mathrm{F}}$
 for the kinematic variables considered in the analysis,
 so no additional uncertainty is
 assigned. 
-
 
 The interference term is evaluated on particle-level simulated events
 selected from the samples described in Section~\ref{sec:mc}. 
