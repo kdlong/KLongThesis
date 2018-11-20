@@ -579,7 +579,7 @@ Table~\ref{tab:nonpromptNorms}.
 
 \section{Statistical procedures}
 
-The distribution of data events in a quantum process are fundamentally stochastic 
+The distribution of data events in a quantum process is fundamentally stochastic 
 in nature. For scattering experiments with a low expected number of events,
 the probability $f(n, \nu)$ for an experiment to observe $n$ events
 when measuring a quantity with an expected event count $\nu$ is given 
@@ -589,14 +589,14 @@ by the Poisson distribution,
   f(n, \nu) = e^{-\nu}\frac{\nu^{n}}{n!} \,.
 \end{equation}
 
-The expected event counts arise from both signal and background
+The expected events arise from both signal and background
 processes, that is, $\nu = \nu_{b} + \nu_{s}$, where $\nu_{b}$ and $\nu_s$
 represent the expected event yields from background and signal processes
 respectively. As this analysis seeks to extract information from the data about the signal
 processes -- which may differ from the expectation --
 the two contributions are not treated on equal footing. 
-The uncertainty about the signal prediction can be quantified by 
-introducing a rate modifier $\mu$ for the expected signal event yields, which
+The variability of the signal expectation can be quantified by 
+introducing a rate modifier $\mu$ for the expected signal event yield, which
 is referred to as the ``signal strength'' for the signal process.
 
 Given this relationship, an observation of observation of $n$ events
@@ -610,23 +610,62 @@ The probability distribution in terms of the
 observed and expected event yields can therefore be expressed as
 
 \begin{equation}
-  f(n, \nu) = e^{-(\nu_{b} + \mu\sigma_{s}\mathcal{L})}\frac{\nu^{n}}{n!} \,.
+  f(n, \nu) = e^{-(\nu_{b} + \mu\sigma_{s}\mathcal{L})}\frac{(\nu_{b} + \mu\sigma_{s}\mathcal{L})^{n}}{n!} \,.
 \end{equation}
 
-However, given the stochastic nature of the observation $n$, the 
-true value $\mu$ from which the data are drawn can only be estimated.
-Furthermore, the distribution the 
-from the knowledge of this distribution. Furthermore, the 
+Given the stochastic nature of the observation $n$, the 
+true value $\mu$ from which the data are drawn cannot be inferred precisely
+but can be estimated by
+leveraging knowledge of the underlying distribution of the event yields.
+Uncertainties in the underlying model present an additional complication
+in quantifying the probability of an observation in terms of an input model,
+as they reduce the certainty to which underlying distribution is known.
+In this analysis, the knowledge of expected number of background-associated events
+is limited by several limitations in the model, including the energy
+scale of jet measurements, the theoretical uncertainty in the \WZ processes
+and other contributions discussed in Section~\ref{sec:systematics},
+Estimating the model of the expected event distributions and its uncertainties 
+forms the central challenge of this analysis.
 
-The interpretation of data in terms of the SM predictions and BSM extensions 
-is carried out via maximum likelihood fits of the predicted yields and distributions
-to the observed data.  
+The expected probability distribution is therefore a function of additional
+nuisance parameters, which form a distribution in a range of possible values.
+That is, 
+
+\begin{equation}
+  f(n, \nu, \vec{\theta}) = e^{-\nu(\vec{\theta})}\frac{\nu^{n(\vec{\theta})}}{n!} \,,
+\end{equation}
+
+where the dependence of the expected event yield on underlying parameters
+of the model is now made explicit.
+
+The probability distribution of the expected event yields is particularly important
+when a measurement seeks to quantify the consistency of a measurement 
+with a spectrum of possible signal hypotheses. 
+Of particular importance is the 
+``background-only hypotheses,'' in which $\mu = 0$. For a given observed
+$n$, one may seek to quantify whether the observation is unambiguously
+consistent with the $\mu \ne 0$ or if the data can fully be described by
+a of the background expectation. 
+The statistical procedure to quantify this consistency in most particle 
+physics experiments is the maximum likelihood estimation, or maximum
+likelihood fit.
+
 The likelihood is a function of the expected probability distributions for the
-outcome of an experiment, and estimating the model predicting this expected 
-distribution forms the central challenge of this analysis.
+outcome of an experiment. All results presented in this analysis
+use a binned likelihood function, which is a product of the probability
+distribution function per bin. 
 
-The likelihood function is built from the expected probability 
-distributions of the signal and background processes.
+Comments about nuisance parameters
+
+All interpretations of results in terms of 
+the SM predictions and BSM extensions presented this thesis 
+are carried out via binned maximum likelihood fits of the predicted yields and distributions
+to the observed data. The form of the binned likelihood used in each
+analysis interpretation is presented briefly in the following discussion.
+Fits to the likelihood are used to 
+quantifying the statistical significance of an observed excess over the background-only hypothesis, 
+to extract results in terms of cross section measurements, and establish
+one- or multi-dimensional confidence intervals for BSM model parameters.
 
 \subsection{\WZjj cross section measurement}
 For the extraction of the \WZjj cross section, the likelihood function is built
@@ -651,6 +690,7 @@ Briefly describe fit to MT
 \subsection{Limits on anomalous quartic gauge couplings}
 
 \section{Systematic uncertainties}
+\label{sec:systematics}
 
 The dominant uncertainties in both the cross section measurement 
 and new physics searches are those associated with 
