@@ -614,7 +614,7 @@ observed and expected event yields can therefore be expressed as
 \end{equation}
 
 Given the stochastic nature of the observation $n$, the 
-true value $\mu$ from which the data are drawn cannot be inferred precisely
+true value of $\nu_b$ and $\nu_s$ from which the data are drawn cannot be inferred precisely
 but can be estimated by
 leveraging knowledge of the underlying distribution of the event yields.
 Uncertainties in the underlying model present an additional complication
@@ -632,11 +632,11 @@ nuisance parameters, which form a distribution in a range of possible values.
 That is, 
 
 \begin{equation}
-  f(n, \nu, \vec{\theta}) = e^{-\nu(\vec{\theta})}\frac{\nu^{n(\vec{\theta})}}{n!} \,,
+  f(n, \nu, \vec{\theta}) = e^{-\nu(\vec{\theta})}\frac{\nu(\vec{\theta})^{n}}{n!} \,,
 \end{equation}
 
-where the dependence of the expected event yield on underlying parameters
-of the model is now made explicit.
+where the dependence of the expected event yield on parameters 
+of the model $\vec{\theta}$ is made explicit.
 
 The probability distribution of the expected event yields is particularly important
 when a measurement seeks to quantify the consistency of a measurement 
@@ -646,19 +646,55 @@ Of particular importance is the
 $n$, one may seek to quantify whether the observation is unambiguously
 consistent with the $\mu \ne 0$ or if the data can fully be described by
 a of the background expectation. 
+
 The statistical procedure to quantify this consistency in most particle 
 physics experiments is the maximum likelihood estimation, or maximum
-likelihood fit.
+likelihood fit. The technique seeks to estimate the underlying parameters
+of the model from which the data set is drawn, using knowledge of the
+expected distribution of the parameters. The technique is built around the
+likelihood function, which is built from the
+of the expected probability distributions for the
+outcome of an experiment. 
+The likelihood is a function of the parameters of the model which are not 
+known with certitude.
+Given an observed data set, the best estimate for 
+the true set of parameters of the model from which the data
+maximizes this function.
 
-The likelihood is a function of the expected probability distributions for the
-outcome of an experiment. All results presented in this analysis
+Results presented in this analysis
 use a binned likelihood function, which is a product of the probability
-distribution function per bin. 
+distribution function per bin. That is,
 
-Comments about nuisance parameters
 
-All interpretations of results in terms of 
-the SM predictions and BSM extensions presented this thesis 
+\begin{equation}
+  \mathcal{L}(n, \nu, \vec{\theta}) = \prod_{i=0}^{n_{bins}} 
+      e^{-\nu_{i}(\vec{\theta})}\frac{\nu_{i}(\vec{\theta_{i}})^{n_i}}{n_i!} 
+      \times e^{-\theta^2/2} \,.
+\label{eq:likelihood}
+\end{equation}
+
+In this expression, 
+the set of parameters $\vec{\theta}$ are referred to as nuisance parameters.
+accounts for the uncertainty in the expected values of the associated model parameter.
+The best estimated value of this parameters is input to the fit. 
+Each $\vec{\theta}$ parameter has a probability density function around its
+central value which is derived for each parameter and discussed in 
+in Section~\ref{sec:systematics}.
+As shown in Equation~\ref{eq:likelihood}, as $\vec{\theta}$ parameters diverge from
+their input values $\theta_i = 0$, corresponding to no variation from the expected 
+central value of a parameter, the likelihood function is reduced.
+The parameter may impact the predictions in all bins equally,
+referred to as a normalization uncertainty, or it may affect the distribution in
+a bin-dependent way, referred to as a shape uncertainty.
+For the extraction of results, log-normal probability density functions are 
+assumed for the nuisance parameters affecting 
+the event yields of the various background contributions, whereas systematic uncertainties 
+that affect the shape of the distributions are represented by nuisance parameters whose 
+variation results in a continuous perturbation of the spectrum~\cite{Prosper:2011zz} and which are assumed 
+to have a Gaussian probability density function.
+
+The interpretations of results in terms of 
+the SM predictions and BSM extensions presented in this thesis 
 are carried out via binned maximum likelihood fits of the predicted yields and distributions
 to the observed data. The form of the binned likelihood used in each
 analysis interpretation is presented briefly in the following discussion.
@@ -666,10 +702,37 @@ Fits to the likelihood are used to
 quantifying the statistical significance of an observed excess over the background-only hypothesis, 
 to extract results in terms of cross section measurements, and establish
 one- or multi-dimensional confidence intervals for BSM model parameters.
+The likelihood function is maximized, or rather the function $-\ln \mathcal{L}$,
+using the {\sc Minuit} software package in the {\sc RooFit} framework. Distributions 
+and expected event yields
+shown using the best-fit normalizations and uncertainties from this procedure
+are referred to as post-fit distributions, whereas results obtained with the model parameters 
+values used as input to the maximum likelihood fit are referred to as pre-fit results.
 
 \subsection{\WZjj cross section measurement}
+
 For the extraction of the \WZjj cross section, the likelihood function is built
-from the predicted yields 
+from the predicted yields in the four leptonic channels for the electroweak signal selection. 
+The likelihood function is shown in Equation~\ref{eq:wzjjLikelihood}.
+A single signal strength for \WZjj production $\mu_{\WZjj}$ is treated as an unconstrained parameter in the fit.
+
+\begin{equation}
+  \mathcal{L}(\mu, \vec{\theta} | n_{c}) = 
+    \prod_{c}^{channels} e^{-(\nu_{b, c}(\vec{\theta}) + 
+    \mu_{\WZjj}\sigma_{th}\times\mathcal{B}_{\WZ \rightarrow c} \mathcal{L})}
+    \frac{(\nu_{b} + \mu_{\WZjj}\sigma_{th} 
+    \times\mathcal{B}_{\WZ \rightarrow c})^{n_{c}}}{n_{c}!} 
+    e^{-\theta^2/2} \,.
+    \label{eq:wzjjLikelihood}
+\end{equation}
+
+The likelihood is a function of the number of expected background events $\nu_{b}$, which is
+a function of the nuisance parameters $\vec{\theta}$. The 
+$\sigma_{th}$ is the theoretical prediction for the \WZjj cross section, and 
+$\mathcal{BR}_{\WZ \rightarrow c}$ is the branching ratio for \WZ to each of the four leptonic decay
+channels considered. The expectation parameters used at input to the likelihood are shown
+in Fig.~\ref{fig:expectedEWSignal}. For this comparison, the expected sum of signal and background
+predictions is treated as the observed data in the maximum likelihood.
 
 \begin{figure}[htbp]
   \centering
@@ -682,6 +745,36 @@ from the predicted yields
         }
  \label{fig:expectedEWSignal}
 \end{figure}
+
+The observed cross section is obtained from the maximum likelihood fit as 
+
+\begin{equation}
+  \sigma_{\WZjj , obs} = \mu_{EW}\times\sigma_{th}
+  \label{eq:sigmaObs}
+\end{equation}
+
+Note that this expression does not imply that $\sigma_{\WZjj, obs}$
+depends directly on the predicted cross section, as $\mu_{\WZjj}$ will adjust
+linearly to fit the observed data, as seen in Equation~\ref{eq:wzjjLikelihood}.
+Thus any input value for $\sigma_{th}$ will lead to the same $\sigma_{\WZjj , obs}$
+given by Equation~\ref{eq:sigmaObs}, provided the efficiency for
+reconstructing the events is unaffected. In terms of the efficiency for reconstruction
+$\epsilon$, which is given by the ratio of expected events in the fiducial
+volume to the number of reconstructed events,  $\epsilon = n_{th}/n_{reco}$.
+
+In this expression, the number of expected events $n_{th}$ excludes events
+outside the fiducial volume of the detector, or outside the kinematic region
+where events can reasonably be reconstructed, e.g., leptons at very low \pt.
+For this reason, the cross section obtained from this expression is referred to 
+as a fiducial cross section.
+To report a cross section in a region that difference significantly from the 
+experimental fiducial volume, the extrapolation factor from the region
+of measurement must be calculated. This fully theoretical quantity, known
+as the acceptance, introduces a theoretical uncertainty to the measurement.
+It is defined as $\mathcal{A} = \sigma_{report, th}/\sigma_{meas, th}$ where
+$\sigma_{meas, th}$ and $\sigma_{report, th}$ are the predicted cross sections
+in the region of measurement and reported region respectively. The fiducial
+cross section regions considered in this analysis are described in Section~\ref{sec:selections}.
 
 \subsection{Significance of electroweak WZ Production}
 Briefly describe 2D fit
