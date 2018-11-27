@@ -577,7 +577,7 @@ Table~\ref{tab:nonpromptNorms}.
   \label{tab:nonpromptNorms}
 \end{table}
 
-\section{Statistical procedures}
+\section{Statistical proceduress}
 
 The distribution of data events in a quantum process is fundamentally stochastic 
 in nature. For scattering experiments with a low expected number of events,
@@ -777,10 +777,278 @@ in the region of measurement and reported region respectively. The fiducial
 cross section regions considered in this analysis are described in Section~\ref{sec:selections}.
 
 \subsection{Significance of electroweak WZ Production}
-Briefly describe 2D fit
+
+Separating the EW- and QCD-induced components of \WZjj events requires exploiting the different 
+kinematic signatures of the two processes.
+The relative fraction of the \EWWZ process with respect to the \QCDWZ process and other backgrounds
+grows with increasing values of the $\mjj$ and $\left|\etajj\right|$
+the leading jets, as demonstrated in Fig.~\ref{fig:VBSPlotsExpected},
+which shows the expected distributions of $\mjj$ and $\etajj$ for events satisfying the EW signal selection.
+This motivates the use of a 2D distribution built from these variables for the extraction of the EW \WZjj
+signal strength via a maximum likelihood fit.
+This 2D distribution, 
+shown as a one-dimensional histogram in Fig.~\ref{fig:2DfitDistribution},
+along with the yield in the control region defined in 
+Section~\ref{sec:backgrounds}, are combined in a binned likelihood
+involving the expected and observed numbers of events in each bin.
+The distribution including the yield in the \QCDWZ control region, shown as the first bin,
+is shown in Fig.~\ref{fig:2DfitDistributionWCR}.
+
+\begin{figure}[htbp]
+  \centering
+   \includegraphics[width=0.45\textwidth]{figures/AnalysisProcedure/mjj_nMinus1.pdf}
+   \includegraphics[width=0.45\textwidth]{figures/AnalysisProcedure/dEtajj_nMinus1.pdf}
+  \caption{
+  The $\mjj$ (left) and $\left|\etajj\right|$ 
+  of the two leading jets 
+  (right) for events satisfying the EW signal selection. 
+  The last bin contains all events with $\mjj > 2500\GeV$ (left) and 
+  $\left|\etajj\right| > 7.5$ (right).
+  The dashed line shows the expected \EWWZ contribution stacked
+  on top of the backgrounds, which are shown as filled histograms. 
+  The hatched bands represent the total and relative 
+  statistical uncertainties on the predicted yields.
+  The bottom panel shows the ratio of the number of events measured in data to the total 
+  number of expected events. 
+  The predicted yields are shown with their pre-fit normalizations.
+          }
+ \label{fig:VBSPlots}
+\end{figure}
+\begin{figure}[htbp]
+  \centering
+   \includegraphics[width=0.7\textwidth]{figures/AnalysisProcedure/mjj_etajj_unrolled_Expected.pdf}\qquad
+  \caption{
+    The one-dimensional representation of the 2D distribution of 
+    $\mjj$ and $\left|\etajj\right|$, used for the EW 
+    signal extraction. The x axis shows the dijet mass distribution
+    in the indicated bins, split into three bins of {\etajj }: {\etajj} $\in [2.5, 4], [4, 5], \ge 5$.
+    The dashed line represents the \EWWZ contribution stacked
+    on top of the backgrounds, which are shown as filled histograms. 
+    The hatched bands represent the total and relative 
+    systematic uncertainties on the predicted yields.
+    The bottom panel shows the ratio of the number of events measured in data to the total 
+    number of expected events. 
+    The predicted yields are shown with their best-fit normalizations.
+}
+\label{fig:2DfitDistribution}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+   \includegraphics[width=0.7\textwidth]{figures/AnalysisProcedure/mjj_etajj_unrolled_wCR_Expected.pdf}\qquad
+  \caption{
+    The one-dimensional representation of the 2D distribution of 
+    $\mjj$ and $\left|\etajj\right|$, used for the EW 
+    signal extraction. The x axis shows the dijet mass distribution
+    in the indicated bins, split into three bins of {\etajj }: {\etajj} $\in [2.5, 4], [4, 5], \ge 5$.
+    The dashed line represents the \EWWZ contribution stacked
+    on top of the backgrounds, which are shown as filled histograms. 
+    The hatched bands represent the total and relative 
+    systematic uncertainties on the predicted yields.
+    The bottom panel shows the ratio of the number of events measured in data to the total 
+    number of expected events. 
+    The predicted yields are shown with their best fit normalizations.
+}
+\label{fig:2DfitDistributionWCR}
+\end{figure}
+
+The likelihood is a combination of individual likelihoods for the four decay channels, 
+following the definition of Equation~\ref{eq:likelihood}.
+The measurement seeks to compare the best-fit value of $\mu_{\rm EW}$ from the 
+maximum likelihood, to the background-only fit in which $\mu_{rm EW} = 0$.
+The signficance of $mu_{rm EW}$ is a measure of the compatibility of the measurement
+with the best-fit value of $\mu_{\rm EW} \ne 0$ obtained from the maximum likelihood
+fit, referred to as the signal hypothesis, to
+the background-only hypothesis. 
+
+The compatability of the measurement with the background-only hypothetises
+is quantified via the test statistic, $t_{\mu}$, which is a function
+of the best-fit signal strength and the model with $\mu = 0$. It is defined as
+
+\begin{equation}
+  t_{\mu} = \left\{ 
+\begin{array}{c l}
+  \frac{\mathcal{L}(\mu,{\bf \hat{\hat{\theta}}}(\mu))}
+    {\mathcal{L}(\hat{\mu},{\bf \hat{\theta}})}           & \mu \ge \hat{\mu} \\
+  \frac{\mathcal{L}(\mu,{\bf \hat{\hat{\theta}}}(\mu))}
+    {\mathcal{L}(0,{\bf \hat{\theta}})}           & \mu < 0 \\
+
+\end{array}\right\} \,,
+\end{equation}
+
+where $\hat{\mu}$ and ${\bf \hat{\hat{\theta}}}$ are the values of 
+$\mu$ and ${\bf \vec{\theta}}$ which maximize the likelihood, and
+${\bf \hat{\hat{theta}}}(\nu)$ are the values of ${\bf \theta}$ which 
+maximize the likelihood for the given $\mu$.
+The significance of a measured value $\hat{\mu} \ne 0$ is quantified
+via the test statistic $q_{0} = t_{\mu}(\mu = 0)$.
+Note that the consistency with the background-only hypothetsis is evaluated
+with respect to the signal plus background hypothesis, and only a positive
+signal strength is considered a signal-like deviation from the background.
+
+The test statistic has a probability distribution $f(q_{\mu} | \mu)$
+for a given $\mu$. This distribution can be determined by sampling the underlying
+model and nuisance parameters to form an ensemble of pseudo-experiments drawn
+from a value of $\mu$. The observed value $\hat{\mu}$ obtained from a fit 
+to the data corresponds to a single realisation of the possible observations
+given the underlying model. 
+As sampling of the distribution is extremely computationally extensive,
+it is common for particle physics results to be derived with assymptotic
+formulae for the , presented in Ref.~\ref{CL_formula}.
+These formulae are applicable provided the observed number of events 
+per bin in the likelihood is not small. All results in this thesis 
+use the asymptotic approach.
+
+The probability of this result given the expected
+parameters of the model is quantified in terms of the $p$-value,
+
+\begin{equation}
+  p_{\mu} = \int_{t_{\mu, obs}}^{\infty} f(t_{\mu} | \mu) {\rm d}t \,.
+  \label{eq:pvalue}
+\end{equation}
+
+The value of $p_{0}$ (or $p$-value) is customarily transposed such that the area from
+$x=\sigma$ to $x=\infty$ for a Gaussian distributed function with standard
+deviation $\sigma$ would give the same value. This value, in terms of the standard
+deviation, is referred to as the significance of the result.
+It is customary in the particle physics community to refer to a $p$-value
+of $p = 2.87 \times 10^{-7}$, corresponding to a significance of 5 standard 
+deviations, or $5 \sigma$, as sufficient for rejection of the background-only
+hypothesis in favor of the signal plus background model. 
+
+The expected significance of \EWWZ process obtained from a fit to the likelihood
+shown in Fig.~\ref{fig:2DfitDistributionWCR},
+based on the expected distribution
+of background and signal events with $\mu_{\rm EW} = 1$, is 2.5 standard deviations.
+
 \subsection{Limits on charged Higgs bosons}
-Briefly describe fit to MT
+
+For the \EWWZ search, the background-only assumption corresponds to the SM with
+no \EWWZ process. An excess with respect to the background-only hypothesis is therefore
+expected, and is quantified using the procedures of the previous section. For searches 
+for BSM physics, one does not anticipate the need to quantify the significance of a signal-like
+fluctuation. One seeks instead to place constraints on the parameters of the unobserved BSM
+based on the consistency of the search with the null hypothesis. 
+
+Upper limits on the signal strength is are derived using the CL$_{s}$ criterion of Refs.~\ref{}.
+The procedure follows the approach of the previous section, with the test statistic now
+defined as
+
+\begin{equation}
+  t_{\mu} = \left\{ 
+\begin{array}{c l}
+  \frac{\mathcal{L}(\mu,{\bf \hat{\hat{\theta}}}(\mu))}
+    {\mathcal{L}(\hat{\mu},{\bf \hat{\theta}})}           & \mu \ge \hat{\mu} \\
+  \frac{\mathcal{L}(\mu,{\bf \hat{\hat{\theta}}}(\mu))}
+    {\mathcal{L}(0,{\bf \hat{\theta}})}           & \mu < \hat{\mu} \\
+
+\end{array}\right\} \,.
+\end{equation}
+
+
+The distribution of expected results and the 
+$p$-value of the observation are calculated from this test statistic for a 
+range of possible values of $\mu$ for the signal hypothesis is computed using
+Equation~\ref{eq:pvalue}. The CL$_{S}$ criterion is defined as
+
+\begin{equation}
+  \mathrm{CL}_{s} = \frac{p_{\mu}}{p_{0}} \,.
+\end{equation}
+
+The signal strength $\mu$ that satisfies the condition
+${\rm CL}_{s} = 1 - \alpha$ is said to be excluded at 
+confidence level (CL) $\alpha$. For example, the value $\alpha=0.95$ corresponds
+to an exclusion limit of 95\% CL.
+
+Because presence of charged Higgs bosons would give rise to a resonance-like structure in the 
+\WZ transverse mass, defined as
+
+\begin{equation}
+  \mt = \sqrt{(\ET(\W) + \ET(\Z))^2 - (\vec{\PT}(\W) + \vec{\PT}(\Z))^2} \, ,
+  \label{eq:wztransmass}
+\end{equation}
+
+with $\ET = \sqrt{m^2 + \PT^2}$,
+where the \W candidate is constructed from 
+the \ptvecmiss 
+and the lepton associated with the $\PW$ boson
+
+the likelihood used to test the consistency of the data with the presence of a charged Higgs
+boson is built from this distribution, shown in Fig.~\ref{fig:higgsmtExp}, 
+and the event yield in the
+control region described in Section~\ref{backgrounds}.
+A combined fit of the predicted signal and background yields to the data 
+in the Higgs boson selection is performed 
+to derive model-independent expected and observed upper limits on $\sigma_\mathrm{VBF}(\PHpm) \, 
+\mathcal{B}(\PHpm\to \PW\Z)$ at 95\% CL using the CL$\mathrm{_s}$ criterion. 
+
+\begin{figure}[htbp]
+  \centering
+    \includegraphics[width=0.5\textwidth]{figures/AnalysisProcedure/MTWZ_Higgs_expected.pdf}
+  \caption{
+      $\mt$ for events satisfying the Higgs boson selection,
+      used to place constraints on the production of charged Higgs bosons.
+      The last bin contains all events with $\mt > 2000\GeV$.
+      The dashed lines show predictions from the Georgi-Machechek model with
+      $m(\PHpm) = 500 \,(900)\GeV$ and $s_{\PH} = 0.3 \,(0.5)$.
+      The bottom panel shows the ratio of the number of events measured in data to the total 
+      number of expected events. The hatched bands represent the total and relative 
+      systematic uncertainties on the predicted background yields.
+      The predicted yields are shown with their best-fit normalizations from the background-only fit.
+      }
+ \label{fig:higgsmtExp}
+\end{figure}
+
 \subsection{Limits on anomalous quartic gauge couplings}
+
+Events satisfying the EW signal selection are used to constrain aQGCs in the effective field theory approach~\cite{Degrande:2012wf}.
+Results are obtained following the formulation of Ref.~\cite{Eboli:2006wa}, which proposes
+nine independent dimension-eight operators which assume the presence of a light Higgs boson and 
+respect the {\SUtwo$\times$\Uone} symmetry of the EW gauge sector. All operators are
+charge conjugation and parity-conserving.
+The \WZjj channel is most sensitive to the 
+T0, T1, and T2 operators, which are constructed purely from the {\SUtwo} gauge fields,
+the S0 and S1 operators, which involve interactions with the Higgs field,
+and the M0 and M1 operators, which involve a mixture of gauge and Higgs field interactions.
+
+The presence of nonzero aQGCs would enhance the production of events with high 
+WZ mass. The binned likelihood used for the extraction of results
+is therefore built from $\mt$ as for the limits on charged Higgs bosons. The 
+expected distribution is shown in Fig.~\ref{fig:aQGCDistributionExp}, 
+with several illustrative anomalous coupling parameters also shown.
+
+\begin{figure}[htbp]
+  \centering
+    \includegraphics[width=0.5\textwidth]{figures/AnalysisProcedure/MTWZ_aQGC_expected.pdf}
+  \caption{
+      $\mt$ for events satisfying the EW signal selection,
+      used to place constraints on the anomalous coupling parameters.
+      The dashed lines show predictions for several aQGC parameters values, which modify the \EWWZ process.
+      The last bin contains all events with $\mt > 2000\GeV$.
+      The hatched bands represent the total and relative 
+      systematic uncertainties on the predicted yields.
+      The bottom panel shows the ratio of the number of events measured in data to the total 
+      number of expected events. 
+      The predicted yields are shown with their best-fit normalizations from the background-only fit.
+      }
+ \label{fig:aQGCDistributionExp}
+\end{figure}
+
+The MC simulations of non-zero aQGCs include the SM \EWWZ process, with an increase
+in the yield at high $\mt$ arising from parameters different from their SM values. 
+Because the increase of the expected yield over the SM prediction exhibits a quadratic 
+dependence on the operator coefficient, 
+a parabolic function is fitted to the predicted yields per bin to obtain a smooth interpolation
+between the discrete operator coefficients considered in the MC simulation.
+The one-dimensional 95\% confidence level (CL) limits are extracted 
+using the CL$\mathrm{_s}$ criterion~\cite{Junk:1999kv,CLS2,Cowan:2010js}
+with the same as used for the charged Higgs boson search.
+The SM prediction, including the \EWWZ process, is treated as the null hypothesis.
+
+One-dimensional limits are placed with all
+parameters except for the coefficient being probed set to zero.
+In addition, a scan of the likelihood is also performed with multiple independent
+$\mu$ values corresponding to different dimension-eight operators. 
 
 \section{Systematic uncertainties}
 \label{sec:systematics}
