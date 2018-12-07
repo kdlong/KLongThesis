@@ -1,4 +1,5 @@
 \chapter{Analysis Strategy}
+\label{sec:analysis}
 
 This analysis selects events with exactly three leptons (electrons or muons), 
 missing transverse momentum, 
@@ -26,13 +27,66 @@ one or two electrons or muons.
 The \pt threshold for the single lepton trigger is 25 (20)\GeV for the electron (muon) trigger.
 For the dilepton triggers, with the same or different flavors, the minimum \pt of the leading and subleading leptons are 17\,(17) and 12\,(8)\GeV
 for electrons (muons), respectively.
-Partial mistiming of signals in the forward region of the electromagnetic calorimeter (ECAL) endcaps
+The combination of these trigger paths brings the trigger efficiency for three-lepton events
+to nearly 100\%.
+However, partial mistiming of signals in the forward region of the electromagnetic calorimeter (ECAL) endcaps
 ($2.5 < \left|\eta\right| < 3.0$) led to a reduction in the level 1 trigger efficiency. 
-A correction for this effect was determined using an unbiased data sample. 
+
+This mistiming of L1 trigger signals led to a significant contribution of events
+with high electromagnetic activity in the ECAL encaps to trigger an event
+acceptance incorrectly associated with an proton bunch crossing.
+This effect, known as pre-firing, is significant because requirements necessary
+to avoid a excessive readout of events prevent events from successive bunch crossings
+from triggering. That is, if an event has been accepted by the CMS trigger
+system, it is impossible for the following event to also be accepted.
+
+For EW WZ events, forward and high momentum jets can lead to such L1 pre-firing.
+The jet leading to pre-firing is incorrectly associated with the previous bunch
+crossing, producing an event missing the leptonic signature of WZ events.
+It is therefore likely to be rejected by the HLT, leading to an unrecoverable 
+inefficiency.
+
+A correction for this efficiency loss was determined using an unbiased sample
+of events where the event pre-firing is prevented by additional trigger conditions.
+In particular, a sample of events is selected where the trigger conditions
+preventing the readout of events separated by less than three bunch crossings 
+prevented the mistimed electromagnetic
+signal from firing the trigger, but do not prevent the correctly timed event
+from triggering. Jet candidates in the reconstructed data are formed 
+using the anti-$\kt$ algorithm and required to have $\pt > 30\GeV$
+and are matched to their trigger primitive objects.
+The jet pre-firing efficiency is defined as the ratio of jet objects matched
+to the correct bunch crossing to the total jet  
+
+\begin{figure}[htbp]
+  \centering
+   \includegraphics[width=0.4\textwidth]{figures/AnalysisProcedure/jet0Eta_prefiring.pdf}
+   \includegraphics[width=0.4\textwidth]{figures/AnalysisProcedure/jet1Eta_prefiring.pdf}
+   \includegraphics[width=0.4\textwidth]{figures/AnalysisProcedure/mjj_prefiring.pdf}
+   \includegraphics[width=0.4\textwidth]{figures/AnalysisProcedure/dEtajj_prefiring.pdf}
+  \caption{
+      Estimated efficiency loss for selected \EWWZ simulated events due to 
+      mistimed events in the L1 trigger. The solid lines show the uncorrected
+      distributions, while the dotted lines show the efficiency-corrected 
+      predictions.
+        }
+ \label{fig:signalPrefiringEff}
+\end{figure}
+
+The impact of this inefficiency on this analysis is estimated by applying
+these efficiency corrections, estimated in bins of jet $\pt$ and $\eta$,
+to the selected signal and background events. Due to the signature of forward
+and high momentum jets, the \EWWZ process is particularly affected. 
+This is demonstrated in Fig.~\ref{fig:signalPrefiringEff}, which shows the
+estimated efficiency loss in jet $\eta$, $\mjj$, and $\detajj$
+in simulated events for \EWWZ process selected for the analysis.
 This loss of efficiency is found to be about 
 1\% for {\mjj} of $200\GeV$ and it increases to about 15\% for $\mjj > 2\TeV$.
+The loss of sensitivity due to this inefficiency in the \EWWZ search is estimated 
+to be about 10\%.
 
 \section{Event selection and fiducial cross section regions}
+\label{sec:eventselection}
 
 A selected event is required to have three lepton candidates $\ell\ell'\ell'$,
 where $\ell, \ell' = \mathrm{e}$, $\mu$.
@@ -47,7 +101,7 @@ The pair with invariant mass closest to $m_{\PZ} = 91.2\GeV$, the nominal $\cPZ$
 Ref.~\cite{Tanabashi:2018oca}, is selected as the $\cPZ$ boson candidate.
 The lepton not associated the $\cPZ$ boson is associated with the $\PW$ boson and must have $\pt > 20\GeV$. All leptons
 must pass the identification and isolation requirements
-described in Section~\ref{sec:eventreconstruction}.
+described in Section~\ref{sec:reconstruction}.
 Events containing additional isolated leptons with $\pt > 10\GeV$ in the event are rejected.
 Because of the neutrino in the final state, the events are required to have $\ptmiss > 30\GeV$. 
 To reduce contributions from $\ttbar$ events,
@@ -136,7 +190,7 @@ momentum to account for final-state photon radiation, referred to as ``dressing.
 The three leading \pt leptons are selected and associated with the \W and \Z
 bosons with the same procedure as described for the analysis selection.
 Theoretical predictions are evaluated using \MG at LO interfaced to \PYTHIA with the samples
-described in Section~\ref{sec:simulation}.
+described in Section~\ref{sec:backgrounds}.
 
 \begin{table}[!ht]
   \begin{center}
@@ -190,6 +244,7 @@ The nonprompt component of the $\cPZ\gamma$ process,
 in which the photon experiences conversion into leptons in the tracker,
 is evaluated using MC simulation. 
 \subsection{Simulation and validation of signal and prompt backgrounds}
+\label{sec:backgrounds}
 
 Several Monte Carlo (MC) event generators are used to simulate the signal and
 background processes.
@@ -542,7 +597,7 @@ of the control regions.
     the contribution from only the ee$\mu$ channel, which is severally limited by the 
     control region event count. 
         }
- \label{fig:fakeRates2D}
+ \label{fig:nonpromptdEtajjByChan}
 \end{figure}
 
 The combined shape of the nonprompt background for all channels 
@@ -578,6 +633,7 @@ Table~\ref{tab:nonpromptNorms}.
 \end{table}
 
 \section{Statistical proceduress}
+\label{sec:statistics}
 
 The distribution of data events in a quantum process is fundamentally stochastic 
 in nature. For scattering experiments with a low expected number of events,
@@ -774,7 +830,7 @@ as the acceptance, introduces a theoretical uncertainty to the measurement.
 It is defined as $\mathcal{A} = \sigma_{report, th}/\sigma_{meas, th}$ where
 $\sigma_{meas, th}$ and $\sigma_{report, th}$ are the predicted cross sections
 in the region of measurement and reported region respectively. The fiducial
-cross section regions considered in this analysis are described in Section~\ref{sec:selections}.
+cross section regions considered in this analysis are described in Section~\ref{sec:eventselection}.
 
 \subsection{Significance of electroweak WZ Production}
 
@@ -812,7 +868,7 @@ is shown in Fig.~\ref{fig:2DfitDistributionWCR}.
   number of expected events. 
   The predicted yields are shown with their pre-fit normalizations.
           }
- \label{fig:VBSPlots}
+ \label{fig:VBSPlotsExpected}
 \end{figure}
 \begin{figure}[htbp]
   \centering
@@ -878,7 +934,7 @@ of the best-fit signal strength and the model with $\mu = 0$. It is defined as
 
 where $\hat{\mu}$ and ${\bf \hat{\hat{\theta}}}$ are the values of 
 $\mu$ and ${\bf \vec{\theta}}$ which maximize the likelihood, and
-${\bf \hat{\hat{theta}}}(\nu)$ are the values of ${\bf \theta}$ which 
+${\bf \hat{\hat{\theta}}}(\nu)$ are the values of ${\bf \theta}$ which 
 maximize the likelihood for the given $\mu$.
 The significance of a measured value $\hat{\mu} \ne 0$ is quantified
 via the test statistic $q_{0} = t_{\mu}(\mu = 0)$.
@@ -894,7 +950,7 @@ to the data corresponds to a single realisation of the possible observations
 given the underlying model. 
 As sampling of the distribution is extremely computationally extensive,
 it is common for particle physics results to be derived with assymptotic
-formulae for the , presented in Ref.~\ref{CL_formula}.
+formulae for the , presented in Ref.~\ref{Cowan:2010js}.
 These formulae are applicable provided the observed number of events 
 per bin in the likelihood is not small. All results in this thesis 
 use the asymptotic approach.
@@ -976,7 +1032,7 @@ and the lepton associated with the $\PW$ boson
 the likelihood used to test the consistency of the data with the presence of a charged Higgs
 boson is built from this distribution, shown in Fig.~\ref{fig:higgsmtExp}, 
 and the event yield in the
-control region described in Section~\ref{backgrounds}.
+control region described in Section~\ref{sec:backgrounds}.
 A combined fit of the predicted signal and background yields to the data 
 in the Higgs boson selection is performed 
 to derive model-independent expected and observed upper limits on $\sigma_\mathrm{VBF}(\PHpm) \, 
@@ -1000,6 +1056,7 @@ to derive model-independent expected and observed upper limits on $\sigma_\mathr
 \end{figure}
 
 \subsection{Limits on anomalous quartic gauge couplings}
+\label{sec:aqgcProcedure}
 
 Events satisfying the EW signal selection are used to constrain aQGCs in the effective field theory approach~\cite{Degrande:2012wf}.
 Results are obtained following the formulation of Ref.~\cite{Eboli:2006wa}, which proposes
