@@ -209,13 +209,31 @@ The pair with invariant mass closest to $m_{\PZ} = 91.2\GeV$, the nominal $\cPZ$
 Ref.~\cite{Tanabashi:2018oca}, is selected as the $\cPZ$ boson candidate.
 The lepton not associated the $\cPZ$ boson is associated with the $\PW$ boson and must have $\pt > 20\GeV$. All leptons
 must pass the identification and isolation requirements
-described in Section~\ref{sec:reconstruction}.
+described in Section~\ref{sec:reconstruction} (NOTE: will point to previous chapter).
 Events containing additional isolated leptons with $\pt > 10\GeV$ in the event are rejected.
 Because of the neutrino in the final state, the events are required to have $\ptmiss > 30\GeV$. 
 To reduce contributions from $\ttbar$ events,
 the leptons constituting the $\cPZ$ boson candidate are required to have an invariant mass satisfying
 $\left|m_{\ell'\ell'} - m_\PZ\right| < 15\GeV $ and events with a 
 b tagged jet with $\pt > 30\,\GeV$ and $\abs{\eta} < 2.4$ are vetoed.
+
+\begin{figure}[htbp]
+  \centering
+   \includegraphics[width=0.4\textwidth]{figures/AnalysisProcedure/Zlep1_Pt_Wselection.pdf}
+   \includegraphics[width=0.4\textwidth]{figures/AnalysisProcedure/ZMass_Wselection.pdf}
+   \includegraphics[width=0.4\textwidth]{figures/AnalysisProcedure/nJets_Wselection.pdf}
+   \includegraphics[width=0.4\textwidth]{figures/AnalysisProcedure/dEtajj_Wselection.pdf}
+  \caption{
+    Distributions for events satisfying the \WZ selection described in the text.
+    The $\pt$ of the highest momentum lepton associated with the $\PZ$ boson 
+    candidate (top left), the invariant mass of the $\PZ$ candidate (top right),
+    and the event rate by number of anit-$\kt$ jets with $\pt > 30\GeV$ (bottom left)
+    are shown with no requirement on the jet activity in the event. The rapidity
+    Separation of the highest $\pt$ jets for events with at least two
+    $\pt>30\GeV$ events are also shown (bottom right).
+        }
+ \label{fig:WselectionPlots}
+\end{figure}
 
 The invariant mass of any dilepton
 pair $m_{\ell\ell}$ must be greater than 4\GeV.
@@ -228,17 +246,28 @@ The trilepton invariant mass, $m_{3\ell}$, is required to be more than 100\GeV
 to exclude a region where production of $\PZ$ bosons with final-state photon radiation
 is expected to contribute.
 
-Furthermore, the event must have at least two jets with $\pt > 50\GeV$ and $|\eta| < 4.7$. 
+Distributions of events satisfying these criteria, designed to select
+$\WZ\rightarrow 3\ell\nu$ events, are shown in Fig.~\ref{fig:WselectionPlots}.
+The \WZ production rate by
+number of anti-$\kt$ jets, and the rapidity separation of the two
+highest $\pt$ jets for events with at least two anit-$\kt$ jets
+with are also shown.
+
+With no condition on the jet activity in the selection,
+the \EWWZ contribution is negligible. To enhance the \EWWZ contribution,
+the event must have at least two jets with $\pt > 30\GeV$ and $|\eta| < 4.7$. 
 The jet with the highest $\pt$ is 
 called the leading jet and the jet with the second-highest $\pt$ the subleading jet. 
 To exploit the unique signature of the VBS process, these two jets are required to have
 $\mjj > 500\GeV$ and $\eta$ separation 
 $\left|\detajj \right| \equiv \left|\etajj \right| > 2.5$.
-The variable $\etas = \zepl$
-of the three-lepton system is additionally required to be between $-2.5$ and 2.5. This selection is
-referred to as the ``EW signal selection." The same set of selections, but with no requirement on 
-{\etas} and with the relaxed requirement $\pt > 30\GeV$, 
+This selection 
 is used for searches for charged Higgs bosons and therefore called the ``Higgs boson selection."
+For the \WZjj and \EWWZ measurement,
+the leading and subleading jet must satisfy $\pt > 50\GeV$, and
+the variable $\etas = \zepl$
+of the three-lepton system is additionally required to be between $-2.5$ and 2.5. This selection is
+referred to as the ``EW signal selection." 
 A summary of these selections is shown in Table~\ref{tab:selections}. 
 
 \begin{table}[!ht]
@@ -300,46 +329,6 @@ bosons with the same procedure as described for the analysis selection.
 Theoretical predictions are evaluated using \MG at LO interfaced to \PYTHIA with the samples
 described in Section~\ref{sec:backgrounds}.
 
-\begin{table}[!ht]
-  \begin{center}
-  \caption{Summary of event selections and fiducial region definitions for the analysis. 
-    The selections labeled ``EW signal'' and ``Higgs boson'' are applied to data and reconstructed 
-    simulated events.
-    The EW signal selection is used for all measurements except for charged the charged Higgs boson search,
-    which uses the selection indicated in the column labeled ``Higgs boson''.
-    The \WZjj cross section is reported in the fiducial regions defined by the selections specified in 
-    the last two columns, which are applied to simulated events.
-    $n_{\jet}$, $n_{\mathrm{b}}$, and $\pt^{\mathrm{b}}$ refer to the number of
-    anti-\kt jets, the number of anti-\kt b-tagged jets, and the b jet 
-    \pt threshold, respectively. Other variables are defined in the text.
-    }
-  \begin{tabular}{c|c|c|c|c}
-  \hline
-                                    & EW signal & Higgs boson & Tight fiducial & Loose fiducial\\
-    \hline\hline
-    $  \PT^{\ell'_{1}}   $ [GeV]    & $> 25$    & $> 25$        & $ > 25 $       & $ > 20 $ \\
-    $  \PT^{\ell'_{2}}   $ [GeV]    & $> 15$    & $> 15$        & $ > 15 $       & $ > 20 $ \\
-    $  \PT^{\ell}     $ [GeV]       & $> 20$    & $> 20$        & $ > 20 $       & $ > 20 $ \\
-  $\left|\eta^{\mu}\right|   $      & $< 2.4$   & $< 2.4$       & $ < 2.5$       & $ < 2.5$ \\
-    $\left|\eta^{\mathrm{e}}\right|$      & $< 2.5$   & $< 2.5$       & $ < 2.5$       & $ < 2.5$ \\
-  $\left|m_{\ell'\ell'}-m_{\Z}\right|$ [GeV] & $ < 15 $ & $ < 15 $ & $ < 15 $ & $ < 15 $ \\
-  $m_{3\ell}                $ [GeV] & $> 100$   & $> 100$       & $> 100$        & $> 100$    \\
-  $m_{\ell\ell}           $ [GeV]   & $> 4$     & $> 4$         & $>4$           & $>4$    \\
-  $\ptmiss                  $ [GeV] & $> 30$       & $> 30$     &   -            &   -     \\
-  $\left|\eta^{\jet}\right|  $      & $< 4.7$   & $< 4.7$       & $< 4.7$        & $< 4.7$ \\
-    $\PT^{\jet}                $ [GeV] & $ > 50$   & $> 30$        & $> 50$         & $> 30$  \\
-  $\left|\Delta R(\jet, \ell)\right|$            & $ > 0.4$  & $> 0.4$       & $> 0.4$        & $> 0.4$ \\
-  $n_{\mathrm{\jet}}           $    & $\ge 2$   & $\ge 2$       & $\ge 2$        & $\ge 2$    \\
-  $\PT^{\mathrm{b}}         $ [GeV] & $ > 30$   & $ > 30$       &   -            &   -     \\
-  $n_{\mathrm{b}}       $         & $= 0$     & $= 0$         &   -            &   -     \\
-  $\mjj             $               & $> 500$   & $> 500$       & $> 500$        & $> 500$ \\
-  $\left|\etajj \right|$            &$> 2.5$         & $> 2.5$ & $> 2.5$ & $> 2.5$ \\
-  $\left| \zepl \right|$            & $< 2.5$ & - & $< 2.5$ & - \\
-  \end{tabular}
-  \label{tab:selections}
-  \end{center}
-\end{table}
-
 \section{Background contributions}
 Background contributions in this analysis are divided into two categories:
 background processes with prompt isolated leptons, \eg, 
@@ -379,7 +368,7 @@ and differences arising from such configurations are considered when assessing t
 
 Several MC simulations of the \QCDWZ process are considered.
 The simulations are inclusive in the number of jets associated with the 
-leptonically decaying \PW and \cPZ bosons, and therefore include 
+leptonically decaying \PW and {\cPZ} bosons, and therefore include 
 the \WZjj contribution studied in this analysis.
 The primary MC sample is simulated at 
 LO with \MG v2.4.2, with contributions to \WZ production with up to three outgoing partons 
@@ -459,9 +448,9 @@ evaluated with control regions of events in data.
 Events satisfying the full analysis selection,
 with the exception that one, two, or three leptons pass relaxed identification
 requirements but fail the more stringent requirements applied to signal events,
-are selected to form seven control regions. The control regions are
+are selected to form loose lepton control regions. The loose lepton control regions are
 mutually independent and additionally independent from the signal selection.
-The small contribution to the control regions from events with three prompt leptons
+The small contribution to the loose lepton control regions from events with three prompt leptons
 is estimated with MC simulation and 
 subtracted from the event samples.
 
@@ -479,18 +468,19 @@ subtracted from the event samples.
  \label{fig:nonpromptBackgroundCRs}
 \end{figure}
 
-The control regions are defined by the identification
-criteria of the three selected lepton candidates. 
 A lepton candidate is labeled as ``passed'' (P) if it passes the ``tight'' identification
 requirements required for signal events, 
 and ``failed'' (F) if it passes the relaxed lepton identification criteria, 
 but fails the tight identification. The signal region is defined by events 
-with three passing leptons, referred to as PPP events. The PPF region, where the first
+with three passing leptons, referred to as PPP events. 
+The loose lepton control regions are defined by the identification
+criteria of the three selected lepton candidates. 
+The PPF region, where the first
 two labels refer to the two leptons which satisfy the tight identification criteria and are
-associated with the \cPZ boson candidate, and the failing lepton is associated with
+associated with the \PZ boson candidate, and the failing lepton is associated with
 the \cPW-candidate, is dominated by {\Zpj} events.
 The $\mjj$ for the observed data compared to the prediction of the MC simulation
-in the \WZjj selection, with $\pt^{\jet} > 30\GeV$, in two illustrative control regions are shown
+in the \WZjj selection, with $\pt^{\jet} > 30\GeV$, is shown in two illustrative control regions 
 in Fig.~\ref{fig:nonpromptBackgroundCRs}. The nonprompt estimation does not depend on the 
 nonprompt MC simulations, including Drell--Yan and $\ttbar$ production, which are shown for reference.
 All possible combinations of P and F objects are listed in Table~\ref{tab:control_regions},
@@ -499,14 +489,14 @@ along with the dominant production mechanisms of such events.
 \begin{table}[htbp]
     \centering
     \caption{Possible combinations of lepton identification for three-lepton events
-            defining the control regions used to estimate nonprompt backgrounds.}
+            that define the control regions used to estimate nonprompt backgrounds.}
     \begin{tabular}{c|ccc} 
 \hline %------------------------------------------------------------------------------------------
 Dominant        & \multicolumn{3}{c}{Combination}                                                  \\
 contribution    & \multicolumn{2}{c}{Z-candidate leptons}   & W-candidate lepton                   \\
 \hline %------------------------------------------------------------------------------------------
 \hline %------------------------------------------------------------------------------------------
-QCD multiet    & F & F & F \\ 
+QCD multi-jet  & F & F & F \\ 
 \hline %----------------------------------------------------------------------------------------- 
 W+jets         & F & F & P \\
                & P & F & F \\
@@ -522,7 +512,7 @@ Z+jets         & P & P & F \\
 
 The expected contribution from these processes in the signal region is estimated
 using ``loose-to-tight'' efficiency factors, which are
-applied as transfer factors to the lepton candidates failing the analysis requirements 
+applied as extrapolation factors to the lepton candidates failing the analysis requirements 
 in the control region events.
 The efficiency factors, referred to as ``fake rates,'' are 
 evaluated using samples of events dominated by jet activity.
@@ -561,13 +551,13 @@ The fake rates are evaluated
 using ratios of events where the $\ell_{\mathrm{candidate}}$ 
 object satisfies the full identification requirements 
 to events where all identification criteria are not satisfied, defined as
-$\varepsilon_{\text{fake}} = \frac{N_{\text{tight}}}{N_\text{loose}}$,
-is parameterized as a function of the {\lcand} \PT and $\eta$. 
+$\varepsilon_{\text{fake}} = \frac{N_{\text{tight}}}{N_\text{loose}}$.
+They are parameterized as a function of the {\lcand} \PT and $\eta$. 
 The expected contribution from true three-prompt-lepton events is
 estimated from MC simulation and subtracted from the event samples.
 The fake rates measured in data, corrected using the prompt MC simulation,
-and the predicted fake rates from the nonprompt MC simulation are shown in
-Fig.~\ref{fig:fakeRates1DPt}, which are seen to be in good agreement.
+and the predicted fake rates from the nonprompt MC simulation
+are in good agreement, as shown in Fig.~\ref{fig:fakeRates1DPt}, 
 The MC simulation prediction is not used in the analysis, but serves as a consistency-check
 of the nonprompt estimation technique.
 The two-dimensional values of the fake rates derived from data which are used for
@@ -622,12 +612,12 @@ FFF &     &     &     & FFF &     &     &        \\
 Because control regions with $n_{F}$ failing leptons can contribute to the region with
 $n_{F}-1$ failing leptons,
 the total background contribution in the signal region is not a simple sum of the 
-control region event yields multiplied by the fake rate of each failing leptons. 
+loose lepton control region event yields multiplied by the fake rate of each failing leptons. 
 Table~\ref{tab:nonpromptRegionOverlap} shows the possible contributions 
-of control regions with loose leptons into tight lepton regions.
+of loose lepton control regions with loose leptons into tight lepton regions.
 For example,
 the estimated contribution of events to the signal region $N_{B,FPP+PFP}$ 
-from the FPP and PFP control region, with $N_{FPP}$ and $N_{PFP}$ data events is given by
+from the FPP and PFP loose lepton control regions, with $N_{FPP}$ and $N_{PFP}$ data events is given by
 
 \begin{multline*}
 N_{B,FPP + PFP} = N_{FPP} \times f_{l1}
@@ -645,7 +635,7 @@ where $f_{l1} = \frac{\varepsilon_{\text{fake}}}{1 - \varepsilon_{\text{fake}}}$
 computed from the misidentification ratio $\varepsilon_{\text{fake}}$ in the 
 particular $p_{\text{T}}$ and $\eta$ bin.
 
-Combining the yields from all seven control regions in this way yields the following formula
+Combining the yields from all seven loose lepton control regions in this way yields the following formula
 for the total number of estimated background events from all regions 
 
 \begin{align*}
@@ -684,16 +674,15 @@ $\etajj$ are limited by the event count of data events used for the nonprompt es
     The events are required to have two $\pt > 30\GeV$
     jets but no additional kinematic selection is applied to the dijet system.
         }
- \label{fig:fakeRates2D}
+ \label{fig:nonpromptValidationRegions}
 \end{figure}
 
-The event count of the control samples of nonprompt events
+The event count of the loose lepton control samples of nonprompt events
 satisfying the EW signal selection severely limits
 differential predictions in this region. This is illustrated in 
 Fig.~\ref{fig:nonpromptdEtajjByChan}, which shows the differential
-prediction from the nonprompt background in the EW signal region.
-The per-channel predictions are severely limited by the event count
-of the control regions.
+prediction from the nonprompt background in the EW signal region,
+which is particularly limited when dividing distributions by decay channel.
 
 \begin{figure}[htbp]
   \centering
@@ -703,7 +692,7 @@ of the control regions.
     Distribution of $\etajj$ for estimated nonprompt events in the EW signal region. The
     left plot shows the combined contribution for all channels, while the right plot shows
     the contribution from only the ee$\mu$ channel, which is severally limited by the 
-    control region event count. 
+    event count in the loose lepton control samples. 
         }
  \label{fig:nonpromptdEtajjByChan}
 \end{figure}
@@ -759,15 +748,15 @@ represent the expected event yields from background and signal processes
 respectively. As this analysis seeks to extract information from the data about the signal
 processes -- which may differ from the expectation --
 the two contributions are not treated on equal footing. 
-The variability of the signal expectation can be quantified by 
+The variability of the signal expectation is quantified by 
 introducing a rate modifier $\mu$ for the expected signal event yield, which
 is referred to as the ``signal strength'' for the signal process.
 
-Given this relationship, an observation of observation of $n$ events
-combined with an estimation of $\nu_{b}$ can be used to derive an
-observed value for $\mu$, and equivalently for the signal process
-production cross section $\sigma_{s}$, given the relationship 
-between the lumionsity of the scattering process, the cross section,
+Given this relationship, an observation of $n$ events
+combined with an estimation of $\nu_{b}$ can be used to estimate 
+the value for $\mu$. The estimated value of the signal process
+production cross section $\sigma_{s}$ follows trivially, given the relationship 
+between the integrated luminosity $\mathcal{L}$ of the scattering process, the cross section,
 and the expected event yield, $\nu_s = \mathcal{L}\sigma_{s}$.
 
 The probability distribution in terms of the 
@@ -783,16 +772,17 @@ but can be estimated by
 leveraging knowledge of the underlying distribution of the event yields.
 Uncertainties in the underlying model present an additional complication
 in quantifying the probability of an observation in terms of an input model,
-as they reduce the certainty to which underlying distribution is known.
+as they reduce the accuracy in which the underlying distribution is known.
 In this analysis, the knowledge of expected number of background-associated events
 is limited by several limitations in the model, including the energy
 scale of jet measurements, the theoretical uncertainty in the \WZ processes
-and other contributions discussed in Section~\ref{sec:systematics},
-Estimating the model of the expected event distributions and its uncertainties 
-forms the central challenge of this analysis.
+and other contributions discussed in Section~\ref{sec:systematics}.
+Estimating the expected event distributions and their uncertainties 
+forms the central challenge of this analysis, as discussed in the
+previous sections.
 
 The expected probability distribution is therefore a function of additional
-nuisance parameters, which form a distribution in a range of possible values.
+nuisance parameters, which themselves have a distribution of possible values.
 That is, 
 
 \begin{equation}
@@ -800,22 +790,22 @@ That is,
 \end{equation}
 
 where the dependence of the expected event yield on parameters 
-of the model $\vec{\theta}$ is made explicit.
+of the model $\vec{\theta}$ is made explicit in this expression.
 
 The probability distribution of the expected event yields is particularly important
-when a measurement seeks to quantify the consistency of a measurement 
+when a measurement seeks to quantify the consistency of the observed data
 with a spectrum of possible signal hypotheses. 
 Of particular importance is the 
 ``background-only hypotheses,'' in which $\mu = 0$. For a given observed
 $n$, one may seek to quantify whether the observation is unambiguously
 consistent with the $\mu \ne 0$ or if the data can fully be described by
-a of the background expectation. 
+the background expectation. 
 
 The statistical procedure to quantify this consistency in most particle 
 physics experiments is the maximum likelihood estimation, or maximum
 likelihood fit. The technique seeks to estimate the underlying parameters
 of the model from which the data set is drawn, using knowledge of the
-expected distribution of the parameters. The technique is built around the
+expected distribution of the model parameters. The technique is built around the
 likelihood function, which is built from the
 of the expected probability distributions for the
 outcome of an experiment. 
@@ -823,24 +813,23 @@ The likelihood is a function of the parameters of the model which are not
 known with certitude.
 Given an observed data set, the best estimate for 
 the true set of parameters of the model from which the data
-maximizes this function.
+maximizes this function~\ref{Cranmer:2015nia}.
 
 Results presented in this analysis
 use a binned likelihood function, which is a product of the probability
-distribution function per bin. That is,
+distribution functions per bin. That is,
 
 
 \begin{equation}
   \mathcal{L}(n, \nu, \vec{\theta}) = \prod_{i=0}^{n_{bins}} 
       e^{-\nu_{i}(\vec{\theta})}\frac{\nu_{i}(\vec{\theta_{i}})^{n_i}}{n_i!} 
-      \times e^{-\theta^2/2} \,.
+      \times e^{-\theta_{i}^2/2} \,.
 \label{eq:likelihood}
 \end{equation}
 
 In this expression, 
-the set of parameters $\vec{\theta}$ are referred to as nuisance parameters.
+the set of parameters $\vec{\theta}$, referred to as nuisance parameters,
 accounts for the uncertainty in the expected values of the associated model parameter.
-The best estimated value of this parameters is input to the fit. 
 Each $\vec{\theta}$ parameter has a probability density function around its
 central value which is derived for each parameter and discussed in 
 in Section~\ref{sec:systematics}.
@@ -850,7 +839,7 @@ central value of a parameter, the likelihood function is reduced.
 The parameter may impact the predictions in all bins equally,
 referred to as a normalization uncertainty, or it may affect the distribution in
 a bin-dependent way, referred to as a shape uncertainty.
-For the extraction of results, log-normal probability density functions are 
+For the extraction of results in this analysis, log-normal probability density functions are 
 assumed for the nuisance parameters affecting 
 the event yields of the various background contributions, whereas systematic uncertainties 
 that affect the shape of the distributions are represented by nuisance parameters whose 
@@ -870,15 +859,16 @@ The likelihood function is maximized, or rather the function $-\ln \mathcal{L}$,
 using the {\sc Minuit} software package in the {\sc RooFit} framework. Distributions 
 and expected event yields
 shown using the best-fit normalizations and uncertainties from this procedure
-are referred to as post-fit distributions, whereas results obtained with the model parameters 
-values used as input to the maximum likelihood fit are referred to as pre-fit results.
+are referred to as post-fit distributions, whereas predictions
+representing the input values of parameters to fit are referred to as pre-fit results.
 
 \subsection{\WZjj cross section measurement}
 
 For the extraction of the \WZjj cross section, the likelihood function is built
-from the predicted yields in the four leptonic channels for the electroweak signal selection. 
-The likelihood function is shown in Equation~\ref{eq:wzjjLikelihood}.
+from the predicted yields in the four leptonic channels for the EW signal selection,
+shown in Equation~\ref{eq:wzjjLikelihood}.
 A single signal strength for \WZjj production $\mu_{\WZjj}$ is treated as an unconstrained parameter in the fit.
+Explicitly,
 
 \begin{equation}
   \mathcal{L}(\mu, \vec{\theta} | n_{c}) = 
@@ -891,12 +881,12 @@ A single signal strength for \WZjj production $\mu_{\WZjj}$ is treated as an unc
 \end{equation}
 
 The likelihood is a function of the number of expected background events $\nu_{b}$, which is
-a function of the nuisance parameters $\vec{\theta}$. The 
-$\sigma_{th}$ is the theoretical prediction for the \WZjj cross section, and 
+a function of the nuisance parameters $\vec{\theta}$, which may be channel dependent. Here
+$\sigma_{th}$ is the theoretical prediction for the \WZjj cross section, 
 $\mathcal{BR}_{\WZ \rightarrow c}$ is the branching ratio for \WZ to each of the four leptonic decay
-channels considered. The expectation parameters used at input to the likelihood are shown
-in Fig.~\ref{fig:expectedEWSignal}. For this comparison, the expected sum of signal and background
-predictions is treated as the observed data in the maximum likelihood.
+channels, and $\mathcal{L}$ is the integrated luminosity. The expectation parameters used at input to the likelihood are shown
+in Fig.~\ref{fig:expectedEWSignal}, where the expected sum of signal and background
+predictions is treated as the observed data in the fit.
 
 \begin{figure}[htbp]
   \centering
@@ -910,10 +900,11 @@ predictions is treated as the observed data in the maximum likelihood.
  \label{fig:expectedEWSignal}
 \end{figure}
 
-The observed cross section is obtained from the maximum likelihood fit as 
+The observed cross section is obtained from the value of $\mu_{\WZjj}$ 
+which maximizes the likelihood function given
 
 \begin{equation}
-  \sigma_{\WZjj , obs} = \mu_{EW}\times\sigma_{th}
+  \sigma_{\WZjj , obs} = \mu_{EW}\times\sigma_{th} \,.
   \label{eq:sigmaObs}
 \end{equation}
 
@@ -1001,17 +992,11 @@ is shown in Fig.~\ref{fig:2DfitDistributionWCR}.
   \centering
    \includegraphics[width=0.7\textwidth]{figures/AnalysisProcedure/mjj_etajj_unrolled_wCR_Expected.pdf}\qquad
   \caption{
-    The one-dimensional representation of the 2D distribution of 
-    $\mjj$ and $\left|\etajj\right|$, used for the EW 
-    signal extraction. The x axis shows the dijet mass distribution
-    in the indicated bins, split into three bins of {\etajj }: {\etajj} $\in [2.5, 4], [4, 5], \ge 5$.
-    The dashed line represents the \EWWZ contribution stacked
-    on top of the backgrounds, which are shown as filled histograms. 
-    The hatched bands represent the total and relative 
-    systematic uncertainties on the predicted yields.
-    The bottom panel shows the ratio of the number of events measured in data to the total 
-    number of expected events. 
-    The predicted yields are shown with their best fit normalizations.
+    Visualization of the likelihood function used for the \EWWZ search.
+    The first bin represents the yield in the low-\mjj control region,
+    with other bins showing the one-dimensional representation of
+    2D distribution of 
+    $\mjj$ and $\left|\etajj\right|$ shown in~\ref{fig:2DfitDistribution}.
 }
 \label{fig:2DfitDistributionWCR}
 \end{figure}
@@ -1019,9 +1004,9 @@ is shown in Fig.~\ref{fig:2DfitDistributionWCR}.
 The likelihood is a combination of individual likelihoods for the four decay channels, 
 following the definition of Equation~\ref{eq:likelihood}.
 The measurement seeks to compare the best-fit value of $\mu_{\rm EW}$ from the 
-maximum likelihood, to the background-only fit in which $\mu_{rm EW} = 0$.
-The significance of $mu_{rm EW}$ is a measure of the compatibility of the measurement
-with the best-fit value of $\mu_{\rm EW} \ne 0$ obtained from the maximum likelihood
+maximum likelihood, to the background-only fit in which $\mu_{\rm EW} = 0$.
+The significance of $\mu_{\rm EW}$ is a measure of the compatibility of the measurement
+with the best-fit value of $\mu_{\rm EW} > 0$ obtained from the maximum likelihood
 fit, referred to as the signal hypothesis, to
 the background-only hypothesis. 
 
@@ -1041,8 +1026,8 @@ of the best-fit signal strength and the model with $\mu = 0$. It is defined as
 \end{equation}
 
 where $\hat{\mu}$ and ${\bf \hat{\hat{\theta}}}$ are the values of 
-$\mu$ and ${\bf \vec{\theta}}$ which maximize the likelihood, and
-${\bf \hat{\hat{\theta}}}(\nu)$ are the values of ${\bf \theta}$ which 
+$\mu$ and ${\bf \hat{\theta}}$ which maximize the likelihood, and
+${\bf \hat{\hat{\theta}}}(\nu)$ are the values of $\vec{\theta}$ which 
 maximize the likelihood for the given $\mu$.
 The significance of a measured value $\hat{\mu} \ne 0$ is quantified
 via the test statistic $q_{0} = t_{\mu}(\mu = 0)$.
@@ -1058,13 +1043,14 @@ to the data corresponds to a single realisation of the possible observations
 given the underlying model. 
 As sampling of the distribution is extremely computationally extensive,
 it is common for particle physics results to be derived with asymptotic
-formulae for the , presented in Ref.~\ref{Cowan:2010js}.
+formulae to approximate the distribution of $f(q_{\mu} | \mu)$ following Ref.~\cite{Cowan:2010js}.
 These formulae are applicable provided the observed number of events 
 per bin in the likelihood is not small. All results in this thesis 
 use the asymptotic approach.
 
 The probability of this result given the expected
-parameters of the model is quantified in terms of the $p$-value,
+parameters of the model in the background-only hypothesis
+is quantified in terms of the $p$-value,
 
 \begin{equation}
   p_{\mu} = \int_{t_{\mu, obs}}^{\infty} f(t_{\mu} | \mu) {\rm d}t \,.
@@ -1072,11 +1058,11 @@ parameters of the model is quantified in terms of the $p$-value,
 \end{equation}
 
 The value of $p_{0}$ (or $p$-value) is customarily transposed such that the area from
-$x=\sigma$ to $x=\infty$ for a Gaussian distributed function with standard
+$x=\pm\sigma$ to $x=\pm\infty$ for a Gaussian function with unit area and standard
 deviation $\sigma$ would give the same value. This value, in terms of the standard
 deviation, is referred to as the significance of the result.
 It is customary in the particle physics community to refer to a $p$-value
-of $p = 2.87 \times 10^{-7}$, corresponding to a significance of 5 standard 
+of $2.87 \times 10^{-7}$, corresponding to a significance of 5 standard 
 deviations, or $5 \sigma$, as sufficient for rejection of the background-only
 hypothesis in favor of the signal plus background model. 
 
@@ -1091,11 +1077,12 @@ For the \EWWZ search, the background-only assumption corresponds to the SM with
 no \EWWZ process. An excess with respect to the background-only hypothesis is therefore
 expected, and is quantified using the procedures of the previous section. For searches 
 for BSM physics, one does not anticipate the need to quantify the significance of a signal-like
-fluctuation. One seeks instead to place constraints on the parameters of the unobserved BSM
+fluctuation. One seeks instead to place constraints on the parameters of the unobserved BSM model
 based on the consistency of the search with the null hypothesis. 
 
-Upper limits on the signal strength is are derived using the CL$_{s}$ criterion of Refs.~\ref{}.
-The procedure follows the approach of the previous section, with the test statistic now
+Upper limits on the signal strength is are derived using the CL$_{s}$ criterion of Refs.~\cite{Junk:1999kv,CLS2,Cowan:2010js}.
+The procedure follows the approach of the previous section, with a
+slight modification of the test statistic,
 defined as
 
 \begin{equation}
@@ -1112,8 +1099,8 @@ defined as
 
 The distribution of expected results and the 
 $p$-value of the observation are calculated from this test statistic for a 
-range of possible values of $\mu$ for the signal hypothesis is computed using
-Equation~\ref{eq:pvalue}. The CL$_{S}$ criterion is defined as
+range of possible values of $\mu$ for the signal hypothesis using
+Equation~\ref{eq:pvalue}. The CL$_{s}$ criterion is defined as
 
 \begin{equation}
   \mathrm{CL}_{s} = \frac{p_{\mu}}{p_{0}} \,.
@@ -1135,8 +1122,7 @@ Because presence of charged Higgs bosons would give rise to a resonance-like str
 with $\ET = \sqrt{m^2 + \PT^2}$,
 where the \W candidate is constructed from 
 the \ptvecmiss 
-and the lepton associated with the $\PW$ boson
-
+and the lepton associated with the $\PW$ boson,
 the likelihood used to test the consistency of the data with the presence of a charged Higgs
 boson is built from this distribution, shown in Fig.~\ref{fig:higgsmtExp}, 
 and the event yield in the
@@ -1205,15 +1191,22 @@ Because the increase of the expected yield over the SM prediction exhibits a qua
 dependence on the operator coefficient, 
 a parabolic function is fitted to the predicted yields per bin to obtain a smooth interpolation
 between the discrete operator coefficients considered in the MC simulation.
-The one-dimensional 95\% confidence level (CL) limits are extracted 
-using the CL$\mathrm{_s}$ criterion~\cite{Junk:1999kv,CLS2,Cowan:2010js}
-with the same as used for the charged Higgs boson search.
+The one-dimensional 95\% CL limits are extracted 
+using the CL$\mathrm{_s}$ criterion
+as for the charged Higgs boson search.
 The SM prediction, including the \EWWZ process, is treated as the null hypothesis.
 
 One-dimensional limits are placed with all
 parameters except for the coefficient being probed set to zero.
 In addition, a scan of the likelihood is also performed with multiple independent
 $\mu$ values corresponding to different dimension-eight operators. 
+
+Constraints are also placed on aQGC parameters using a two-dimensional scan,
+where two parameters are probed in the fit with all others set to zero.
+In this case, the likelihood is a function of two signal strength parameters,
+and a two-dimensional exclusion region is defined by the region
+in $\mu_1$ and $\mu_2$ space in which the likelihood differs
+from its maximum value by the desired confidence interval.
 
 \section{Systematic uncertainties}
 \label{sec:systematics}
@@ -1279,8 +1272,8 @@ for the kinematic variables considered in the analysis,
 so no additional uncertainty is
 assigned. 
 
-The interference term is evaluated on particle-level simulated events
-selected from the samples described in Section~\ref{sec:mc}. 
+The interference term is evaluated using MC simulation of particle-level events
+selected from the samples described in Section~\ref{sec:backgrounds}. 
 It is found to be positive, and amounts to 12\% 
 of the \EWWZ contribution in the control region and 4\% in the signal region
 for both MC samples considered. 
