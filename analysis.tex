@@ -1,16 +1,33 @@
 \chapter{Analysis Strategy}
 \label{sec:analysis}
 
-This analysis selects events with exactly three leptons (electrons or muons), 
+The \EWWZ process exhibits a distinct experimental signature characterized by two forward, 
+high-momentum jets, typically arising from the hadronization of 
+two valence quarks from each of the colliding
+protons scattered away from the beam line, in addition 
+to the vector bosons. We exploit the leptonic decay channel of the $\PW$ and $\PZ$
+bosons in this analysis, as the three-lepton event signature is relatively free
+from other background processes. 
+Events with exactly three leptons (electrons or muons), 
 missing transverse momentum, 
-and two jets at high pseudorapidity $\eta$ with large dijet system invariant mass {\mjj},
-characteristic of VBS processes.
-We use selected
-events to make measurements of the \WZjj production cross section, without separating
-by production mechanism, and to extract the component of these events produced
-by the \EWWZ process, using
-kinematic variables of the two forward and high momentum jets, 
-including $\eta$ separation and {\mjj}.
+and two jets at high pseudorapidity $\eta$ with large dijet system invariant mass {\mjj}
+are selected for this analysis.
+A candidate \EWWZ event selected by this analysis,
+demonstrating these characteristics, is shown in Fig.~\ref{fig:eventView}.
+
+\begin{figure}[htbp]
+  \centering
+   \includegraphics[width=0.6\textwidth]{figures/AnalysisProcedure/AnnotatedEventViewWZjjZProj.pdf}
+   \includegraphics[width=0.95\textwidth]{figures/AnalysisProcedure/WZjjFullEventView.png}
+  \caption{
+    Visualization of a candidate \EWWZ event selected by in this analysis. High momentum
+    and well separated jets are observed in the forward part of the detector. Two muons
+    (red) satisfy the $\pt$ requirements while forming a composite object with invariant
+    mass consistent with $m_{\PZ}$. Moderate missing transverse momentum (purple arrow)
+    and an electron candidate (light blue) are consistent with a $\PW$-boson decay.
+        }
+ \label{fig:eventView}
+\end{figure}
 
 Deviation from the SM prediction in the rate of \EWWZ production, or in differential characteristics 
 of \EWWZ-like events, could indicate the presence of BSM physics. New physics 
@@ -18,8 +35,87 @@ sensitive to the scattering energy of the interaction would modify $m_{\WZ}$.
 The $\mt$ of selected events is used to characterize the consistency of
 the data with the SM prediction and with possible BSM extensions.
 
-\section{WZ VBS event signature and background composition}
-Give a cut flow, and the expected background composition. Show Feynman diagrams.
+We exploit these features to perform complementary interpretations of the
+observed data and its consistency with the prediction of the SM or signs 
+of new physics. In particular, we measure
+
+\begin{itemize}
+  \item The total production rate of $\PW\PZ \rightarrow 3\ell\nu$ in
+    fiducial regions with enhanced contributions from \EWWZ production
+  \item The consistency of the \EWWZ production rate
+    with the SM prediction and the statistical significance at which this rate
+    can be established as non-zero.
+\end{itemize}
+
+We also place constraints on hypothetical new physics using the differential
+characteristics of selected \WZ events with a VBS topology. 
+These processes would be characterized by and excess of VBS \WZ events
+with high $m_{\WZ}$, due to the modifications of the WWZZ interaction
+in a manner sensitive to the scattering energy.
+We place limits on the production and model parameters of
+
+\begin{itemize}
+  \item Charged Higgs bosons, in a model-independent manner (assuming
+    a small $\PH^{\pm}$ width) and in the Georgi-Machacek model.
+  \item Anomalous quartic gauge couplings, using the language of
+    dimension-eight effective field theory.
+\end{itemize}
+
+This section describes the selection of events, the estimation of 
+the expected signal and background contributions, the assessment of
+systematic uncertainties impacting these estimations, and the statistical
+techniques used to derive results.
+
+\section{Background composition}
+
+Several process can mimic the $\WZjj\rightarrow3\ell\jet\jet$ signal. 
+For the \EWWZ
+selection described in Section~\ref{sec:eventselection},
+true \WZjj production is estimated to account for $3/4$ of the
+expected event yield, with background processes accounting
+for $1/4$ of the expected events. The estimation of each
+background contribution is discussed in Section~\ref{sec:backgrounds}.
+
+We refer to processes 
+with at least three leptons produced in the hard scattering interaction
+as ``prompt.'' This includes the leptonic decay channels of 
+$\PZ\PZ$, \tZq, $\ttbar\cPZ$, and VVV production,
+where V refers to a $\PW$ or $\PW$ boson. The \tZq process, where
+the top quark decays leptonically via a $\PW$ boson, is the dominant
+prompt background contribution, accounting for
+$~25\%$ of background events after the \EWWZ selection. 
+In this process, 
+one vector boson is radiated from the incoming quark,
+leading to a forward jet in addition to the three lepton signature.
+The $\PZ\PZ\jet\jet$, $\ttbar\cPZ$, and VVV processes
+enter the \WZjj selection when leptons
+are outside of the detector acceptance, leading to the three lepton and
+\ptmiss signature. The $\ttbar\cPZ$, $\PZ\PZ$, and $\cPZ\cPZ$ processes
+are estimated to account for about 15\%, 10\%, and 5\% of the total
+background respectively.
+
+``Nonprompt'' processes arise when leptons which are produced outside
+the hard interaction, especially through leptonic decays of hadronic
+states in jets and photon conversion to leptons in the detector material.
+These processes are dominated by $\cPZ$+jet production, in which
+misidentification and mismeasurement of jet activity mimics
+a third lepton and gives rise to $\ptmiss$ in the event, \ttbar production,
+and $\PZ\gamma$ production. The expected contributions from these 
+processes are 30\%, 5\%, and 10\% of the total background for events
+satisfying the \EWWZ signal selection.
+
+The component of the \WZjj process considered as signal or background
+is adjusted for the interpretation of results. For the \WZjj fiducial
+cross section measurement, all \WZjj production mechanisms are considered 
+signal.
+For the \EWWZ measurement,
+the \EWWZ process is considered signal, and the \QCDWZ process is considered
+background. The \QCDWZ process is the dominant background in this search,
+with a ratio of $~3:1$ to the \EWWZ process in the signal region.
+For new physics searches, all \WZjj processes are considered background.
+The ratio of \EWWZ and \QCDWZ processes is assumed to be consistent with the SM
+expectation.
+
 \section{Event triggering}
 
 Collision events are selected by triggers that require the presence of
@@ -32,31 +128,43 @@ to nearly 100\%.
 However, partial mistiming of signals in the forward region of the electromagnetic calorimeter (ECAL) endcaps
 ($2.5 < \left|\eta\right| < 3.0$) led to a reduction in the level 1 trigger efficiency. 
 
-This mistiming of L1 trigger signals led to a significant contribution of events
-with high electromagnetic activity in the ECAL encaps to trigger an event
-acceptance incorrectly associated with an proton bunch crossing.
+Due to larger-than-expected aging effects of ECAL crystals,
+a significant fraction of events
+with high electromagnetic activity in the ECAL endcaps triggered 
+early event readout at towards the end of 2016 data taking. 
 This effect, known as pre-firing, is significant because requirements necessary
-to avoid a excessive readout of events prevent events from successive bunch crossings
-from triggering. That is, if an event has been accepted by the CMS trigger
+to avoid excessive data readout prevent events from successive bunch crossings
+from being accepted by the CMS trigger system. 
+That is, if an event has been accepted by the CMS trigger
 system, it is impossible for the following event to also be accepted.
 
-For EW WZ events, forward and high momentum jets can lead to such L1 pre-firing.
+In normal conditions, the inefficiency due to this requirement is very small
+and unbiased. Systematic pre-firing, however, can lead to a biased and unrecoverable
+loss of efficiency.
+For \EWWZ events, mistiming of ECAL trigger objects in
+forward and high momentum jets can lead to such L1 pre-firing.
 The jet leading to pre-firing is incorrectly associated with the previous bunch
-crossing, producing an event missing the leptonic signature of WZ events.
-It is therefore likely to be rejected by the HLT, leading to an unrecoverable 
-inefficiency.
+crossing, producing an event missing the leptonic signature of \WZ events.
+The triggered event is likely to be rejected by the HLT, while the correctly-timed
+event is rejected by the restriction against successive triggered events.
 
 A correction for this efficiency loss was determined using an unbiased sample
 of events where the event pre-firing is prevented by additional trigger conditions.
 In particular, a sample of events is selected where the trigger conditions
 preventing the readout of events separated by less than three bunch crossings 
 prevented the mistimed electromagnetic
-signal from firing the trigger, but do not prevent the correctly timed event
-from triggering. Jet candidates in the reconstructed data are formed 
-using the anti-$\kt$ algorithm and required to have $\pt > 30\GeV$
-and are matched to their trigger primitive objects.
-The jet pre-firing efficiency is defined as the ratio of jet objects matched
-to the correct bunch crossing to the total jet  
+signal from firing the trigger, but did not prevent the correctly timed event
+from triggering. This sample of events is formed by selecting 
+jet candidates in the reconstructed data, defined 
+using the anti-$\kt$ algorithm and required to have $\pt > 30\GeV$,
+which are matched to their trigger primitive objects.
+The jet pre-firing efficiency is defined as the ratio of events with jets
+matched to an L1 trigger object associated with the correct bunch crossing 
+to the all events with selected jets. 
+For jets with $\abs{\eta} < 2.25$, the pre-firing rate is less than 2\% 
+over the entire \pt spectrum. In contrast, it
+grows as a function of jet \pt and $\eta$ up to values close to 100\% 
+for jets with $2.75 < \abs{\eta} < 3.0$ and $\pt > 400\GeV$.
 
 \begin{figure}[htbp]
   \centering
@@ -79,18 +187,18 @@ to the selected signal and background events. Due to the signature of forward
 and high momentum jets, the \EWWZ process is particularly affected. 
 This is demonstrated in Fig.~\ref{fig:signalPrefiringEff}, which shows the
 estimated efficiency loss in jet $\eta$, $\mjj$, and $\detajj$
-in simulated events for \EWWZ process selected for the analysis.
+for simulated \EWWZ events selected for the analysis.
 This loss of efficiency is found to be about 
 1\% for {\mjj} of $200\GeV$ and it increases to about 15\% for $\mjj > 2\TeV$.
 The loss of sensitivity due to this inefficiency in the \EWWZ search is estimated 
-to be about 10\%.
+to be about 10\%. 
 
 \section{Event selection and fiducial cross section regions}
 \label{sec:eventselection}
 
-A selected event is required to have three lepton candidates $\ell\ell'\ell'$,
+Selected events are required to have three lepton candidates $\ell\ell'\ell'$,
 where $\ell, \ell' = \mathrm{e}$, $\mu$.
-The electrons and muons can be directly produced from a \W or \Z boson decay or from a \W or \Z
+The electrons and muons can be directly produced from a \W or \Z boson decay or from a \PW or \Z
 boson with an intermediate $\tau$ lepton decay.
 The $\ell'\ell'$ pair consists of two leptons with opposite charge and the same flavor,
 as expected for a $\PZ$ boson candidate.
@@ -243,7 +351,7 @@ with nonprompt leptons from hadronic activity are estimated from control samples
 The nonprompt component of the $\cPZ\gamma$ process,
 in which the photon experiences conversion into leptons in the tracker,
 is evaluated using MC simulation. 
-\subsection{Simulation and validation of signal and prompt backgrounds}
+\subsection{Signal simulation and estimation of prompt backgrounds}
 \label{sec:backgrounds}
 
 Several Monte Carlo (MC) event generators are used to simulate the signal and
@@ -311,7 +419,7 @@ The production of $\PZ$ boson pairs via $\cPq\cPaq$ annihilation is generated at
 The $\ZZ$ samples are scaled to the cross section calculated at next-to-NLO
 for $\cPq\cPaq \to \ZZ$ \cite{Cascioli:2014yka} ($K$ factor 1.1)
 and at NLO for $\Pg\Pg \to \ZZ$ \cite{Caola:2015psa} ($K$ factor 1.7).
-The $\cPZ\cPgg$, $\ttbar\text{V}$ ($\ttbar\PW$, $\ttbar\PZ$), $\PQt\PZ$, 
+The $\cPZ\cPgg$, $\ttbar\text{V}$ ($\ttbar\PW$, $\ttbar\PZ$), $\PQt\PZ\Pq$, 
 and triboson events VVV (WWZ, WZZ, ZZZ)  
 are generated at NLO with \MG v2.3.3, with the vector bosons generated on-shell
 and decayed via {\sc MadSpin}.
@@ -601,7 +709,7 @@ of the control regions.
 \end{figure}
 
 The combined shape of the nonprompt background for all channels 
-is therefore used for each channel in the \EWWZ signal strength
+is therefore used for each channel in the \EWWZ 
 measurement and in the extraction of constraints on anomalous quartic
 gauge couplings. 
 The normalization of the distribution per channel is taken from the 
@@ -832,7 +940,7 @@ $\sigma_{meas, th}$ and $\sigma_{report, th}$ are the predicted cross sections
 in the region of measurement and reported region respectively. The fiducial
 cross section regions considered in this analysis are described in Section~\ref{sec:eventselection}.
 
-\subsection{Significance of electroweak WZ Production}
+\subsection{Search for \EWWZ production}
 
 Separating the EW- and QCD-induced components of \WZjj events requires exploiting the different 
 kinematic signatures of the two processes.
@@ -912,12 +1020,12 @@ The likelihood is a combination of individual likelihoods for the four decay cha
 following the definition of Equation~\ref{eq:likelihood}.
 The measurement seeks to compare the best-fit value of $\mu_{\rm EW}$ from the 
 maximum likelihood, to the background-only fit in which $\mu_{rm EW} = 0$.
-The signficance of $mu_{rm EW}$ is a measure of the compatibility of the measurement
+The significance of $mu_{rm EW}$ is a measure of the compatibility of the measurement
 with the best-fit value of $\mu_{\rm EW} \ne 0$ obtained from the maximum likelihood
 fit, referred to as the signal hypothesis, to
 the background-only hypothesis. 
 
-The compatability of the measurement with the background-only hypothetises
+The compatibility of the measurement with the background-only hypothesises
 is quantified via the test statistic, $t_{\mu}$, which is a function
 of the best-fit signal strength and the model with $\mu = 0$. It is defined as
 
@@ -938,7 +1046,7 @@ ${\bf \hat{\hat{\theta}}}(\nu)$ are the values of ${\bf \theta}$ which
 maximize the likelihood for the given $\mu$.
 The significance of a measured value $\hat{\mu} \ne 0$ is quantified
 via the test statistic $q_{0} = t_{\mu}(\mu = 0)$.
-Note that the consistency with the background-only hypothetsis is evaluated
+Note that the consistency with the background-only hypothesis is evaluated
 with respect to the signal plus background hypothesis, and only a positive
 signal strength is considered a signal-like deviation from the background.
 
@@ -949,7 +1057,7 @@ from a value of $\mu$. The observed value $\hat{\mu}$ obtained from a fit
 to the data corresponds to a single realisation of the possible observations
 given the underlying model. 
 As sampling of the distribution is extremely computationally extensive,
-it is common for particle physics results to be derived with assymptotic
+it is common for particle physics results to be derived with asymptotic
 formulae for the , presented in Ref.~\ref{Cowan:2010js}.
 These formulae are applicable provided the observed number of events 
 per bin in the likelihood is not small. All results in this thesis 
@@ -1141,7 +1249,7 @@ background process and 100\% correlated across bins for the distributions
 used to extract results.
 
 The uncertainty in modeling the \EWWZ and \QCDWZ
-processes has a large impact in the \EWWZ signal strength measurement.
+processes has a large impact in the \EWWZ measurement.
 In addition to the uncertainties from PDF and scale choice, 
 comparisons of alternative matrix element and parton shower generators are
 considered.
@@ -1180,7 +1288,7 @@ The ratio of the interference to the \EWWZ
 decreases with increasing $\mjj$, consistent with the observations of Ref.~\cite{leshouches2017}.
 These values are used as a symmetric shape uncertainty in the 
 signal cross section when performing the 
-\EWWZ signal strength measurement.
+\EWWZ measurement.
 This uncertainty is subdominant with respect to other theoretical uncertainties 
 and has a negligible contribution to the uncertainty 
 on the observed \EWWZ signal strength.
@@ -1193,7 +1301,7 @@ calculations have not yet been performed for the final state considered
 in this letter, and they are therefore not applied to the EW WZ MC simulation. 
 However, with the exception of the highest values of {\mjj}, modifications 
 are expected to be contained within the theoretical uncertainties and 
-we have confirmed that the EW WZ signal strength measurement is 
+we have confirmed that the \EWWZ measurement is 
 insensitive to corrections of the shape and magnitude calculated for 
 other EW production processes
 
@@ -1220,7 +1328,7 @@ using transfer factors derived in \Zpj and dijet events.
      \caption{ The dominant uncertainty contributions in the fiducial 
          \WZjj cross section measurement 
          and their expected contributions to the significance of the
-         \EWWZ signal strength measurement. The impact of each systematic 
+         \EWWZ measurement. The impact of each systematic 
          uncertainty in the \WZjj 
          cross section measurement is obtained by freezing the set of associated nuisance 
          parameters to their best fit values and comparing the total uncertainty in the signal strength

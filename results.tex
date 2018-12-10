@@ -4,7 +4,7 @@
 
 The cross section for \WZjj production, without separating by production mechanism,
 is measured with a combined maximum likelihood fit to the 
-observed event yields by leptonic decay channel of the W and Z bosons as 
+observed event yields by leptonic decay channel of the $\PW$ and $\PZ$ bosons as 
 described in Section~\ref{sec:statistics}.
 A signal strength $\mu_{\WZjj}$, which represents the 
 ratio of the measured signal yield to the expected number of signal events, 
@@ -18,6 +18,7 @@ is treated as a free parameter in the fit.
           }
  \label{fig:EWSignalYields}
 \end{figure}
+
 
 The best fit value for the signal strength is used to obtain a cross section
 in the tight fiducial region defined in Table~\ref{tab:selections}. 
@@ -67,6 +68,34 @@ for the tight fiducial region.
 
 \section{Search for EW WZ boson production}
 
+The rate of \EWWZ production with respect to the SM prediction
+is quantified by treating the \EWWZ process as signal and the \QCDWZ
+process background in a binned likelihood fit to a two-dimensional
+distribution of $\mjj$ and $\detajj$ as described in Section~\ref{sec:statistics}.
+The observed data and the background and signal predictions,
+adjusted to their best-fit values from the maximum likelihood fit,
+are shown for this distribution in Fig.~\ref{fig:2DfitDistribution}.
+The individual distributions of $\mjj$ and $\detajj$ are shown in
+Fig.~\ref{fig:VBSPlots}.
+
+The best-fit value for the signal strength $\mu_{\mathrm{EW}}$ is 
+\begin{equation}
+  \mu_{\mathrm{EW}} = 0.82^{+0.51}_{-0.43} \,,
+\end{equation}
+consistent with the SM expectation. 
+
+The significance of the signal is quantified by calculating the local $p$-value
+for an upward fluctuation of the data relative to the background prediction
+using a profile likelihood ratio test statistic and asymptotic formulae~\cite{Cowan:2010js}.
+The observed (expected) statistical significance for \EWWZ production is 2.2 (2.5) standard deviations. 
+The total uncertainty of the signal strength
+measurement is dominated by the statistical uncertainty of the data.
+The predicted cross section in the loose fiducial region used in the fit is 
+$1.48^{+0.12}_{-0.11} \,(\mathrm{scale}) \pm 0.07 \, (\mathrm{PDF})$ fb.
+The post-fit yields for the signal and background corresponding to the best-fit signal strength 
+for \EWWZ production are shown in
+Table~\ref{tab:VBSYields}.
+
 \begin{figure}[htbp]
   \centering
    \includegraphics[width=0.45\textwidth]{figures/AnalysisResults/mjj.pdf}
@@ -106,6 +135,28 @@ for the tight fiducial region.
     }
   \label{fig:2DfitDistribution}
 \end{figure}
+
+\begin{table}[htbp]
+  \centering
+  \caption{Post-fit event yields after the signal extraction fit to events satisfying the EW signal selection.}
+  \begin{tabular}{c|c|c|c|c|c}
+    \hline
+        Process      &      \mmm      &      \emm      &      \eem      &      \eee     &  Total yield   \\
+    \hline\hline                                                                        
+        \QCDWZ       & 13.5 $\pm$ 0.8 & 9.1 $\pm$ 0.5  & 6.8 $\pm$ 0.4  & 4.6 $\pm$ 0.3 & 34.1 $\pm$ 1.1 \\
+        t+V/VVV      & 5.6 $\pm$ 0.4  & 3.1 $\pm$ 0.2  & 2.5 $\pm$ 0.2  & 1.7 $\pm$ 0.1 & 12.9 $\pm$ 0.5 \\
+       Nonprompt     & 5.2 $\pm$ 2.0  & 2.4 $\pm$ 0.9  & 1.5 $\pm$ 0.6  & 0.7 $\pm$ 0.3 & 9.9 $\pm$ 2.3  \\
+           VV        & 0.8 $\pm$ 0.1  & 1.6 $\pm$ 0.2  & 0.4 $\pm$ 0.0  & 0.7 $\pm$ 0.1 & 3.5 $\pm$ 0.2  \\
+       Z$\gamma$     & $< 0.1$        & 2.1 $\pm$ 0.8  & $< 0.1$        & $< 0.1$       & 2.1 $\pm$ 0.8  \\
+      \hline
+    Pred. background & 25.2 $\pm$ 2.1 & 18.3 $\pm$ 1.6 & 11.2 $\pm$ 0.8 & 7.7 $\pm$ 0.5 & 62.4 $\pm$ 2.8 \\
+     \EWWZ signal    & 6.0 $\pm$ 1.2  & 4.2 $\pm$ 0.8  & 2.9 $\pm$ 0.6  & 2.1 $\pm$ 0.4 & 15.1 $\pm$ 1.6 \\
+          Data       &       38       &       15       &       12       &       10      &       75       \\
+    \hline
+  \end{tabular}
+  \label{tab:VBSYields}
+\end{table}
+
 \section{New physics searches}
 
 \subsection{Limits on anomalous quartic gauge couplings}
@@ -181,7 +232,8 @@ outside of contours are excluded at the corresponding CL.
 
 The observed event yields by channel, and expected yields adjusted to the
 best-fit values obtained from a maximum likelihood fit in the charged Higgs
-boson selection are shown in Fig.~\ref{fig:higgsSignalYields}.
+boson selection described in Section~\ref{sec:selections} 
+are shown in Fig.~\ref{fig:higgsSignalYields}.
 
 \begin{figure}[htbp]
   \centering
