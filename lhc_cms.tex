@@ -1,13 +1,248 @@
 \chapter{The CMS Experiment at the CERN LHC}
+
+The Large Hadron Collider (LHC) at the European Organization for Nuclear Research (CERN)
+is the world's largest and most powerful particle collider.~\cite{Evans:2008zzb} It collides protons 
+at a center of mass energy of $13\TeV$, and lead ions at $2.76\TeV$ per nucleon.
+Collisions of protons at the LHC are the sole focus of this thesis. 
+The protons or ions are brought to collision at the center of four large detectors,
+themselves a combination of many detector technologies. 
+The particle detectors at the LHC were conceived, developed, and constructed over decades
+by collaborations of thousands of scientists from hundreds of nations to
+achieve a broad program of research. The detectors were designed and are operator 
+by mutually exclusive collaborations of scientists working independently,
+
+The detector sites are
+
+\begin{itemize}
+  \item A Large Ion Collider Experiment (ALICE) detector, located at access point 2.
+  Designed for the study of lead-ion collisions, especially for the characterization
+    of quark gluon plasmas formed in collisions.~\cite{Aamodt:2008zz}
+  \item A Large Toroidal LHC ApparatuS (ATLAS) detector, located at access point 1.
+  A general purpose detector. Designed for sensitivity to new physics
+  with decays to stable SM particles, in particular the 
+    discovery and characterization of the SM Higgs boson.~\cite{Aad:2008zzm}
+  \item The Compact Muon Solenoid (CMS) detector, located at access point 5.
+    A general purpose detector with comparable measurement potential to the ATLAS detector.~\cite{Chatrchyan:2008aa}
+  \item The Large Hadron Collider Beauty (LHCb) detector, located at access point 8.
+  Designed to characterize the production and decay of b-quark hadrons. Particularly
+    focused on CP violation in these decays.~\cite{Alves:2008zz}
+\end{itemize}
+
+Results in this thesis are based on an analysis of proton--proton collisions at the LHC 
+collected by the CMS detector in 2016. This chapter describes the design principles of the 
+LHC and the CMS detector, as well as their operating characteristics in 2016.
+  
 \section{The Large Hadron Collider}
+The LHC was proposed to the CERN council, the management group of the 
+laboratory, in 1994, and accepted
+with a preliminary budget in 1995. Construction was initially completed in
+2008, with full operation beginning in 2009 after setbacks 
+encountered in the initial commissioning.
+The collider is located on the outskirts
+of Geneva, Switzerland and in the nearby French countryside,
+which has been the site of the CERN laboratory since it was founded in 1954.
+The project was funded by the 20 member states of CERN, as well
+as monetary and research contributions from many other nations participating 
+in the project, including the United States.
+
+The principle design considerations of a particle collider are the energy
+of the particle collisions, the rate of collisions, and the objects collided.
+The collided objects determine the possible interactions which can be probed,
+while the energy of the collision drives the mass range which can be probed,
+given that the produced particle mass $m$ be less than the 
+center of mass energy. As particle interactions are quantum mechanical 
+and fundamentally stochastic in nature, the rate of collisions is also 
+critical for achieving statistically significant measurements.
+
+Several characteristics of proton--proton collisions motivated the decision 
+to use protons in the world's highest-energy collisions. Existing high-energy
+accelerators, notably the Large Electron Positron Collider (LEP) collider
+at CERN and the Tevatron collider at Fermilab in the United States, collided
+particle--antiparticle pairs. This is advantageous for processes which proceed by annihilation, 
+but requires production of positrons or antiprotons, which is a significantly
+bottleneck on achieving a high rate of collisions. 
+
+The LHC is situated in a $26.7\unit{km}$ tunnel, $45$--$170\unit{m}$
+below the Swiss and French country side. The tunnel pre-dates the LHC,
+having been originally built for the Large Electron Positron (LEP) collider.
+It consists of 8 straight sections $528\unit{m}$ in length, and 8 arced sections.
+The majority of the tunnel is $3.7\unit{m}$ in diameter, with larger excavated
+areas at the four experimental caverns and other access points.
+The primary motivation for an underground tunnel is to circumvent the high
+cost of land acquisition, but underground operation is also advantageous for
+reducing the cosmic radiation reaching the experimental cavern and  
+for shielding the radiation produced by the LHC.
+
+The protons are directed through pipes inside the tunnel, which are held
+at high vacuum. The positions and accelerations of the protons are controlled 
+by magnetic and electric fields maintained by instrumentation surrounding the 
+vacuum pipes. The arced sections are equipped with dipole magnets,
+which direct charged objects along a circular path.
+The size of the LEP tunnel prohibited the installation of two independent beam
+systems, which led to the adoption of a unique "two-in-one" superconducting
+magnet design~\cite{}, shown in Fig~\ref{fig:dipoleXsec}. 
+
+\begin{figure}[htbp]
+  \centering
+   \includegraphics[width=\textwidth]{figures/LHCandCMS/dipoleXSec.jpeg}
+  \caption{
+    Cross section of an LHC dipole magnet~\cite{Jean-Luc:841539}.
+        }
+ \label{fig:dipoleXsec}
+\end{figure}
+
+Neglecting synchrotron radiation,
+the primary limitations on the energy of a synchrotron come
+from the magnetic field of the bending magnets and the radius of curvature
+of the tunnel. For an particle of charge $q$ with velocity $v$ accelerated at
+in a circular 
+trajectory of radius $R$ trough a magnetic field of strength $B$
+The energy $E$ of the particle is given by
+
+\begin{equation}
+  E = eBRv \approx qBRc \,,
+\label{eq:beamEnergy}
+\end{equation}
+
+where $v \approx c$, the speed of light, for $p \gg m$. Increasing the radius
+requires a larger tunnel, which is limited by the cost of construction. 
+The LHC tunnel size was set by the existing LEP tunnel, so achieving
+a sufficient magnetic field was a major focus of the LHC development. 
+
+Dipole magnets with a maximum field strength of $8.33\unit{T}$ were achieved
+at an affordable cost through major technological advances. Such a high 
+field necessitates the use of superconducting magnets. The magnets 
+are constructed of niobium-titanium, and are operated at $1.9\unit{K}$,
+lower than any previous accelerator. 
+at 
+first accelerator to operate 
+In particular,
+the LHC is the first accelerator to operate 
+Because about 80\% of the arced sectors of the LHC are equipped with dipole magnets,
+the bending radius of the dipoles is $2.804\unit{km}$, yielding the design energy
+of $7\TeV$ per beam from Equation~\ref{eq:beamEnergy}.
+
+Also brief mention of the 
+
+How it accelerates protons (e.g., the system of accelerators)
+
+The magnet design and characteristics 
+
+The RF and bunch characteristics
+
+Focusing beams to collisions
+
+
 \section{Operation of the LHC in 2016}
-\section{The Compact Muon Solenoid Experiment}
-\section{The CMS Magnet}
+\section{The Compact Muon Solenoid experiment}
+
+The CMS detector is a general-purpose detector designed to 
+study particle production and interactions at the TeV scale.
+A major design principle of the CMS detector was the ability to 
+probe the nature of electroweak symmetry breaking, which has been
+achieved through the discovery and characterisation of a scalar boson
+consistent with the SM Higgs boson~\cite{}. The design of the CMS detector
+ensured sensitivity to a Higgs boson with mass up to
+$1\TeV$ in its SM decays, as well as sensitivity to a broad class
+of BSM theories. In terms of detector performance, these design principles,
+as defined in Ref.~\cite{Chatrchyan:2008aa}, are:
+
+\begin{itemize}
+  \item Accurate mmuon identification and high momentum resolution, including
+    dimuon mass resolution of $\approx 1\%$ at $m_{\mu\mu} = 100\GeV$ and correct charge
+    assignment up to $\pt^{\mu}\approx 1\TeV$.
+  \item Identification of objects with a short but significantly decay time,
+    including tau leptons and b hadrons, which requires fine position resolution 
+    close to the interaction point to distinguish their displaced tracks.
+  \item Good electromagnetic energy and momentum resolution, achieving
+    diphoton and dielectron mass resolution of $\approx 1\%$ at $m_{ee} = 100\GeV$,
+    and sufficient granularity to distinguish prompt diphotons from $\pi^{0}$ decays to photons.
+  \item Sufficient calorimeter resolution and hermeticity for precise dijet mass
+    and missing transverse momentum reconstruction.
+\end{itemize}
+
+The CMS detector has a cylindrical geometry. As shown in Fig.~\ref{fig:CMScutaway},
+it is built from the combination
+of several detector technologies which work in harmony to achieve the outlined design
+goals. The following sections briefly describe each of the detector subsystems
+which comprise the CMS detector. 
+Chapter~\ref{ch:reconstruction} details the ways in which these subsystems 
+are used together to reconstruct the physics objects used for the results
+presented in this thesis.
+
+\begin{figure}[htbp]
+  \centering
+   \includegraphics[width=\textwidth]{figures/LHCandCMS/CMScutaway.png}
+  \caption{
+    A cutaway view of the CMS detector, showing each detector 
+    subsystem~\cite{1742-6596-513-2-022032}.
+        }
+ \label{fig:CMScutaway}
+\end{figure}
+
+The coordinate system adopted by CMS, and used in this thesis,
+is a right-handed coordinate system with the point $(x, y, z) = (0, 0, 0)$
+centered in the detector, at the nominal collision point. The $y$-axis 
+is perpendicular to the earth, where vertically upward defines the $+y$ direction.
+The $x$-axis is in the plane of the LHC, with the $+x$ direction pointing towards
+the center of the ring. The $z$-axis points through the center of the detector
+along the direction of travel of the colliding protons, where $+z$ is defined
+by the right-handedness of the coordinate system. In polar coordinates, 
+the azimuthal angle $\phi$ is measured from the $x$-axis in the $x$-$y$
+plane, and the polar angle $\theta$ is measured from the $z$-axis. The radial
+coordinate $r$ is defined as $r = \sqrt{x^2 + y^2 + z^2}$.
+Because the production of 
+particles is preferentially in the forward direction (along
+the $z$-axis), it is convenient to introduce the pseduorapidity $\eta = - \ln(\tan{\theta/2})$
+for the polar coordinate. The momentum in the transverse direction,
+defined as $\pt = \sqrt{p_{x}^2 + p_{y}^2}$, is a particularly important quantity.
+because the initial transverse momentum of the collision is zero.
+In this thesis, the four-momentum of an object will commonly be expressed as
+$p = p(m, \vec{p}) = p(m, \pt, \eta, \phi)$.
+
+\section{The CMS solenoidal magnet}
+
+The central feature of the CMS apparatus is a superconducting solenoid 
+of $6\unit{m}$ internal diameter and $12.5\unit{m}$ in length,
+constructed from 4 layers of reinforced niobium titanium.
+It provides a nearly constant $3.8\unit{T}$ magnetic field inside the solenoidal volume.
+The magnetic flux of the solenoid is returned through
+a $12 000$-tonne steel yoke, comprising 5 wheels and 2 endcaps,
+which is fully saturated to approximately $2\unit{T}$. 
+The tracker and calorimeters are situated inside the solenoid, while 
+the muon detectors are embedded in the steel return yoke, as shown
+in Fig.~\ref{fig:CMScutaway}.
+
+During operation, the CMS solenoid stores approximately $2.4\unit{GJ}$ of 
+energy, the largest magnet in the world by this metric. This immense
+size leads to a powerful bending radius for charged objects within the detector,
+which is a critical metric for particle reconstruction and identification.
+In particular, objects of charge $q$ moving
+in a magnetic field $\vec{B}$ at velocity $\vec{v}$ experience a Lorentz force,
+
+\begin{equation}
+  \vec{F} = q\vec{B} \times \vec{v} \,.
+\end{equation}
+
+Because the solenoidal field is constant and aligned along the $z$-direction, 
+$\vec{B} = B\hat{z}$, the force is purely in the transverse direction.
+Consequently, charged particles within the CMS
+solenoid travel along a nearly helical path of radius $R=\pt/\abs{q}B$, where 
+small deviations from this path arise from non-uniformity of the field
+and interactions in the detector material. The sign of a 
+$\pt$ of a particle of known charge can therefore be deduced by measuring its radius of
+curvature. The bending power of the magnet $BR$ is therefore a critical 
+parameter determining the detector capability for accurate particle $\pt$ measurement.
+The nearly $12\unit{Tm}$ bending power achieved by the CMS is critical to achieving
+the high momentum resolution outlined in the design goals of the experiment. It
+is also fundamental to the particle flow reconstruction technique utilized by CMS,
+outlined in Chapter~\ref{ch:reconstruction}.
+
 \section{The CMS silicon tracking system}
-\section{The CMS Electromagnetic Calorimeter}
-\section{The CMS Hadronic Calorimeter}
-\section{The CMS Muon System}
-\subsection{Drift Tube System}
-\subsection{Resistive Plate Chamber system}
-\subsection{Cathode Strip Chamber system}
+\section{The CMS electromagnetic calorimeter}
+\section{The CMS hadronic calorimeter}
+\section{The CMS muon system}
+\subsection{Drift tube system}
+\subsection{Resistive plate chamber system}
+\subsection{Cathode strip chamber system}
 
