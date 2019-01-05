@@ -239,10 +239,117 @@ is also fundamental to the particle flow reconstruction technique utilized by CM
 outlined in Chapter~\ref{ch:reconstruction}.
 
 \section{The CMS silicon tracking system}
+
+Stuff about this
+
 \section{The CMS electromagnetic calorimeter}
 \section{The CMS hadronic calorimeter}
 \section{The CMS muon system}
-\subsection{Drift tube system}
-\subsection{Resistive plate chamber system}
-\subsection{Cathode strip chamber system}
 
+As suggested by the CMS name itself, the muon detector subsystem is essential to the
+achieving the experimental goals of the CMS experiment. 
+High-energy muons are produced in many heavy-object SM and BSM 
+decays, and long-established detector technologies are well suited to muon detection in LHC collisions.
+Muons with $v\approx c$ are nearly stable
+on timescale of the traversal of the CMS detector volume. As the heavies stable lepton, 
+they are less susceptible to electromagnetic radiative energy loss than electrons, and therefore
+interact minimally with the calorimeter system. Detector technologies suitable for
+charged-particle detection, placed outside all other detector systems, 
+are therefore ideal for muon detection. 
+
+\begin{figure}[htbp]
+  \centering
+   \includegraphics[width=\textwidth]{figures/LHCandCMS/MuonSystemGeometry.png}
+  \caption{
+    An $R-z$ cross section of a quadrant of the CMS detector, with the interaction
+    point at the bottom left corner. The locations of the detectors
+    comprising the CMS muon system within the steel steel return yoke
+    are shown~\cite{Chatrchyan:2012xdj}.
+        }
+ \label{fig:muonSystemGeo}
+\end{figure}
+
+The muon system is composed of three technologies, 
+described in more detail in the following sections. 
+Each operates on the principle of gas ionization. 
+The detectors consist of a volume of 
+gas over which an electric field is applied. Charged
+particles passing through the volume ionize the gas, and the ionized gas molecules
+and free electrons drift in the electric field towards read-out electronics at the 
+edges of the detector volume. The track of the interacting object is inferred from
+the position and timing of the measured electrons and ions.
+The operating characteristics of the gas ionization detectors can be modified
+for fast readout, high granularity, and 
+In the CMS detector, these considerations, along with the cost of construction 
+for detectors covering an area of $\\approx 25,000\unit{m}^2$ and 
+the effect of the radiation environment of the detector on performance, motivate
+the specific design choices.
+
+Gas ionization detectors are
+sensitive to all charged particles passing through the detector. As previously discussed,
+nd illustrated in Fig.~\ref{fig:muonSystemGeo}, the muon system is 
+the outer layer of the CMS detector, embedded in
+the steel return yoke of the magnet system. This structure, along with the inner
+detector systems, serves as shielding for the muon system and ensures that the 
+well over 99\% of objects reaching the muon system are muons.
+
+\subsection{Drift tube system}
+
+The barrel part of the muon detector, $\abs{\eta} < 1.2$,
+is composed of drift tube (DT) chambers. In this region, the magnetic field
+outside the return yoke is generally small (below 0.2\unit{T}), and the muon occupancy is low, justifying
+the use of DT detectors. The DT system is built from individual DTs, 
+rectangular aluminum tubes with a length of 2.4\unit{m} and a cross section
+of $13\times42\unit{mm}^2$, shown in Fig~\ref{fig:DTs}. At the center of each
+tube is a 50-\micron-diameter gold-plated stainless-steel anode wire.
+Aluminum strips are attached to the interior of the aluminum 
+structure---insulated by mylar tape---to
+shape the electric field to the pattern illustrated in Fig.~\ref{fig:DTs},
+and an 85\% Ar 15\% CO$_2$ gas mixture is contained in the volume. 
+The drift time for muons crossing a
+cell at a maximum distance from the anode wire of 21\unit{mm}
+is about 380\micron, which is sufficient to keep the occupancy low.
+Muons passing through the gas volume ionize the gas and create an avalanche of
+electrons around the very high field at the anode wire.
+A time-to-digital converter reads out the electrical pulse of the electrons.
+The arrival time of the signal, corrected by the drift velocity and the time
+from the collisions to the trigger decision, are used to obtain the muon interaction
+position. 
+
+\begin{figure}[htbp]
+  \centering
+   \includegraphics[width=0.6\textwidth]{figures/LHCandCMS/DriftTubeCutaway.png}
+  \caption{
+    Diagram of a drift tube cell, from Ref.~\cite{}. The 
+    geometry of the cell and the electric field lines resulting from the 
+    anode wire and electrode strips are illustrated.
+        }
+ \label{fig:DTs}
+\end{figure}
+
+
+The DT cells are assembled into superlayers (SL), composed of 
+4 layers of drift cells staggered by half a cell. 
+The SLs grouped in to chambers of 2 or 3 SLs which are arranged into stations
+within the magnet return yoke.
+The wires in the outer SLs within a chamber are parallel to beam line, providing
+a measurement in the bending plane.
+An additional inner SL is aligned perpendicular to the beam direction, 
+for all chambers but those in the 
+outermost station, to provide a measurement in the $z$ plane. 
+The chambers are arranged in concentric cylinders
+around the beam line, with 60 chambers each in the three inner cylinders
+and 70 in the outer cylinder. In total there are $\approx172,000$ 
+cells, read out as independent channels. The offset arrangement of the cells
+eliminates dead spots in the efficiency, and allows a measurement of the
+muon crossing time to be obtained using meantimer circuits.
+The muon position resolution in the DTs is around 100\micron and the
+timing resolution is within a few ns.
+
+\subsection{Resistive plate chamber system}
+
+
+
+\subsection{Cathode strip chamber system}
+\section{Data triggering and acquisition}
+\section{Luminosity measurement}
