@@ -320,7 +320,7 @@ position.
   \centering
    \includegraphics[width=0.6\textwidth]{figures/LHCandCMS/DriftTubeCutaway.png}
   \caption{
-    Diagram of a drift tube cell, from Ref.~\cite{}. The 
+    Diagram of a drift tube cell, from Ref.~\cite{Chatrchyan:2008aa}. The 
     geometry of the cell and the electric field lines resulting from the 
     anode wire and electrode strips are illustrated.
         }
@@ -351,7 +351,51 @@ timing resolution is within a few ns.
 Cathode strip chambers (CSC) are used in
 the forward regions of the CMS detector ($0.9 < \abs{eta} 2.4$), 
 where the prompt and background muon rates are high, and the magnetic field
-is large and non-uniform.
+is large and non-uniform. The CSC system is constructed of trapezoidal
+multi-wire proportional chambers,
+which subtend 20 or 30 degrees in $\phi$. The largest chambers are 3.4\unit{m}
+long and up to 1.5\unit{m} wide. The chambers are divided into 6 sections---7\unit{mm} 
+wide for the innermost layer of chambers and 9.5\unit{mm} for all 
+others---each filled with an Ar-CO$_2$-CF$_4$ gas mixture. Aluminum cathode strips,
+which span the radial direction at a constant phi, 
+are milled to 6 of the panels forming the sections. The strips vary from
+8.4 to 16\unit{mm}, for a constant width in $\phi$, and are separated by about 0.5\mm. 
+In addition, each layer has a planes of anode wires running lengthwise, 
+50\micron in diameter, separated by 2.5\unit{mm}, and slightly tilted to correct
+for the deflection of the drifting electrons in magnetic field.
+Muons passing through the chambers create and avalanche
+of electrons in each layer, which is read out on the anode wires. In addition,
+A mirror pulse is created in the cathode strips.
+Together, the pulses and shapes give an excellent position measurement 
+in both the $r-\phi$ and $\eta$ planes, as shown in Fig~\ref{fig:CSC}.
+Each cathode strip is read out, whereas anode strips are read out in
+groups of 16. The position resolution of a CSC chamber is around
+100\micron, and the timing resolution is $\approx7\unit{ns}$
+
+\begin{figure}[htbp]
+  \centering
+   \includegraphics[width=0.49\textwidth]{figures/LHCandCMS/CSCdiagram.png}
+   \raisebox{0.3\height}{\includegraphics[width=0.49\textwidth]{figures/LHCandCMS/CSCoperation.png}}
+  \caption{
+    Left: diagram of a CSC chamber. Right: principle of operation for a CSC
+    layer, showing the avalanche around the anode wires and the pulse shape
+    on the cathode strips, which are combined for accurate position measurement.
+    Both figures are reproduced from Ref.~\cite{Chatrchyan:2008aa}
+        }
+ \label{fig:CSC}
+\end{figure}
+
+The CSC chambers are arranged perpendicular to the beam line,
+conjoined for full coverage in $\phi$. Four stations of CSC chambers are interspersed
+amongst the magnetic flux return plates in each endcap of the detector, see
+Fig~\ref{fig:CMScutaway}. The innermost station (for each endcap) is composed of 
+3 rings of CSC in the radial direction, whereas other stations have two rings.
+In total there are 540 CSC chambers. All but the outer ring of chambers in the 
+innermost layer partially overlap the neighboring chambers, avoiding regions
+of low efficiency. Aging studies of the CSC chambers at the original CERN Gamma
+Irradiation Facility (GIF), and at the new GIF++, have shown that the CSC system
+performance is resistant to the damage incurred by the radioactive environment
+of high luminosity collisions. 
 
 \subsection{Resistive plate chamber system}
 
