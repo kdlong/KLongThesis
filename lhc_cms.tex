@@ -330,7 +330,7 @@ position.
 
 The DT cells are assembled into superlayers (SL), composed of 
 4 layers of drift cells staggered by half a cell. 
-The SLs grouped in to chambers of 2 or 3 SLs which are arranged into stations
+The SLs are grouped into chambers of 2 or 3 SLs which are arranged into stations
 within the magnet return yoke.
 The wires in the outer SLs within a chamber are parallel to beam line, providing
 a measurement in the bending plane.
@@ -346,10 +346,39 @@ muon crossing time to be obtained using meantimer circuits.
 The muon position resolution in the DTs is around 100\micron and the
 timing resolution is within a few ns.
 
+\subsection{Cathode strip chamber system}
+
+Cathode strip chambers (CSC) are used in
+the forward regions of the CMS detector ($0.9 < \abs{eta} 2.4$), 
+where the prompt and background muon rates are high, and the magnetic field
+is large and non-uniform.
+
 \subsection{Resistive plate chamber system}
 
+A crucial role of the muon system is to provide muon position and momentum
+measurements in a sufficiently timescale
+to determine if an event justifies storage offline analysis. 
+This process, known as event triggering,
+is described in additional detail in Section~\ref{sec:triggering}.
+While the DT and CSC system provide fast readout, the background rate and
+importance of associating an event with the correct bunch crossing (within
+25\unit{ns}) make additional redundancy desirable.
 
+A system of resistive plate chambers (RPC) in both the barrel and endcap
+($\abs{\eta} < 1.2$ accomplishes this goal. The RPCs are double-gap chambers
+constructed from a thin layer of readout strips between two electrodes held 
+at high voltage, forming a volume filled predominately with C$_2$H$_2$F$_4$ gas.
+The system is operated in avalanche mode, where the sum of the signals
+in the two gaps created by an interacting muon is read out on strips
+at the center plate. The plates are separated by 2\unit{mm}, which ensures
+that the charge avalanche is observed well below the 25\unit{ns} window
+needed to assign the muon to the correct bunch crossing.
+There are 6 layers of RPCs in the detector barrel, interspersed among the DTs,
+and 3 layers in the endcap alongside the CSCs. The readout strips in the barrel RPCs
+subtend an angle of 5/16 degree. The position resolution of the RPCs, about 1\cm,
+is below the DT and CSC systems, but the system provides an independent position
+and timing measurement. 
 
-\subsection{Cathode strip chamber system}
 \section{Data triggering and acquisition}
+\label{sec:triggering}
 \section{Luminosity measurement}
