@@ -15,14 +15,18 @@
 \usepackage{subfig}
 \usepackage{lineno}
 \linenumbers
+% Label figures as chapter.number
+\makeatletter
+\renewcommand{\counterwithin}{\@ifstar{\@csinstar}{\@csin}}
+\makeatother
 
-\settitle{Measurement of Electroweak WZ Production and Search for New Physics in Proton--Proton Collisions at $\sqrt{s} = 13$ TeV with the CMS Detector at the CERN LHC}
+\settitle{Measurement of electroweak WZ production and search for new physics in proton--proton collisions at $\sqrt{s} = 13$ TeV with the CMS detector at the CERN LHC}
 %\settitle{Cross section measurements and New Physics searches in WZ vector boson scattering events in proton--proton collisions at $\sqrt{s} = 13$ TeV with the CMS Detector at the CERN LHC}
 \setauthor{Kenneth Long}
 \setdepartment{Physics}
 \doctors % or \masters
-\setgraddate{2018}
-\setdefensedate{15 Dec. 2018} % or whatever format you want
+\setgraddate{2019}
+\setdefensedate{10 March 2019} % or whatever format you want
 
 %%%% Members of the Final Oral Committee (FOC)
 %%%% Give name, rank, and department

@@ -240,7 +240,60 @@ outlined in Chapter~\ref{ch:reconstruction}.
 
 \section{The CMS silicon tracking system}
 
-Stuff about this
+The inner part of the CMS detector is instrumented with semiconductor tracking detectors.
+The tracking system is positioned inside the solenoidal magnet, surrounding the interaction point,
+with a cylindrical shape of length 5.8\unit{m} and diameter 2.5\unit{m}. 
+Sensors arranged in discs cover the forward part of the volume ($\eta < 2.5$).
+It consists of silicon pixels in the innermost part, and silicon strips further from
+the interaction point. The tracker geometry, including the layout of the silicon 
+sensors, is shown in Fig.~\ref{fig:trackerCrossSec}.
+
+The tracking system is designed to measure the helical paths of charged
+particles emanating from the collision point, from which the transverse
+momenta can be inferred. Charged particles passing through
+the reverse-biased doped silicon diodes produce ionization currents, which are measured
+to infer the position of the interaction with very high position resolution. 
+With $200\unit{m}^2$ of active silicon area, the CMS tracker is the largest
+silicon tracker ever built.
+
+\begin{figure}[htbp]
+  \centering
+   \includegraphics[width=\textwidth]{figures/LHCandCMS/trackerCrossSection.png}
+  \caption{
+    Cross section of the CMS tracker, viewed in the $r$-$\eta$ plane.
+    At the center is the pixel detector, with the tracker inner (TIB) and
+    outer barrel (TOB) instrumenting the barrel part of the detector
+    at increasing distances from the beam line. The tracker inner disk (TID)
+    and tracker endcap (TEC) are perpendicular to the beam pipe.
+    Single lines represents a detector module, and double lines represent
+    double-sided modules. Reproduced from Ref.~\cite{Chatrchyan:2009aa}.
+        }
+ \label{fig:trackerCrossSec}
+\end{figure}
+
+At the operating conditions of the LHC in 2016, an average of 23 proton
+interactions took place per bunch crossing, producing on the order of $10^{3}$ particles
+every 25\unit{ns}.
+In this environment, the tracking system is crucial to determining which particles are associated
+with the interaction of interest. In addition, decays displaced from the
+production vertex is an important signature of heavy-flavor hadrons and $\tau$ leptons,
+so knowledge of the track origins in three dimensions is crucial.
+The paths of charged particles can be deduced from their discrete interactions
+in the tracking system, from which the particle origin can be inferred.
+Because multiple interactions in a single sensor complicate track reconstruction, the pixel and strip 
+dimensions are designed to keep the particle flux per collision low.
+The pixel detector barrel consists of three layers, positioned at 4.4, 7.3, and
+10.2\unit{cm} from the beam line. At the inner layer,
+the hit rate density is $\approx1\unit{MHz/mm}^2$, which motivates 
+motivates the use of $100\times150\micron$ silicon sensors, for an occupancy
+on the order of $10^{-4}$ per sensor per bunch crossing. The flux is significantly
+reduced further from the beamline, so the outer parts of the tracker uses silicon
+stip detectors, 10-25\unit{cm} in length and 80-180\micron in length, to reduce
+the channel count and cost. In total, the silicon tracking system has over 75 million read-out channels.
+The position resolution of individual sensors is $10-40\micron$,
+allowing for vertex association which is accurate to $\approx10\micron$, 
+and momentum resolution for muons with $\pt = 100\GeV$
+and $\eta < 1.5$ is around 2\%~\cite{Chatrchyan:2014fea}.
 
 \section{The CMS electromagnetic calorimeter}
 \section{The CMS hadronic calorimeter}
@@ -261,7 +314,7 @@ are therefore ideal for muon detection.
   \centering
    \includegraphics[width=\textwidth]{figures/LHCandCMS/MuonSystemGeometry.png}
   \caption{
-    An $R-z$ cross section of a quadrant of the CMS detector, with the interaction
+    An $R$-$z$ cross section of a quadrant of the CMS detector, with the interaction
     point at the bottom left corner. The locations of the detectors
     comprising the CMS muon system within the steel steel return yoke
     are shown~\cite{Chatrchyan:2012xdj}.
@@ -349,7 +402,7 @@ timing resolution is within a few ns.
 \subsection{Cathode strip chamber system}
 
 Cathode strip chambers (CSC) are used in
-the forward regions of the CMS detector ($0.9 < \abs{eta} 2.4$), 
+the forward regions of the CMS detector ($0.9 < \abs{\eta} < 2.4$), 
 where the prompt and background muon rates are high, and the magnetic field
 is large and non-uniform. The CSC system is constructed of trapezoidal
 multi-wire proportional chambers,
