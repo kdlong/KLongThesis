@@ -1,10 +1,9 @@
-Sep. ? -- Introduction finished
-Nov. 19 -- Results chapter
-Nov. 26 -- Analysis Overview chapter
-Dec. 10 -- First Chapter
-Dec. 17 -- Simulation Chapter
-Jan. 1 -- Reconstruction Chapter
-Jan. 14 -- CMS and LHC Chapter
-Jan. 21 -- Conclusions Chapter
-~Jan 30 -- Thesis defense
+Jan. 8 -- CMS and LHC chapter
+Jan. 21 --  Simulation chapter
+Feb. 4 -- Reconstruction chapter
+Feb. 18 -- Theory chapter
+Feb. 25 -- Conclusions chapter
+Mar. 4 -- Revisions finished
+Week of March 15 -- Defense
 
+I suck :(
