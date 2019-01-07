@@ -298,11 +298,69 @@ and $\eta < 1.5$ is around 2\%~\cite{Chatrchyan:2014fea}.
 \section{The CMS electromagnetic calorimeter}
 
 Immediately outside the tracking system, but inside the solenoid, is the electromagnetic 
-calorimeter (ECAL). It is constructed from lead tungstate cristals, which
-absorb energy of electromagnetically-interacting objects, before emitting
-light at a specific wavelength proportional to the absorbed energy.
+calorimeter (ECAL). It is constructed from transparent lead tungstate (\PbT) crystals, which
+absorb energy of electromagnetically-interacting objects (e.g., electrons and photons) before emitting
+light of wavelength $\lambda = 420$--$430\unit{nm}$, with intensity proportional to the absorbed energy.
+The energy deposits of the interacting particles are obtained from
+photodetectors that collect the emitted light.
+Lead tungstate was chosen for properties including its high density of $8.3\unit{g/cm}^3$, which contributes
+to its small radiation length---the mean distance an electron travels
+in the material before loosing $1/e$ of its initial energy---of 0.89\unit{cm},
+and its small Moli{\`e}xre radius (the radius at which 90\% of the electromagnetic
+shower is contained on average) of 2.2\unit{cm}. These properties facilitate the 
+compact design of the CMS ECAL. Because photons and electrons interact significantly
+with the large physical structure of the CMS solenoid, positioning the ECAL outside
+of the solenoid would degrade the energy performance and compromise the association
+of tracks with ECAL energy deposits.
+Consequently, a compact calorimetry system
+is required to reduce the volume---and therefore the cost---of the solenoid.
+In addition, the scintillation decay time of the crystals, the delay between the absorption of energy and light emission,
+is such that 80\% of the light is released by an excited crystal within 25\unit{ns},
+enabling the necessary fast read out. These highly favorable characteristics of {\PbT} are 
+partially offset by its relatively low light output of 4.5~photons~per~MeV of deposited energy
+at the operating temperature of 18\degree\unit{C}. 
+
+\begin{figure}[htbp]
+  \centering
+   \includegraphics[width=0.6\textwidth]{figures/LHCandCMS/ecalCrossSection.png}
+  \caption[An $r$-$\eta$ cross section of the CMS ECAL]{
+    An $r$-$\eta$ cross section of the CMS ECAL, showing the detector components,
+    crystals, and their $\eta$ coverage. Reproduced from Ref.~\ref{Benaglia:2014aqa}.
+        }
+ \label{fig:ecal}
+\end{figure}
+
+The ECAL system consists of 61,200 PbWO$_4$ crystals in the barrel, $\abs{\eta} < 1.444$,
+and 7,324 crystals in each of two encap discs covering $1.566 < \abs{eta} < 3.0$.
+The small gap in the ECAL is due to cabling and support structure for the tracking system.
+The cross section of the crystals in the plane facing the interaction point is $2.2\times2.2\unit{cm}^2$,
+equal to the Moli{\`e}re radius of the material. The barrel crystals are 23\unit{cm} in
+length, whereas the endcap crystals are 22\unit{cm}, corresponding to 
+25.8 and 24.7 radiation lengths respectively. The arrangement of the crystals is shown in Fig.~\ref{fig:ecal}.
+Because of the relatively low light yield of {\PbT}, fast photodetectors with
+powerful amplification capabilities, that are capable of operating in the high magnetic
+field, are needed. Avalanche photodiodes instrument the barrel, while vacuum phototriodes
+are used in the barrel, due to their superior radiation hardness.
+
+The resolution of the energy measurement in the ECAL improves with energy up to 
+0.5--1\TeV, at which point the percentage of the shower energy not contained in the ECAL becomes
+signifiant. Below this threshold, higher energies correspond with greater light production,
+and a more accurate energy measurement. The uncertainty in the energy measurement
+below $\approx500\GeV$ can be parameterized as
+\begin{equation}
+  \left(\frac{\sigma_E}{E}\right)^2 = \left(\frac{S}{\sqrt{E/\GeVns}}\right)^2 + \left(\frac{N}{E/\GeVns}\right)^2 + C^2.
+\end{equation}
+Where $S$ is a stochastic term, driven by the number of scintillation photons produced,
+$N$ is a noise term arising from the electronics and background radiation produced
+outside the primary proton--proton interaction, and $C$ is a constant term due to
+the non-uniformity of the crystal material and fabrication.
+The values of $S=2.8\%$, $N=0.12$ and $C=0.30\%$ were measured in the initial 
+CMS commissioning~\cite{Chatrchyan:2008aa}, 
+and are illustrative of the performance during 2016 data taking.
 
 \section{The CMS hadronic calorimeter}
+
+
 \section{The CMS muon system}
 
 As suggested by the CMS name itself, the muon detector subsystem is essential to the
@@ -319,8 +377,8 @@ are therefore ideal for muon detection.
 \begin{figure}[htbp]
   \centering
    \includegraphics[width=\textwidth]{figures/LHCandCMS/MuonSystemGeometry.png}
-  \caption[An $r$-$z$ cross section of a quadrant of the CMS detector]{
-    An $r$-$z$ cross section of a quadrant of the CMS detector, with the interaction
+  \caption[An $r$-$\eta$ cross section of a quadrant of the CMS detector]{
+    An $r$-$\eta$ cross section of a quadrant of the CMS detector, with the interaction
     point at the bottom left corner. The locations of the detectors
     comprising the CMS muon system within the steel steel return yoke
     are shown~\cite{Chatrchyan:2012xdj}.
