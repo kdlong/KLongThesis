@@ -349,6 +349,7 @@ and a more accurate energy measurement. The uncertainty in the energy measuremen
 below $\approx500\GeV$ can be parameterized as
 \begin{equation}
   \left(\frac{\sigma_E}{E}\right)^2 = \left(\frac{S}{\sqrt{E/\GeVns}}\right)^2 + \left(\frac{N}{E/\GeVns}\right)^2 + C^2.
+  \label{eq:resolution}
 \end{equation}
 Where $S$ is a stochastic term, driven by the number of scintillation photons produced,
 $N$ is a noise term arising from the electronics and background radiation produced
@@ -360,6 +361,62 @@ and are illustrative of the performance during 2016 data taking.
 
 \section{The CMS hadronic calorimeter}
 
+Outside the ECAL, but inside the solenoid, is the hadronic calorimter (HCAL),
+covering the radial space from 1.77\unit{m} to 2.95\unit{m}.
+The HCAL measures energy of charged and neutral hadrons for identification
+and measurement of hadronic jets. The hermetic coverage of the HCAL
+up to $\abs{eta} < 5.0$ permits an extensive characterization of the 
+transverse energy of hadronic particles in an event, allowing neutrinos (or weakly
+interacting new physics) to be detected as an unbalance in transverse momentum.
+Unlike the ECAL, the HCAL is a sampling calorimeter, that is, it is constructed
+of layers of dense material to induce hadronic showers interspersed amongst 
+active layers of scintillating material. 
+The barrel ($\abs{\eta} < 1.3$) and endcap ($1.3 < \abs{\eta} < 3.0$) region of the HCAL are constructed from 
+flat steel and brass absorber plates, 50-80\unit{mm} thick, layered between scintillating tiles.
+The scintillators are segmented to cover an area in $(\eta, \phi)$ of $(0.087,0.087)$
+for $\abs{\eta} < 1.6$ and $\approx(0.17,0.17)$ for $\abs{\eta} > 1.6$.
+Wavelength shifting fibers adjust the wavelength to a more favorable
+frequency before light is collected and measured by hybrid photodiodes.
+At $\eta = 0$, the HCAL is $5.82\lambda_I$ thick, whereas it is $\approx10\lambda_I$ thick 
+at $\abs{\eta} > 1.3$.
+Here $\lambda_{I}$ is the nuclear interaction length, the mean free path of a hadronic particle
+before undergoing an inelastic hadronic interaction.
+Hadronic particles encounter about $1.1\lambda_{I}$ of material before reaching
+the HCAL.
+
+In order to measure very forward jets---which are critical for this result--a 
+forward HCAL system (HF) is installed close to the beam pipe on the extreme end of the 
+detector, $\pm11.15\unit{m}$ from the interaction point. 
+The HF detects particles in the region $3.0 \abs{\eta} < 5.0$. Because the energy deposit
+per collision in the HF is 5--10 times greater than the combined energy deposits in
+the rest of the detector, the HF must be extremely radiation hard.
+The active material of the HF is quartz fiber Cherenkov detectors, which 
+collect radiation from particles traveling with velocity above the Cherenkov limit.
+The fibers are in steel showering material. Half of the fibers extend the full length
+of the detector, whereas half begin at a dept of 22\unit{cm}, which gives
+sensitivity to the shower development, to distinguish between hadronic and electromagnetic
+showers. The detectors are housed in a hermetic steel, concrete, 
+and polyethylene shielding of 0.85\unit{m} in thickness for additional radiation
+hardness. The resolution of the HF is at least a factor of two lower than the 
+barrel and endcap calorimeters. Despite this, it plays an important role 
+in the results presented in this thesis, which rely on forward jet reconstruction.
+
+The layout of the HCAL, showing each subsystem discussed, as well as the small
+outer part of the HCAL outside the magnet, is shown in Fig.~\ref{fig:hcal}.
+As for ECAL, the energy resolution can be described by Equation~\ref{eq:resolution}.
+The results obtained from pion test beams before the start of CMS
+data taking are $S=115\%$ and $C = 5.5\%$. The noise term $N$ is subdominant.
+
+\begin{figure}[htbp]
+  \centering
+   \includegraphics[width=0.6\textwidth]{figures/LHCandCMS/HCAL.png}
+  \caption[An $r$-$\eta$ cross section of a quadrant of the CMS detector, showing the 
+      HCAL system]{
+    An $r$-$\eta$ cross section of a quadrant of the CMS detector. The components
+    of the HCAL system are shown.~\cite{Chatrchyan:2012xdj}.
+        }
+ \label{fig:hcal}
+\end{figure}
 
 \section{The CMS muon system}
 
@@ -540,6 +597,17 @@ subtend an angle of 5/16 degree. The position resolution of the RPCs, about 1\cm
 is below the DT and CSC systems, but the system provides an independent position
 and timing measurement. 
 
-\section{Data triggering and acquisition}
+\section{Event triggering and data acquisition}
+
+Despite significant zero-suppression and data compression, the
+read out from the millions of channels in the CMS detector associated
+with a typical proton--proton collision of interest requires around
+1\unit{MB} of storage.
+Transmitting this quantity of information 
+at the collision rate of 40\unit{MHz} delivered by the LHC to the CMS detector 
+exceeds the threshold of practical technological capabilities. Furthermore,
+the event rate 
+
 \label{sec:triggering}
 \section{Luminosity measurement}
+\section{Data}
