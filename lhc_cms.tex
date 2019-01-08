@@ -632,7 +632,7 @@ interactions, such as elastic electromagnetic scattering.
 The Level 1 (L1) trigger is a custom-designed hardware system,
 primarily built from programmable electronics, that
 is designed to reduce the rate of collisions to below 100\unit{kHz}
-in a latency of about 4\unit{$\mu s$}. The L1 trigger decision,
+in a latency of about 4\mus. The L1 trigger decision,
 known as an ``L1 accept`` when an event is stored,
 uses coarsely segmented
 information from the muon and calorimeter systems.
@@ -694,6 +694,23 @@ referred to as deadtime, is generally unbiased and kept below 1\%. However,
 for this analysis, a systematic loss of events due to mistimed
 trigger signals lead to an inefficiency in collection of events of interest. This
 effect is discussed in detail in Chapter~\ref{ch:analysis}.
+
+Events accepted by the L1 trigger undergo an additional filtering 
+by the high level trigger (HLT) before they are stored to tape for offline analysis.
+The HLT is a software-based system running on a commercial processing farm that
+has access to the full event information from all detector systems. In principle,
+the HLT can implement the same reconstruction algorithms described in Chapter~\ref{ch:reconstruction},
+but the time constraints for the decision and the limited size of the compute farm
+make this impractical. Instead, the HLT implements similar algorithms with
+optimizations and simplifications designed to reach an event acceptance or rejection
+decision in less than 200\mus. As with the L1 trigger, the event evaluation is
+divided into trigger paths. Operations are performed per trigger path such that
+uninteresting events are rejected as soon as possible, with computationally
+expensive operations such as track building only performed at the final stages.
+The high cost of large-scale data storage, especially in a way that allows quick access 
+for processing at sites throughout the world, is an increasing concern for the
+LHC experimental program. In addition to ensuring manageable read-out rates,
+efficient filtering by the HLT is an important to addressing this storage issue.
 
 \label{sec:triggering}
 \section{Luminosity measurement}
