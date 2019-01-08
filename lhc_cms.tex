@@ -566,10 +566,24 @@ Fig~\ref{fig:CMScutaway}. The innermost station (for each endcap) is composed of
 3 rings of CSC in the radial direction, whereas other stations have two rings.
 In total there are 540 CSC chambers. All but the outer ring of chambers in the 
 innermost layer partially overlap the neighboring chambers, avoiding regions
-of low efficiency. Aging studies of the CSC chambers at the original CERN Gamma
+of low efficiency. Members of the University of Wisconsin -- Madison 
+CMS group have played a crucial role in the design and operation of the CSC
+system since the inception of the CMS experiment. I contributed to the operation
+of the CSC system, serving the detector-on-call for the
+detector subsystem for three weeks per year from 2016 -- 2018. During these periods
+I represented the CSC system in daily meetings, coordinated maintenance and 
+development projects, and responded to critical issues preventing data collection
+or degrading data quality.
+
+Aging studies of the CSC chambers at the original CERN Gamma
 Irradiation Facility (GIF), and at the new GIF++, have shown that the CSC system
 performance is resistant to the damage incurred by the radioactive environment
-of high luminosity collisions. 
+of high luminosity collisions. I contributed to the on-going studies at the 
+GIF++ facility by monitoring the performance of . The continued performance
+of the CSC chambers after exposure to sustained radiation, comparable
+to many times the luminosity already delivered to CMS,
+has provided evidence that the CSC system will remain an important part
+of CMS throughout the full LHC program.
 
 \subsection{Resistive plate chamber system}
 
@@ -600,13 +614,86 @@ and timing measurement.
 \section{Event triggering and data acquisition}
 
 Despite significant zero-suppression and data compression, the
-read out from the millions of channels in the CMS detector associated
-with a typical proton--proton collision of interest requires around
+read out from the millions of channels in the CMS detector for
+a typical proton--proton collision of interest requires around
 1\unit{MB} of storage.
 Transmitting this quantity of information 
 at the collision rate of 40\unit{MHz} delivered by the LHC to the CMS detector 
 exceeds the threshold of practical technological capabilities. Furthermore,
-the event rate 
+the event rate of rare standard model processes and theorized BSM interactions
+is many orders of magnitude below this rate. 
+Therefore, it is neither feasible 
+nor desirable to store every collision.
+
+The CMS trigger system uses a two-tiered approach to selecting events of 
+interest---typically characterized by having one or more objects
+at high missing transverse momentum---and rejecting more common proton 
+interactions, such as elastic electromagnetic scattering.
+The Level 1 (L1) trigger is a custom-designed hardware system,
+primarily built from programmable electronics, that
+is designed to reduce the rate of collisions to below 100\unit{kHz}
+in a latency of about 4\unit{$\mu s$}. The L1 trigger decision,
+known as an ``L1 accept`` when an event is stored,
+uses coarsely segmented
+information from the muon and calorimeter systems.
+Information in the inner tracker is not used at L1, due to the read-out
+latency of the system. 
+
+The L1 trigger system initially handles the calorimeter and muon system
+information independently. For the calorimeter information, the ECAL crystals
+are grouped into towers of 25 crystals, to match the HCAL granularity
+in $\eta$ and $\phi$ space and to reduce granularity. Energy deposits in
+the ECAL and HCAL are used to build primitive objects, e.g., 
+the energy and shape of ECAL deposits
+contribute to photon and electron candidates while HCAL information
+suggests clusters of hadronic particles produces in the event.
+The particle candidates are sorted by $\pt$, and the total energy deposit
+in the event is computed, before forwarding the event information to
+the global trigger for an event-wide decision.
+
+The muon trigger system builds track candidates by matching hit
+patterns in the CSC, the DT, and the RPC subsystems. Track finders
+specific to the barrel region ($\abs{\eta} < 0.9$), the endcap region
+($0.9 < \abs{\eta} < 1.2$), and the CSC-DT overlap region ($1.2 < \abs{\eta} < 2.4$),
+combine the track segments from individual detectors to form muon
+candidates. The candidates built by each track finder are combined
+and disambiguated by the global muon trigger, which sorts the 
+candidate objects by \pt before forwarding them to the global trigger.
+
+The global trigger uses the sorted candidate and event information from
+the muon and calorimeter triggers to test for
+tests for the physics objects and object combinations,
+based on kinematic and quality criteria, before accepting or rejecting
+the event. The set of conditions by which events are evaluated
+are organized into ``trigger paths,'' which act to sorting the 
+dataset and the procedure by which it is evaluated. For paths 
+with very high rate, e.g., signal lepton triggers with lower \pt
+thresholds, a trigger path may be ``prescaled.'' This process 
+reduces the event rate by rejecting an unbiased subset of the events
+otherwise satisfying the acceptance criteria. Prescaled trigger paths
+are important for validating the efficiency and performance of other
+trigger paths.
+
+Data collected by the detector system is continually read and stored into
+40-MHz pipelined buffers while waiting for a trigger decision to determine
+if the data should be overwritten by the continual stream of new data,
+or pushed to the next stage of the data acquisition system for storage.
+The $4\,\mu s$ window for the trigger decision is set by the storage capacity
+of the most limited buffer system, associated with the silicon tracker.
+If the L1 trigger determines an event should be read for further analysis,
+the data are forwarded over a high-bandwidth network system to a 
+processing farm for further analysis. The read-out bandwidth limits the 
+rate of accepted events at L1 to about 100\unit{kHz}. In some cases, it is
+necessary to explicitly enforce this condition, accomplished through
+the trigger throttling system. The trigger throttling system prevents event
+read out in cases where a subsystem data buffer is near capacity,
+or when event triggering in quick succession would lead to excessive rate. For example,
+the trigger throttling system prevents event read out for three successive
+bunch crossing after a triggered event. This reduction in event readout,
+referred to as deadtime, is generally unbiased and kept below 1\%. However,
+for this analysis, a systematic loss of events due to mistimed
+trigger signals lead to an inefficiency in collection of events of interest. This
+effect is discussed in detail in Chapter~\ref{ch:analysis}.
 
 \label{sec:triggering}
 \section{Luminosity measurement}
