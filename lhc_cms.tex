@@ -1,31 +1,31 @@
 \chapter{The CMS Experiment at the CERN LHC}
 
 The Large Hadron Collider (LHC) at the European Organization for Nuclear Research (CERN)
-is the world's largest and most powerful particle collider.~\cite{Evans:2008zzb} It collides protons 
+is the world's largest and most powerful particle collider~\cite{Evans:2008zzb}. It collides protons 
 at a center of mass energy of $13\TeV$, and lead ions at $2.76\TeV$ per nucleon.
-Collisions of protons at the LHC are the sole focus of this thesis. 
 The protons or ions are brought to collision at the center of four large detectors,
 themselves a combination of many detector technologies. 
 The particle detectors at the LHC were conceived, developed, and constructed over decades
 by collaborations of thousands of scientists from hundreds of nations to
-achieve a broad program of research. The detectors were designed and are operator 
-by mutually exclusive collaborations of scientists working independently,
+achieve a broad program of research. The detectors were designed and are operated
+by mutually exclusive collaborations of researchers working independently,
+which enables cross-validation of results while fostering productive competition.
 
-The detector sites are
+The detector sites along the LHC tunnel are:
 
 \begin{itemize}
-  \item A Large Ion Collider Experiment (ALICE) detector, located at access point 2.
+  \item A Large Ion Collider Experiment (ALICE) detector~\cite{Aamodt:2008zz}, located at access point 2.
   Designed for the study of lead-ion collisions, especially for the characterization
-    of quark gluon plasmas formed in collisions.~\cite{Aamodt:2008zz}
-  \item A Large Toroidal LHC ApparatuS (ATLAS) detector, located at access point 1.
-  A general purpose detector. Designed for sensitivity to new physics
-  with decays to stable SM particles, in particular the 
-    discovery and characterization of the SM Higgs boson.~\cite{Aad:2008zzm}
-  \item The Compact Muon Solenoid (CMS) detector, located at access point 5.
-    A general purpose detector with comparable measurement potential to the ATLAS detector.~\cite{Chatrchyan:2008aa}
-  \item The Large Hadron Collider Beauty (LHCb) detector, located at access point 8.
+    of quark gluon plasmas formed in collisions.
+  \item A Large Toroidal LHC ApparatuS (ATLAS) detector~\cite{Aad:2008zzm}, located at access point 1.
+  A general-purpose detector designed for sensitivity to new physics at the electroweak scale
+  decaying to stable SM particles, in particular the 
+    discovery and characterization of the SM Higgs boson.
+  \item The Compact Muon Solenoid (CMS) detector~\cite{Chatrchyan:2008aa}, located at access point 5.
+    A general purpose detector with comparable measurement potential to the ATLAS detector.
+  \item The Large Hadron Collider Beauty (LHCb) detector~\cite{Alves:2008zz}, located at access point 8.
   Designed to characterize the production and decay of b-quark hadrons. Particularly
-    focused on CP violation in these decays.~\cite{Alves:2008zz}
+    focused on charge--parity violations in these decays.
 \end{itemize}
 
 Results in this thesis are based on an analysis of proton--proton collisions at the LHC 
@@ -80,7 +80,7 @@ vacuum pipes. The arced sections are equipped with dipole magnets,
 which direct charged objects along a circular path.
 The size of the LEP tunnel prohibited the installation of two independent beam
 systems, which led to the adoption of a unique "two-in-one" superconducting
-magnet design~\cite{}, shown in Fig~\ref{fig:dipoleXsec}. 
+magnet design~\cite{temp}, shown in Fig~\ref{fig:dipoleXsec}. 
 
 \begin{figure}[htbp]
   \centering
@@ -100,7 +100,7 @@ trajectory of radius $R$ trough a magnetic field of strength $B$
 The energy $E$ of the particle is given by
 
 \begin{equation}
-  E = eBRv \approx qBRc \,,
+  E = qBRv \approx qBRc \,,
 \label{eq:beamEnergy}
 \end{equation}
 
@@ -134,6 +134,12 @@ Focusing beams to collisions
 
 
 \section{Operation of the LHC in 2016}
+
+\begin{equation}
+  \mathcal{L} = \frac{n_b N_b^2 f_\textit{rev}}{A_\text{eff}}
+  \label{eq:lumi}
+\end{equation}
+
 \section{The Compact Muon Solenoid experiment}
 
 The CMS detector is a general-purpose detector designed to 
@@ -141,7 +147,8 @@ study particle production and interactions at the TeV scale.
 A major design principle of the CMS detector was the ability to 
 probe the nature of electroweak symmetry breaking, which has been
 achieved through the discovery and characterisation of a scalar boson
-consistent with the SM Higgs boson~\cite{}. The design of the CMS detector
+consistent with the SM Higgs boson~\cite{Chatrchyan:2012xdj,Chatrchyan:2013lba}. 
+The design of the CMS detector
 ensured sensitivity to a Higgs boson with mass up to
 $1\TeV$ in its SM decays, as well as sensitivity to a broad class
 of BSM theories. In terms of detector performance, these design principles,
@@ -714,4 +721,91 @@ efficient filtering by the HLT is an important to addressing this storage issue.
 
 \label{sec:triggering}
 \section{Luminosity measurement}
-\section{Data}
+
+The luminosity delivered by the LHC to the CMS interaction point is a critical
+input parameter to any cross section measurement and many LHC searches, as it 
+is needed to established the expected background contribution from processes
+described by MC simulation and to convert an observed event rate to an measured
+cross section. Luminosity is defined purely in terms of the parameters of the 
+LHC, as given by Equation~\ref{eq:lumi}. However, because the conditions of the LHC beams
+are not constant throughout a data collection period (e.g., the number of protons
+in the colliding bunches decreases continually during an LHC fill),
+the instantaneous luminosity must be continually monitored. Establishing
+the luminosity in terms of the parameters in Equation~\ref{eq:lumi} while the LHC
+is delivering collisions is unfavorable
+because measurements of the beam parameters, such as the beam widths,
+cannot be made to high precision without interfering with the beam conditions.
+Instead, the luminosity can be monitored by exploiting the relationship between
+luminosity and detector occupancy, which is linear for the primary the current
+LHC operating conditions and the detector systems considered for the 
+measurement~\cite{CMS-PAS-LUM-13-001}.
+Therefore, the relationship between the observed occupancy 
+rate and the luminosity can be expressed as
+\begin{equation}
+  R = \sigma_{vis}\mathcal{L}\,,
+  \label{eq:lumiRate}
+\end{equation}
+where the proportionality constant $\sigma_{vis}$ is known as the visible cross
+section seen by the detector system. By establishing $\mathcal{L}$ and $\sigma_{vis}$
+in conditions where the parameters of Equation~\ref{eq:lumi} are known, further monitoring
+of the luminosity can be achieved purely via a measurements of the $R$.
+
+The reference luminosity measurement is accomplished in dedicated LHC run periods using 
+a technique established by Simon Van der Meer at the CERN intersecting storage
+rings in 1968~\cite{vanderMeer:296752}. During these periods, the $x$ and $y$ positions of the LHC beams are
+scanned from their nominal head-on alignment used during collision by controlled distances.
+Because the number of colliding protons depends on the beam overlap,
+the occupancy rate in the detector can be used to establish the Gaussian profiles of 
+the beams. Combined with the rate at nominal collision alignment and the beam intensity,
+this procedure, referred to as a Van der Meer scan, establishes the relationship of 
+Equation~\ref{eq:lumiRate}.
+The CMS experiment monitors the luminosity by measuring the occupancy
+in the pixel detector, the DT system, and the HF. In addition, two detector
+systems dedicated to the luminosity measurement are used, the fast beam conditions monitor 
+and the pixel luminosity telescope. A separate $R_i$ and $\sigma_{vis}$ is obtained for
+each monitoring system, so the consistency of the independent measurements can be used
+for validation. 
+The consistency of different approaches to monitoring the luminosity,
+along with uncertainties in establishing the beam parameters in the Van der Meer scan,
+contribute to the systematic uncertainty of the luminosity measurement. For the 2016
+dataset, the luminosity is established with a systematic uncertainty of 2.5\%~\cite{CMS-PAS-LUM-17-001}.
+Calibrated values of the luminosity are established
+In 2016, the LHC delivered $41.0\fbinv$ of {\pp} collisions to the CMS interaction point.
+
+\section{CMS Data quality}
+
+The CMS detector collects data from collisions delivered by the LHC to the CMS interaction point
+with all components of the CMS detector active, configured, and synchronized. In some cases,
+issues with a subsystem status or configuration prevent data collection. Reasons for data loss include, e.g., 
+trigger throttling (discussed in the previous section), or problems with
+high or low voltage power supplies that require manual intervention to recover detector operation.
+In 2016, the CMS experiment collected 92\% of the data delivered by the LHC. 
+
+Collected data
+are evaluated by experts from each subsystem to assess the detector performance, because 
+problems that did not prevent data collection can still compromise its utility for physics analysis.
+For example, collected data with severe localized inefficiencies that prevent 
+object reconstruction in a kinematic region and bias results in a complex way are excluded from 
+the data set used for analysis.
+This analysis uses only data certified by the CMS
+experiment for physics analysis, which corresponds to 95\% of the collected data.
+
+\begin{figure}[htbp]
+  \centering
+   \includegraphics[width=0.6\textwidth]{figures/LHCandCMS/int_lumi_per_day_cumulative_pp_2016.pdf}
+  \caption{
+    The accumulated luminosity of the data delivered to the CMS interaction point, 
+    collected by the CMS experiment, and approved for physics analysis by detector
+    experts, are shown. Reproduced from Ref.~\cite{lumiTwiki}
+        }
+ \label{fig:lumi}
+\end{figure}
+
+I represented the CSC subsystem as the primary data certification expert during 
+the collection of data used in this thesis.
+Because of the large redundancy of the CSC chamber layout, the CSC system approved over 99\% of the
+collected data for physics analysis. A water leak at the end of 2016 in the CSC cooling system 
+necessitating a large-scale shutdown of the inner 
+CSC chambers was the major source of data loss, however, this primarily effected \pp collisions
+at 5\TeV, which are not used in this thesis. The source of the problem was identified during
+the early-2017 LHC shutdown, and repaired by reinforcing the connections of the copper pipe cooling system.
