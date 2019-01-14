@@ -33,6 +33,44 @@ collected by the CMS detector in 2016. This chapter describes the design princip
 LHC and the CMS detector, as well as their operating characteristics in 2016.
   
 \section{The Large Hadron Collider}
+The principle design considerations of a particle collider are the energy
+of the particle collisions, the rate of collisions, and the objects collided.
+The collided objects determine the possible interactions which can be probed,
+whereas the energy of the collision drives the mass range which can be probed,
+subject to the constraint that the produced particle mass $m$ be less than the 
+center of mass energy of the collision. As particle interactions are quantum mechanical 
+and fundamentally stochastic in nature, the rate of collisions is also 
+critical for achieving statistically significant measurements.
+
+Several characteristics of proton--proton (\pp) collisions motivated the decision 
+to use protons in the world's highest-energy collisions. Accelerating and
+directing particles to collision relies on electric and magnetic forces,
+so the collided particles must be electrically charged. 
+The only charged, stable, unbound, and fundamental particle is the electron.
+Electron--positron collisions have played a major role in the field 
+of particle physics, however, because accelerated charged objects
+loose energy proportional to $m^{-4}$ via synchrotron radiation,
+accelerating electrons to the TeV scale would require a prohibitively large tunnel
+to limit the bending force of the accelerator.
+Because the mass of the proton is nearly two thousand times greater than the 
+electron mass, synchrotron radiation is much less severe for accelerated protons.
+However, the proton is a composite object, so the conditions of its constituent
+quarks and gluons cannot be directly controlled when
+directing the protons to interaction, rather, they must be inferred from 
+the properties of the colliding protons. These unknowns, governed by the 
+complex structure of the proton, make proton--proton collisions inherently
+messier than collisions of fundamental particles. However, the compositeness
+of the proton is advantageous due to the rich phenomenology of interactions
+proceeding via quarks and gluons. 
+Additionally, quark-antiquark pairs are accessible in the proton at high energy
+scales, so interactions proceeding via particle--antiparticle annihilation
+are still accessible in high energy \pp interactions. Without the need 
+to produce antiparticles before bringing them to collision, which was necessary
+at lower-energy accelerators---notably the Large Electron Positron Collider (LEP) collider
+at CERN and the Tevatron collider at Fermilab in the United States---the LHC is
+able to deliver significantly higher interaction rate to complement its high
+collision energy.
+
 The LHC was proposed to the CERN council, the management group of the 
 laboratory, in 1994, and accepted
 with a preliminary budget in 1995. Construction was initially completed in
@@ -45,42 +83,23 @@ The project was funded by the 20 member states of CERN, as well
 as monetary and research contributions from many other nations participating 
 in the project, including the United States.
 
-The principle design considerations of a particle collider are the energy
-of the particle collisions, the rate of collisions, and the objects collided.
-The collided objects determine the possible interactions which can be probed,
-while the energy of the collision drives the mass range which can be probed,
-given that the produced particle mass $m$ be less than the 
-center of mass energy. As particle interactions are quantum mechanical 
-and fundamentally stochastic in nature, the rate of collisions is also 
-critical for achieving statistically significant measurements.
-
-Several characteristics of proton--proton collisions motivated the decision 
-to use protons in the world's highest-energy collisions. Existing high-energy
-accelerators, notably the Large Electron Positron Collider (LEP) collider
-at CERN and the Tevatron collider at Fermilab in the United States, collided
-particle--antiparticle pairs. This is advantageous for processes which proceed by annihilation, 
-but requires production of positrons or antiprotons, which is a significantly
-bottleneck on achieving a high rate of collisions. 
-
-The LHC is situated in a $26.7\unit{km}$ tunnel, $45$--$170\unit{m}$
+The LHC is situated in a 26.7\unit{km} circumference tunnel, 45--170\unit{m}
 below the Swiss and French country side. The tunnel pre-dates the LHC,
 having been originally built for the Large Electron Positron (LEP) collider.
 It consists of 8 straight sections $528\unit{m}$ in length, and 8 arced sections.
-The majority of the tunnel is $3.7\unit{m}$ in diameter, with larger excavated
+The cross section of the majority of the tunnel is $3.7\unit{m}$ in diameter, with larger excavated
 areas at the four experimental caverns and other access points.
 The primary motivation for an underground tunnel is to circumvent the high
 cost of land acquisition, but underground operation is also advantageous for
 reducing the cosmic radiation reaching the experimental cavern and  
-for shielding the radiation produced by the LHC.
-
-The protons are directed through pipes inside the tunnel, which are held
+for shielding the radiation produced by the LHC. Protons are directed through pipes inside the tunnel, which are held
 at high vacuum. The positions and accelerations of the protons are controlled 
 by magnetic and electric fields maintained by instrumentation surrounding the 
 vacuum pipes. The arced sections are equipped with dipole magnets,
 which direct charged objects along a circular path.
 The size of the LEP tunnel prohibited the installation of two independent beam
 systems, which led to the adoption of a unique "two-in-one" superconducting
-magnet design~\cite{temp}, shown in Fig~\ref{fig:dipoleXsec}. 
+magnet design~\cite{temp}, shown in Fig.~\ref{fig:dipoleXsec}. 
 
 \begin{figure}[htbp]
   \centering
@@ -481,7 +500,7 @@ is composed of drift tube (DT) chambers. In this region, the magnetic field
 outside the return yoke is generally small (below 0.2\unit{T}), and the muon occupancy is low, justifying
 the use of DT detectors. The DT system is built from individual DTs, 
 rectangular aluminum tubes with a length of 2.4\unit{m} and a cross section
-of $13\times42\unit{mm}^2$, shown in Fig~\ref{fig:DTs}. At the center of each
+of $13\times42\unit{mm}^2$, shown in Fig.~\ref{fig:DTs}. At the center of each
 tube is a 50-\micron-diameter gold-plated stainless-steel anode wire.
 Aluminum strips are attached to the interior of the aluminum 
 structure---insulated by mylar tape---to
@@ -548,7 +567,7 @@ Muons passing through the chambers create and avalanche
 of electrons in each layer, which is read out on the anode wires. In addition,
 A mirror pulse is created in the cathode strips.
 Together, the pulses and shapes give an excellent position measurement 
-in both the $r-\phi$ and $\eta$ planes, as shown in Fig~\ref{fig:CSC}.
+in both the $r-\phi$ and $\eta$ planes, as shown in Fig.~\ref{fig:CSC}.
 Each cathode strip is read out, whereas anode strips are read out in
 groups of 16. The position resolution of a CSC chamber is around
 100\micron, and the timing resolution is $\approx7\unit{ns}$
@@ -569,7 +588,7 @@ groups of 16. The position resolution of a CSC chamber is around
 The CSC chambers are arranged perpendicular to the beam line,
 conjoined for full coverage in $\phi$. Four stations of CSC chambers are interspersed
 amongst the magnetic flux return plates in each endcap of the detector, see
-Fig~\ref{fig:CMScutaway}. The innermost station (for each endcap) is composed of 
+Fig.~\ref{fig:CMScutaway}. The innermost station (for each endcap) is composed of 
 3 rings of CSC in the radial direction, whereas other stations have two rings.
 In total there are 540 CSC chambers. All but the outer ring of chambers in the 
 innermost layer partially overlap the neighboring chambers, avoiding regions
