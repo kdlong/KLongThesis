@@ -28,7 +28,7 @@ The detector sites along the LHC tunnel are:
     focused on charge--parity violations in these decays.
 \end{itemize}
 
-Results in this thesis are based on an analysis of proton--proton collisions at the LHC 
+Results in this thesis are based on an analysis of proton--proton (\pp) collisions at the LHC 
 collected by the CMS detector in 2016. This chapter describes the design principles of the 
 LHC and the CMS detector, as well as their operating characteristics in 2016.
   
@@ -42,7 +42,7 @@ center of mass energy of the collision. As particle interactions are quantum mec
 and fundamentally stochastic in nature, the rate of collisions is also 
 critical for achieving statistically significant measurements.
 
-Several characteristics of proton--proton (\pp) collisions motivated the decision 
+Several characteristics of \pp collisions motivated the decision 
 to use protons in the world's highest-energy collisions. Accelerating and
 directing particles to collision relies on electric and magnetic forces,
 so the collided particles must be electrically charged. 
@@ -54,13 +54,13 @@ accelerating electrons to the TeV scale would require a prohibitively large tunn
 to limit the bending force of the accelerator.
 The mass of the proton is nearly two thousand times greater than the 
 electron mass, so synchrotron radiation is much less severe for accelerated protons.
-However, the proton is a composite object, so the conditions of its constituent
+Unlike the electron, the proton is a composite object, so the conditions of its constituent
 quarks and gluons cannot be directly controlled when
 directing the protons to interaction, rather, they must be inferred from 
 the properties of the colliding protons. These unknowns, governed by the 
-complex structure of the proton, make proton--proton collisions inherently
-messier than collisions of fundamental particles. However, the compositeness
-of the proton is advantageous due to the rich phenomenology of interactions
+complex structure of the proton, make \pp collisions inherently
+messier than collisions of fundamental particles. Nonetheless, the compositeness
+of the proton is also advantageous due to the rich phenomenology of interactions
 proceeding via quarks and gluons. 
 Additionally, quark-antiquark pairs are accessible in the proton at high energy
 scales, so interactions proceeding via particle--antiparticle annihilation
@@ -69,7 +69,7 @@ to produce antiparticles before bringing them to collision, as was necessary
 at lower-energy accelerators---notably the Large Electron Positron Collider (LEP) collider
 at CERN and the Tevatron collider at Fermilab in the United States---the LHC is
 able to deliver significantly higher interaction rate to complement its high
-collision energy~\cite{}.
+collision energy~\cite{Nielsen:2011kc}.
 
 \subsection{Design characteristics of the LHC}
 
@@ -79,11 +79,11 @@ with a preliminary budget in 1995. Construction was initially completed in
 2008, with full operation beginning in 2009 after setbacks 
 encountered in the initial commissioning.
 The collider is located on the outskirts
-of Geneva, Switzerland, in the nearby French and Swiss countryside,
+of Geneva, Switzerland, 
 which has been the site of the CERN laboratory since it was founded in 1954.
 The project was funded by the 20 member states of CERN, as well
 as monetary and research contributions from many other nations participating 
-in the project, including the United States~\cite{}.
+in the project, including the United States~\cite{Schorner-Sadenius:2015dja}.
 
 The LHC is situated in a 26.7-km-circumference tunnel, 45--170\unit{m} below ground.
 The tunnel pre-dates the LHC,
@@ -94,14 +94,14 @@ areas at the four experimental caverns and other access points.
 The primary motivation for an underground tunnel is to circumvent the high
 cost of land acquisition, but underground operation is also advantageous for
 reducing the cosmic radiation reaching the experimental cavern and  
-for shielding the radiation produced by the LHC~\cite{}. 
+for shielding the radiation produced by the LHC~\cite{Evans:2008zzb}. 
 Protons are directed through pipes inside the tunnel, which are held
 at high vacuum. The positions and accelerations of the protons are controlled 
 by magnetic and electric fields maintained by instrumentation surrounding the 
 vacuum pipes. The arced sections are equipped with dipole magnets,
 which direct charged objects along a circular path.
 The size of the LEP tunnel prohibited the installation of two independent beam
-systems, which led to the adoption of a unique "two-in-one" superconducting
+systems, which led to the adoption of a unique ``two-in-one'' superconducting
 magnet design~\cite{Blewett:1068131}, shown in Fig.~\ref{fig:dipoleXsec}. 
 
 \begin{figure}[htbp]
@@ -114,12 +114,13 @@ magnet design~\cite{Blewett:1068131}, shown in Fig.~\ref{fig:dipoleXsec}.
 \end{figure}
 
 Neglecting synchrotron radiation,
-the primary limitations on the energy of a synchrotron come
+the primary limitations on the energy of a circular collider come
 from the magnetic field of the bending magnets and the radius of curvature
-of the tunnel. For an particle of charge $q$ with velocity $v$ accelerated at
-in a circular 
-trajectory of radius $R$ trough a magnetic field of strength $B$
-The energy $E$ of the particle is given by
+of the tunnel. 
+A particle of charge $q$ with velocity $v$ 
+will travel through a magnetic field of strength $B$ along
+a circular trajectory. These quantities are related to the energy of the
+particle and its radius of curvature $R$ by
 \begin{equation}
   E = qBRv \approx qBRc \,,
 \label{eq:beamEnergy}
@@ -151,7 +152,7 @@ are accelerated from rest to an energy of 50\unit{MeV} in the linear accelerator
 \textsc{Linac2} before being fed
 into the Proton Synchrotron Booster, where they reach an energy of 1.4\GeV. 
 The Proton Synchrotron Booster feeds the Proton Synchrotron (PS), the world's highest-energy
-collider in 1959, where the protons reach 25\GeV. The PS feeds the Super Proton Synchrotron,
+collider in 1959, where the protons reach 25\GeV. The PS feeds the Super Proton Synchrotron (SPS),
 where the protons reach 450\GeV before injection into the LHC.
 
 \begin{figure}[htbp]
@@ -169,13 +170,14 @@ The protons are injected into the LHC in bunches, which must be matched to the
 400\unit{MHz} oscillating frequency of the electric field of the RF cavities. 
 Protons are injected from the SPS into the LHC such that every 10th RF oscillation 
 is populated, leading to the LHC collision rate of 40\unit{MHz}. 
-The field oscillations leads to larger or weaker kick applied to in and out of time protons,
+The field oscillations leads to stronger or weaker kick applied to in-time or out-of-time protons,
 which works to further coalesce the beam into bunches.
 The 25\unit{ns} bunch separation corresponds to a total of 3564 possible bunches
-which can be stored in the LHC. However, when removing the proton beam from the LHC,
+that can be stored in the LHC. However, 
+to avoid damaging the LHC cryogenic system when removing the proton beam from the LHC,
 it is necessary to direct the beam
-away from its nominal path to deposit its energy in a controlled way
-to avoid damaging the LHC cryogenic system. This process, known as a beam dump,
+away from its nominal path to deposit its energy in a controlled way.
+This process, known as a beam dump,
 is facilitated by kicker magnets in access point 6 which deflect the beam. A gap
 of protons is necessary to allow the magnet time to reach the necessary field without
 scanning the beam through the cryogenic system, so only a maximum of 2808 bunches 
@@ -183,19 +185,19 @@ are ever populated by protons.
 
 \subsection{Operation of the LHC in 2016}
 
-In 2016, the LHC delivered proton--proton collision at $\sqrt{s} = 13\TeV$ from
+In 2016, the LHC delivered \pp collision at $\sqrt{s} = 13\TeV$ from
 April 22 to October 27. During this time, the proton beams were circulating in the
-LHC for about 75\% of the time, and with the majority of the time devoted to
+LHC for about 75\% of the time, that majority of which was devoted to
 delivering collisions for physics analysis.
 The LHC maintained a very high level of
 performance, even exceeding its design parameters by some metrics. 
-However, operation at $\sqrt{13}\TeV$ is below the design energy of $\sqrt{s}=14\TeV$.
+However, operation at $\sqrt{s} = 13\TeV$ is below the design energy of $\sqrt{s}=14\TeV$.
 Operating at a lower energy was necessary due to the time-consuming process of 
 ``training'' magnets to hold a stable field without quenching, or sudden loss
 of superconductivity, which can be damaging to the magnet but also helps to align 
 the magnetic coils, increasing the maximum field which the magnet can sustain.
 This procedure will again be undertaken during the LHC shutdown from 2019--2020, and
-collisions at 14\TeV are envision beginning in 2021.
+collisions at 14\TeV are envisioned beginning in 2021.
 
 The instantaneous luminosity $\mathcal{L}$
 measures the rate of \pp collisions delivered by the LHC
@@ -208,7 +210,7 @@ is obtained by integrating the instantaneous luminosity over time.
 The total number of collisions of interest is directly proportional to the 
 integrated luminosity, so maximizing both the active time devoted to collisions and
 the instantaneous luminosity are vital to achieving the LHC physics program.
-Integrated luminosity is generally measured in cm${-24}$ or b$^{-1}$,
+Integrated luminosity is measured in cm$^{-2}$ or b$^{-1}$,
 where the barn (b) is defined as $1\unit{b} = 10^{-24}\unit{cm}$. 
 The LHC data set is generally reported in fb$^{-1}$.
 
@@ -219,9 +221,8 @@ beam revolution frequency $f_{rev}$ and the effective
 area of beam overlap $A_\text{eff}$, it can be expressed as
 \begin{equation}
   \mathcal{L} = \frac{n_b N_b^2 f_\textit{rev}}{A_\text{eff}}\,.
-  \label{eq:lumi}
 \end{equation}
-Assuming the beams have Gaussian profile, and introducing the variables
+Assuming the beams have Gaussian profiles, and introducing the variables
 $\beta^\ast$, the amplitude of the betatron function 
 at the interaction point, the normalized emittance $\epsilon_N$,
 a measure of the beam spread in position and momentum space, 
@@ -230,6 +231,7 @@ $\sigma^\ast$, the longitudinal and transverse RMS widths of
 the bunches in the lab frame, the expression becomes
 \begin{equation}
   \mathcal{L} = f_\textit{rev} \frac{n_b N_b^2 \gamma}{4\pi \beta^\ast \epsilon_N}\left(1 + \left(\frac{\theta_c \sigma_z}{2\sigma^\ast}\right)^2\right)^{-1/2}\,,
+  \label{eq:lumi}
 \end{equation}
 Peak values of these parameters from 2016 running are shown in Table~\ref{tab:LHCOperation}.
 
@@ -279,13 +281,13 @@ as defined in Ref.~\cite{Chatrchyan:2008aa}, are:
 
 \begin{itemize}
   \item Accurate mmuon identification and high momentum resolution, including
-    dimuon mass resolution of $\approx 1\%$ at $m_{\mu\mu} = 100\GeV$ and correct charge
+    dimuon mass resolution of $\approx$1\% at $m_{\mu\mu} = 100\GeV$ and correct charge
     assignment up to $\pt^{\mu}\approx 1\TeV$.
-  \item Identification of objects with a short but significantly decay time,
+  \item Identification of objects with a short but significant decay time,
     including tau leptons and b hadrons, which requires fine position resolution 
     close to the interaction point to distinguish their displaced tracks.
   \item Good electromagnetic energy and momentum resolution, achieving
-    diphoton and dielectron mass resolution of $\approx 1\%$ at $m_{ee} = 100\GeV$,
+    diphoton and dielectron mass resolution of $\approx$1\% at $m_{ee} = 100\GeV$,
     and sufficient granularity to distinguish prompt diphotons from $\pi^{0}$ decays to photons.
   \item Sufficient calorimeter resolution and hermeticity for precise dijet mass
     and missing transverse momentum reconstruction.
@@ -325,7 +327,7 @@ Because the production of
 particles is preferentially in the forward direction (along
 the $z$-axis), it is convenient to introduce the pseduorapidity $\eta = - \ln(\tan{\theta/2})$
 for the polar coordinate. The momentum in the transverse direction,
-defined as $\pt = \sqrt{p_{x}^2 + p_{y}^2}$, is a particularly important quantity.
+defined as $\pt = \sqrt{p_{x}^2 + p_{y}^2}$, is a particularly important quantity,
 because the initial transverse momentum of the collision is zero.
 In this thesis, the four-momentum of an object will commonly be expressed as
 $p = p(m, \vec{p}) = p(m, \pt, \eta, \phi)$.
@@ -359,11 +361,11 @@ $\vec{B} = B\hat{z}$, the force is purely in the transverse direction.
 Consequently, charged particles within the CMS
 solenoid travel along a nearly helical path of radius $R=\pt/\abs{q}B$, where 
 small deviations from this path arise from non-uniformity of the field
-and interactions in the detector material. The sign of a 
-$\pt$ of a particle of known charge can therefore be deduced by measuring its radius of
-curvature. The bending power of the magnet $BR$ is therefore a critical 
+and interactions in the detector material. It follows that the
+$\pt$ of a particle of known charge can be deduced by measuring its radius of
+curvature, therefore, the bending power of the magnet $BR$ is a critical 
 parameter determining the detector capability for accurate particle $\pt$ measurement.
-The nearly $12\unit{Tm}$ bending power achieved by the CMS is critical to achieving
+The nearly $12\unit{Tm}$ bending power achieved by the CMS is central to achieving
 the high momentum resolution outlined in the design goals of the experiment. It
 is also fundamental to the particle flow reconstruction technique utilized by CMS,
 outlined in Chapter~\ref{ch:reconstruction}.
@@ -455,7 +457,7 @@ at the operating temperature of 18\degree\unit{C}.
    \includegraphics[width=0.6\textwidth]{figures/LHCandCMS/ecalCrossSection.png}
   \caption[An $r$-$\eta$ cross section of the CMS ECAL]{
     An $r$-$\eta$ cross section of the CMS ECAL, showing the detector components,
-    crystals, and their $\eta$ coverage. Reproduced from Ref.~\ref{Benaglia:2014aqa}.
+    crystals, and their $\eta$ coverage. Reproduced from Ref.~\cite{Benaglia:2014aqa}.
         }
  \label{fig:ecal}
 \end{figure}
@@ -483,7 +485,7 @@ below $\approx500\GeV$ can be parameterized as
 \end{equation}
 Where $S$ is a stochastic term, driven by the number of scintillation photons produced,
 $N$ is a noise term arising from the electronics and background radiation produced
-outside the primary proton--proton interaction, and $C$ is a constant term due to
+outside the primary \pp interaction, and $C$ is a constant term due to
 the non-uniformity of the crystal material and fabrication.
 The values of $S=2.8\%$, $N=0.12$ and $C=0.30\%$ were measured in the initial 
 CMS commissioning~\cite{Chatrchyan:2008aa}, 
@@ -745,7 +747,7 @@ and timing measurement.
 
 Despite significant zero-suppression and data compression, the
 read out from the millions of channels in the CMS detector for
-a typical proton--proton collision of interest requires around
+a typical \pp collision of interest requires around
 1\unit{MB} of storage.
 Transmitting this quantity of information 
 at the collision rate of 40\unit{MHz} delivered by the LHC to the CMS detector 
@@ -755,9 +757,9 @@ is many orders of magnitude below this rate.
 Therefore, it is neither feasible 
 nor desirable to store every collision.
 
-The CMS trigger system uses a two-tiered approach to selecting events of 
+The CMS trigger system uses a two-tiered approach to select events of 
 interest---typically characterized by having one or more objects
-at high missing transverse momentum---and rejecting more common proton 
+at high missing transverse momentum---and to reject more common \pp 
 interactions, such as elastic electromagnetic scattering.
 The Level 1 (L1) trigger is a custom-designed hardware system,
 primarily built from programmable electronics, that
@@ -776,7 +778,7 @@ in $\eta$ and $\phi$ space and to reduce granularity. Energy deposits in
 the ECAL and HCAL are used to build primitive objects, e.g., 
 the energy and shape of ECAL deposits
 contribute to photon and electron candidates while HCAL information
-suggests clusters of hadronic particles produces in the event.
+suggests clusters of hadronic particles produced in the event.
 The particle candidates are sorted by $\pt$, and the total energy deposit
 in the event is computed, before forwarding the event information to
 the global trigger for an event-wide decision.
@@ -791,11 +793,11 @@ and disambiguated by the global muon trigger, which sorts the
 candidate objects by \pt before forwarding them to the global trigger.
 
 The global trigger uses the sorted candidate and event information from
-the muon and calorimeter triggers to test for
-tests for the physics objects and object combinations,
+the muon and calorimeter triggers to test 
+physic objects and object combinations, 
 based on kinematic and quality criteria, before accepting or rejecting
 the event. The set of conditions by which events are evaluated
-are organized into ``trigger paths,'' which act to sorting the 
+are organized into ``trigger paths,'' which act to sort the 
 dataset and the procedure by which it is evaluated. For paths 
 with very high rate, e.g., signal lepton triggers with lower \pt
 thresholds, a trigger path may be ``prescaled.'' This process 
@@ -840,7 +842,7 @@ expensive operations such as track building only performed at the final stages.
 The high cost of large-scale data storage, especially in a way that allows quick access 
 for processing at sites throughout the world, is an increasing concern for the
 LHC experimental program. In addition to ensuring manageable read-out rates,
-efficient filtering by the HLT is an important to addressing this storage issue.
+efficient filtering by the HLT is an important aspected of addressing this storage issue.
 
 \label{sec:triggering}
 \subsection{Luminosity measurement}
@@ -859,9 +861,8 @@ is delivering collisions is unfavorable
 because measurements of the beam parameters, such as the beam widths,
 cannot be made to high precision without interfering with the beam conditions.
 Instead, the luminosity can be monitored by exploiting the relationship between
-luminosity and detector occupancy, which is linear for the primary the current
-LHC operating conditions and the detector systems considered for the 
-measurement~\cite{CMS-PAS-LUM-13-001}.
+luminosity and detector occupancy, which is linear for the current for
+certain detector systems and under the current LHC operating conditions~\cite{CMS-PAS-LUM-13-001}.
 Therefore, the relationship between the observed occupancy 
 rate and the luminosity can be expressed as
 \begin{equation}
@@ -885,14 +886,13 @@ Equation~\ref{eq:lumiRate}.
 The CMS experiment monitors the luminosity by measuring the occupancy
 in the pixel detector, the DT system, and the HF. In addition, two detector
 systems dedicated to the luminosity measurement are used, the fast beam conditions monitor 
-and the pixel luminosity telescope. A separate $R_i$ and $\sigma_{vis}$ is obtained for
+and the pixel luminosity telescope. A separate $R_i$ and $\sigma_{vis,i}$ is obtained for
 each monitoring system, so the consistency of the independent measurements can be used
 for validation. 
 The consistency of different approaches to monitoring the luminosity,
 along with uncertainties in establishing the beam parameters in the Van der Meer scan,
 contribute to the systematic uncertainty of the luminosity measurement. For the 2016
 dataset, the luminosity is established with a systematic uncertainty of 2.5\%~\cite{CMS-PAS-LUM-17-001}.
-Calibrated values of the luminosity are established
 In 2016, the LHC delivered $41.0\fbinv$ of {\pp} collisions to the CMS interaction point.
 
 \subsection{CMS Data quality}
@@ -907,7 +907,7 @@ In 2016, the CMS experiment collected 92\% of the data delivered by the LHC.
 Collected data
 are evaluated by experts from each subsystem to assess the detector performance, because 
 problems that did not prevent data collection can still compromise its utility for physics analysis.
-For example, collected data with severe localized inefficiencies that prevent 
+Collected data with severe localized inefficiencies that prevent 
 object reconstruction in a kinematic region and bias results in a complex way are excluded from 
 the data set used for analysis.
 This analysis uses only data certified by the CMS
