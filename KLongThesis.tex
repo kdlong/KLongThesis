@@ -5,106 +5,89 @@
 %%%% The uwthesis.sty file relies on the memoir class!
 %%%% You should be using the memoir class anyway; it makes life easier:
 %%%% http://www.ctan.org/tex-archive/macros/latex/contrib/memoir/
+
+
 \documentclass[oneside, letterpaper, 12pt, oldfontcommands]{memoir}
 
-%%%% Import uwthesis.sty to get official formatting, then set your variables.
-\usepackage{uwthesis}
-\usepackage{ptdr-definitions}
-\usepackage{graphicx}
-\usepackage{amsmath}
-\usepackage{subfig}
-\usepackage{lineno}
+
 \setsecnumdepth{subsubsection}
-\linenumbers
-% Label figures as chapter.number
-\makeatletter
-\renewcommand{\counterwithin}{\@ifstar{\@csinstar}{\@csin}}
-\makeatother
 
-\usepackage{gensymb}
+% Package imports and other setup
+\input{includes/preamble}
+% Symbols and a few functions
+\input{includes/definitions}
+% add the biblography we'll use
+\addbibresource{bibliography.bib}
 
-\settitle{Measurement of electroweak WZ production and search for new physics in proton--proton collisions at $\sqrt{s} = 13$ TeV with the CMS detector at the CERN LHC}
-\setauthor{Kenneth Long}
-\setdepartment{Physics}
-\doctors % or \masters
-\setgraddate{2019}
-\setdefensedate{10 March 2019} % or whatever format you want
-
-%%%% Members of the Final Oral Committee (FOC)
-%%%% Give name, rank, and department
-%%%% 
-\setfoca{Matthew Herndon}{Professor}{Physics} % <- Your advisor
-\setfocb{John Adams}{Professor}{Physics}
-\setfocc{Thomas Jefferson}{Assistant Professor}{Physics}
-\setfocd{James Madison}{Professor}{Physics}
-\setfoce{James Monroe}{Professor}{Materials Engineering}
-\setfocf{Grover Cleveland}{Professor}{Zoology}
-
-%%%% Your abstract, used for the UMI abstract and in your front matter
-\setabstract{%
-}
+% Define what goes on the title page and in the abstract (but don't actually create them yet)
+\input{titlepage}
+\input{abstract}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% Document
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\input{definitions}
+
 \begin{document}
 
-% Tell the memoir class to set up lowercase roman for pagination, etc.
+%% Tell the memoir class to set up lowercase roman for pagination, etc.
 \frontmatter
 
-%%%% Uncomment this to create a UMI abstract page.
-%%%% If you are submitting electronically, however, this page is unnecessary.
-% \theumiabstract
 
 % The title page
-\thetitlepage
+\thetitlepage{}
 \clearpage
 
 % The copyright page, if you want to pay the fee and register copyright.
-\thecopyrightpage
-\cleardoublepage
+% \thecopyrightpage
+\cleardoublepage{}
 
 % These above pages should not be counted, so we reset the counter to 1.
 \setcounter{page}{1}
 
 % An abstract may be required by your department.
 \section{Abstract}
-\uwabstract
-\cleardoublepage
+\uwabstract{}
+\cleardoublepage{}
 
 % Acknowledgements go here if you want to include them.
-%\section{Dedication}
-%This thesis is dedicated to the memory of Dr. David Murdock, whose
-%passion for physics and education helped countless students
-%at Tennessee Technological University and far beyond. Your love of
-%particle physics spread to me, and your generosity with your time and knowledge
-%gave me the tools to be successful beyond the walls of Tennessee Tech.
+\input{acknowledgements}
 
-\clearpage
-% Acknowledgements go here if you want to include them.
-\section{Acknowledgements}
 \clearpage
 
 % Table of contents
-%\maxtocdepth{subsection}
-\tableofcontents* % the * means that there isn't an entry for the TOC itself
+\tableofcontents*
 % \clearpage
-\listoffigures  % if you have any figures
-% \clearpage
-% \listoftables   % if you have any tables
+
+\makeatletter
+     \renewcommand*\l@figure{\@dottedtocline{1}{1em}{3.2em}}
+\makeatother
+
+ \clearpage
+ \listoffigures  % if you have any figures
+ \listoftables   % if you have any tables
 
 % Tell the memoir class to set up normal pagination, etc. for the main doc
-\mainmatter
+\mainmatter{}
 
-\input{introduction}
-\input{phenomenology}
-\input{lhc_cms}
-\input{simulation}
-\input{reconstruction}
-\input{analysis}
-\input{results}
-%\input{conclusions}
-\bibliographystyle{JHEP}
-\bibliography{bibliography}
+
+%%%%%%SETLINE NUMBERS
+%%\setpagewiselinenumbers
+% \modulolinenumbers[1]
+% \linenumbers % chktex 1
+%%%%%%%END SETLINE NUMBERS
+
+% Chapters
+
+\include{introduction}
+\include{phenomenology}
+\include{lhc_cms}
+\include{simulation}
+\include{reconstruction}
+\include{analysis}
+\include{results}
+
+\SingleSpace{}
+\setlength{\bibitemsep}{\onelineskip}
+\printbibliography{}
+
 \end{document}

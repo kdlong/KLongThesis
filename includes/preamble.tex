@@ -1,0 +1,93 @@
+%!TEX root = ../nwoods_thesis.tex
+% chktex-file 41
+
+\usepackage{includes/uwthesis}
+\usepackage{includes/ptdr-definitions}
+\usepackage{graphicx}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{gensymb}
+\usepackage{xspace}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage[utf8]{inputenc}
+
+%%% Line numbering. Comment entire following block to remove
+\usepackage{lineno}
+% reset for each chapter
+\usepackage{chngcntr}
+\counterwithin*{linenumber}{chapter}
+% silliness to make line numbers work before equations
+\newcommand*\patchAmsMathEnvironmentForLineno[1]{%
+  \expandafter\let\csname old#1\expandafter\endcsname\csname #1\endcsname
+  \expandafter\let\csname oldend#1\expandafter\endcsname\csname end#1\endcsname
+  \renewenvironment{#1}%
+     {\linenomath\csname old#1\endcsname}%
+     {\csname oldend#1\endcsname\endlinenomath}}%
+\newcommand*\patchBothAmsMathEnvironmentsForLineno[1]{%
+  \patchAmsMathEnvironmentForLineno{#1}%
+  \patchAmsMathEnvironmentForLineno{#1*}}%
+\AtBeginDocument{%
+\patchBothAmsMathEnvironmentsForLineno{equation}%
+\patchBothAmsMathEnvironmentsForLineno{align}%
+\patchBothAmsMathEnvironmentsForLineno{flalign}%
+\patchBothAmsMathEnvironmentsForLineno{alignat}%
+\patchBothAmsMathEnvironmentsForLineno{gather}%
+\patchBothAmsMathEnvironmentsForLineno{multline}%
+}
+
+\usepackage[hidelinks]{hyperref}
+\usepackage[
+  sorting=none,
+  backend=bibtex,
+  style=ieee,
+  citestyle=numeric-comp
+]{biblatex}
+
+\usepackage{feynmp-auto}
+\usepackage{breakurl}
+
+\hypersetup{
+  colorlinks,
+  allcolors=black
+}
+
+\setsecnumdepth{subsubsection}
+\maxtocdepth{subsubsection}
+
+% Collaboration instead of author if present
+\DeclareSourcemap{
+  \maps[datatype=bibtex,overwrite=true]{
+    \map{
+      \step[fieldsource=collaboration,% fieldvalue={$1 Collaboration},
+            final=true]
+      \step[fieldset=usera, origfieldval, final=true]
+    }
+  }
+}
+\renewbibmacro*{author}{
+  \iffieldundef{usera}{
+    \printnames{author}
+  }{
+      \printfield{usera} Collaboration
+  }
+}
+
+\DeclareFieldFormat{url}{\url{#1}}
+
+\makeatletter
+\DeclareFieldFormat{eprint:arxiv}{%
+  arXiv\addcolon\space % chktex 1
+  \ifhyperref % chktex 1
+    {\href{http://arxiv.org/\abx@arxivpath/#1}{%
+       \nolinkurl{#1}%
+       \iffieldundef{eprintclass}
+     {}
+     {\addspace\mkbibbrackets{\thefield{eprintclass}}}}}
+    {\nolinkurl{#1}
+     \iffieldundef{eprintclass}
+       {}
+       {\addspace\mkbibbrackets{\thefield{eprintclass}}}}}
+\makeatother
