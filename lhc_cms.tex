@@ -2,7 +2,7 @@
 
 The Large Hadron Collider (LHC) at the European Organization for Nuclear Research (CERN)
 is the world's largest and most powerful particle collider~\cite{Evans:2008zzb}. It collides protons 
-at a center of mass energy of $13\TeV$, and lead ions at $2.76\TeV$ per nucleon.
+at a center of mass energy $\sqrt{s} = 13\TeV$, and lead ions at $2.76\TeV$ per nucleon.
 The protons or ions are brought to collision at the center of four large detectors,
 themselves a combination of many detector technologies. 
 The particle detectors at the LHC were conceived, developed, and constructed over decades
@@ -10,7 +10,6 @@ by collaborations of thousands of scientists from hundreds of nations to
 achieve a broad program of research. The detectors were designed and are operated
 by mutually exclusive collaborations of researchers working independently,
 which enables cross-validation of results while fostering productive competition.
-
 The detector sites along the LHC tunnel are:
 
 \begin{itemize}
@@ -22,7 +21,8 @@ The detector sites along the LHC tunnel are:
   decaying to stable SM particles, in particular the 
     discovery and characterization of the SM Higgs boson.
   \item The Compact Muon Solenoid (CMS) detector~\cite{Chatrchyan:2008aa}, located at access point 5.
-    A general purpose detector with comparable measurement potential to the ATLAS detector.
+    A general purpose detector with comparable measurement potential 
+    and research goals to the ATLAS detector.
   \item The Large Hadron Collider Beauty (LHCb) detector~\cite{Alves:2008zz}, located at access point 8.
   Designed to characterize the production and decay of b-quark hadrons. Particularly
     focused on charge--parity violations in these decays.
@@ -33,11 +33,11 @@ collected by the CMS detector in 2016. This chapter describes the design princip
 LHC and the CMS detector, as well as their operating characteristics in 2016.
   
 \section{The Large Hadron Collider}
-The principle design considerations of a particle collider are the energy
+The primary design considerations of a particle collider are the energy
 of the particle collisions, the rate of collisions, and the objects collided.
-The collided objects determine the possible interactions which can be probed,
-whereas the energy of the collision drives the mass range which can be probed,
-subject to the constraint that the produced particle mass $m$ be less than the 
+The collided objects determine the possible interactions that are accessible,
+whereas the energy of the collision drives the mass scale which is probed,
+subject to the constraint that the mass of any produced particle be less than the 
 center of mass energy of the collision. As particle interactions are quantum mechanical 
 and fundamentally stochastic in nature, the rate of collisions is also 
 critical for achieving statistically significant measurements.
@@ -52,8 +52,8 @@ of particle physics, however, because accelerated charged objects
 loose energy proportional to $m^{-4}$ via synchrotron radiation,
 accelerating electrons to the TeV scale would require a prohibitively large tunnel
 to limit the bending force of the accelerator.
-Because the mass of the proton is nearly two thousand times greater than the 
-electron mass, synchrotron radiation is much less severe for accelerated protons.
+The mass of the proton is nearly two thousand times greater than the 
+electron mass, so synchrotron radiation is much less severe for accelerated protons.
 However, the proton is a composite object, so the conditions of its constituent
 quarks and gluons cannot be directly controlled when
 directing the protons to interaction, rather, they must be inferred from 
@@ -65,11 +65,13 @@ proceeding via quarks and gluons.
 Additionally, quark-antiquark pairs are accessible in the proton at high energy
 scales, so interactions proceeding via particle--antiparticle annihilation
 are still accessible in high energy \pp interactions. Without the need 
-to produce antiparticles before bringing them to collision, which was necessary
+to produce antiparticles before bringing them to collision, as was necessary
 at lower-energy accelerators---notably the Large Electron Positron Collider (LEP) collider
 at CERN and the Tevatron collider at Fermilab in the United States---the LHC is
 able to deliver significantly higher interaction rate to complement its high
-collision energy.
+collision energy~\cite{}.
+
+\subsection{Design characteristics of the LHC}
 
 The LHC was proposed to the CERN council, the management group of the 
 laboratory, in 1994, and accepted
@@ -77,14 +79,14 @@ with a preliminary budget in 1995. Construction was initially completed in
 2008, with full operation beginning in 2009 after setbacks 
 encountered in the initial commissioning.
 The collider is located on the outskirts
-of Geneva, Switzerland and in the nearby French countryside,
+of Geneva, Switzerland, in the nearby French and Swiss countryside,
 which has been the site of the CERN laboratory since it was founded in 1954.
 The project was funded by the 20 member states of CERN, as well
 as monetary and research contributions from many other nations participating 
-in the project, including the United States.
+in the project, including the United States~\cite{}.
 
-The LHC is situated in a 26.7\unit{km} circumference tunnel, 45--170\unit{m}
-below the Swiss and French country side. The tunnel pre-dates the LHC,
+The LHC is situated in a 26.7-km-circumference tunnel, 45--170\unit{m} below ground.
+The tunnel pre-dates the LHC,
 having been originally built for the Large Electron Positron (LEP) collider.
 It consists of 8 straight sections $528\unit{m}$ in length, and 8 arced sections.
 The cross section of the majority of the tunnel is $3.7\unit{m}$ in diameter, with larger excavated
@@ -92,14 +94,15 @@ areas at the four experimental caverns and other access points.
 The primary motivation for an underground tunnel is to circumvent the high
 cost of land acquisition, but underground operation is also advantageous for
 reducing the cosmic radiation reaching the experimental cavern and  
-for shielding the radiation produced by the LHC. Protons are directed through pipes inside the tunnel, which are held
+for shielding the radiation produced by the LHC~\cite{}. 
+Protons are directed through pipes inside the tunnel, which are held
 at high vacuum. The positions and accelerations of the protons are controlled 
 by magnetic and electric fields maintained by instrumentation surrounding the 
 vacuum pipes. The arced sections are equipped with dipole magnets,
 which direct charged objects along a circular path.
 The size of the LEP tunnel prohibited the installation of two independent beam
 systems, which led to the adoption of a unique "two-in-one" superconducting
-magnet design~\cite{temp}, shown in Fig.~\ref{fig:dipoleXsec}. 
+magnet design~\cite{Blewett:1068131}, shown in Fig.~\ref{fig:dipoleXsec}. 
 
 \begin{figure}[htbp]
   \centering
@@ -117,47 +120,148 @@ of the tunnel. For an particle of charge $q$ with velocity $v$ accelerated at
 in a circular 
 trajectory of radius $R$ trough a magnetic field of strength $B$
 The energy $E$ of the particle is given by
-
 \begin{equation}
   E = qBRv \approx qBRc \,,
 \label{eq:beamEnergy}
 \end{equation}
-
 where $v \approx c$, the speed of light, for $p \gg m$. Increasing the radius
 requires a larger tunnel, which is limited by the cost of construction. 
 The LHC tunnel size was set by the existing LEP tunnel, so achieving
 a sufficient magnetic field was a major focus of the LHC development. 
 
-Dipole magnets with a maximum field strength of $8.33\unit{T}$ were achieved
+The LHC dipole magnets, with a maximum field strength of $8.33\unit{T}$, were constructed
 at an affordable cost through major technological advances. Such a high 
 field necessitates the use of superconducting magnets. The magnets 
 are constructed of niobium-titanium, and are operated at $1.9\unit{K}$,
 lower than any previous accelerator. 
-at 
-first accelerator to operate 
-In particular,
-the LHC is the first accelerator to operate 
 Because about 80\% of the arced sectors of the LHC are equipped with dipole magnets,
 the bending radius of the dipoles is $2.804\unit{km}$, yielding the design energy
 of $7\TeV$ per beam from Equation~\ref{eq:beamEnergy}.
+In addition to dipole magnets, superconducting quadrupole, octopole, and sextapole magnets are
+used to constrain the beam into its compact form.
 
-Also brief mention of the 
+The protons used in the LHC are acquired by 
+exposing hydrogen gas to a strong electric field to ionizes the hydrogen
+atoms, leaving free protons. The protons are not injected directly into the LHC ring,
+but are instead accelerated through a chain of linear and circular accelerators 
+of increasing size.
+This acceleration chain, in the context of the full 
+accelerator complex at CERN, is shown in Fig.~\ref{fig:lhcAccChain}. The protons
+are accelerated from rest to an energy of 50\unit{MeV} in the linear accelerator 
+\textsc{Linac2} before being fed
+into the Proton Synchrotron Booster, where they reach an energy of 1.4\GeV. 
+The Proton Synchrotron Booster feeds the Proton Synchrotron (PS), the world's highest-energy
+collider in 1959, where the protons reach 25\GeV. The PS feeds the Super Proton Synchrotron,
+where the protons reach 450\GeV before injection into the LHC.
 
-How it accelerates protons (e.g., the system of accelerators)
+\begin{figure}[htbp]
+  \centering
+   \includegraphics[width=\textwidth]{figures/LHCandCMS/CERNAcceleratorComplex.png}
+  \caption{The accelerator complex at CERN, including the LHC and its feeder
+  accelerator chain~\cite{Mobs:2197559}.
+        }
+ \label{fig:lhcAccChain}
+\end{figure}
 
-The magnet design and characteristics 
+The protons are accelerated from injection energy to the collision energy by 
+radiofrequency (RF) cavities housed in the straight section of the LHC tunnel at access point 4.
+The protons are injected into the LHC in bunches, which must be matched to the 
+400\unit{MHz} oscillating frequency of the electric field of the RF cavities. 
+Protons are injected from the SPS into the LHC such that every 10th RF oscillation 
+is populated, leading to the LHC collision rate of 40\unit{MHz}. 
+The field oscillations leads to larger or weaker kick applied to in and out of time protons,
+which works to further coalesce the beam into bunches.
+The 25\unit{ns} bunch separation corresponds to a total of 3564 possible bunches
+which can be stored in the LHC. However, when removing the proton beam from the LHC,
+it is necessary to direct the beam
+away from its nominal path to deposit its energy in a controlled way
+to avoid damaging the LHC cryogenic system. This process, known as a beam dump,
+is facilitated by kicker magnets in access point 6 which deflect the beam. A gap
+of protons is necessary to allow the magnet time to reach the necessary field without
+scanning the beam through the cryogenic system, so only a maximum of 2808 bunches 
+are ever populated by protons.
 
-The RF and bunch characteristics
+\subsection{Operation of the LHC in 2016}
 
-Focusing beams to collisions
+In 2016, the LHC delivered proton--proton collision at $\sqrt{s} = 13\TeV$ from
+April 22 to October 27. During this time, the proton beams were circulating in the
+LHC for about 75\% of the time, and with the majority of the time devoted to
+delivering collisions for physics analysis.
+The LHC maintained a very high level of
+performance, even exceeding its design parameters by some metrics. 
+However, operation at $\sqrt{13}\TeV$ is below the design energy of $\sqrt{s}=14\TeV$.
+Operating at a lower energy was necessary due to the time-consuming process of 
+``training'' magnets to hold a stable field without quenching, or sudden loss
+of superconductivity, which can be damaging to the magnet but also helps to align 
+the magnetic coils, increasing the maximum field which the magnet can sustain.
+This procedure will again be undertaken during the LHC shutdown from 2019--2020, and
+collisions at 14\TeV are envision beginning in 2021.
 
+The instantaneous luminosity $\mathcal{L}$
+measures the rate of \pp collisions delivered by the LHC
+and governs the rate of particle production in collisions.
+The maximum instantaneous luminosity achieved by the LHC in 2016 was
+$1.5\times 10^{34}\unit{cm}^{-2}s^{-1}$, which exceeds the design 
+luminosity of $\approx$1.1$\times 10^{34}\unit{cm}^{-2}s^{-1}$. 
+The integrated luminosity $\mathcal{L}_{int}$ 
+is obtained by integrating the instantaneous luminosity over time.
+The total number of collisions of interest is directly proportional to the 
+integrated luminosity, so maximizing both the active time devoted to collisions and
+the instantaneous luminosity are vital to achieving the LHC physics program.
+Integrated luminosity is generally measured in cm${-24}$ or b$^{-1}$,
+where the barn (b) is defined as $1\unit{b} = 10^{-24}\unit{cm}$. 
+The LHC data set is generally reported in fb$^{-1}$.
 
-\section{Operation of the LHC in 2016}
-
+The instantaneous luminosity is purely a function of the LHC beam paramters. 
+Defined in terms of the number of 
+protons per bunch $N_{b}$ (assuming symmetric beams), the number of proton bunches $n_b$, the 
+beam revolution frequency $f_{rev}$ and the effective 
+area of beam overlap $A_\text{eff}$, it can be expressed as
 \begin{equation}
-  \mathcal{L} = \frac{n_b N_b^2 f_\textit{rev}}{A_\text{eff}}
+  \mathcal{L} = \frac{n_b N_b^2 f_\textit{rev}}{A_\text{eff}}\,.
   \label{eq:lumi}
 \end{equation}
+Assuming the beams have Gaussian profile, and introducing the variables
+$\beta^\ast$, the amplitude of the betatron function 
+at the interaction point, the normalized emittance $\epsilon_N$,
+a measure of the beam spread in position and momentum space, 
+the beam crossing angle $\theta_c$, and $\sigma_z$ and 
+$\sigma^\ast$, the longitudinal and transverse RMS widths of 
+the bunches in the lab frame, the expression becomes
+\begin{equation}
+  \mathcal{L} = f_\textit{rev} \frac{n_b N_b^2 \gamma}{4\pi \beta^\ast \epsilon_N}\left(1 + \left(\frac{\theta_c \sigma_z}{2\sigma^\ast}\right)^2\right)^{-1/2}\,,
+\end{equation}
+Peak values of these parameters from 2016 running are shown in Table~\ref{tab:LHCOperation}.
+
+\begin{table} [htbp]
+\centering
+  \caption{Peak performance parameters contributing to LHC luminosity in 2016 operation~\cite{Dubourg:2289585}.}
+\begin{tabular}{lll}
+\hline 
+  Parameter & 2016 value & \\ 
+\hline
+  Protons per bunch ($N_b$)           & $\approx$1.1$\times10^{11}$  &                       \\
+  Number of bunches ($n_b$)           & 2220                         &                       \\
+  Normalized emittance ($\epsilon_N$) & $\approx$2.0                 & mm$\cdot$mrad         \\
+  $\beta^\ast$                        & 40                           & cm                    \\
+  Crossing angle ($\theta_c$)         & 280                          & $\mu$rad              \\
+  Bunch length                        & $\approx$1.05                & ns                    \\
+  Peak luminosity                     & $\approx$1.5                 & $\times10^{34}\unit{cm}^{-2}\text{s}^{-1}$ \\
+  Peak mean pile-up                   & $\approx$45                  &                       \\
+\end{tabular} 
+\label{tab:LHCOperation}
+\end{table}
+
+Because of the high density of protons when the beams are brought to collision,
+there are generally multiple \pp interactions per beam crossing, referred to as pileup.
+Pileup interactions increase the multiplicity of particles
+in the detector, many of which are not associated with the interaction of interest.
+The number of pileup interactions
+per collision is driven by the instantaneous luminosity and the inelastic \pp cross section,
+$\sigma_{\pp}\approx 70\unit{mb}$. 
+An average of 23 \pp interactions per event were observed in the 2016 data set.
+Techniques to mitigate the 
+impact of pileup when selecting events of interest are discussed in Chapter~\ref{ch:reconstruction}.
 
 \section{The Compact Muon Solenoid experiment}
 
@@ -226,7 +330,7 @@ because the initial transverse momentum of the collision is zero.
 In this thesis, the four-momentum of an object will commonly be expressed as
 $p = p(m, \vec{p}) = p(m, \pt, \eta, \phi)$.
 
-\section{The CMS solenoidal magnet}
+\subsection{The CMS solenoidal magnet}
 
 The central feature of the CMS apparatus is a superconducting solenoid 
 of $6\unit{m}$ internal diameter and $12.5\unit{m}$ in length,
@@ -264,7 +368,7 @@ the high momentum resolution outlined in the design goals of the experiment. It
 is also fundamental to the particle flow reconstruction technique utilized by CMS,
 outlined in Chapter~\ref{ch:reconstruction}.
 
-\section{The CMS silicon tracking system}
+\subsection{The CMS silicon tracking system}
 
 The inner part of the CMS detector is instrumented with semiconductor tracking detectors.
 The tracking system is positioned inside the solenoidal magnet, surrounding the interaction point,
@@ -321,7 +425,7 @@ allowing for vertex association which is accurate to $\approx10\micron$,
 and momentum resolution for muons with $\pt = 100\GeV$
 and $\eta < 1.5$ is around 2\%~\cite{Chatrchyan:2014fea}.
 
-\section{The CMS electromagnetic calorimeter}
+\subsection{The CMS electromagnetic calorimeter}
 
 Immediately outside the tracking system, but inside the solenoid, is the electromagnetic 
 calorimeter (ECAL). It is constructed from transparent lead tungstate (\PbT) crystals, which
@@ -385,7 +489,7 @@ The values of $S=2.8\%$, $N=0.12$ and $C=0.30\%$ were measured in the initial
 CMS commissioning~\cite{Chatrchyan:2008aa}, 
 and are illustrative of the performance during 2016 data taking.
 
-\section{The CMS hadronic calorimeter}
+\subsection{The CMS hadronic calorimeter}
 
 Outside the ECAL, but inside the solenoid, is the hadronic calorimter (HCAL),
 covering the radial space from 1.77\unit{m} to 2.95\unit{m}.
@@ -444,7 +548,7 @@ data taking are $S=115\%$ and $C = 5.5\%$. The noise term $N$ is subdominant.
  \label{fig:hcal}
 \end{figure}
 
-\section{The CMS muon system}
+\subsection{The CMS muon system}
 
 As suggested by the CMS name itself, the muon detector subsystem is essential to the
 achieving the experimental goals of the CMS experiment. 
@@ -493,7 +597,7 @@ the steel return yoke of the magnet system. This structure, along with the inner
 detector systems, serves as shielding for the muon system and ensures that the 
 well over 99\% of objects reaching the muon system are muons.
 
-\subsection{Drift tube system}
+\subsubsection{Drift tube system}
 
 The barrel part of the muon detector, $\abs{\eta} < 1.2$,
 is composed of drift tube (DT) chambers. In this region, the magnetic field
@@ -546,7 +650,7 @@ muon crossing time to be obtained using meantimer circuits.
 The muon position resolution in the DTs is around 100\micron and the
 timing resolution is within a few ns.
 
-\subsection{Cathode strip chamber system}
+\subsubsection{Cathode strip chamber system}
 
 Cathode strip chambers (CSC) are used in
 the forward regions of the CMS detector ($0.9 < \abs{\eta} < 2.4$), 
@@ -611,7 +715,7 @@ to many times the luminosity already delivered to CMS,
 has provided evidence that the CSC system will remain an important part
 of CMS throughout the full LHC program.
 
-\subsection{Resistive plate chamber system}
+\subsubsection{Resistive plate chamber system}
 
 A crucial role of the muon system is to provide muon position and momentum
 measurements in a sufficiently timescale
@@ -637,7 +741,7 @@ subtend an angle of 5/16 degree. The position resolution of the RPCs, about 1\cm
 is below the DT and CSC systems, but the system provides an independent position
 and timing measurement. 
 
-\section{Event triggering and data acquisition}
+\subsection{Event triggering and data acquisition}
 
 Despite significant zero-suppression and data compression, the
 read out from the millions of channels in the CMS detector for
@@ -739,7 +843,7 @@ LHC experimental program. In addition to ensuring manageable read-out rates,
 efficient filtering by the HLT is an important to addressing this storage issue.
 
 \label{sec:triggering}
-\section{Luminosity measurement}
+\subsection{Luminosity measurement}
 
 The luminosity delivered by the LHC to the CMS interaction point is a critical
 input parameter to any cross section measurement and many LHC searches, as it 
@@ -791,7 +895,7 @@ dataset, the luminosity is established with a systematic uncertainty of 2.5\%~\c
 Calibrated values of the luminosity are established
 In 2016, the LHC delivered $41.0\fbinv$ of {\pp} collisions to the CMS interaction point.
 
-\section{CMS Data quality}
+\subsection{CMS Data quality}
 
 The CMS detector collects data from collisions delivered by the LHC to the CMS interaction point
 with all components of the CMS detector active, configured, and synchronized. In some cases,
