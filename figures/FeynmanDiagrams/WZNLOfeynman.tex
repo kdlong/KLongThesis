@@ -1,0 +1,71 @@
+\documentclass[tikz]{article}
+
+\usepackage[compat=1.1.0]{tikz-feynman}
+\usepackage[active,pdftex,tightpage]{preview}
+
+\PreviewEnvironment{tikzpicture}
+\begin{document}
+  \begin{tikzpicture}
+        \begin{feynman}
+            \vertex (q1) at (-2, 1.5) {q};
+            \vertex (q2) at (-2, -1.5) {$\bar{\mathrm{q}}'$};
+            \vertex (gq) at (-1, 0.7);
+            \vertex (zq) at (-1, -0.7);
+            \vertex (gdm) at (0.5, 1);
+            \vertex (zll) at (0.5, -1);
+
+            \diagram* {
+              (q1) -- [fermion] (gq),
+              (gq) -- [fermion] (zq),
+              (zq) -- [fermion] (q2),
+              (gq) -- [boson,edge label'={\(Z\)}] (gdm),
+              (zq) -- [boson,edge label={\(W^{\pm}\)}] (zll),
+            };
+        \end{feynman}
+      \end{tikzpicture}
+      \begin{tikzpicture}
+        \begin{feynman}
+            \vertex (q1) at (-2, 1.5) {q};
+            \vertex (q2) at (-2, -1.5) {$\bar{\mathrm{q}}'$};
+            \vertex (gq) at (-1, 0.7);
+            \vertex (zq) at (-1, -0.7);
+            \vertex (gdm) at (0.5, 1);
+            \vertex (zll) at (0.5, -1);
+            \vertex (glu1) at (-1.4, 1.0);
+            \vertex (glu2) at (0, 2);
+
+            \diagram* {
+              (glu1) -- [gluon,red] (glu2),
+              (q1) -- [fermion] (gq),
+              (gq) -- [fermion] (zq),
+              (zq) -- [fermion] (q2),
+              (gq) -- [boson,edge label'={\(Z\)}] (gdm),
+              (zq) -- [boson,edge label'={\(W^{\pm}\)}] (zll),
+            };
+        \end{feynman}
+  \end{tikzpicture}
+  \begin{tikzpicture}
+        \begin{feynman}
+            \vertex (q1) at (-2, 1.5) {q};
+            \vertex (q2) at (-2, -1.5) {$\bar{\mathrm{q}}'$};
+            \vertex (gq) at (-1, 0.7);
+            \vertex (zq) at (-1, -0.7);
+            \vertex (gdm) at (0.5, 1);
+            \vertex (zll) at (0.5, -1);
+            \vertex (glu1) at (-1.4, 1.0);
+            \vertex (glu2) at (-1, 0.14);
+
+            \diagram* {
+              (glu1) -- [gluon,red,half right] (glu2),
+              (q1) -- [fermion] (gq),
+              (gq) -- [fermion] (zq),
+              (zq) -- [fermion] (q2),
+              (gq) -- [boson,edge label'={\(Z\)}] (gdm),
+              (zq) -- [boson,edge label={\(W^{\pm}\)}] (zll),
+            };
+        \end{feynman}
+      \end{tikzpicture}
+
+\end{document}
+
+

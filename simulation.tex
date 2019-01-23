@@ -41,7 +41,7 @@ Nonetheless, the results presented in this thesis concern the measurement
 of a rare SM process. In particular, determining the production mechanism
 of {\WZjj} production and identifying the component that is sensitive to the
 WWZZ coupling relies heavily on achieving well-understood simulations of the
-siCgnal and background processes contributing to the events analyzed.
+signal and background processes contributing to the events analyzed.
 This chapter discusses the techniques used to simulate \pp collisions at the
 LHC. The techniques used to obtain results for \WZjj production in the SM
 aCnd beyond are presented. The predictions used in this analysis are presented,
@@ -64,7 +64,7 @@ that interact with the detector---have non-perturbative properties.
 The uncomfortable dichotomy between the regime of most physical phenomena and calculability
 is averted by the concept of factorization, which allows a separation of short-distance
 interactions from long-distance interactions, or equivalently, interactions governed
-by energy scales large or small with respect to $\lambda_{\mathrm{QCD}}\approx 200\MeV$.
+by energy scales large or small with respect to $\Lambda_{\mathrm{QCD}}\approx 200\MeV$.
 Factorization states that the interaction
 of hadrons can be reduced to structure functions describing the distribution of quarks
 and gluons in hadrons, known as parton distribution functions (PDF), convoluted
@@ -86,7 +86,7 @@ of hadron--hadron, lepton--lepton, and hadron--lepton colliders.
     Illustration of the principle of QCD factorization. The cross section
     of the process $\pp\to X$ is reduced to the parton distribution
     functions $f_{a,b}(x)$, the partonic cross sections $\sigma^{a+b\to c}$,
-    and the parton-to-hadron fragementation functions $D_{c}^{h}(z)$.
+    and the parton-to-hadron fragmentation functions $D_{c}^{h}(z)$.
     Reproduced from Ref.~\cite{Adare:2014hsq}.
         }
  \label{fig:factorization}
@@ -111,15 +111,163 @@ analysis is discussed.
 One of the fundamental ideas of factorization is that the low-energy confinement
 of quarks and gluons in the proton can be described independently from the 
 parton--parton interaction in a hard collision, e.g., momentum transfer 
-$Q^2 \gg \lambda_{\mathrm{QCD}}^2$. Mathematically, this is expressed as
+$Q^2 \gg \Lambda_{\mathrm{QCD}}^2$. Mathematically, the 
+separation of the proton structure and the high-$Q^2$ parton interaction,
+shown pictorially in Fig.~\ref{fig:factorization}, can
+be expressed as
 \begin{equation}
-  f(n, \nu) = e^{-\nu}\frac{\nu^{n}}{n!} \,.
+  \sigma^{\pp\to X} = \sum_{a,b\in\{q,g\}}\int{\mathrm{d}x_1\mathrm{d}x_2f_{a}(x_1, \muF^{2})f_{a}(x_2,\muF^{2})}
+      \hat{\sigma}^{\Pq\Pq'\to X}(x_1x_2s, \muF^{2})
 \end{equation}
-test test
+where $x_1$ and $x_2$ are the momentum fractions of the proton momentum carried by 
+partons $a,b \in \{q,g\}$ and the PDFs $f_{a,b}(x_i)$ give
+the probability of extracting the given parton with momentum fraction $x_{i}$.
+The total momentum must be divided amongst the constituents, i.e.,
+\begin{equation}
+  \sum_{i}\int_{0}^{1}\mathrm{d}x xf_{i}(x, \muF^2) = 1
+\end{equation}
+Here $\muF$ is the factorization scale, an energy scale which represents the transition
+from the non-perturbative regime of the PDF and the perturbative high $Q^2$ interaction.
+Thought it is often convenient to take $\muF=Q^2$, $\muF$ is a free parameter that is an
+artifact of the truncated serious in perturbation theory. As the order of the perturbation
+expansion considered increases, the $\muF$ dependence of the result is reduced.
+
+At least to very good approximation, the PDFs can be considered universal functions. 
+Therefore, they can be derived using independent measurements, such as
+deep inelastic scattering of lepton and proton beams. As shown in Fig.~\ref{fig:dis}, a lepton
+incident on a proton target interacts with the quarks of the proton via a virtual
+$\gamma$ or {\cPZ}. By controlling the incident energy of the proton and lepton and
+measuring the outgoing particles the abundance and momentum fraction of the proton
+constituents can be established.
+\begin{figure}[htbp]
+  \centering
+   \includegraphics[width=0.4\textwidth]{figures/Simulation/DIS.png}
+  \caption{
+    Illustration of deep inelastic scattering of a lepton from a proton, used
+    as a probe of the internal parton structure of the proton.
+    Reproduced from Ref.~\cite{Filippone:2001ux}.
+        }
+ \label{fig:dis}
+\end{figure}
+
+In practice, it is not feasible to parameterize all partons (and flavors) for
+all $x_{i}$ through experimental measurements. Fortunately, while perturbation theory
+cannot predict the formation of bound states, it does allow a means to 
+parameterize the evolution of the bound partons across energy scales. The scale
+dependence of the PDF is captured by the DGLAP equations, first established
+by Dokshitzer~\cite{Dokshitzer:1977sg}, Gribov~\cite{Gribov:1972ri}, 
+Alterelli and Parisi~\cite{Altarelli:1977zs} in the 1970s:
+\begin{equation}
+  \muF^2\frac{\mathrm{d}f_{a}(x, \muF^2)}{\mathrm{d}muF^2} =
+    \sum_{b\in\{q,g\}}\int_{x}^{1}\frac{\mathrm{d}z}{z}\frac{\alpha_s}{2\pi}
+    \hat{P}_{ba}(z))f_b(x/z,\muF^2 \,.
+\end{equation}
+The functions $\hat{P}_{ba}(z)$ are the Alterelli--Parisi splitting functions,
+which describe the splitting of parton $a$ into $b$, carrying a momentum
+fraction $z$ of the initial momentum, that
+can be derived order by order in perturbation theory. The splitting of
+parton $a$ is accompanied by an additional parton, e.g., $\Pg\to\Pq\Paq$,
+that is absorbed in to the parton sea of the proton. Given the DGLAP equations,
+if the proton PDF can be established for any complete phase space of
+parton flavors, momentum fractions, and $Q^2$, it can be evolved to all other 
+scales. In practice, the contributions to the PDF are
+at many different $Q^2$ with experiments sensitive to different quark flavors.
+The experimental data is fitted, considering the DGLAP evolution, to obtain
+a full parametrization of the PDF at all energy scales. 
+
+Collaborations of theorist use independent techniques to fit data
+from many collider and fixed target experiments to produce large data sets
+of predictions that can be used in simulations. The PDF is parameterized
+and distributed as data grids that can be sampled with a centralized interfaced
+known as LHAPDF~\cite{Buckley:2014ana}. Results in this thesis primarily
+make use of the NNPDF3.0~\cite{NNPDF2015} set of PDFs, which use a neutral net and generated
+pseduodata to perform global fits to the data. 
+Uncertainties in this procedure and their impact on this analysis 
+are discussedin Chapter~\ref{ch:analysis}.
+They are assessed by evaluating the quality of the PDF fit to the data, 
+comparing the predictions of independent collaborations
+in a formulaic way~\cite{Butterworth:2015oua}, and by determining
+the dependence of predictions on $\muF$.
 
 \section{Perturbative calculations and matrix element generators}
-\section{Predictions from fixed-order calculations}
+
+With the parton content of the proton captured by the PDFs, the next challenge
+in modeling an LHC collision is the perturbative calculation of the parton--parton
+interaction. As discussed in Chapter~\ref{ch:phenomenology}, perturbation theory
+relies on an expansion in the coupling constants of the theory. 
+\begin{equation}
+  \sigma = \sigma_0\alpha_s^{0} + \sigma_1\alpha_s^{1} + \sigma_2\alpha_s^{2} + \cdots
+  \label{eq:pqcd}
+\end{equation}
+For a process with only by EW couplings at the lowest order, such as VV production,
+$\sigma_0 = \sigma_{LO}$ and $\sigma_1 = \sigma_{NLO}$.
+While $\alpha_s$ is sufficiently small at the LHC collision energy to justify the
+perturbative expansion ($\alpha_s(m_{\PZ}) = 0.1189 \pm 0.0010$~\cite{Tanabashi:2018oca}),
+the energy and phase-space dependence of higher-order terms are non-trivial,
+leading to QCD corrections much larger than the naive 
+expectation in many cases~\cite{Altarelli:1979ub,Campbell:2011bn,Dittmaier:2011ti}.
+The majority of production processes at the LHC require a calculation at least to NLO in QCD for percent-level accuracy.
+Theoretical tools have advanced to allow automated computation of all 
+SM processes at NLO~\cite{Gleisberg:2008ta,MGatNLO,Recola},
+and many processes have recently been computed at NNLO in QCD~\cite{Grazzini:2017mhc}.
+Calculations
+at LO in the EW theory are often sufficient for percent-level accuracy. However,
+some processes are susceptible to anomalously large EW corrections, including
+VBS VV production~\cite{Biedermann:2016yds}, considered in this thesis.
+
+The cross section of Equation~\ref{eq:pqcd} can be expressed in terms of the square of 
+the scattering matrix element $\mathcal{M}$, which 
+captures the transition probability from the initial to the final state.
+The matrix element, or scattering amplitude, is calculable in perturbation theory, of which
+techniques based on Feynman diagrams are the most familiar. 
+Because the total cross section is a scan over all possible outgoing energy and momenta
+combinations of the outgoing particles, the cross section is an integration over a
+many-dimensional phase space of configurations $\Phi$,
+\begin{equation}
+  \sigma_{i} = \int \mathrm{d}\Phi\left|\mathcal{M}_i\right|^2 \,.
+\end{equation}
+The integration can be performed with numerical techniques. The high dimensionality
+of the phase space, as well as the complex peak structure arising from resonances,
+is well-suited for Monte Carlo integration techniques, described in the following section.
+
+In the Feynman diagram approach to matrix-element calculations, amplitudes are represented by Feynman diagrams
+where QCD (EW) coupling vertices in the diagrams are proportional to $\sqrt{alpha_s}$ ($\alpha$).
+A calculation at a given perturbative order involves all diagrams connecting 
+desired initial and final states for which the product of vertices is less than the order
+of the perturbative expansion.
+Feynman diagrams can be generated in an automated procedure with techniques from graph theory, 
+before being used to derive and calculate amplitudes from Feynamn rules in the SM.
+Automation of this process was established in the early 1990s at LO~\cite{Stelzer:1994ta}.
+Extending this to procedure to NLO has been accomplished more recently by the 
+program \MG~\cite{MGatNLO}, the successor to the previous work, which is the used extensively
+for results in this thesis.
+
+Diagrams without loop contributions are called ``tree-level'' diagrams. The lowest tree-level
+contribution to a given state, shown for $\pp\to\PW\PZ$ in Fig.~\ref{fig:WZNLO} (far left),
+is referred to as the Born-level contribution to the process. The NLO correction to the Born
+process includes contributions from tree-level diagrams of $\pp\to\PW\PZ+\jet$ for $\jet\in\{\Pg,\Pq\}$, 
+known as real emission diagrams, and loop contributions, shown in Fig.~\ref{fig:WZNLO} (center)
+and (left) respectively. 
+Divergences from each of these contributions cancel through
+renormalization. The delicate procedure of cancelling infinities to numerical techniques,
+a major challenge of automating NLO calculations,
+requires careful management of the divergent contributions and high-precision numerical accuracy.
+It is accomplished by independently 
+in the calculation
+At LO, 
+
+\begin{figure}[htbp]
+  \centering
+   \includegraphics[page=1,width=0.22\textwidth]{figures/FeynmanDiagrams/WZNLOfeynman.pdf}
+   \includegraphics[page=2,width=0.22\textwidth]{figures/FeynmanDiagrams/WZNLOfeynman.pdf}
+   \includegraphics[page=3,width=0.22\textwidth]{figures/FeynmanDiagrams/WZNLOfeynman.pdf}
+  \caption{Representative Feynman diagrams for \WZjj production in the SM and BSM. 
+  }
+ \label{fig:WZNLO}
+\end{figure}
+
 \section{Monte Carlo techniques}
+\section{Predictions from fixed-order calculations}
 \section{Event simulation for experimental analysis}
   \subsection{The parton shower and matching to matrix element calculations}
   \subsection{underlying Event, hadronization, and decay}
