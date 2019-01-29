@@ -10,14 +10,14 @@ to the electrical signals induced in the CMS detector by
 In an ideal case, one would use
 the theory of particles and fields outlined in Chapters~\ref{ch:introduction} 
 and \ref{ch:phenomenology} as input to derive the expected distribution
-of electrical signals in the detector, given 
+of measurable signals resulting from \pp collisions.
 In this paradigm, BSM modifications to the SM are realized as modifications 
 to the structure of the underlying QFT. They lead to new interactions, which
-modify the rate or type of particle productions, or kinematics variables 
+modify the rate or type of particle production, or kinematics variables 
 of the produced particles, leading to deviations from the SM expectation
 in measured quantities. 
 In practice, a factorized approach---leveraging approximations and tuning 
-to experimental data---allows the simulation of particle production in
+to experimental data---allows the simulation of primary particle production in
 \pp collisions, the formation of bound states and particle decay,
 and the interactions of particles in the CMS detector 
 to be simulated in a way that largely achieves this goal.
@@ -27,24 +27,25 @@ physicists and many previous studies to achieve detailed simulations.
 It is important to highlight that the experimental physicists
 is not purely at the mercy of the simulations from which our predictions derive.
 Many predictions are phenomenological in nature, i.e., they have been tuned to the 
-observations measured in LHC collisions and from previous accelerators.
-Furthermore, in situ measurements allow the data observation
-to modify aspects of the precisions. Lastly, broad knowledge of the nature
+observations measured in LHC collisions and previous accelerators.
+Furthermore, in situ measurements allow the data observation 
+to modify aspects of the predictions. Lastly, broad knowledge of the nature
 of particle production in collisions can sometimes be leveraged to completely 
-remove dependence on simulation, for example, with no resonant source of 
+remove dependence on simulation. For example, with no resonant source of 
 diphoton production, the $m_{\gamma\gamma}$ distribution would be a falling spectrum.
-The discovery of the scalar Higgs boson with $m_{\PH} = 125\GeV$ was made using
-with the SM expectation parameterized as a falling exponential distribution,
+The first measurements of the scalar Higgs boson with $m_{\PH} = 125\GeV$ made 
+in the diphoton channel where achieved with the SM $\pp\to\gamma\gamma$ 
+expectation parameterized as a falling exponential distribution,
 not with an ab initio simulation of the distribution~\cite{Aad:2014eha,Khachatryan:2014ira}.
 
 Nonetheless, the results presented in this thesis concern the measurement
 of a rare SM process. In particular, determining the production mechanism
 of {\WZjj} production and identifying the component that is sensitive to the
-WWZZ coupling relies heavily on achieving well-understood simulations of the
+\WWZZ coupling relies heavily on achieving well-understood simulations of the
 signal and background processes contributing to the events analyzed.
 This chapter discusses the techniques used to simulate \pp collisions at the
-LHC. The techniques used to obtain results for \WZjj production in the SM
-aCnd beyond are presented. The predictions used in this analysis are presented,
+LHC. The techniques used to obtain results for \WZjj production in the SM and beyond,
+and the prediction used in this analysis, are presented. 
 Their impact on the analysis and the role of the analysis in assessing the predictions
 is discussed.
 
@@ -52,7 +53,7 @@ is discussed.
 
 As discussed in Chapter~\ref{ch:penomenology}, perturbation theory is the 
 most effective technique for calculations of particle scattering in
-in the SM QFT. While the underlying principles are well-established, calculations
+the SM QFT. While the underlying principles are well-established, calculations
 of QCD interactions, in particular, are computationally challenging. The QCD 
 theory is asymptotically free, meaning $\alpha_s(\mu)$ grows with low values of 
 the energy scale $\mu$, so low-energy phenomena are non-perturbative.
@@ -64,7 +65,7 @@ that interact with the detector---have non-perturbative properties.
 The uncomfortable dichotomy between the regime of most physical phenomena and calculability
 is averted by the concept of factorization, which allows a separation of short-distance
 interactions from long-distance interactions, or equivalently, interactions governed
-by energy scales large or small with respect to $\Lambda_{\mathrm{QCD}}\approx 200\MeV$.
+by energy scales large or small with respect to $\lqcd\approx 200\MeV$.
 Factorization states that the interaction
 of hadrons can be reduced to structure functions describing the distribution of quarks
 and gluons in hadrons, known as parton distribution functions (PDF), convoluted
@@ -111,7 +112,7 @@ analysis is discussed.
 One of the fundamental ideas of factorization is that the low-energy confinement
 of quarks and gluons in the proton can be described independently from the 
 parton--parton interaction in a hard collision, e.g., momentum transfer 
-$Q^2 \gg \Lambda_{\mathrm{QCD}}^2$. Mathematically, the 
+$Q^2 \gg \lqcd^2$. Mathematically, the 
 separation of the proton structure and the high-$Q^2$ parton interaction,
 shown pictorially in Fig.~\ref{fig:factorization}, can
 be expressed as
@@ -194,16 +195,16 @@ the dependence of predictions on $\muF$.
 With the parton content of the proton captured by the PDFs, the next challenge
 in modeling an LHC collision is the perturbative calculation of the parton--parton
 interaction. As discussed in Chapter~\ref{ch:phenomenology}, perturbation theory
-relies on an expansion in the coupling constants of the theory. 
+relies on an expansion in the coupling constants of the theory,
 \begin{equation}
-  \sigma = \sigma_0\alpha_s^{0} + \sigma_1\alpha_s^{1} + \sigma_2\alpha_s^{2} + \cdots
+  \sigma = \sigma_0\alpha_s^{0} + \sigma_1\alpha_s^{1} + \sigma_2\alpha_s^{2} + \cdots\,.
   \label{eq:pqcd}
 \end{equation}
 For a process with only by EW couplings at the lowest order, such as VV production,
 $\sigma_0 = \sigma_{LO}$ and $\sigma_1 = \sigma_{NLO}$.
 While $\alpha_s$ is sufficiently small at the LHC collision energy to justify the
 perturbative expansion ($\alpha_s(m_{\PZ}) = 0.1189 \pm 0.0010$~\cite{Tanabashi:2018oca}),
-the energy and phase-space dependence of higher-order terms are non-trivial,
+the energy and phase-space dependence of higher-order terms is non-trivial,
 leading to QCD corrections much larger than the naive 
 expectation in many cases~\cite{Altarelli:1979ub,Campbell:2011bn,Dittmaier:2011ti}.
 The majority of production processes at the LHC require a calculation at least to NLO in QCD for percent-level accuracy.
@@ -222,9 +223,10 @@ The matrix element, or scattering amplitude, is calculable in perturbation theor
 techniques based on Feynman diagrams are the most familiar. 
 Because the total cross section is a scan over all possible outgoing energy and momenta
 combinations of the outgoing particles, the cross section is an integration over a
-many-dimensional phase space of configurations $\Phi$,
+many-dimensional phase space of configurations $\Phi_{n}$,
 \begin{equation}
-  \sigma_{i} = \int \mathrm{d}\Phi\left|\mathcal{M}_i\right|^2 \,.
+  \sigma_{i} = \int \mathrm{d}\Phi_{n}\left|\mathcal{M}_i\right|^2 \,.
+  \label{eq:meint}
 \end{equation}
 The integration can be performed with numerical techniques. The high dimensionality
 of the phase space, as well as the complex peak structure arising from resonances,
@@ -249,29 +251,154 @@ process includes contributions from tree-level diagrams of $\pp\to\PW\PZ+\jet$ f
 known as real emission diagrams, and loop contributions, shown in Fig.~\ref{fig:WZNLO} (center)
 and (left) respectively. 
 Divergences from each of these contributions cancel through
-renormalization. The delicate procedure of cancelling infinities to numerical techniques,
-a major challenge of automating NLO calculations,
-requires careful management of the divergent contributions and high-precision numerical accuracy.
-It is accomplished by independently 
-in the calculation
-At LO, 
+renormalization. The delicate procedure of ``cancelling infinities'' via numerical techniques,
+presents a major challenge to automating NLO calculations.
+It requires a cut to be made precisely at the infinite pole, and 
+careful management of the divergent contributions around the pole with high-precision numerical accuracy.
+All possible one-loop amplitudes in the SM have been calculated with analytic techniques.
+Automated codes access these loop contributions and residual divergences from packages such as
+OpenLoops~\cite{Cascioli:2011va}, and combine them with the Born and real-emission calculations,
+while verifying that the infinities of the loop and real-emission calculations do indeed cancel.
+As the first NLO calculations became available, the interplay between contributions was
+adjusted per process in dedicated calculations. For example in Refs. for the \WZ process
+and Refs. for \EWWZ.
+This procedure is now automated in several general-purpose MC programs, including
+\MG~\cite{MGatNLO}, \Sherpa~\cite{Gleisberg:2008ta}, \Herwig~\cite{Bellm:2015jjp}, and \Recola~\cite{Recola}.
+However, programs which automate all SM calculations are not optimized for specific
+process, which can lead to prohibitively long computation time for high-multiplicity states
+or processes with a complex phase, such as \EWWZ. For this reason, the best-available
+calculations for the \QCDWZ and \EWWZ process come from dedicated implementations, such as
+Refs.~\cite{Bozzi:2007ur,Campanario:2013qba}.
 
 \begin{figure}[htbp]
   \centering
    \includegraphics[page=1,width=0.22\textwidth]{figures/FeynmanDiagrams/WZNLOfeynman.pdf}
    \includegraphics[page=2,width=0.22\textwidth]{figures/FeynmanDiagrams/WZNLOfeynman.pdf}
    \includegraphics[page=3,width=0.22\textwidth]{figures/FeynmanDiagrams/WZNLOfeynman.pdf}
-  \caption{Representative Feynman diagrams for \WZjj production in the SM and BSM. 
+  \caption[Contributions to the $\pp\to\WZ$ process at NLO]{
+    Contributions to the $\pp\to\WZ$ process at NLO. The leftmost diagram is the Born
+    contribution, which is part of the LO calculation. The real-emission diagram
+    is shown in the center, and the loop contribution is far right. The cross section
+    is proportional to the square of the sum of amplitudes shown, which at 
+    $\mathcal{O}(\alpha_s)$ includes the square of the Born and real-emission diagrams
+    and the interference of the loop and Born diagrams.
   }
  \label{fig:WZNLO}
 \end{figure}
 
-\section{Monte Carlo techniques}
-\section{Predictions from fixed-order calculations}
+Diboson processes inclusive in the number of jets have recently become available 
+at next-to-next-to-leading order (NNLO)~\cite{Grazzini:2017mhc}. These calculations
+have an additional layer of complication due to the more complex cancelling of
+divergences between double loop, double real-emission, and combined real-emission
+and loop contributions. They are not yet automated,
+partially because not all two-loop amplitudes in the SM are known.
+Combining these predictions with hadronization functions,
+discussed in the following sections, is also not yet accomplished for diboson
+processes. In this thesis, we use NNLO cross section calculations to 
+correct the predicted yields of NLO simulations for diboson processes.
+
+\section{Monte Carlo integration and event unweighting}
+
+As referenced in the previous section, calculations of physical
+quantities involve integrations of the amplitude over the relevant phase space
+for the scattering process. Because the solution
+
+
+The phase space integration in Equation~\ref{eq:meint}
+is an integration over the quantum numbers and four-momenta of all particles 
+considered. The integration is often complex and rarely solvable analytically.
+Solutions can be obtained numerically, leveraging techniques which have
+been widely studied in applied mathematics and computer science~\ref{}.
+Because of the high-dimensionality of the integration, an algorithm 
+for which the uncertainty scales independently of the dimensionality is highly 
+desirable. For this reason, a technique based on random numbers known as 
+Monte Carlo (MC) integration is used~\cite{doi:10.1002/wics.1314}. The algorithm
+was first formally developed in the late 1940s as part of the Manhattan project,
+with the name derived from the eponymous casino for due to its leveraging
+of random processes~\cite{10.2307/2280232}.
+
+The MC procedure estimates 
+the integral of a function $f(x_{i},\cdots,x_n\equiv\vec{x})$, defined over a volume $V^{n}$,
+is estimated by tossing random random points inside a known volume
+over which the function is defined, of dimension $V^{n+1}$. The volume $V^{n+1}$
+from which the random numbers are drawn must fully contain 
+$f(\vec{x})$, however, no further knowledge of $f(\vec{x})$ over $V^{n+1}$ is required. The function
+is evaluated for the coordinates $x_i\cdots x_n$ of the random point.
+If the random point is inside the volume of $f(\vec{x})$, it is accepted,
+if it falls in a region of $V^{n+1}$ outside of $f(\vec{x})$ it is rejected.
+As the number of points sampled $N$ grows, the ratio of the number of accepted
+points to $N$ times the volume of $V^{n+1}$ approaches the integral of $f(\vec{x})$.
+This is illustrated for one dimension in Fig.~\ref{fig:mcintegration}.
+The error of the integration decreases proportional to $\sqrt{N}$, which
+is very poor for low dimension integration ($\lesssim$4) but much better than
+traditional techniques for high-dimensional problems.
+
+\begin{figure}[htbp]
+  \centering
+   \includegraphics[width=0.6\textwidth]{figures/Simulation/MCintegration.png}
+  \caption[Illustration of the principle of Monte Carlo integration.]{
+    Illustration of the principle of Monte Carlo integration. If the area
+    of the rectangular phase space is known, the area of the circle can
+    be estimated from the ratio of randomly sampled points falling
+    inside or outside the volume. In this example, the ratio of accepted
+    points (709, red) to the total points sampled (900) approximates the
+    analytic result for the ratio of the areas, $\pi/4$.
+    Reproduced under public license from Ref.~\cite{wiki:mc}.
+        }
+ \label{fig:mcintegration}
+\end{figure}
+
+In addition to predictions for aggregated quantities such as total cross sections
+and differential rates, event-wise simulations are critical to modeling expected 
+results in the realistic environment of particle physics measurements.
+The MC integration approach is well-suited for this, as the procedure of randomly
+sampling the integrand over a phase space can be leveraged to draw events from
+the distribution. In this procedure, specific realizations of particle states,
+including quantum numbers and four momenta, are sampled from
+the possible outcomes with rate proportional to the probability for production,
+given by the phase space and squared amplitude of Equation~\ref{eq:meint}.
+
 \section{Event simulation for experimental analysis}
-  \subsection{The parton shower and matching to matrix element calculations}
-  \subsection{underlying Event, hadronization, and decay}
-  \subsection{Detector simulation}
+
+Peturbation theory and matrix element calculations concern free
+excitations of the fundamental
+fields in the SM QFT. For the $\pp\to\WZ\to\ell\ell'\ell'\nu\jet\jet$ process, 
+Equation~\ref{eq:meint} can be used to compute observables for the underlying
+subprocesses, e.g., when a $\Pq\Pq'$ interaction takes place and
+$\jet\jet=\Pq\Pq''$. This parton-level process can be used to derive useful predictions,
+however, events containing free partons and leptons 
+do not offer a full picture of the objects that interact with the CMS
+detector. High-energy partons radiate quarks and gluons or split to quark--antiquark
+pairs, reducing their energy until they reach the energy scale of hadronization \lqcd.
+Similarly, leptons can radiate photons, which can subsequently pair produce photons.
+Both effects are considered in the QCD and QED showers, which simulate successive soft
+emissions of nearly-massless particles.
+At the scale {\lqcd}, the free partons form hadrons. Long lived hadrons interact with the detector,
+whereas shorter-lived hadrons decay to neutrinos, leptons, or other hadrons before interacting.
+These considerations, combined with additional \pp interactions in a single LHC bunch crossing,
+and multiple parton-parton in a single \pp collision, contribute to the full $\mathcal{O}(1000)$
+particle multiplicity measured in the CMS detector per event. The properties and kinematic
+distributions, as well as their interactions with the CMS detector, must be well-understood
+for a full simulation of a realistic event.
+
+\subsection{The parton shower and matching to matrix element calculations}
+The shower allows radiations at low transverse momentum
+and angular separation to be summed to all orders in perturbation theory, therefore populating
+
+More generally, calculations at a fixed order in perturbation theory, as described in the proceeding
+sections, have several shortcomings that must be accounted for when connecting
+their predictions to physical measurements. Firstly, the fact that the perturbative
+series has been truncated implies that higher-order effects are neglected. 
+Measurements of quantities that are inclusive in the number of clustered partons associated
+with the \WZ state may be have only a small dependence on these higher-order corrections.
+However, the jets associated with the state have a strong dependence 
+
+
+\subsection{The underlying event, hadronization, and decay}
+Multiple parton-parton interatction
+underlying event 
+\subsection{Detector simulation}
+\section{Predictions from fixed-order calculations}
 \section{MC simulations of \WZjj production}
 
 Here we present some of the studies done in comparison, quote the Les Houches paper,
