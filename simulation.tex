@@ -69,8 +69,8 @@ by energy scales large or small with respect to $\lqcd\approx 200\MeV$.
 Factorization states that the interaction
 of hadrons can be reduced to structure functions describing the distribution of quarks
 and gluons in hadrons, known as parton distribution functions (PDF), convoluted
-with the parton--parton interaction cross section. At high momentum transfer,
-the parton--parton interaction can be described perturbatively. Furthermore,
+with the parton-parton interaction cross section. At high momentum transfer,
+the parton-parton interaction can be described perturbatively. Furthermore,
 the evolution of the interaction from outgoing quarks, gluons, and leptons
 can be factorized from the formation of bound states, described by 
 parton-to-hadron fragmentation functions, and their decay. The concept is illustrated
@@ -78,7 +78,7 @@ for \pp collisions in Fig.~\ref{fig:factorization}.
 Factorization 
 is formally established under certain conditions~\cite{Collins:1989gx}, and it 
 has been highly successful in describing experimental observations over generations
-of hadron--hadron, lepton--lepton, and hadron--lepton colliders.
+of hadron-hadron, lepton-lepton, and hadron-lepton colliders.
 
 \begin{figure}[htbp]
   \centering
@@ -111,7 +111,7 @@ analysis is discussed.
 
 One of the fundamental ideas of factorization is that the low-energy confinement
 of quarks and gluons in the proton can be described independently from the 
-parton--parton interaction in a hard collision, e.g., momentum transfer 
+parton-parton interaction in a hard collision, e.g., momentum transfer 
 $Q^2 \gg \lqcd^2$. Mathematically, the 
 separation of the proton structure and the high-$Q^2$ parton interaction,
 shown pictorially in Fig.~\ref{fig:factorization}, can
@@ -193,7 +193,7 @@ the dependence of predictions on $\muF$.
 \section{Perturbative calculations and matrix element generators}
 
 With the parton content of the proton captured by the PDFs, the next challenge
-in modeling an LHC collision is the perturbative calculation of the parton--parton
+in modeling an LHC collision is the perturbative calculation of the parton-parton
 interaction. As discussed in Chapter~\ref{ch:phenomenology}, perturbation theory
 relies on an expansion in the coupling constants of the theory,
 \begin{equation}
@@ -262,7 +262,8 @@ while verifying that the infinities of the loop and real-emission calculations d
 As the first NLO calculations became available, the interplay between contributions was
 adjusted per process in dedicated calculations. For example in Refs. for the \WZ process
 and Refs. for \EWWZ.
-This procedure is now automated in several general-purpose MC programs, including
+This procedure is now automated in several general-purpose MC programs
+used in this analysis, including
 \MG~\cite{MGatNLO}, \Sherpa~\cite{Gleisberg:2008ta}, \Herwig~\cite{Bellm:2015jjp}, and \Recola~\cite{Recola}.
 However, programs which automate all SM calculations are not optimized for specific
 process, which can lead to prohibitively long computation time for high-multiplicity states
@@ -368,7 +369,7 @@ subprocesses, e.g., when a $\Pq\Pq'$ interaction takes place and
 $\jet\jet=\Pq\Pq''$. This parton-level process can be used to derive useful predictions,
 however, events containing free partons and leptons 
 do not offer a full picture of the objects that interact with the CMS
-detector. High-energy partons radiate quarks and gluons or split to quark--antiquark
+detector. High-energy partons radiate quarks and gluons or split to quark-antiquark
 pairs, reducing their energy until they reach the energy scale of hadronization \lqcd.
 Similarly, leptons can radiate photons, which can subsequently pair produce photons.
 Both effects are considered in the QCD and QED showers, which simulate successive soft
@@ -383,23 +384,310 @@ for a full simulation of a realistic event.
 
 \subsection{The parton shower and matching to matrix element calculations}
 The shower allows radiations at low transverse momentum
-and angular separation to be summed to all orders in perturbation theory, therefore populating
+and angular separation to be summed to all orders in perturbation theory. It is based on the
+fact that the matrix elements $\mathcal{M}_{a\to b}$ and $\mathcal{M}_{a\to b+c}$ are related
+as $\mathcal{M}_{a\to bc} \approx \mathcal{M}_{a\to b}P_{b \to bc}$
+in the limit where $\pt^{b}$ and the angular separation $\theta_{bc}$ is small~\ref{Peskin:1995ev}.
+Here $P_{b \to bc}$ is a splitting function for the particle $b$ to $bc$.
+Thus, in this soft and collinear limit, additional radiation can be interpreted as a 
+matrix element for the state $b$, and a factorizable probability for the 
+incoming partons and final state particles---quarks, gluons,
+leptons, and photons---to radiate or pair convert. 
 
-More generally, calculations at a fixed order in perturbation theory, as described in the proceeding
-sections, have several shortcomings that must be accounted for when connecting
-their predictions to physical measurements. Firstly, the fact that the perturbative
-series has been truncated implies that higher-order effects are neglected. 
-Measurements of quantities that are inclusive in the number of clustered partons associated
-with the \WZ state may be have only a small dependence on these higher-order corrections.
-However, the jets associated with the state have a strong dependence 
+The shower is most important for QCD
+radiation, because gluon radiations and splittings occur with high probability. Therefore,
+it is generally referred to as a ``parton shower,'' even though photon radiation is also considered.
+$X$ represents additional quarks or gluons. The splitting functions $P_{b\to bc}$ 
+are equivalent to the Altarelli--Parisi function used in the determination of the PDF,
+thus, they are well established. 
+The process is followed iteratively,
+allowing radiations subsequent radiations to evolve the state $a$ into a state $a+X$, where
 
+If the matrix element calculation includes outgoing partons, care must
+be taken ovoid overlap between the matrix element and shower components of the event.
+At LO, this is trivially accomplished by limiting the $\pt$ of partons 
+generated by shower splittings to be less than those generated by the matrix 
+element---otherwise the harder shower emission would duplicate a possible
+configuration with harder matrix element partons and soft shower radiation,
+and the contribution would be double counted. 
+This procedure, referred to as shower matching, is more complex for NLO
+calculations, because shower radiation from the Born diagrams
+(Fig.~\ref{fig:WZNLOfeynman}, left) overlaps the contribution of radiation from
+the real-emission diagram (Fig.~\ref{fig:WZNLOfeynman}, right). Two techniques
+were developed to resolve this conflict and enable showered and hadronized NLO 
+predictions: the POWHEG~\cite{Nason:2004rx,Frixione:2007vw} and the 
+MC@NLO~\cite{Frixione:2002ik} approaches.
+
+The MC@NLO approach uses an analytic calculation of the parton shower to correct
+the matrix element predictions per event. This expected contribution is subtracted
+from the matrix element events, modifying the kinematics. The stochastic parton
+shower is then applied to the corrected events, which are not physically meaningful
+without the shower. The combined matrix element plus shower events, however, are accurate to NLO in QCD.
+The POWHEG technique takes a converse approach. It modifies the kinematics of the
+
+The result is 
+
+
+The MC techniques described previously are also well suited
+for the shower for event-wise simulation.
+The series can also be summed analytically, referred to as resummation. 
+Because the terms in the expansion have a logarithmic
+dependence on the energy scale of the splitting, the accuracy of the summation is assessed by the
+terms considered, e.g., leading logarithm (LL), and next-to-leading logarithm (NLL).
 
 \subsection{The underlying event, hadronization, and decay}
-Multiple parton-parton interatction
-underlying event 
-\subsection{Detector simulation}
-\section{Predictions from fixed-order calculations}
-\section{MC simulations of \WZjj production}
+Hadronization refers to the transition from the colored partonic state to the 
+colorless hadronic state that populate the low-energy physical world. 
+For fixed-order calculations, generic parton-to-hadron fragmentation functions
+are sometimes used to estimate the transition from partons to hadronic jets.
+In general, the distributions of the total momentum of hadrons forming jets is approximately
+described by the momentum distribution from perturbative calculations of partons,
+so fixed-order calculations are still useful for predictions about the \WZjj state.
+However, a much richer picture of hadron formation 
+is obtained by simulating hadronization from the
+multi-parton state of the remnants of the interacting protons
+and the parton shower evolved to to a cutoff scale
+$\sim$\lqcd~\cite{Buckley:2011ms}. 
 
-Here we present some of the studies done in comparison, quote the Les Houches paper,
-and the paper on EW corrections, and yeah... Hopefully POWHEG
+Partons do not hadronize
+individually, rather, they interplay to build colorless systems,
+To good approximation, the hadronization process can be considered universal, that is,
+the formation of hadrons is independent of the production mechanism of the
+partonic state, only on its configuration at the hadronization scale.
+Two models are used in general-purpose MC generators: the cluster model,
+implemented in \Sherpa and \Herwig, and the Lund string model, implemented in
+\Pythia. The cluster model is based on forming clusters of colorless quarks
+at the shower cutoff scale, after splitting gluons to {\Pq\Paq}. As demonstrated
+by Amati and Veneziano in 1979~\cite{Amati:133141}, color singlets of at the cutoff scale have
+a mass distribution independent of the energy scale of the production process.
+The color singlet clusters are then decayed into hadrons according to the available phase space.
+In the string model seeks to model the process of confinement more directly. 
+The \Pq\Paq pairs are consider connected by confinement strings
+with potential energy proportional to the separation in the quark rest frame, $V=\kappa z$.
+Observationally, $\kappa\approx 1\GeV/\mathrm{fm}$, which is consistent with calculations in 
+lattice QCD. As the $\Pq\Paq$ pairs are separated, the energy increases, and it may
+be energetically favorable to snap the string with new $\Pq'\Paq'$ pairs from the vacuum,
+as illustrated in Fig.~\ref{fig:hadronization}.
+High energy gluons show up as kinks in the string, which give rise to more
+hadron formation in the gluon direction. The process continues
+until the color singlet pairs, or colorless $\Pq\Pq\Pq$ groups, are not
+energetic enough to break the confining string and form hadrons.
+
+\begin{figure}[htbp]
+  \centering
+   \includegraphics[width=0.6\textwidth]{figures/Simulation/StringHadronization.png}
+  \caption[Illustration of hadronization in the string model]{
+    Illustration of hadronization in the string model. Field
+    lines from gluon exchange lead to a string-like linear force
+    between $\Pq\Paq$ pairs (a). As the energy of the string increases,
+    it is energetically favorable to produce new $\Pq'\Paq'$ pairs (b).
+        }
+ \label{fig:factorization}
+\end{figure}
+
+The cluster and string models both require input parameters derived from 
+data, especially from measurements of jet formation in \EE collisions at LEP.
+The string model of \PYTHIA is often seen to perform slightly better, however,
+it is dependent on a greater number of parameters derived from data.
+Good agreement is seen between these models for the \WZjj state considered in this analysis.
+The simulation of the parton shower
+and matrix element merging, discussed in the previous section, 
+have significantly more impact on the dijet kinematics of the 
+\WZjj state than does hadronziation process, which is most relevant to this work.
+
+Multi-parton interactions (MPI) and pileup are also important for 
+realistic picture of particle formation in LHC collisions. The MPI is primarily
+soft. It does not generally result in easily identifiable jets, but
+it impacts the total energy transfer in a scatter event and affects the color
+connections of the scatter partons and proton remanants, leading to a more complex
+hadronization stage~\cite{Buckley:2011ms}. The MPI is modeled in \Pythia, with parameters tuned 
+by the CMS experiment using 7 and 8\TeV data as presented in Ref.~\cite{Khachatryan:2015pea},
+referred to as the CUEP8M1 tune. Pileup is simulated using large datasets of 
+events of elastic and low-energy transfer \pp scattering events, referred
+to as mimimum bias events, simulated with \PYTHIA 8. Events are sampled randomly
+from the dataset and mixed into the simulated sample of hard-scattering events
+at with a distribution matching the number of pileup events observed in data.
+
+Hadron decays are simulated with a combination of theoretical models,
+including simple matrix element calculations for the light mesons and tau,
+and observational data from experimental measurements as tabulated
+by the Particle Data Group in Ref.~\ref{Tanabashi:2018oca}. Spin-dependent
+decays depend on the production mechanism of the particle. 
+The production and decay spin correlations are taken into account by using \textsc{MadSpin}~\cite{Artoisenet:2012st} 
+together with \PYTHIA for simulations used in this analysis.
+
+\subsection{Detector simulation}
+
+To build a dataset of realistic collision events, used to guide this
+analysis and model expected signal and background distributions,
+the interactions of the particles that reach
+the CMS detector in the active and inactive volume are simulated using a
+detailed model in the \GEANTfour program~\cite{GEANT,Geant2}.
+The paths of primary and secondary particles through the detector
+\GEANTfour includes a large set of physics models over an energy range
+from eV to TeV, and it effectively serves as a repository of the known
+set of interactions of particles with matter.
+The paths of primary particles and secondary particles through the CMS detector
+are traced by \GEANTfour, using the MC method to determine interactions
+according to their probabilities. Decays of semi-stable particles 
+are calculated and their decay products are tracked. Energy deposits
+and hits in the detector are recorded and transmitted to customized digitization software.
+The digitized information, designed to accurately emulate the real CMS 
+electronics, is fed through the same reconstruction algorithms as real data. 
+
+The performance
+of the detector modeling and digitization have been tuned and validated using
+both test beam~\cite{CMS-DP-2018-045} and collision data~\cite{Banerjee:1345317}.
+Nonetheless, differences in the simulated and collected data are unavoidable. They 
+arise due to e.g., inactive regions in the detector, shifts in the detector alignment,
+and radiation damage. Differences in data and simulation efficiencies are corrected
+using known quantities, such as the lepton kinematics from $\cPZ$ decays or jet
+energies in dijet events. These corrections are generally at the percent level. As discussed
+in Chapters~\ref{ch:analysis} and \ref{ch:results}, the agreement between data
+and MC simulation is excellent for most processes considered in this result.
+
+\section{Simulations of \WZjj production}
+
+The primary generators used in this analysis are \MG and \POWHEG 2.0 for simulation
+of the hard-scattering interaction at LO or NLO, and \PYTHIA 8 for parton
+showering and hadronization. The specific samples used for background processes
+are discussed in Chapter~\ref{ch:analysis}. Because the MC simulations are fudamental
+to distinguishing the EW- and QCD-induced contributions to \WZjj, particular
+care is taken in studying the simulation of these processes.
+
+Standard techniques to evaluate the uncertainties of MC simulations involve
+varying the parameters of the PDF fit and the scale of the \muF and \muR parameters,
+as discussed in Chapter~\ref{ch:analysis}. 
+%Because \muF and \muR arise due to the truncation
+%Of the perturbation series and the division between hard and soft scales,
+%They can also be used as a probe of the impact of these choices on the calculation.
+It is well established that these approaches offer a probe of the precision
+of a perturbative calculation. However, the extent to which they represent
+an uncertainty that can be interpreted in a statistical sense, and that fully
+covers the impacts of additional missing orders of the calculation, are unknown.
+In addition, additional parameters in a full simulation, such as the tuning
+of the shower and hadronization to data, are not captured by this approach.
+Even for fixed-order calculations, several parameters must be input to the calcultion,
+including the functional form of the \muF and \muR, the couplings, and particle masses, and
+widths. 
+
+A useful approach to obtain a broad picture of the uncertainty of theoretical
+predictions for a process is to compare results between different calculations.
+In principle, all difference should be traceable to specific choices in the calculations.
+However, probing all possible sources of differences in a hadronized prediction is a very
+tedious process. It is essential when understanding sources of disagreement, but
+may not be necessary when demonstrating that broadly different models of, e.g., parton
+shower and hadronization, give similar results.
+For the work presented in this thesis, we use comparisons of MC generators to demonstrate that the 
+features of the \EWWZ and \QCDWZ processes that we exploit for this analysis 
+are theoretically well understood.
+Much of this work was performed
+in collaboration with experts in the theoretical community at the Les Houches 2017
+workshop, and reported in Ref.~\cite{leshouches2017}.
+
+Following this work, results are presented for the following event selection,
+referred to as the fiducial region.
+
+\begin{itemize}
+\item All charged leptons are required to have
+    \begin{align}
+        \label{cut:1}
+         \pt^{\ell} >  20\GeV,\qquad |y_{\ell}| < 2.5.
+    \end{align}
+\item For the leptons of opposite charge and same flavour, an invariant mass cut to single out the Z-boson resonance is applied:
+    \begin{align}
+        \label{cut:2}
+         76\GeV < m_{\ell^{+}\ell^{-}} < 106\GeV.
+    \end{align}
+
+\item hadronic or partic particles are cluster into jets using the anti-$k_T$ algorithm~\cite{Cacciari:2008gp} with radius parameter $R=0.4$.
+      At least two jets are required to have
+        \begin{align}
+        \label{cut:3}
+         \pt^{\jet} >  30\GeV, \qquad |y_{\rm j}| < 4.7, \qquad \Delta R_{\jet \ell} > 0.4,
+        \end{align}
+        %
+        and are called tagging jets.
+\item On the two leading tagging jets, typical VBS cuts are applied:
+        \begin{align}
+        \label{cut:4}
+        \mjj >  500\GeV,\qquad \abs{\detajj} > 2.5.
+        \end{align}
+\end{itemize}
+\subsection{Predictions from fixed-order calculations}
+
+Calculations of the \EWWZ process at NLO in QCD were first performed
+some over ten years ago~\cite{Bozzi:2007ur}, however, only recently have these
+results been implemented in a form that is compatible with parton shower and 
+hadronization generators~\cite{Jager:2018cyo}. Recent preliminary
+results considering both NLO EW and QCD effects for \WZjj production are also limited to fixed order.
+Therefore, it is necessary to consider fixed-order results when considering
+the best available predictions for this process. The additional
+complications of showered and hadronized events can complicate efforts to
+establish the relative agreement of generators. 
+
+\begin{figure}[htbp]
+  \centering
+   \includegraphics[width=0.49\textwidth]{figures/Simulation/mjj_FO_untuned.pdf}
+   \includegraphics[width=0.49\textwidth]{figures/Simulation/mjj_FO_tuned.pdf}
+  \caption[The fixed-order prediction for $\mjj$ from \MG, \Sherpa, \VBFNLO, and \Moca at LO]
+  {
+    The fixed-order prediction for $\mjj$ from \MG, \Sherpa, \VBFNLO, and \Moca at LO
+    for the \EWWZ process. The left plot shows comparisons using the default settings
+    of all input parameters for the public MC programs. The right plot is shown
+    with parameters tuned to the values given in Ref.~\cite{leshouches2017}.
+        }
+ \label{fig:FOWZcomparisons}
+\end{figure}
+
+For this reason, we first consider comparisons of the \EWWZ process at fixed order. 
+Because the process has no $\alpha_s$ couplings at LO, the 
+calculation has almost no $\muR$ dependence.
+The $\muR$ dependence is also relatively low, $\mathcal{O}(10\%)$
+leading order. Furthermore, the NLO corrections to the cross section are small,
+the $k$-factor $k\def \sigma_{NLO}/\sigma_{LO} = 0.98$ in the fiducial region
+defined in Equations~\ref{eq:cut1}-\ref{eq:cut4}, calculated with 
+VBFNLO~\cite{VBFNLO}. Nonetheless, the process has a significant dependence on
+the masses, widths, and couplings of the particles used in the calculation,
+as demonstrated in Fig.~\ref{fig:FOWZcomparisons}. The Les Houches study demonstrated
+that discrepancies may arise at fixed-order when these parameters are not controlled,
+however, when using a common, adjusted to the best-available measurements and
+well-motivated parameters, excellent agreement is obtained. 
+Because most settings can be determined in an objective way, we do not consider
+differences to constitute additional uncertainty in modeling this process.
+
+\subsection{Hadronized predictions and fully-simulated events}
+
+We also study the modeling of the \EWWZ process using hadronized events. 
+The results are largely consistent with the studies at fixed order;
+agreement is seen across a broad range of generators for leptonic variables,
+or kinematic variables of the two jet system. 
+Specifically, the variables $\mjj$, $\etajj$, and
+$\etas \def \zepl$ (sometimes referred to as the "Zeppenfeld variable") are
+all well described, and can be exploited in this analysis with limited uncertainty.
+Variables depending on more than
+three clustered jets are produced purely by the shower and hadronization
+can have significant differences. This is expected: the parton shower and hadronization
+of \Sherpa, \Herwig, \MG, and \Pythia use different models and different tuned parameters.
+Because many are phenomenological nature, it is difficult to constrain them extensively.
+We acknowledge a higher modeling uncertainty for such variables, and seek to avoid
+relying on their simulation in this analysis. Example distributions with large
+and small shower dependence are shown in Fig.~\ref{fig:ewwzHadronization}.
+
+\begin{figure}[htbp]
+  \centering
+   \includegraphics[width=0.49\textwidth]{figures/Simulation/LH_VBFNLO_WmZ_OF_zep3l.pdf}
+   \includegraphics[width=0.49\textwidth]{figures/Simulation/LH_VBFNLO_WmZ_OF_nJets.pdf}
+  \caption[Comparison of predictions for \EWWZ production including hadronization effects]
+  {
+    Predictions for EW $\PW^{-}\cPZ\to\EE\mu\nu_{\mu}$ production, including the parton
+    shower and hardonization. Variables well-described by the fixed-order calculation,
+    including $\etas$ (left), are not significantly impacted by the shower and hadronization.
+    Variables with a large dependence on shower and hadronization, including the number
+    of cluster jets with $\pt > 30\GeV$ (right), shower larger variance between MC generators.
+        }
+ \label{fig:ewwzHadronization}
+\end{figure}
+
+Because QCD-induced \WZjj production is $\mathcal{O}(\alpha_s^{2})$ it has a large
+dependence on $\muF$ and $\muR$, especially at LO. Fixed order predictions
