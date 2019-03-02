@@ -94,15 +94,15 @@ The allowed interactions in the SM are illustrated in Fig.~\ref{fig:SMinteractio
 propagating fields, and vertices represent interactions, arising from the
 interaction terms in the SM Lagrangian. These illustrations,
 known as Feynman diagrams, can be pieced together to give a diagrammatic
-picture of a scattering interaction. Fig.~\ref{fig:wz3lfeynman} shows
-an example quark-quark interaction---which contributions to $\pp$ collision
+picture of a scattering interaction. Fig.~\ref{fig:wz3lfeynman} gives
+two illustrative $\cPq\cPq$ interactions---a component of the $\pp$ collision
 at the LHC---mediated by the $\PW$ and $\PZ$
-bosons, leading to free muon, electron, and electron neutrino fields. 
+bosons, leading to muon, electron, and electron neutrino fields. 
 
 \begin{figure}[htbp]
   \centering
-   \includegraphics[width=0.4\textwidth]{figures/FeynmanDiagrams/WZ3lfeynman.pdf}
-   \includegraphics[width=0.4\textwidth]{figures/FeynmanDiagrams/WZ3lNLOfeynman.pdf}
+   \includegraphics[page=1,width=0.35\textwidth]{figures/FeynmanDiagrams/WZ3lfeynman.pdf}
+   \includegraphics[page=2,width=0.35\textwidth]{figures/FeynmanDiagrams/WZ3lfeynman.pdf}
   \caption{
     Feynman diagrams illustrating the $\Pq\Paq\to\mathrm{e}\PAGne\MM$ process,
     proceeding via quark and lepton couplings to the $\PW$ and $\PZ$ bosons.
@@ -123,27 +123,47 @@ Observables, including the total
 rate of production for a final state given the initial state, are dependent
 on the square of the scattering matrix elements.
 
-The diagram in Fig.~\ref{fig:wz3lfeynman} (left) is not the only possible
+\begin{figure}[htbp]
+  \centering
+   \includegraphics[page=3,width=0.3\textwidth]{figures/FeynmanDiagrams/WZ3lfeynman.pdf}
+   \includegraphics[page=4,width=0.3\textwidth]{figures/FeynmanDiagrams/WZ3lfeynman.pdf}
+  \caption{
+    Feynman diagrams illustrating the $\Pq\Paq\to\mathrm{e}\PAGne\MM$ process
+    with higher-order QCD couplings.
+        }
+ \label{fig:wz3lfeynmanNLO}
+\end{figure}
+
+The diagrams in Fig.~\ref{fig:wz3lfeynman} are not the only possible
 set of interactions connecting the $\Pq\Paq$ initial state to the
-$\mathrm{e}\PAGne\Paq\MM$ state. Other contributions include
-diagrams where the $\PW$ and $\PZ$ bosons couple directly. In addition,
-more intricate arrangements of the quark and gluon lines are possible,
-as shown in Fig.~\ref{fig:wz3lfeynman} (right). A critical difference in
-these two contributions to the $\Pq\Paq\to\mathrm{e}\PAGne\Paq\MM$ process is the
-number of vertices, which contribute additional factors of the EW and
-QCD couplings. If this coupling term is $\ll$1, the dominant contribution
-will come from diagrams such as Fig.~\ref{fig:wz3lfeynman} (left), and
-it may be possible to neglect the contribution of Fig.~\ref{fig:wz3lfeynman} (right).
+$\mathrm{e}\PAGne\MM$ state. 
+More intricate arrangements of the quark and gluon lines are possible,
+as shown in Fig.~\ref{fig:wz3lfeynmanNLO} (left). 
+Whereas the diagrams in Fig.~\ref{fig:wz3lfeynman} have four vertices
+of fields coupling via the \EW interaction, this diagram has two additional
+QCD couplings of the gluon and quarks.
+Each vertex contributes and additional factor of the EW and
+QCD couplings in the mathematical expression of the scattering matrix element. 
+If the coupling term is $\ll$1, the dominant contribution
+will come from diagrams such as those shown in Fig.~\ref{fig:wz3lfeynman}, and
+it may be possible to neglect the contribution of Fig.~\ref{fig:wz3lfeynmanNLO} (left).
 Perturbative calculations rely on this approximation
 by restricting a calculation to a maximum ``order'' $\mathcal{O}(\alpha^{n})$ 
 in the coupling $\alpha \propto g^2$, by only considering
 contributions to a process that have at most a dependence $\alpha^{n}$.
 
-While the diagram in Fig.~\ref{} (right) does produce $\mathrm{e}\PAGne\Paq\MM$,
-it does so with an additional gluon. It is tempting to consider this as a separate
+While the diagram in Fig.~\ref{fig:wz3lfeynmanNLO} (right) does lead to a
+$\mathrm{e}\PAGne\Paq\MM$ state, it also produces a final-state gluon.
+It is tempting to consider this contribution as a separate
 process, however, due to the nature of the strong force, such an approach is not favorable experimentally.
-Free gluons are not observable, rather, they hadronize into baryons and mesons.
-In addition, 
+Free gluons are not observable, rather, they hadronize into baryons and mesons,
+which do not correspond trivially to the radiated partons.
+In addition, for gluons radiated at a small angle or low momenta,
+it is impossible to experimentally distinguish whether two or one quarks or
+gluons are present. For this reason, many leptonic measurements at the LHC
+are \emph{inclusive} in the number of associated hadronic particles. That is,
+we consider $\pp\to\WZ$ production to include all states producing
+the $\mathrm{e}\PAGne\Paq\MM$ with any number of associated hadronic objects.
 
 Depending on the process considered and the accuracy needed for a calculation,
 neglecting the terms of ``higher order'' may not be appropriate. While the 
@@ -186,6 +206,7 @@ Perturbative calculations are discussed in more detail in Chapter~\ref{ch:simula
 
 \section{The \WZ production at the LHC}
 
+\textbf{move to introduction}
 This thesis is based on an analysis of $\pp$ collisions. At low energy, the proton can be viewed as a bound state
 of the quarks $\cPqu\cPqu\cPqd$. However, at higher energy, the content of the proton
 appears more complex. High-energy quarks can radiate gluons, which can split to $\cPq\cPaq$ pairs.
@@ -196,7 +217,7 @@ composed of quarks and gluons, collectively dubbed ``partons.'' The energy of th
 protons is controlled, but the flavor and energy of the interacting partons can only 
 be inferred based on these properties, as discussed in Chapter~\ref{ch:simulation}.
 
-The dominant modes of $\pp\to\WZ3\ell\nu$ production are shown in Fig.~\ref{fig:wz3lfeynman}.
+The dominant modes of $\pp\to\WZ\to\threelnu$ production are shown in Fig.~\ref{fig:wz3lfeynman}.
 Equivalent diagrams are possible with the $\PW$ and $\PZ$ bosons coupling
 to quarks, or the $\PZ$ boson to neutrinos. Many aspects of the processes are similar,
 and it is often justified to treat the $\pp\to\WZ$ and $\WZ$ decay to leptons, neutrinos,
@@ -206,13 +227,13 @@ via their decay products. The results in this thesis exploit the leptonic decay 
 $\WZ\to\EE\mu\nu_{\mu}$ and $\WZ\to\MM\mathrm{e}\nu_{e}$.
 
 Studies of $\WZ$ production at the LHC provide an important test of the SM.
-As shown in Fig.~\ref{}, the process is sensitive to the charged $\PW\PZ\PZ$
+As shown in Fig.~\ref{fig:WZ3lfeynman} (right), the process is sensitive to the charged $\PW\PZ\PZ$
 coupling, which arises due to the non-Abelian nature of the electroweak
-theory, and is exactly predicted in the SM~\ref{}. Additional charged
+theory, and is exactly predicted in the SM~\cite{Hagiwara:1986vm}. Additional charged
 resonances, or other modifications of the \EW sector of the SM, would
 modify this process and adjust the rate. Moreover, the process is known
-to be sensitive to higher-order corrections~\ref{}. Measuring this process
-with sufficient accuracy to test state-of-the-art calculation, and to 
+to be sensitive to higher-order corrections~\cite{Grazzini:2016swo}. Measuring this process
+with sufficient accuracy to test state-of-the-art calculations, and to 
 determine consistency with the SM or uncover hints of new physics, is
 of great interest to the LHC experimental program.
 
@@ -241,13 +262,27 @@ QCD vertices, these diagrams contribute to the \WZjj state at $\mathcal{O}(\alph
 compared with $\mathcal{O}(\alpha_s^{0}\alpha^{2})$ for the dominant contributions to the $\pp\to\WZ$
 process. At this order, contributions from $\cPq\cPg$ and $\cPg\cPg$ initial
 states also contribute, slightly enhancing the total $\WZjj$ production rate.
-In addition, another contribution at $\mathcal{O}(\alpha_s^{0})$ emerges, of
+
+\begin{figure}[htbp]
+  \centering
+   \includegraphics[page=1,width=0.23\textwidth]{figures/FeynmanDiagrams/feynmanEW.pdf}
+   \includegraphics[page=2,width=0.23\textwidth]{figures/FeynmanDiagrams/feynmanEW.pdf}
+   \includegraphics[page=4,width=0.23\textwidth]{figures/FeynmanDiagrams/feynmanEW.pdf}
+   \includegraphics[page=3,width=0.23\textwidth]{figures/FeynmanDiagrams/feynmanEW.pdf}
+  \caption[Representative Feynman diagrams for \EWWZ production in the SM]{
+    Representative Feynman diagrams for \EWWZ production in the SM,
+  including those with quartic \WWZZ interactions (left) and via scattering to the Higgs boson (right).
+  }
+ \label{fig:feynmanDiagramsVBS}
+\end{figure}
+
+Another contribution at $\mathcal{O}(\alpha_s^{0})$ emerges, of
 order $\mathcal{O}(\alpha_s^{4})$. 
 The subclass of processes with only EW couplings at tree level has a rich
 and important phenomenology.
 It includes contributions from vector boson scattering (VBS), 
 where vector bosons are radiated from the incoming quarks before interacting,
-as illustrated in Fig.~\ref{fig:feynmanDiagrams}~(left). 
+as illustrated in Fig.~\ref{fig:feynmanDiagramsVBS}. 
 The VBS processes form a distinct experimental signature characterized by 
 the $\PW$ and $\PZ$ bosons with two forward, 
 high-momentum jets, arising from the hadronization of two quarks. 
@@ -255,43 +290,65 @@ $\mathcal{O}(\alpha^4)$, referred to as EW-induced \WZjj production, or simply \
 The previously discussed contributions to the \WZjj state that proceed via QCD 
 radiation of partons from are referred to as QCD-induced WZjj production (or \QCDWZ).
 
-\begin{figure}[htbp]
-  \centering
-   \includegraphics[page=1,width=0.25\textwidth]{figures/FeynmanDiagrams/feynmanVBS.pdf}
-   \includegraphics[page=2,width=0.25\textwidth]{figures/FeynmanDiagrams/feynmanVBS.pdf}
-   \includegraphics[page=3,width=0.25\textwidth]{figures/FeynmanDiagrams/feynmanVBS.pdf}
-  \caption{Representative Feynman diagrams for \WZjj production in the SM and BSM. 
-  EW-induced WZ production includes quartic interactions (a) of the vector bosons.
-  New physics in the EW sector modifying the quartic coupling 
-  can be parameterized in terms of dimension-eight effective field theory operators (b).
-  Specific models modifying this interaction include those predicting charged Higgs bosons (c).
-  }
- \label{fig:feynmanDiagrams}
-\end{figure}
-
 \section{Probing the electroweak sector through vector boson scattering}
 
-As illustrated in Fig.~\ref{fig:feynmanDiagrams} (right), \EWWZ production 
-is sensitive to the quartic couplings of the vector bosons. In addition,
+As illustrated in Fig.~\ref{fig:feynmanDiagramsVBS} (right), \EWWZ production 
+is sensitive to the quartic couplings of the vector bosons, as well as the 
+interactions of the vector bosons and the Higgs boson. Additional interactions
+in the \EW sector, such as heavy new scalar Higgs bosons, would lead to additional
+contributions, modifying the effective rate of production of \EWWZ events.
 
+The existence of the Higgs boson has strong implications for VBS VV production.
+The longitudinally polarized component of the diagrams of Fig.~\ref{fig:feynmanDiagramsVBS} 
+that do not involve the Higgs
+couplings increase with the scattering energy without bound.
+In 1987, an analysis of VBS production of $\PW{+}\PW^{-}$ in $\pp$ collisions
+demonstrated that the presence of a scalar boson is necessary to regulate
+this component to a finite rate.
+By analyzing the partial wave amplitudes of the process, they derived a unitary
+bound on for the process that stipulated $m_{\PH} \le 1\TeV$, providing a convincing argument for
+the Higgs boson to be discovered at the future LHC. 
+While the observed SM Higgs is sufficient to regulate the process, further modifications
+could disturb this cancellation, leading to large deviations from the SM predictions.
 
+This thesis presents a measurement of the \EWWZ process under the assumption that
+its rate and characteristics are those of the SM prediction. 
+We also search for deviations from the SM in both the rate of production of events characteristic
+of the \EWWZ process, and in differential distributions sensitive to the scattering energy
+of the interaction and the mass of new scalar particles. We interpret the results in terms 
+of both explicit models predicting charged Higgs bosons, shown in Fig.~\ref{fig:feynmanNP} (left),
+and in the generalized framework of dimension-8 effective field theory, illustrated in
+Fig.~\ref{fig:feynmanNP} (right). In this diagram a set of unknown interactions are represented,
+which result in a modification of the effective quartic vertices. The charged Higgs 
+and EFT models we investigate are complimentary: the former is applicable in a regime
+where the collision energy allows the resonant Higgs to be directly produced, whereas
+the latter is meaningful when the scale of new physics exceeds the LHC collision energy.
+The models we consider are described in more detail in the following sections.
 
-
-Why is the quartic coupling interesting?
-
-The historical significance of the WZ vector boson scattering process
+\begin{figure}[htbp]
+  \centering
+   \includegraphics[page=1,width=0.35\textwidth]{figures/FeynmanDiagrams/feynmanNP.pdf}
+   \includegraphics[page=2,width=0.35\textwidth]{figures/FeynmanDiagrams/feynmanNP.pdf}
+  \caption[Feynman diagrams illustrating hypothetical new physics in the \EWWZ process]{
+    Feynman diagrams illustrating hypothetical new physics in the \EWWZ process.
+    Charged Higgs production (left) is predicted in many BSM extensions. The aQGC
+    approach (right) can be used to parameterize a large class of new interactions modifying the
+    \WWZZ process.
+        }
+ \label{fig:feynmanNP}
+\end{figure}
 
 \subsection{Additional Higgs bosons and the Georgi-Machacek model}
 
 In the SM, EWSB is realized by a single isospin doublet scalar field.
 This field is sufficient to give mass to the $\PW$ and $\cPZ$
 bosons, while resulting in the scalar $\PH$ boson, consistent with the observed
-boson with $m_{\PH} = 125\GeV$.  Especially given the complexity of the fermion sector
+boson with $m_{\PH} = 125\GeV$.  Given the complexity of the fermion sector
 of the SM, it is natural to ask if the universe contains a more complex
 structure of scalar fields than the single doublet. 
-However, SM extensions by arbitrary \SUtwo scalar fields 
+However, SM extensions by arbitrary $\SUtwo$ scalar fields 
 are high constrained by the parameter $\rho \equiv m_\PW^2/m_\PZ^w\cos^2\theta$,
-experimentally established to be very close to 1~\cite{}.
+experimentally established to be very close to 1~\cite{Tanabashi:2018oca}.
 For a theory with $n$ scalar multiplets
 $\phi_i$, with weak Isospin $I_i$, weak hypercharge $Y_i$, and vacuum expectation
 value $v_i$, $\rho$ is given defined in terms of the quantum numbers of the fields
@@ -309,17 +366,23 @@ charged Higgs bosons $\PH^{\pm}$ in addition to a light SM-like Higgs boson.
 In this model, the $\PH^{\pm}$ bosons coupling strongly to the leptons,
 and decays to bosons are strongly suppressed in the mass range probed by the LHC~\cite{Arhrib:2016wpw}.
 
-An alternative extension of the Higgs sector of the SM that satisfies experimental
-constraints on $\rho$ was first proposed by Georgi and Machecek~\cite{Georgi:1985nv}.
+Alternatively, if the Higgs sector of the SM is extended by scalar $\SUtwo$ triplets,
+charged Higgs bosons with tree-level couplings to the $\PW$ and $\PZ$ bosons are 
+generated by EWSB.
+Higgs triplets appear in left-right symmetric~\cite{Pati:1974yy,Mohapatra:1974gc,},
+little Higgs~\cite{ArkaniHamed:2002qy,Chang:2003zn,Chang:2003un}, 
+and some supersymmetric models~\cite{Garcia-Pepin:2014yfa,Cort:2013foa}.
+A simple extension of the SM with Higgs triplets that satisfies experimental
+constraints on $\rho$ was proposed by Georgi and Machecek~\cite{Georgi:1985nv}.
 In the Georgi Machacek (GM) model, the Higgs sector is extended by a real 
 triplet with $Y=0$ and 
 a complex triplet with $Y=2$ in addition to the usual SM doublet ($Y =1$). 
 After EWSB, this leads to a rich Higgs sector with intriguing phenomenology.
 The Higgs sector of the GM has ten physical states that are organized based
 on their transformation properties under the approximate global $\SUtwo$ symmetry
-of the scalar fields, referred to as custodial symmetry. There are two singlets,
+of the scalar fields, referred to as custodial symmetry~\cite{Sikivie:1980hm}. There are two singlets,
 one of which is associated with the observed Higgs boson, a triplet, and 
-a fiveplet ($\PH_5^{++}$,$\PH_5^{+}$,$\PH_5^{0}$,$\PH_5^{-}$,$\PH_5^{--}$) that
+a fiveplet ($\PH_5^{++}$, $\PH_5^{+}$, $\PH_5^{0}$, $\PH_5^{-}$, $\PH_5^{--}$) that
 is fermiophobic. If the mass of the triplet states is greater than the
 mass of the fiveplet, the only production mechanism for $\PH^{\pm}$ at the LHC
 is vector boson fusion (VBF). The production cross section is proportional to the variable
@@ -330,13 +393,100 @@ The $\WZjj$ state probed in this thesis is well-suited for further probes of thi
 which is significantly less constrained than those charged Higgs with predominantly
 leptonic decays.
 
-\subsection{Generalizing new $\WWZZ$ interactions with effective field theory}
+\subsection{Generalizing new interactions with effective field theory}
 
-If new physics is present VBS WZ production 
+Explicit models of charged Higgs production, such as those
+discussed in the previous section, provide a well-motivated set of characteristics
+to exploit in searches for deviations from the SM. 
+In such a paradigm, expectations
+about the underlying structure of the theory allow explicit relationships
+between independent measurements to be drawn. 
+However, when results favor
+the SM to a proposed extension, it may be useful to cast a wider net, in search
+of more subtle or more exotic extensions. Furthermore, if the mass scale
+of new physics---such as a heavy charged Higgs bosons---exceeds the range 
+directly probed by 13\TeV \pp collisions, a broad characterization of a deviation,
+or lack thereof, may be more meaningful than sensitivity to a particular model.
+
+Effective field theory (EFT) is well suited for a broad characterization
+of new physics at a high energy scale. In EFT, the SM is assumed to describe the
+field content of the universe below some scale $\Lambda$. 
+Additional fields may exist, but they are only directly accessible (e.g., 
+resonant production at a collider) above $\Lambda$. Below this scale,
+their effect on the low-energy world can be parameterized in terms of the known
+SM field content. These interactions are realized by adding additional terms
+to the SM Lagrangian, built from the SM fields, of mass dimension $>$4. In order
+to restore calculability of these interactions, a dimensionful coupling must also
+be associated. The scale $\Lambda$
+
+The bottom up approach to EFT described here, in which
+new interactions are parameterized in terms of the low-energy field content,
+is useful because it is consistent with a top down approach, where the low-energy behavior is extracted
+from a known full theory. The most well-known example of this is the Fermi theory
+of the weak decay, $\mathrm{n}\to\PAp\mathrm{e}^{-}\PAGne$~\cite{}. 
+In the full \EW theory, the interaction between
+a $\cPqd$ quark of the neutron and an electron is mediated by the $\PW^{-}$ boson,
+through $\cPqd\PW^{-}\cPqu$ and $\mathrm{e}^{-}\PW^{-}\PAGne$ couplings of the EW theory.
+Because the energy exchange of the interaction is on the MeV scale, whereas 
+$m_{\PW} = 80.4\GeV$, the lower-energy approximation of a direct four-fermion
+interaction between the quarks, electron, and 
+In fact the W boson mass was predicted?
+\textbf{Add citations of the Fermi theory. Can copy Nick}
+
+
+In this analysis, we consider a set of dimension-8 EFT operators sensitive
+to the quartic interactions $\WWZZ$ and $\WWZ\gamma$. Because an alternative,
+largely historical, approach to parametrizing these interactions involves
+directly modifying the coupling terms in the Lagrangian, we refer to this 
+as a search for anomalous quartic gauge couplings (aQGC). Similarly, anomalous triple gauge
+couplings (aTGC), probed in inclusive $\WZ$ production,
+can be parameterized by dimension-6 operators. 
+
+The set of operators considered in this analysis
+are shown in Equation~\ref{eq:aqgc}.
+\begin{equation}
+  \begin{aligned}
+    \mathcal{L}_\text{S0} = & \frac{f_\text{S0}}{\Lambda^4} \left[(D_\mu \Phi)^\dagger(D_\nu \Phi)\right]\times\left[(D^\mu \Phi)^\dagger(D^\nu \Phi)\right] \\
+    \mathcal{L}_\text{S1} = & \frac{f_\text{S1}}{\Lambda^4} \left[(D_\mu \Phi)^\dagger(D^\mu \Phi)\right]\times\left[(D_\nu \Phi)^\dagger(D^\nu \Phi)\right] \\
+    \mathcal{L}_\text{T0} = & \frac{f_\text{T0}}{\Lambda^4} \text{Tr}\left[\hat{W}_{\mu\nu} \hat{W}^{\mu\nu}\right] \times \text{Tr}\left[\hat{W}_{\alpha\beta} \hat{W}^{\alpha\beta}\right] \\
+    \mathcal{L}_\text{T1} = & \frac{f_\text{T1}}{\Lambda^4} \text{Tr}\left[\hat{W}_{\alpha\nu} \hat{W}^{\mu\beta}\right] \times \text{Tr}\left[\hat{W}_{\mu\beta} \hat{W}^{\alpha\nu}\right] \\
+    \mathcal{L}_\text{T2} = & \frac{f_\text{T2}}{\Lambda^4} \text{Tr}\left[\hat{W}_{\alpha\mu} \hat{W}^{\mu\beta}\right] \times \text{Tr}\left[\hat{W}_{\beta\nu} \hat{W}^{\nu\alpha}\right] \\
+    \mathcal{L}_\text{M0} = & \frac{f_\text{M1}}{\Lambda^4} \left[(D_\mu \Phi)^\dagger(D_\nu \Phi)\right]\times\left[(D^\mu \Phi)^\dagger(D^\nu \Phi)\right] \\
+    \mathcal{L}_\text{M1} = & \frac{f_\text{M1}}{\Lambda^4} \left[(D_\mu \Phi)^\dagger(D^\mu \Phi)\right]\times\left[(D_\nu \Phi)^\dagger(D^\nu \Phi)\right]
+  \end{aligned}
+  \label{eq:aqgcOperators}
+\end{equation}
+Here
+\begin{equation}
+  \hat{W}_{\mu\nu} = \sum_j W_{\mu\nu}^j \frac{\sigma^j}{2}\,,
+\end{equation}
+and the values $f_{\text{S}i}$, $f_{\text{T}i}$, and $f_{\text{M}i}$ are
+dimensionless couplings to the dimension-8 operators.
+
+The operators probed are subset of those outlined in 
+Ref.~\cite{Eboli:2006wa}, which
+nine independent dimension-eight operators that
+assume the $\SUtwo\times\Uone$ symmetry of the EW gauge sector as well as
+the presence of an SM Higgs boson. All operators are
+charge conjugation and parity-conserving.
+The $\mathcal{L}_\text{Si}$ operators
+are a function of the scalar Higgs field. The $\mathcal{L}_\text{Ti}$ operators are
+functions of the gauge fields, and the $\mathcal{L}_\text{Ti}$ operators are
+built from a mix of the scalar and gauge fields. The quartic gauge
+coupling can be expressed in terms of these operators as 
+\begin{equation}
+\mathcal{L}_{quartic} = f_\text{S0}\mathcal{L}_\text{S0} + f_\text{S1}\mathcal{L}_\text{S1} \,.
+\end{equation}
+With $f_\text{S0} = -f_\text{S1} = f$, non-zero values of $f$ give a rescaling
+of the SM coupling by $(1+fv^{4}/8)$.
 
 \section{Previous results}
 
 \subsection{Measurements of \WZ production}
+
+The $\WZ$ production was first first observed
+in $\Pp\PAp$ collisions by the CDF~\cite{Aaltonen:2012vu,Abulencia:2007tu} 
+and D0~\cite{Abazov:2012cj} Collaborations at the Tevatron in 2006. 
 The inclusive \WZ production cross section in \pp collisions 
 has been measured in the leptonic decay modes by the ATLAS and CMS Collaborations 
 at 7, 8, and $13\TeV$~\cite{Aad:2012twa,Aad:2016ett,Aaboud:2016yus,Aaboud:2019gxl,Khachatryan:2016tgp,Khachatryan:2016poo}, 
@@ -421,13 +571,31 @@ The ATLAS analysis reports and observation of the \EWWZ process with observed st
 $5.3\sigma$, with $3.4\sigma$ expected in the SM.
 
 
-\subsection{Measurements of the quartic \WWZZ coupling}
+\subsection{Searches for anomalous quartic gauge couplings}
 
-and limits on anomalous triple gauge couplings~\cite{Hagiwara:1989mx} are presented in Refs.~\cite{Aad:2016ett,Khachatryan:2016poo}. 
-Constraints on anomalous quartic gauge couplings (aQGC)~\cite{Eboli:2006wa}
-are presented by the ATLAS Collaboration at $8\TeV$ in Ref.~\cite{Aad:2016ett}. 
+Anomalous triple and quartic gauge couplings were studied with
+measurements of $\PW\PW$ and $\PW\PW\gamma$ production in electron-positron collisions
+at the LEP Collider at CERN by the ALEPH, DELPHI, L3, and OPAL Collaborations~\cite{LEP-2}.
+These processes are sensitive to the triple vector boson couplings
+$\WWZ$ and $\PW\PW\gamma$, and the quartic couplings $\PW\PW\gamma\gamma$
+and $\PW\PW\PZ\gamma$. The production rate and angular distributions of the decay
+products of the vector bosons in these states were used to derive values 
+of the triple and quartic couplings. No deviations were observed from the 
+predictions of the SM with a light Higgs boson.
+Limits on the anomalous triple gauge coupling \WWZ~\cite{Hagiwara:1989mx} 
+were also presented by CDF and D0 collaboration in 
+Ref.~\cite{}, followed by studies performed by the ATLAS and CMS Collaborations in 
+Refs.~\cite{Aad:2016ett,Khachatryan:2016poo}. 
 
-Limits from SS WW @ 13 TeV, and ZZ. Triple W production from ATLAS?
+Experimental sensitivity to the quartic coupling \WWZZ 
+was first achieved at the LHC.
+In pp collisions, quartic WZ interactions are accessible through 
+VBS \VV production or trough triple vector boson production (\VVV).
+Constraints on the deviations of quartic couplings from the SM prediction, 
+referred to as anomalous quartic gauge couplings (aQGC), in 
+WZ events with at least two jets were first
+presented by the ATLAS collaboration at 8 TeV~\cite{Aad:2016ett}. This thesis
+reports the first study of aQGCs in the \WZ channel at 13\TeV.
 
 \begin{figure}[htbp]
   \centering
@@ -436,10 +604,16 @@ Limits from SS WW @ 13 TeV, and ZZ. Triple W production from ATLAS?
     Constraints on the parameters f$_{\text{Mi}}/\Lambda^4$ for dimension-8 EFT
     operators from the CMS and ATLAS experiments.
         }
- \label{fig:}
+ \label{fig:aQGCs}
 \end{figure}
 
-\subsection{Measurements of charged Higgs production via vector boson fusion}
+Fig.~\ref{fig:aQGCs} illustrates the constraints on the operator parameters
+and scale of new physics for the dimension-8 quartic operators
+$\mathcal{L}_{\text{T}i}$ from previous studies by the ATLAS and CMS Collaborations.
+The most sensitive measurements are those performed in the $\Wpm\Wpm$ channel
+reported in Ref.~\cite{Sirunyan:2017ret} and in the $\ZZ$ channel, reported in Ref.~\cite{Sirunyan:2017jej}.
+
+\subsection{Searches for charged Higgs production via vector boson fusion}
 
 The first studies of the production of charged Higgs bosons produced via VBF
 and decaying to $\WZ$ at the LHC were performed by the ATLAS Collaboration

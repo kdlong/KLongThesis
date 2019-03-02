@@ -1,0 +1,109 @@
+\documentclass[tikz]{article}
+
+\usepackage[compat=1.1.0]{tikz-feynman}
+\usepackage[active,pdftex,tightpage]{preview}
+
+\PreviewEnvironment{tikzpicture}
+\begin{document}
+  \begin{tikzpicture}
+    \begin{feynman}
+      \vertex (q1) at (-1, 1.5) {q$'$};
+      \vertex (q2) at (-1, -1.5) {q};
+      \vertex (q3) at (2., 1.5) {q$''$};
+      \vertex (q4) at (2., -1.5) {q};
+      \vertex (gq1) at (0, 1);
+      \vertex (gq2) at (0, -1);
+      \vertex (gvv) at (0.5, 0);
+      \vertex (gW) at (2, 0.75) {W$^{\pm}$};
+      \vertex (gZ) at (2, -0.75) {$\mathrm{Z}$};
+
+      \diagram* {
+        (q1) -- [fermion] (gq1),
+        (gq1) -- [fermion] (q3),
+        (q2) -- [fermion] (gq2),
+        (gq2) -- [fermion] (q4),
+        (gq1) -- [boson, edge label=\(\mathrm{W}^{\pm}\)] (gvv),
+        (gq2) -- [boson, edge label'=\(Z\)] (gvv),
+        (gvv) -- [boson] (gW),
+        (gvv) -- [boson] (gZ),
+      };
+    \end{feynman}
+  \end{tikzpicture}
+
+  \begin{tikzpicture}
+    \begin{feynman}
+      \vertex (q1) at (-1, 1.5) {q$'$};
+      \vertex (q2) at (-1, -1.5) {q};
+      \vertex (q3) at (2., 1.5) {q$''$};
+      \vertex (q4) at (2., -1.5) {q};
+      \vertex (vvh1) at (0.5, 0.5);
+      \vertex (vvh2) at (0.5, -0.5);
+      \vertex (gW) at (2, 0.75) {$\mathrm{Z}$};
+      \vertex (gZ) at (2, -0.75) {W$^{\pm}$};
+
+      \diagram* {
+        (q1) -- [fermion] (gq1),
+        (gq1) -- [fermion] (q3),
+        (q2) -- [fermion] (gq2),
+        (gq2) -- [fermion] (q4),
+        (gq1) -- [boson, edge label'=\(\mathrm{W}^{\pm}\)] (vvh1),
+        (gq2) -- [boson, edge label=\(Z\)] (vvh2),
+        (vvh1) -- [boson] (vvh2),
+        (vvh1) -- [boson] (gW),
+        (vvh2) -- [boson] (gZ),
+      };
+    \end{feynman}
+  \end{tikzpicture}
+  \begin{tikzpicture}
+    \begin{feynman}
+      \vertex (q1) at (-1, 1.5) {q$'$};
+      \vertex (q2) at (-1, -1.5) {q};
+      \vertex (q3) at (2., 1.5) {q$''$};
+      \vertex (q4) at (2., -1.5) {q};
+      \vertex (vvh1) at (0.5, 0.5);
+      \vertex (vvh2) at (0.5, -0.5);
+      \vertex (gW) at (2, 0.75) {W$^{\pm}$};
+      \vertex (gZ) at (2, -0.75) {$\mathrm{Z}$};
+
+      \diagram* {
+        (q1) -- [fermion] (gq1),
+        (gq1) -- [fermion] (q3),
+        (q2) -- [fermion] (gq2),
+        (gq2) -- [fermion] (q4),
+        (gq1) -- [boson, edge label'=\(\mathrm{W}^{\pm}\)] (vvh1),
+        (gq2) -- [boson, edge label=\(Z\)] (vvh2),
+        (vvh1) -- [scalar, edge label = H] (vvh2),
+        (vvh1) -- [boson] (gW),
+        (vvh2) -- [boson] (gZ),
+      };
+    \end{feynman}
+  \end{tikzpicture}
+
+  \begin{tikzpicture}
+    \begin{feynman}
+      \vertex (q1) at (-1, 1.5) {q$'$};
+      \vertex (q2) at (-1, -1.5) {q};
+      \vertex (q3) at (2., 1.5) {q$''$};
+      \vertex (q4) at (2., -1.5) {q};
+      \vertex (gq1) at (0, 1);
+      \vertex (gq2) at (0, -1);
+      \vertex (vvv1) at (0.25, 0);
+      \vertex (vvv2) at (0.75, 0);
+      \vertex (gW) at (2, 0.75) {W$^{\pm}$};
+      \vertex (gZ) at (2, -0.75) {$\mathrm{Z}$};
+
+      \diagram* {
+        (q1) -- [fermion] (gq1),
+        (gq1) -- [fermion] (q3),
+        (q2) -- [fermion] (gq2),
+        (gq2) -- [fermion] (q4),
+        (gq1) -- [boson, edge label=\(\mathrm{W}^{\pm}\)] (vvv1),
+        (gq2) -- [boson, edge label'=\(Z\)] (vvv1),
+        (vvv1) -- [boson] (vvv2),
+        (vvv2) -- [boson] (gW),
+        (vvv2) -- [boson] (gZ),
+      };
+    \end{feynman}
+  \end{tikzpicture}
+\end{document}
+

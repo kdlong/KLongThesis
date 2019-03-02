@@ -6,7 +6,7 @@
 \PreviewEnvironment{tikzpicture}
 \begin{document}
   \begin{tikzpicture}
-        \begin{feynman}
+      \begin{feynman}
             \vertex (q1) at (-2, 1.5) {q};
             \vertex (q2) at (-2, -1.5) {$\bar{\mathrm{q}}'$};
             \vertex (qw) at (-1, 0.7);
@@ -15,7 +15,7 @@
             \vertex (zll) at (0.5, -0.7);
             \vertex (l1) at (2, -1.) {$\mu^{-}$};
             \vertex (l2) at (2, -0.4) {$\mu^{+}$};
-            \vertex (l3) at (2, 1.) {e};
+            \vertex (l3) at (2, 1.) {e$^{-}$};
             \vertex (v) at (2, 0.4) {$\bar{\nu_{\mathrm{e}}}$};
 
             \diagram* {
@@ -32,6 +32,92 @@
         \end{feynman}
       \end{tikzpicture}
 
+  \begin{tikzpicture}
+      \begin{feynman}
+            \vertex (q1) at (-2, 1.25) {q};
+            \vertex (q2) at (-2, -1.25) {$\bar{\mathrm{q}}'$};
+            \vertex (qw) at (-1, 0.0);
+            \vertex (wwz) at (-0.25, 0.0);
+            \vertex (wll) at (0.5, 0.7);
+            \vertex (zll) at (0.5, -0.7);
+            \vertex (l1) at (2, -1.) {$\mu^{-}$};
+            \vertex (l2) at (2, -0.4) {$\mu^{+}$};
+            \vertex (l3) at (2, 1.) {e$^{-}$};
+            \vertex (v) at (2, 0.4) {$\bar{\nu_{\mathrm{e}}}$};
+
+            \diagram* {
+              (q1) -- [fermion] (qw),
+              (qw) -- [boson] (wwz),
+              (qw) -- [fermion] (q2),
+              (wwz) -- [boson,edge label={\(W^{-}\)}] (wll),
+              (wwz) -- [boson,edge label={\(Z\)}] (zll),
+              (zll) -- [fermion] (l1),
+              (l2) -- [fermion] (zll),
+              (wll) -- [fermion] (l3),
+              (v) -- [fermion] (wll),
+            };
+        \end{feynman}
+      \end{tikzpicture}
+
+  \begin{tikzpicture}
+        \begin{feynman}
+            \vertex (q1) at (-2, 1.5) {q};
+            \vertex (q2) at (-2, -1.5) {$\bar{\mathrm{q}}'$};
+            \vertex (qw) at (-1, 0.7);
+            \vertex (zq) at (-1, -0.7);
+            \vertex (wll) at (0.5, 0.7);
+            \vertex (zll) at (0.5, -0.7);
+            \vertex (l1) at (2, -1.) {$\mu^{-}$};
+            \vertex (l2) at (2, -0.4) {$\mu^{+}$};
+            \vertex (l3) at (2, 1.) {e$^{-}$};
+            \vertex (v) at (2, 0.4) {$\bar{\nu_{\mathrm{e}}}$};
+            \vertex (glu1) at (-1.4, 1.0);
+            \vertex (glu2) at (-1, 0.14);
+
+            \diagram* {
+              (glu1) -- [gluon,half right] (glu2),
+              (q1) -- [fermion] (qw),
+              (qw) -- [fermion] (zq),
+              (zq) -- [fermion] (q2),
+              (qw) -- [boson,edge label'={\(W^{-}\)}] (wll),
+              (zq) -- [boson,edge label={\(Z\)}] (zll),
+              (zll) -- [fermion] (l1),
+              (l2) -- [fermion] (zll),
+              (wll) -- [fermion] (l3),
+              (v) -- [fermion] (wll),
+            };
+        \end{feynman}
+      \end{tikzpicture}
+
+  \begin{tikzpicture}
+        \begin{feynman}
+            \vertex (q1) at (-2, 1.5) {q};
+            \vertex (q2) at (-2, -1.5) {$\bar{\mathrm{q}}'$};
+            \vertex (qw) at (-1, 0.7);
+            \vertex (zq) at (-1, -0.7);
+            \vertex (wll) at (0.5, 0.7);
+            \vertex (zll) at (0.5, -0.7);
+            \vertex (l1) at (2, -1.) {$\mu^{-}$};
+            \vertex (l2) at (2, -0.4) {$\mu^{+}$};
+            \vertex (l3) at (2, 1.) {e$^{-}$};
+            \vertex (v) at (2, 0.4) {$\bar{\nu_{\mathrm{e}}}$};
+            \vertex (glu1) at (-1.4, 1.0);
+            \vertex (glu2) at (0, 2);
+
+            \diagram* {
+              (glu1) -- [gluon] (glu2),
+              (q1) -- [fermion] (qw),
+              (qw) -- [fermion] (zq),
+              (zq) -- [fermion] (q2),
+              (qw) -- [boson,edge label'={\(W^{-}\)}] (wll),
+              (zq) -- [boson,edge label={\(Z\)}] (zll),
+              (zll) -- [fermion] (l1),
+              (l2) -- [fermion] (zll),
+              (wll) -- [fermion] (l3),
+              (v) -- [fermion] (wll),
+            };
+        \end{feynman}
+      \end{tikzpicture}
 \end{document}
 
 
