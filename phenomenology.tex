@@ -1,28 +1,12 @@
 \chapter{Vector boson scattering in the standard model and beyond}
 \label{ch:phenomenology}
-The particle content of the SM was established through decades of
-observations of radioactive decays, cosmic rays, and particle
-collisions at accelerators, as discussed in Chapter~\ref{ch:introduction}. 
-To the best of our
-current knowledge, all collisions at the LHC involve only these objects,
-interacting via the known forces.
-\textbf{expand a little. Mention gravity?}
-However, there are tantalizing hints of additional particle content and the 
-interactions based on cosmological observations, which suggest a ``dark matter''
-that interacts gravitationally but not electromagnetically. In addition, 
-the fact that the SM does not exclude additional particles or interactions at
-higher energy scales is sufficient motivation to look for them. Due to the success
-of the SM in describing our current set of observations, we expect these
-``new physics'' modifications to respect our current observations.
-This chapter introduces the mathematical formalism of the SM, and possible
-extensions that are probed by the experimental results of this thesis.
 
 \section{Mathematical formalism of the standard model}
 
 Through these experimental tests and
-discoveries, we have also built a description of all the known interactions 
+discoveries, we have built a description of all the known interactions 
 of the SM particles in the language of gauge quantum field theory (QFT).
-An in depth discussion of QFT and the mathematical expression of the SM is
+An in-depth discussion of QFT and the mathematical expression of the SM is
 the subject of many textbooks, e.g., 
 Refs.~\cite{Aitchison:2003tq,Srednicki:2007qs,Peskin:1995ev,Halzen:1984mc,Barger:1987nn}. 
 An overview of the ideas
@@ -32,42 +16,167 @@ of Refs.~\cite{Quigg:2009vq,Peskin:1995ev}.
 Particles in QFT arise as excitations in quantum fields.
 The equations of motion and interactions for the quantum fields of the SM can
 be extracted from the SM Lagrangian, which can be divided in to 
-terms governing the propagation of free fields of the spin $1/2$ fermions,
-the quarks and leptons, the spin 0 Higgs field, and the gauge fields:
+terms governing the propagation of the free fields of the spin $1/2$ 
+fermions---the quarks and leptons, the spin 0 Higgs field, and the gauge fields:
 \begin{equation}
   \mathcal{L}_{SM} = \mathcal{L}_{\text{gauge}} + \mathcal{L}_{\text{leptons}} + 
       \mathcal{L}_{\text{quarks}} + \mathcal{L}_{\text{scalar}} \,.
   \label{eq:smlagrangian}
 \end{equation}
 In this expression, $\mathcal{L}_{\text{gauge}}$ is a function of the 
-spin 1 gauge fields---$G_a$, associated with the gluons of the strong
-force, and $A_\mu$ and $\mathbf{b_{mu}}$, associated with the electroweak force.
-The $\mathcal{L}_{\text{quark}}$ includes kinetic terms describing the 
+spin 1 vector fields.
+The $\mathcal{L}_{\text{quark}}$ term includes kinetic terms describing the 
 propagation of free quarks as well as interaction terms coupling the quarks
 to the gluon, $A_\mu$, and $\mathbf{b_\mu}$ fields. 
 The term $\mathcal{L}_{\text{quarks}}$ is built from similar kinetic terms and 
 interaction terms coupling the leptons to the electroweak fields, reflecting
 the fact that the leptons do not participate in the strong interaction.
+For free fields fermions $\psi$, the kinetic terms of the Lagrangian are defined as
+\begin{equation}
+  \mathcal{L} = \bar{\psi}(i\gamma^{\mu}\partial_\mu - m)\psi
+  \label{eq:freeFermion}
+\end{equation}
+where $\psi$ is the spinor fermion field, $\gamma^{\mu}$ are the 
+Dirac (or $\gamma$) matrices, and $m$ is the mass of the fermion. 
+The equations of motion derived from this expression give the well-known
+Dirac equation.
 
 A fundamental property of the SM Lagrangian is its invariance 
-under under so-called ``gauge transformations,'' in which a transformation 
-of the fermion fields and the associated gauge field result in a mathematically
-identical Lagrangian. The full SM Lagrangian respects transformations of the
+under under a class of transformations, known as ``gauge transformations.'' 
+The vector fields $A^{a}_\mu$ are referred to as \emph{gauge fields}
+because of their role in ensuring that the Lagrangian remains invariant
+under a particular transformation, which may be respected by subsets of the 
+fermionic fields.
+A gauge transformations is ``generated''
+by the Lie group defined by a set of $n\times n$ matrices $t^{a}$.
+Infinitesimal unitary rotations of the fermion fields of the form $\exp{iV(x)}$,
+for an arbitrary $n\times n$ matrix $V(x)$, can be expressed
+in terms of the $t^{a}$ matrices and an arbitrary function $\alpha(x)$ as
+$V(x) =1 + i\alpha^{a}(x)t^{a}+\mathcal{O}(\alpha^{2})$. Under this rotation,
+a gauge field transforms as
+\begin{equation}
+  A^{a}_\mu \rightarrow A^{a}_\mu + \frac{1}{g}\partial_\mu^{a} + f^{abc}A_\mu^{b}\alpha^{c} \,.
+\end{equation}
+Here $g$ is the coupling constant of the theory
+and $f^{abc}$ are the \emph{structure constants} of the transformation, related
+to the commutator of the generating matrices as $[t^{a}, t^{b}] = if^{abc}t^{c}$.
+By introducing the \emph{covariant derivative} $D_\mu$ associated with the gauge field $A_\mu$,
+\begin{equation}
+  D_\mu = \partial_\mu - igA_\mu^{a}t^{a} \,.
+\end{equation}
+and promoting the partial derivative of the Lagrangian in Equation~\ref{eq:freeFermion},
+the expression is naturally invariant under these transformations.
+Futhermore, the expression has further given rise to interactions between the fermion fields
+and the gauge fields. In this way, we conclude that the interactions of the fermions
+with the vector bosons arise as a consequence of the gauge symmetry of the theory.
+
+The full SM Lagrangian respects transformations of the
 group $\SUthree_C \times\SUtwo_L\times \Uone_Y$. 
-In this expression, $\SUthree$ ($\SUtwo$) is the Lie group of all two-by-two
+In this expression, $\SUthree$ ($\SUtwo$) is the Lie group of all unitary two-by-two
 (three-by-three) matrices with determinant 1, and $\Uone$ is the Lie group
 of complex numbers. The subscripts $C$, $L$, and $Y$ indicate the fermion
 and gauge fields that are impacted by the rotation: the $\SUthree$ transformation
 concerns only objects with color charge (quarks and gluons), and the $\SUtwo$
-and $\Uone$ rotations concern weak isospin charge, which is carried only by 
+and $\Uone$ rotations concern weak isospin charge, carried only by 
 the left-handed fermions, and weak hypercharge.
+The measurements in this thesis are probe the structure of the 
+electroweak force, so it is instructive to consider this in more detail.
 
-The measurements in this thesis are probe the structure of the gauge term
-associated with the electroweak force. 
+The left-handed leptons form doublets under the $SUtwo$ isospin rotation:
+\begin{equation}
+  L_\ell = 
+  \begin{pmatrix}
+      \PGn \\
+      \ell^{-}
+  \end{pmatrix}_{L} \,.
+\end{equation}
+A similar expression holds for the quarks:
+\begin{equation}
+  L_q = 
+  \begin{pmatrix}
+      \cPqu \\
+      \cPqd'
+  \end{pmatrix}_{L} \,,
+\end{equation}
+with corollary expressions for the charm and strange and
+top and bottom quarks. In this expression, $\cPqd'$ indicates
+that the mass eigenstates of the down-type quarks $\cPqd$ are
+not isopsin eigenstates, rather, they are related by the
+$3\times3$ CKM mixing matrix.
+The left-handed isospin doublets carry isospin $I=1/2$.
+The left-handed lepton doublets carry weak hypercharge $Y=-1$, whereas the 
+left-handed quark doublets carry $Y=1/3$.
+All right-handed fermions carry isospin $I=0$, 
+that is, they are uncharged under the $\SUtwo$ component of the interaction,
+resulting in the characteristic parity violation of the weak force.
+The right-handed leptons have $Y=-2$; right-handed up-type (down-type) quarks have
+$I=4/3$ ($2/3$).
 
-Follow the Quigg article to give some specifics for the EW force
+The EW theory consists of an two gauge fields:
+a field $B^{\mu}$, which itself transforms according to the 
+$\SUtwo_{L}$ symmetry, and an isoscalar field $A_{\mu}$ associated
+with the $\Uone_{Y}$ symmetry. Coupling constants $g$ and $g'$ corresponds 
+to the isovector field $\mathbf{B^{\mu}}$ and isoscalar $A_{\mu}$ respectively. 
+The generators of the $\SUtwo$ symmetry are the Pauli isospin matrices, denoted $\tau$,
+whereas the generator of $\Uone$ is 1.
+Combing Equation~\ref{eq:covariantDeriv} and \ref{eq:freeFermion} gives the 
+full expression for the term leptonic component of Equation~\ref{eq:smlagrangian},
+\begin{equation}
+  \mathcal{L}_{\text{leptons}} = 
+    \bar{R}_{\ell}i\gamma^{\mu}\left(\partial_{\mu} + i\frac{g'}{2}A_{mu}Y\right)R_{\ell} +
+  \bar{L}_{\ell}i\gamma^{\mu}\left(\partial_{\mu} + i\frac{g'}{2}A_{mu}Y + i\frac{g}{2}\tau\cdot\pmb{B}_{\mu}\right)L_{\ell} \,.
+  \label{eq:fermionLagrangian}
+\end{equation}
+A similar expression is appropriate for the quarks, with additional gauge fields
+(the gluons) enforcing the $\SUthree$ gauge invariance and leading to QCD interactions.
+
+The free-field form of the EW gauge fields can be expressed in terms of the field 
+strength tensors, defined as 
+\begin{equation}
+  F_{\mu\nu}^{\ell} = \partial_\nu B^{\ell}_{\mu} - \partial_{nu}^{\ell}B^{\ell}_{\nu} + g\epsilon_{jk\ell}B_{\mu}^{j}B_{\nu}^{k},
+  \label{eq:fieldTensor}
+\end{equation}
+where $\ell=1,2,3$ for the components of the isospin vector field, and
+\begin{equation}
+  f_{\mu\nu} = \partial_\nu A_{\mu} - \partial{nu}^{\ell}A_{\nu}
+\end{equation}
+for the isospin scalar field. Then
+\begin{equation}
+  \mathcal{L}_{\text{gauge, EW}} = -\frac{1}{4}\sum_{\ell}F_{\mu\nu}^{\ell}F^{\mu\nu}_{\ell}
+      -\frac{1}{4}\sum_{\ell}f_{\mu\nu}^{\ell}f^{\mu\nu}_{\ell} \,.
+  \label{eq:gaugeLagrangian}
+\end{equation}
+The field strength tensor of the $B_{\mu}$ fields mixes components of the 
+isospin vector. This is a because the associated group symmetry, $\SUtwo$,
+is \emph{non-Abelian}, that is, generators of the theory do not commute. This non-Abelian
+nature leads to a more complex structure to the $\SUtwo$ component of the interaction,
+including the self-interactions of the vector bosons associated with the gauge fields,
+which are probed in this thesis.
+
+Note that in both Equation~\ref{eq:fermionLagrangian} and
+\ref{eq:gaugeLagrangian} we have neglected the mass term of the form $m|\psi|^2$. 
+In both cases, such a term would not respect the gauge symmetries of the EW
+theory. This cannot be a correct theory of nature. In particular, we have already
+emphasized the critical relationship between the mass of the $\Wpm$ and $\PZ$ bosons 
+and the weakness of the interaction. 
 
 \section{Electroweak symmetry breaking}
+
+The solution to this seemingly insurmountable issue 
+comes from the $\mathcal{L}_{\text{scalar}}$ term of Equation~\ref{eq:smlagrangian}
+through the phenomena of EWSB.
+The EWSB is which the underlying symmetry of a fundamental theory is hidden from its
+observable properties. 
+Consider an isospin doublet scalar field $\phi$ with self interactions defined by the Lagrangian
+\begin{equation}
+  \mathcal{L}_{\text{scalar}} = \left(D_\mu\phi\right)^\dagger \left(D^\mu\phi\right) + 
+  \mu^2\phi^\dagger\phi - \lambda^2\left(\phi^\dagger\phi\right)^2 \,.
+\end{equation}
+Here $D_\mu$ is the covariant derivative of the EW theory, which we infer from 
+Equation~\ref{eq:fermionLagrangian} to be
+\begin{equation}
+  D_\mu = \partial_{\mu} + i\frac{g'}{2}A_{mu}Y + i\frac{g}{2}\tau\cdot\pmb{B}_{\mu}
+\end{equation}
 
 \section{Particle scattering and perturbative calculations}
 
@@ -82,10 +191,10 @@ considered small, they can be treated as a perturbation of the free-field
 propagation. Because field interactions are local, associated with 
 a range of the interaction communicated by the gauge field,
 this treatment is particularly well suited for scattering experiments.
-Free, non-interacting fields are brought together in collision 
-from a large separation, where the distance scale of the interacting fields
+Free, non-interacting particles of the fields are brought together in collision 
+from a large separation, where the distance scale of the interaction 
 is proportional to the energy of the collision. After interaction,
-free fields, possibly of different type than those brought to collision,
+free particles, possibly of different type than those brought to collision,
 emanate from the interaction point.
 
 \begin{figure}[htbp]
@@ -99,13 +208,13 @@ emanate from the interaction point.
 \end{figure}
 
 The allowed interactions in the SM are illustrated in Fig.~\ref{fig:SMinteractions}. Lines represent
-propagating fields, and vertices represent interactions, arising from the
+propagating particles, and vertices represent interactions, arising from the
 interaction terms in the SM Lagrangian. These illustrations,
 known as Feynman diagrams, can be pieced together to give a diagrammatic
 picture of a scattering interaction. Fig.~\ref{fig:wz3lfeynman} gives
 two illustrative $\cPq\cPq$ interactions---a component of the $\pp$ collision
 at the LHC---mediated by the $\PW$ and $\PZ$
-bosons, leading to muon, electron, and electron neutrino fields. 
+bosons, leading to free muons, an electron, and an anti-electron neutrino. 
 
 \begin{figure}[htbp]
   \centering
@@ -685,3 +794,36 @@ requires collisions with a high center of mass energy, the LHC has
 the potential to explore these states in more depth 
 than previously achieved.
 
+Deviation from the SM prediction in the rate of \EWWZ production, or in differential characteristics 
+of \EWWZ-like events, could indicate the presence of BSM physics. New physics 
+sensitive to the scattering energy of the interaction would modify $m_{\WZ}$.
+The $\mt$ of selected events is used to characterize the consistency of
+the data with the SM prediction and with possible BSM extensions.
+
+We exploit these features to perform complementary interpretations of the
+observed data and its consistency with the prediction of the SM or signs 
+of new physics. In particular, we measure
+
+\begin{itemize}
+  \item The total production rate of $\PW\PZ \rightarrow 3\ell\nu$ in
+    fiducial regions with enhanced contributions from \EWWZ production
+  \item The consistency of the \EWWZ production rate
+    with the SM prediction and the statistical significance at which this rate
+    can be established as non-zero.
+\end{itemize}
+
+We also place constraints on hypothetical new physics using the kinematic
+distributions of selected \WZ events with a VBS topology. 
+These processes would be characterized by and excess of VBS \WZ events
+with high $m_{\WZ}$, due to the modifications of the quartic VVVV interaction
+in a manner sensitive to the scattering energy.
+We place limits on the production and model parameters of
+
+\begin{itemize}
+  \item Charged Higgs bosons, in a model-independent manner (assuming
+    a small $\PH^{\pm}$ width) and in the Georgi-Machacek model.
+  \item Anomalous quartic gauge couplings, using the language of
+    dimension-eight effective field theory.
+\end{itemize}
+
+This is the first study of this process performed by the CMS Collaboration.
