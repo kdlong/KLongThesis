@@ -3,7 +3,7 @@
 
 \section{Mathematical formalism of the standard model}
 
-Through these experimental tests and
+Guided by experimental tests and
 discoveries, we have built a description of all the known interactions 
 of the SM particles in the language of gauge quantum field theory (QFT).
 An in-depth discussion of QFT and the mathematical expression of the SM is
@@ -15,9 +15,9 @@ of Refs.~\cite{Quigg:2009vq,Peskin:1995ev}.
 
 Particles in QFT arise as excitations in quantum fields.
 The equations of motion and interactions for the quantum fields of the SM can
-be extracted from the SM Lagrangian, which can be divided in to 
+be extracted from the SM Lagrangian, which can be divided into 
 terms governing the propagation of the free fields of the spin $1/2$ 
-fermions---the quarks and leptons, the spin 0 Higgs field, and the gauge fields:
+fermions (quarks and leptons), the spin 0 Higgs field, and the vector boson fields:
 \begin{equation}
   \mathcal{L}_{SM} = \mathcal{L}_{\text{gauge}} + \mathcal{L}_{\text{leptons}} + 
       \mathcal{L}_{\text{quarks}} + \mathcal{L}_{\text{scalar}} \,.
@@ -27,8 +27,8 @@ In this expression, $\mathcal{L}_{\text{gauge}}$ is a function of the
 spin 1 vector fields.
 The $\mathcal{L}_{\text{quark}}$ term includes kinetic terms describing the 
 propagation of free quarks as well as interaction terms coupling the quarks
-to the gluon, $A_\mu$, and $\mathbf{b_\mu}$ fields. 
-The term $\mathcal{L}_{\text{quarks}}$ is built from similar kinetic terms and 
+the vector fields
+The term $\mathcal{L}_{\text{leptons}}$ is built from similar kinetic terms and 
 interaction terms coupling the leptons to the electroweak fields, reflecting
 the fact that the leptons do not participate in the strong interaction.
 For free fields fermions $\psi$, the kinetic terms of the Lagrangian are defined as
@@ -42,15 +42,15 @@ The equations of motion derived from this expression give the well-known
 Dirac equation.
 
 A fundamental property of the SM Lagrangian is its invariance 
-under under a class of transformations, known as ``gauge transformations.'' 
+under under a class of transformations known as ``gauge transformations.'' 
 The vector fields $A^{a}_\mu$ are referred to as \emph{gauge fields}
 because of their role in ensuring that the Lagrangian remains invariant
 under a particular transformation, which may be respected by subsets of the 
 fermionic fields.
-A gauge transformations is ``generated''
+A gauge transformation is ``generated''
 by the Lie group defined by a set of $n\times n$ matrices $t^{a}$.
-Infinitesimal unitary rotations of the fermion fields of the form $\exp{iV(x)}$,
-for an arbitrary $n\times n$ matrix $V(x)$, can be expressed
+Infinitesimal unitary rotations of the fields of the form $\exp{(iV(x))}$,
+for an arbitrary $n\times n$ matrix $V(x)$ in the group, can be expressed
 in terms of the $t^{a}$ matrices and an arbitrary function $\alpha(x)$ as
 $V(x) =1 + i\alpha^{a}(x)t^{a}+\mathcal{O}(\alpha^{2})$. Under this rotation,
 a gauge field transforms as
@@ -65,7 +65,7 @@ By introducing the \emph{covariant derivative} $D_\mu$ associated with the gauge
   D_\mu = \partial_\mu - igA_\mu^{a}t^{a} \,.
 \end{equation}
 and promoting the partial derivative of the Lagrangian in Equation~\ref{eq:freeFermion},
-the expression is naturally invariant under these transformations.
+to a covariant derivative, the expression is naturally invariant under these transformations.
 Futhermore, the expression has further given rise to interactions between the fermion fields
 and the gauge fields. In this way, we conclude that the interactions of the fermions
 with the vector bosons arise as a consequence of the gauge symmetry of the theory.
@@ -82,7 +82,7 @@ the left-handed fermions, and weak hypercharge.
 The measurements in this thesis are probe the structure of the 
 electroweak force, so it is instructive to consider this in more detail.
 
-The left-handed leptons form doublets under the $SUtwo$ isospin rotation:
+The left-handed leptons form doublets under the $\SUtwo$ isospin rotation:
 \begin{equation}
   L_\ell = 
   \begin{pmatrix}
@@ -104,27 +104,27 @@ that the mass eigenstates of the down-type quarks $\cPqd$ are
 not isopsin eigenstates, rather, they are related by the
 $3\times3$ CKM mixing matrix.
 The left-handed isospin doublets carry isospin $I=1/2$.
-The left-handed lepton doublets carry weak hypercharge $Y=-1$, whereas the 
-left-handed quark doublets carry $Y=1/3$.
 All right-handed fermions carry isospin $I=0$, 
 that is, they are uncharged under the $\SUtwo$ component of the interaction,
 resulting in the characteristic parity violation of the weak force.
+The left-handed lepton doublets carry weak hypercharge $Y=-1$, whereas the 
+left-handed quark doublets carry $Y=1/3$.
 The right-handed leptons have $Y=-2$; right-handed up-type (down-type) quarks have
 $I=4/3$ ($2/3$).
 
 The EW theory consists of an two gauge fields:
-a field $B^{\mu}$, which itself transforms according to the 
+a field $\mathbf{B_{\mu}}$, which itself transforms as a vector under the
 $\SUtwo_{L}$ symmetry, and an isoscalar field $A_{\mu}$ associated
 with the $\Uone_{Y}$ symmetry. Coupling constants $g$ and $g'$ corresponds 
-to the isovector field $\mathbf{B^{\mu}}$ and isoscalar $A_{\mu}$ respectively. 
+to the isovector field $\mathbf{B_{\mu}}$ and isoscalar $A_{\mu}$ respectively. 
 The generators of the $\SUtwo$ symmetry are the Pauli isospin matrices, denoted $\tau$,
 whereas the generator of $\Uone$ is 1.
 Combing Equation~\ref{eq:covariantDeriv} and \ref{eq:freeFermion} gives the 
 full expression for the term leptonic component of Equation~\ref{eq:smlagrangian},
 \begin{equation}
   \mathcal{L}_{\text{leptons}} = 
-    \bar{R}_{\ell}i\gamma^{\mu}\left(\partial_{\mu} + i\frac{g'}{2}A_{mu}Y\right)R_{\ell} +
-  \bar{L}_{\ell}i\gamma^{\mu}\left(\partial_{\mu} + i\frac{g'}{2}A_{mu}Y + i\frac{g}{2}\tau\cdot\pmb{B}_{\mu}\right)L_{\ell} \,.
+    \bar{R}_{\ell}i\gamma^{\mu}\left(\partial_{\mu} + i\frac{g'}{2}A_{\mu}Y\right)R_{\ell} +
+  \bar{L}_{\ell}i\gamma^{\mu}\left(\partial_{\mu} + i\frac{g'}{2}A_{\mu}Y + i\frac{g}{2}\tau\cdot\pmb{B}_{\mu}\right)L_{\ell} \,.
   \label{eq:fermionLagrangian}
 \end{equation}
 A similar expression is appropriate for the quarks, with additional gauge fields
@@ -133,17 +133,17 @@ A similar expression is appropriate for the quarks, with additional gauge fields
 The free-field form of the EW gauge fields can be expressed in terms of the field 
 strength tensors, defined as 
 \begin{equation}
-  F_{\mu\nu}^{\ell} = \partial_\nu B^{\ell}_{\mu} - \partial_{nu}^{\ell}B^{\ell}_{\nu} + g\epsilon_{jk\ell}B_{\mu}^{j}B_{\nu}^{k},
+  F_{\mu\nu}^{\ell} = \partial_\nu B^{\ell}_{\mu} - \partial_{\nu}^{\ell}B^{\ell}_{\nu} + g\epsilon_{jk\ell}B_{\mu}^{j}B_{\nu}^{k},
   \label{eq:fieldTensor}
 \end{equation}
 where $\ell=1,2,3$ for the components of the isospin vector field, and
 \begin{equation}
-  f_{\mu\nu} = \partial_\nu A_{\mu} - \partial{nu}^{\ell}A_{\nu}
+  f_{\mu\nu} = \partial_\nu A_{\mu} - \partial_{\mu}^{\ell}A_{\nu}
 \end{equation}
 for the isospin scalar field. Then
 \begin{equation}
   \mathcal{L}_{\text{gauge, EW}} = -\frac{1}{4}\sum_{\ell}F_{\mu\nu}^{\ell}F^{\mu\nu}_{\ell}
-      -\frac{1}{4}\sum_{\ell}f_{\mu\nu}^{\ell}f^{\mu\nu}_{\ell} \,.
+      -\frac{1}{4}\sum_{\ell}f_{\mu\nu}f^{\mu\nu} \,.
   \label{eq:gaugeLagrangian}
 \end{equation}
 The field strength tensor of the $B_{\mu}$ fields mixes components of the 
@@ -156,31 +156,106 @@ which are probed in this thesis.
 Note that in both Equation~\ref{eq:fermionLagrangian} and
 \ref{eq:gaugeLagrangian} we have neglected the mass term of the form $m|\psi|^2$. 
 In both cases, such a term would not respect the gauge symmetries of the EW
-theory. This cannot be a correct theory of nature. In particular, we have already
-emphasized the critical relationship between the mass of the $\Wpm$ and $\PZ$ bosons 
-and the weakness of the interaction. 
+theory. The importance of the
+mass of the $\Wpm$ and $\PZ$ bosons, and its relationship to the strength of the weak force,
+has already been emphasized. Furthermore, masses of the fermions have long been
+experimentally established. Clearly, this cannot be the correct theory of nature.
 
 \section{Electroweak symmetry breaking}
+\label{sec:ewsb}
 
-The solution to this seemingly insurmountable issue 
+The solution to this seemingly insurmountable issue with the theory
 comes from the $\mathcal{L}_{\text{scalar}}$ term of Equation~\ref{eq:smlagrangian}
-through the phenomena of EWSB.
-The EWSB is which the underlying symmetry of a fundamental theory is hidden from its
-observable properties. 
-Consider an isospin doublet scalar field $\phi$ with self interactions defined by the Lagrangian
+through the phenomena of EWSB, 
+which provides a mechanism for the underlying symmetry of a fundamental theory 
+to be hidden from its observable properties. 
+Consider a complex isospin doublet scalar field $\phi$, with $I=1/2$ and $Y=1$,
+with self interactions defined by the Lagrangian
 \begin{equation}
   \mathcal{L}_{\text{scalar}} = \left(D_\mu\phi\right)^\dagger \left(D^\mu\phi\right) + 
   \mu^2\phi^\dagger\phi - \lambda^2\left(\phi^\dagger\phi\right)^2 \,.
+  \label{eq:higgs}
 \end{equation}
 Here $D_\mu$ is the covariant derivative of the EW theory, which we infer from 
 Equation~\ref{eq:fermionLagrangian} to be
 \begin{equation}
-  D_\mu = \partial_{\mu} + i\frac{g'}{2}A_{mu}Y + i\frac{g}{2}\tau\cdot\pmb{B}_{\mu}
+  D_\mu = \partial_{\mu} + i\frac{g'}{2}A_{\mu}Y + i\frac{g}{2}\tau\cdot\pmb{B}_{\mu} \,.
 \end{equation}
+If the parameters $\mu$ and $\lambda$ in the potential of Equation~\ref{eq:higgs} are real,
+the minimum of the potential is not at 0, but at $v = \pm\mu/\lambda$, and
+the vacuum state of the field, or vacuum expectation value (vev) $v= \left<\phi|\phi\right>_{0}$,
+is nonzero. The two components of the doublet field are complex, so $\phi$ has
+a total of four degrees of freedom. However, due to the gauge symmetry, we are
+free to select a gauge in which only one component of the field must be
+explicitly given. If we expand this term around the vacuum expectation value, then
+\begin{equation}
+  \phi = \frac{1}{\sqrt{2}}
+  \begin{pmatrix}
+      0 \\
+      v + h(x)  
+  \end{pmatrix}\,.
+    \label{eq:higgsField}
+\end{equation}
+Inserting this new form of the field into Equation~\ref{eq:higgs} has a dramatic
+effect: coupling terms between the $h$ field and vector boson fields are present,
+as are new terms quadratic in the vector boson fields. Apparently, the explicit
+choice of the vev has broken the gauge symmetry and introduced mass terms for the 
+vector bosons. The mass eigenstates are combinations of the $\mathbf{B_{\mu}}$ and
+$A_{\mu}$ fields:
+\begin{equation}
+  \begin{aligned}
+    \PW_\mu^\pm & = \frac{1}{\sqrt{2}}\left(B_\mu^1 \mp B_\mu^2\right) \\
+    \PZ_\mu     & = \frac{g{B_\mu^3} - g'A_\mu}{\sqrt{g^2 + {g'}^2}} =  B_\mu^3\cos{\theta_B} - A_\mu\sin{\theta_B}  \\
+    A_\mu     & = \frac{g'{B_\mu^3} + g{A_\mu}}{\sqrt{g^2 + {g'}^2}} =  B_\mu^3\cos{\theta_B} + A_\mu\sin{\theta_B} \,.
+    \label{eq:vectorFields}
+  \end{aligned}
+\end{equation}
+where the Weinberg angle $\theta_{W}$ has been introduced, defined as $g' = g\tan{\theta_{W}}$.
+Substituting these redefinitions of the vector and scalar fields of 
+Equation~\ref{eq:vectorFields} and \ref{eq:higgsField}, we see terms of the form
+\begin{equation}
+  \mathcal{L}_\text{gauge,m} = -\frac{v^2g^2}{4} W_\mu^+ W^{-\mu} -\frac{v^2(g^2 + g^{\prime2})}{8} Z_\mu Z^\mu \,.
+\end{equation}
+The new massive vector states are exactly those of the $\Wpm$ and $\PZ$ bosons, with
+masses $m_{\PW} = gv/2$ and $m_{\PZ} = v\sqrt{g^2+g'^2}/2$, experimentally
+established to be $m_{\PW} = 80.385\pm0.015\GeV$ and $m_{\PZ} = 91.1876\pm0.0021\GeV$~\cite{Tanabashi:2018oca}.
+The component of the scalar not absorbed by the gauge freedom is the Higgs field.
+It gives rise to the Higgs boson, with mass $m_{\PH} = \sqrt{2}\mu$, experimentally observed and established 
+as $m_{\PH} = 125.09\pm0.24\GeV$. The $A_\mu$ field remains massless, as required
+by the photon. Its coupling constant is $e=gg'/\sqrt{g^{2}+g'^{2}}$, with the
+conserved quantum number charge, $Q=I^{3}+Y/2$, where $I^{3}$ is the third component
+of weak isospin.
+
+In terms of the massive vector fields, the Lagrangian contains self-interactions
+of the vector fields and the Higgs fields. The couplings of these fields are
+exactly specified in terms of the coupling constants of the $\SUtwo\times\Uone$
+fields and the vector boson masses. Specifically, the V\PH and \PW\PWVV
+couplings are
+\begin{equation}
+  \begin{aligned}
+    \mathcal{L}_{WWVV} = & -\frac{g^2}{4}\left\{\left[2W_\mu^+ W^{-\mu} + \left(A_\mu \sin{\theta_W} - Z_\mu \cos{\theta_W}\right)^2 \right]^2 \right. \\ % chktex 21
+                         & - \left[W_\mu^+ W_\nu^- + W_\nu^+ W_\mu^- \right. \\
+                         & \phantom{-\left[\right.} \left.\left. + \left(A_\mu \sin{\theta_W} - Z_\mu \cos{\theta_W}\right) \left(A_\nu \sin{\theta_W} - Z_\nu \cos{\theta_W}\right) \vphantom{W_\mu^+}\right]^2 \right\}, % chktex 9 chktex 21
+  \end{aligned}
+\end{equation}
+\begin{equation}
+  \mathcal{L}_{HV} = \left(gm_\PW H + \frac{g^2}{4}H^2\right) \left(W_\mu^+ W^{-\mu} + \frac{Z_\mu Z^\mu}{2\cos^2 \theta_W}\right)\,.
+\end{equation}
+
+Lastly, we note that Yukawa interaction terms between the scalar and fermion
+fields are gauge invariant:
+\begin{equation}
+  \mathcal{L}_{\text{Yukawa}} = -\zeta_\ell[(\bar{L}_{\ell}\phi)R_{\ell} + \bar{R}_{\ell}(\phi^\dagger)L_{\ell}]\,.
+\end{equation}
+Inserting the scalar field of Equation~\ref{eq:higgsField} into this expression gives rise to quadratic mass terms
+without violating the symmetry of the fundamental Lagrangian. Thus the Higgs field
+can also give rise to Fermion masses in gauge invariant way. Measurements of Higgs boson decays to fermions
+have provided strong evidence that this is indeed the mechanism by which the heaviest
+leptons obtain mass. 
 
 \section{Particle scattering and perturbative calculations}
 
-Together with the principle of least action, the SM Lagrangian 
+With the full SM Lagrangian in hand, the principle of least action can
 can be used to to derive the equations of motion of the SM fields. For the kinetic
 terms, exact solutions can be obtained, however, closed-form equations of motion
 do not exist when the interaction terms are also relevant.
@@ -259,7 +334,7 @@ as shown in Fig.~\ref{fig:wz3lfeynmanNLO} (left).
 Whereas the diagrams in Fig.~\ref{fig:wz3lfeynman} have four vertices
 of fields coupling via the \EW interaction, this diagram has two additional
 QCD couplings of the gluon and quarks.
-Each vertex contributes and additional factor of the EW and
+Each vertex contributes and additional factor of the {\EW} or
 QCD couplings in the mathematical expression of the scattering matrix element. 
 If the coupling term is $\ll$1, the dominant contribution
 will come from diagrams such as those shown in Fig.~\ref{fig:wz3lfeynman}, and
@@ -270,7 +345,7 @@ in the coupling $\alpha \propto g^2$, by only considering
 contributions to a process that have at most a dependence $\alpha^{n}$.
 
 While the diagram in Fig.~\ref{fig:wz3lfeynmanNLO} (right) does lead to a
-$\mathrm{e}\PAGne\Paq\MM$ state, it also produces a final-state gluon.
+$\mathrm{e}^{-}\PAGne\MM$ state, it also produces a final-state gluon.
 It is tempting to consider this contribution as a separate
 process, however, due to the nature of the strong force, such an approach is not favorable experimentally.
 Free gluons are not observable, rather, they hadronize into baryons and mesons,
@@ -280,7 +355,7 @@ it is impossible to experimentally distinguish whether two or one quarks or
 gluons are present. For this reason, many leptonic measurements at the LHC
 are \emph{inclusive} in the number of associated hadronic particles. That is,
 we consider $\pp\to\WZ$ production to include all states producing
-the $\mathrm{e}\PAGne\Paq\MM$ with any number of associated hadronic objects.
+the $\mathrm{e}\PAGne\MM$ with any number of associated hadronic objects.
 
 Depending on the process considered and the accuracy needed for a calculation,
 neglecting the terms of ``higher order'' may not be appropriate. While the 
@@ -291,10 +366,10 @@ that predict infinite rates, therefore, they cannot correspond to experimental o
 Fortunately, the situation can be recovered when combining with other diagrams
 contributing to the higher-order calculation. A finite contribution can be
 isolated and used to describe experimental measurements with incredible accuracy.
-Infinite terms remain, but they can be associated with experimental-established
+Infinite terms remain, but they can be associated with experimentally-established
 terms---in particular, the masses and couplings of the theory. This procedure,
-known as renormalization, is closely connected to the energy scale of the process
-and the structure fields themselves. In this approach, the coupling constant 
+known as \emph{renormalization}, is closely connected to the energy scale of the process
+and the structure of the fields themselves. In this approach, the coupling constant 
 captures the neglected contributions from diagrams contributing at higher perturbative orders,
 becoming an effective coupling at the energy scale considered.
 
@@ -324,24 +399,28 @@ Perturbative calculations are discussed in more detail in Chapter~\ref{ch:simula
 \section{The \WZ production at the LHC}
 
 \textbf{move to introduction}
-This thesis is based on an analysis of $\pp$ collisions. At low energy, the proton can be viewed as a bound state
+At low energy, the proton can be viewed as a bound state
 of the quarks $\cPqu\cPqu\cPqd$. However, at higher energy, the content of the proton
 appears more complex. High-energy quarks can radiate gluons, which can split to $\cPq\cPaq$ pairs.
-In the high-energy LHC collisions, the proton is a source of gluons, and
+In the high-energy \pp collisions at the LHC, the proton is a source of gluons, and
 all flavors of quarks but the heaviest, the top quark.
 Therefore, the initial state of fundamental particles in the interactions studied at the LHC is always
 composed of quarks and gluons, collectively dubbed ``partons.'' The energy of the colliding 
 protons is controlled, but the flavor and energy of the interacting partons can only 
 be inferred based on these properties, as discussed in Chapter~\ref{ch:simulation}.
 
-The dominant modes of $\pp\to\WZ\to\threelnu$ production are shown in Fig.~\ref{fig:wz3lfeynman}.
+The dominant modes of $\pp\to\WZ\to\threelnu$ 
+(were $\ell,\ell'=\mathrm{e},\mu$) production are shown in Fig.~\ref{fig:wz3lfeynman}.
 Equivalent diagrams are possible with the $\PW$ and $\PZ$ bosons coupling
 to quarks, or the $\PZ$ boson to neutrinos. Many aspects of the processes are similar,
 and it is often justified to treat the $\pp\to\WZ$ and $\WZ$ decay to leptons, neutrinos,
 or quarks separately. For this reason, we refer to ``$\WZ$ production,'' keeping in mind
 that the $\PW$ and $\PZ$ bosons have an extremely short lifetime and are only observable
 via their decay products. The results in this thesis exploit the leptonic decay channels,
-$\WZ\to\EE\mu\nu_{\mu}$ and $\WZ\to\MM\mathrm{e}\nu_{e}$.
+$\PW^{-}Z\to\EE\mu^{-}\PAGnGm$, 
+$\PW^{+}Z\to\EE\mu^{+}\PGnGm$, 
+$\PW^{-}Z\to\MM\mathrm{e}^{-}\PGnGm$, and
+$\PW^{-}Z\to\MM\mathrm{e}^{+}\PGne$.
 
 Studies of $\WZ$ production at the LHC provide an important test of the SM.
 As shown in Fig.~\ref{fig:WZ3lfeynman} (right), the process is sensitive to the charged $\PW\PZ\PZ$
@@ -357,21 +436,21 @@ of great interest to the LHC experimental program.
 As mentioned in the previous section, it is often advantageous to consider
 measurements inclusive in the number of hadronic particles. It is possible, however,
 to make exclusive measurements, provided that we are careful in how we associate
-the number of hadronic objects objects to the number of partons in a Feynamn diagram.
+the number of hadronic objects to the number of partons in a Feynamn diagram.
 The solution is to cluster the partons, or hadrons, using algorithms that are
 well-behaved for low energy partons. We refer to these clustered hadronic objects as
 ``jets,'' (\jet) and a close correspondence between experimental measurements and theoretical
 predictions has been demonstrated for several so-called jet-clustering algorithms.
 The specific algorithms used in this analysis will be discussed in Chapter~\ref{ch:reconstruction}.
-While it is often useful to relate the $\WZ+2$ partons calculation and the $\WZ+2$ jets (\WZjj)
-experimental state, it is important to note that the relationship is most appropriate
-when using a common jet clustering algorithm.
 
 The focus of this thesis is the process
 $\pp\to\WZjj$, an important subcomponent of the inclusive $\pp\to\WZ$ process
 Here, and throughout this thesis, $\WZjj$ refers to $\WZ$ production,
 with leptonic decays,
 associated with at least two jets in the event, e.g., a final state of $3\ell\nu\jet\jet$.
+While it is often useful to relate the $\WZ+2$ partons calculation and the $\WZ+2$ jets (\WZjj)
+experimental state, it is important to note that the relationship is most appropriate
+when using a common jet clustering algorithm.
 The dominant contribution to the $\WZjj$ state is a higher-order correction to the 
 diagrams of Fig.~\ref{fig:wz3lfeynman}, where gluons are radiated from the incoming
 quark lines, as shown in Fig~\ref{fig:FeynmanDiagrams} (left). Because of the additional
@@ -388,7 +467,7 @@ states also contribute, slightly enhancing the total $\WZjj$ production rate.
    \includegraphics[page=3,width=0.23\textwidth]{figures/FeynmanDiagrams/feynmanEW.pdf}
   \caption[Representative Feynman diagrams for \EWWZ production in the SM]{
     Representative Feynman diagrams for \EWWZ production in the SM,
-  including those with quartic \WWZZ interactions (left) and via scattering to the Higgs boson (right).
+  including those with quartic \WWZZ interactions (left) and via scattering with the Higgs boson (right).
   }
  \label{fig:feynmanDiagramsVBS}
 \end{figure}
@@ -403,7 +482,6 @@ as illustrated in Fig.~\ref{fig:feynmanDiagramsVBS}.
 The VBS processes form a distinct experimental signature characterized by 
 the $\PW$ and $\PZ$ bosons with two forward, 
 high-momentum jets, arising from the hadronization of two quarks. 
-$\mathcal{O}(\alpha^4)$, referred to as EW-induced \WZjj production, or simply \EWWZ production. 
 The previously discussed contributions to the \WZjj state that proceed via QCD 
 radiation of partons from are referred to as QCD-induced WZjj production (or \QCDWZ).
 
@@ -420,10 +498,10 @@ The longitudinally polarized component of the diagrams of Fig.~\ref{fig:feynmanD
 that do not involve the Higgs
 couplings increase with the scattering energy without bound.
 In 1987, an analysis of VBS production of $\PW{+}\PW^{-}$ in $\pp$ collisions
-demonstrated that the presence of a scalar boson is necessary to regulate
-this component to a finite rate.
+by Lee, Quigg, and Thacker demonstrated that the presence of a scalar boson is necessary to regulate
+this component to a finite rate~\cite{Lee:1977yc}.
 By analyzing the partial wave amplitudes of the process, they derived a unitary
-bound on for the process that stipulated $m_{\PH} \le 1\TeV$, providing a convincing argument for
+bound on for the process that stipulated $m_{\PH} \lessapprox 1\TeV$, providing a convincing argument for
 the Higgs boson to be discovered at the future LHC. 
 While the observed SM Higgs is sufficient to regulate the process, further modifications
 could disturb this cancellation, leading to large deviations from the SM predictions.
@@ -457,18 +535,19 @@ The models we consider are described in more detail in the following sections.
 
 \subsection{Additional Higgs bosons and the Georgi-Machacek model}
 
-In the SM, EWSB is realized by a single isospin doublet scalar field.
+In the SM, EWSB is realized by a single isospin doublet scalar field,
+as discussed in Section~\ref{sec:ewsb}.
 This field is sufficient to give mass to the $\PW$ and $\cPZ$
-bosons, while resulting in the scalar $\PH$ boson, consistent with the observed
+bosons, while resulting in a scalar $\PH$ boson consistent with the observed
 boson with $m_{\PH} = 125\GeV$.  Given the complexity of the fermion sector
 of the SM, it is natural to ask if the universe contains a more complex
 structure of scalar fields than the single doublet. 
 However, SM extensions by arbitrary $\SUtwo$ scalar fields 
-are high constrained by the parameter $\rho \equiv m_\PW^2/m_\PZ^w\cos^2\theta$,
+are highly constrained by the parameter $\rho \equiv m_\PW^2/m_\PZ^w\cos^2\theta$,
 experimentally established to be very close to 1~\cite{Tanabashi:2018oca}.
 For a theory with $n$ scalar multiplets
-$\phi_i$, with weak Isospin $I_i$, weak hypercharge $Y_i$, and vacuum expectation
-value $v_i$, $\rho$ is given defined in terms of the quantum numbers of the fields
+$\phi_i$, with weak isospin $I_i$, weak hypercharge $Y_i$, and vacuum expectation
+value $v_i$, $\rho$ is defined in terms of the quantum numbers of the fields
 by the following expression at tree level~\cite{Branco:2011iw}
 \begin{equation}
   \rho = \sum_{i = 1}^{n} \frac{I_i(I_i+1) - \frac{1}{4}Y_i^2}
@@ -477,7 +556,8 @@ by the following expression at tree level~\cite{Branco:2011iw}
 \end{equation}
 Extending the scalar sector of the SM by two rather than one doublet satisfies
 this expression. This model, known as the Two-Higgs-doublet model (2HDM), has
-been extensively studied, in part because the scalar sector of SUSY has this form.
+been extensively studied, in part because the scalar sector of 
+many popular theories of supersymmetry have this form.
 The 2HDM gives rise to a heavy Higgs boson, a pseudoscalar Higgs boson, and 
 charged Higgs bosons $\PH^{\pm}$ in addition to a light SM-like Higgs boson.
 In this model, the $\PH^{\pm}$ bosons coupling strongly to the leptons,
@@ -497,12 +577,12 @@ a complex triplet with $Y=2$ in addition to the usual SM doublet ($Y =1$).
 After EWSB, this leads to a rich Higgs sector with intriguing phenomenology.
 The Higgs sector of the GM has ten physical states that are organized based
 on their transformation properties under the approximate global $\SUtwo$ symmetry
-of the scalar fields, referred to as custodial symmetry~\cite{Sikivie:1980hm}. There are two singlets,
+of the scalar fields remaining after EWSB, referred to as custodial symmetry~\cite{Sikivie:1980hm}. There are two singlets,
 one of which is associated with the observed Higgs boson, a triplet, and 
 a fiveplet ($\PH_5^{++}$, $\PH_5^{+}$, $\PH_5^{0}$, $\PH_5^{-}$, $\PH_5^{--}$) that
 is fermiophobic. If the mass of the triplet states is greater than the
 mass of the fiveplet, the only production mechanism for $\PH^{\pm}$ at the LHC
-is vector boson fusion (VBF). The production cross section is proportional to the variable
+is vector boson fusion (VBF, shown in Fig.~\ref{fig:feynmanNP}, left). The production cross section is proportional to the variable
 $s_{\PH}^2 \equiv \sin^2{\theta_{\PH}}$, where $\sin{\theta_{\PH}} = 2\sqrt{2}v_{\chi}/v$,
 the ratio
 of the vacuum expectation value (vev) of the triplet fields to the SM vev. 
@@ -533,26 +613,29 @@ resonant production at a collider) above $\Lambda$. Below this scale,
 their effect on the low-energy world can be parameterized in terms of the known
 SM field content. These interactions are realized by adding additional terms
 to the SM Lagrangian, built from the SM fields, of mass dimension $>$4. In order
-to restore calculability of these interactions, a dimensionful coupling must also
-be associated. The scale $\Lambda$
+to restore calculability of these interactions, a dimensionful coupling must also,
+which is proportional to the inverse of the scale $\Lamda$.
 
-The bottom up approach to EFT described here, in which
+The bottom-up approach to EFT described here, in which
 new interactions are parameterized in terms of the low-energy field content,
 is useful because it is consistent with a top down approach, where the low-energy behavior is extracted
-from a known full theory. The most well-known example of this is the Fermi theory
-of the weak decay, $\mathrm{n}\to\PAp\mathrm{e}^{-}\PAGne$~\cite{}. 
+from a known full theory~\cite{Kaplan:2005es}. The most well-known example of this is the Fermi theory
+of the weak decay $\mathrm{n}\to\PAp\mathrm{e}^{-}\PAGne$. 
+A low energy description, in which the leptons, quarks, and neutrinos couple
+directly in a four-fermion interaction was original proposed by Fermi without knowledge
+of the underlying theory. 
 In the full \EW theory, the interaction between
 a $\cPqd$ quark of the neutron and an electron is mediated by the $\PW^{-}$ boson,
 through $\cPqd\PW^{-}\cPqu$ and $\mathrm{e}^{-}\PW^{-}\PAGne$ couplings of the EW theory.
-Because the energy exchange of the interaction is on the MeV scale, whereas 
-$m_{\PW} = 80.4\GeV$, the lower-energy approximation of a direct four-fermion
-interaction between the quarks, electron, and 
-In fact the W boson mass was predicted?
-\textbf{Add citations of the Fermi theory. Can copy Nick}
-
+Because the momentum exchange $p$ of the interaction is on the MeV scale, whereas 
+$m_{\PW} = 80.4\GeV$, the full expression for the interaction can be expanded in 
+terms of the ratio $p/M$, to derive an approximate theory valid at low energy
+with the effective coupling $G_{F} = \sqrt{s}g^2/8m_{\PW}^2$ of Fermi's theory.
+In this sense, the low-energy EFT gives insight gives useful predictions within
+its energy regime and provides insight into the nature of the full theory.
 
 In this analysis, we consider a set of dimension-8 EFT operators sensitive
-to the quartic interactions $\WWZZ$ and $\WWZ\gamma$. Because an alternative,
+to the quartic interactions of the $\PW$, $\PZ$, and $\gamma$. Because an alternative,
 largely historical, approach to parametrizing these interactions involves
 directly modifying the coupling terms in the Lagrangian, we refer to this 
 as a search for anomalous quartic gauge couplings (aQGC). Similarly, anomalous triple gauge
@@ -577,15 +660,16 @@ Here
 \begin{equation}
   \hat{W}_{\mu\nu} = \sum_j W_{\mu\nu}^j \frac{\sigma^j}{2}\,,
 \end{equation}
+where $W_{\mu\nu}$ are the $\SUtwo_{L}$ fields before EWSB
 and the values $f_{\text{S}i}$, $f_{\text{T}i}$, and $f_{\text{M}i}$ are
 dimensionless couplings to the dimension-8 operators.
 
-The operators probed are subset of those outlined in 
-Ref.~\cite{Eboli:2006wa}, which
+The operators probed are a subset of those outlined in 
+Ref.~\cite{Eboli:2006wa}, which proposes
 nine independent dimension-eight operators that
 assume the $\SUtwo\times\Uone$ symmetry of the EW gauge sector as well as
 the presence of an SM Higgs boson. All operators are
-charge conjugation and parity-conserving.
+charge conjugation and parity conserving.
 The $\mathcal{L}_\text{Si}$ operators
 are a function of the scalar Higgs field. The $\mathcal{L}_\text{Ti}$ operators are
 functions of the gauge fields, and the $\mathcal{L}_\text{Ti}$ operators are
@@ -601,7 +685,7 @@ of the SM coupling by $(1+fv^{4}/8)$.
 
 \subsection{Measurements of \WZ production}
 
-The $\WZ$ production was first first observed
+The $\WZ$ production was first observed
 in $\Pp\PAp$ collisions by the CDF~\cite{Aaltonen:2012vu,Abulencia:2007tu} 
 and D0~\cite{Abazov:2012cj} Collaborations at the Tevatron in 2006. 
 The inclusive \WZ production cross section in \pp collisions 
@@ -609,9 +693,9 @@ has been measured in the leptonic decay modes by the ATLAS and CMS Collaboration
 at 7, 8, and $13\TeV$~\cite{Aad:2012twa,Aad:2016ett,Aaboud:2016yus,Aaboud:2019gxl,Khachatryan:2016tgp,Khachatryan:2016poo}, 
 A summary of these measurements is 
 shown in Fig.~\ref{fig:WZxsecSqrts}. The summarized experimental results are obtained
-by measuring $\pp\to\WZ\to\ell\ell\ell'\nu$ process, corrected for the 
+by measuring $\pp\to\WZ\to\ell'\ell'\ell\nu$ process, corrected for the 
 independently-measured leptonic branching ratios (the percentage of events with
-$\PW\to\ell\nu$ and $\PZ\to\ell\ell$ to all other decay channels), to obtain a total
+$\PW\to\ell\nu$ and $\PZ\to\ell'\ell'$ to all other decay channels), to obtain a total
 rate for the process $\pp\to\WZ$. Theoretical predictions are shown at 
 next-to-leading order (NLO) in QCD, in which all contributions to the process 
 up to $\alpha^{2}\alpha_s$ are considered in the calculation,
@@ -637,7 +721,7 @@ the importance of both high-precision measurements and calculations.
 Fig.~\ref{fig:WZnJets} shows the distribution of the number of jets associated with
 the selected $\ell\ell\ell'\nu$ state in data collected by the CMS experiment
 in 2015. This analysis, the first measurement of the $\WZ$ process at 13\TeV,
-was a critical first towards the $\WZjj$
+was a critical first step towards the $\WZjj$
 studies presented in this thesis. The expected contribution from the $\WZ$
 process, along with the estimated backgrounds, are seen to be in good agreement
 with the observed data. This studies of this thesis are performed with
@@ -648,7 +732,7 @@ jets to isolate the $\EWWZ$ and new physics contributions.
   \centering
    \includegraphics[width=0.6\textwidth]{figures/Phenomenology/WZnJets2015.png}
   \caption{
-    The number of jets in selected $\ell\ell\ell'\nu$ events
+    The number of jets in selected $\ell'\ell'\ell\nu$ events
     for the observed data and the expected $\WZ$ signal and background 
     contributions using 2.3\fbinv of data collected by the CMS experiment in
     2015~\cite{Khachatryan:2016tgp}.
@@ -780,7 +864,7 @@ Higgs bosons contributing in loop diagrams, but these constraints are exceeded
 by the direct measurements discussed here. Global fits of the direct and indirect
 constraints on the GM model can be found in Ref.~\cite{Chiang:2018cgb}.
 
-\section{Motivation and context of this result}
+\section{Motivation and content of this result}
 The work presented in this thesis
 has two related motivations: performing a measurement of a rare
 process predicted by the SM, and searching for signs of 
@@ -805,7 +889,7 @@ observed data and its consistency with the prediction of the SM or signs
 of new physics. In particular, we measure
 
 \begin{itemize}
-  \item The total production rate of $\PW\PZ \rightarrow 3\ell\nu$ in
+  \item The total production rate of $\PW\PZ\jet\jet \rightarrow 3\ell\nu\jet\jet$ in
     fiducial regions with enhanced contributions from \EWWZ production
   \item The consistency of the \EWWZ production rate
     with the SM prediction and the statistical significance at which this rate
