@@ -2,6 +2,7 @@
 \label{ch:phenomenology}
 
 \section{Mathematical formalism of the standard model}
+\label{sec:formalism}
 
 Guided by experimental tests and
 discoveries, we have built a description of all the known interactions 
@@ -229,7 +230,7 @@ of weak isospin.
 In terms of the massive vector fields, the Lagrangian contains self-interactions
 of the vector fields and the Higgs fields. The couplings of these fields are
 exactly specified in terms of the coupling constants of the $\SUtwo\times\Uone$
-fields and the vector boson masses. Specifically, the V\PH and \PW\PWVV
+fields and the vector boson masses. Specifically, the V\PH and {\PW\PW}VV
 couplings are
 \begin{equation}
   \begin{aligned}
@@ -261,7 +262,7 @@ terms, exact solutions can be obtained, however, closed-form equations of motion
 do not exist when the interaction terms are also relevant.
 The strength of these interaction is set by the coupling constants $g_i$
 associated with the gauge fields, as described for the electroweak interaction
-in Equations~\ref{}. If the couplings, and therefore the interactions, can be 
+in Section~\ref{sec:formalism}. If the couplings, and therefore the interactions, can be 
 considered small, they can be treated as a perturbation of the free-field
 propagation. Because field interactions are local, associated with 
 a range of the interaction communicated by the gauge field,
@@ -382,6 +383,7 @@ becoming an effective coupling at the energy scale considered.
     and QCD (right, reproduced from Ref.~\cite{Tanabashi:2018oca}) couplings. The theoretically
     predicted bands and discrete points established experimentally are shown.
   }
+  \label{fig:couplings}
 \end{figure}
 
 The energy dependence of the effective coupling constants for the 
@@ -398,7 +400,6 @@ Perturbative calculations are discussed in more detail in Chapter~\ref{ch:simula
 
 \section{The \WZ production at the LHC}
 
-\textbf{move to introduction}
 At low energy, the proton can be viewed as a bound state
 of the quarks $\cPqu\cPqu\cPqd$. However, at higher energy, the content of the proton
 appears more complex. High-energy quarks can radiate gluons, which can split to $\cPq\cPaq$ pairs.
@@ -423,7 +424,7 @@ $\PW^{-}Z\to\MM\mathrm{e}^{-}\PGnGm$, and
 $\PW^{-}Z\to\MM\mathrm{e}^{+}\PGne$.
 
 Studies of $\WZ$ production at the LHC provide an important test of the SM.
-As shown in Fig.~\ref{fig:WZ3lfeynman} (right), the process is sensitive to the charged $\PW\PZ\PZ$
+As shown in Fig.~\ref{fig:wz3lfeynman} (right), the process is sensitive to the charged $\PW\PZ\PZ$
 coupling, which arises due to the non-Abelian nature of the electroweak
 theory, and is exactly predicted in the SM~\cite{Hagiwara:1986vm}. Additional charged
 resonances, or other modifications of the \EW sector of the SM, would
@@ -453,7 +454,7 @@ experimental state, it is important to note that the relationship is most approp
 when using a common jet clustering algorithm.
 The dominant contribution to the $\WZjj$ state is a higher-order correction to the 
 diagrams of Fig.~\ref{fig:wz3lfeynman}, where gluons are radiated from the incoming
-quark lines, as shown in Fig~\ref{fig:FeynmanDiagrams} (left). Because of the additional
+quarks. Because of the additional
 QCD vertices, these diagrams contribute to the \WZjj state at $\mathcal{O}(\alpha_s^{2}\alpha^{2})$,
 compared with $\mathcal{O}(\alpha_s^{0}\alpha^{2})$ for the dominant contributions to the $\pp\to\WZ$
 process. At this order, contributions from $\cPq\cPg$ and $\cPg\cPg$ initial
@@ -614,7 +615,7 @@ their effect on the low-energy world can be parameterized in terms of the known
 SM field content. These interactions are realized by adding additional terms
 to the SM Lagrangian, built from the SM fields, of mass dimension $>$4. In order
 to restore calculability of these interactions, a dimensionful coupling must also,
-which is proportional to the inverse of the scale $\Lamda$.
+which is proportional to the inverse of the scale $\Lambda$.
 
 The bottom-up approach to EFT described here, in which
 new interactions are parameterized in terms of the low-energy field content,
@@ -782,18 +783,17 @@ $\WWZ$ and $\PW\PW\gamma$, and the quartic couplings $\PW\PW\gamma\gamma$
 and $\PW\PW\PZ\gamma$. The production rate and angular distributions of the decay
 products of the vector bosons in these states were used to derive values 
 of the triple and quartic couplings. No deviations were observed from the 
-predictions of the SM with a light Higgs boson.
+predictions of the SM were observed.
 Limits on the anomalous triple gauge coupling \WWZ~\cite{Hagiwara:1989mx} 
 were also presented by CDF and D0 collaboration in 
-Ref.~\cite{}, followed by studies performed by the ATLAS and CMS Collaborations in 
+Ref.~\cite{Aaltonen:2012vu,Abazov:2012ze}, followed by studies performed by the ATLAS and CMS Collaborations in 
 Refs.~\cite{Aad:2016ett,Khachatryan:2016poo}. 
 
 Experimental sensitivity to the quartic coupling \WWZZ 
 was first achieved at the LHC.
 In pp collisions, quartic WZ interactions are accessible through 
 VBS \VV production or trough triple vector boson production (\VVV).
-Constraints on the deviations of quartic couplings from the SM prediction, 
-referred to as anomalous quartic gauge couplings (aQGC), in 
+Constraints on the deviations of quartic couplings from the SM prediction in
 WZ events with at least two jets were first
 presented by the ATLAS collaboration at 8 TeV~\cite{Aad:2016ett}. This thesis
 reports the first study of aQGCs in the \WZ channel at 13\TeV.
@@ -819,16 +819,16 @@ reported in Ref.~\cite{Sirunyan:2017ret} and in the $\ZZ$ channel, reported in R
 The first studies of the production of charged Higgs bosons produced via VBF
 and decaying to $\WZ$ at the LHC were performed by the ATLAS Collaboration
 at 8~\TeV~\cite{Aad:2015nfa}. The analysis exploited the decay channel
-$\Wpm\to\cPq\cPaq'$ and $\PZ\to\ell\ell'$ (where $\ell=\mathrm{e},\mu$)
+$\Wpm\to\cPq\cPaq'$, $\PZ\to\ell\ell$ 
 to place the first direct production constraints on the GM model, as well as model-independent
 limits on the production of a narrow-width charged Higgs produced via VBF.
-The CMS Collaboration extended this analysis with a study of the VBF $\PH^{\pm}$ 
-using $15.2\fbinv$ of data collected at
-$13\TeV$, exploiting the leptonic decay channel $\WZ\to\ell\ell\ell'\nu$~\cite{Sirunyan:2017sbn}.
+The CMS Collaboration performed the first study of the VBF $\PH^{\pm}$ 
+exploiting the leptonic decay channel $\WZ\to\ell\ell\ell'\nu$,
+using $15.2\fbinv$ of data collected at $13\TeV$~\cite{Sirunyan:2017sbn}.
 The ATLAS Collaboration recently performed an analysis of the same channel
 using the data delivered by the LHC in 2016, corresponding to $36.1\fbinv$~\cite{Aaboud:2018ohp},
 extending the constraints of the previous CMS analysis.
-A local excess of events over the SM prediction was at a resonance mass of
+A local excess of events over the SM prediction at a resonance mass of
 around 450\GeV was suggested by this analysis, with a global significance
 of $1.9\sigma$ when interpreted in the GM model.
 The analysis presented in this thesis extends the results of the previous CMS study, 
@@ -878,13 +878,7 @@ requires collisions with a high center of mass energy, the LHC has
 the potential to explore these states in more depth 
 than previously achieved.
 
-Deviation from the SM prediction in the rate of \EWWZ production, or in differential characteristics 
-of \EWWZ-like events, could indicate the presence of BSM physics. New physics 
-sensitive to the scattering energy of the interaction would modify $m_{\WZ}$.
-The $\mt$ of selected events is used to characterize the consistency of
-the data with the SM prediction and with possible BSM extensions.
-
-We exploit these features to perform complementary interpretations of the
+We perform complementary interpretations of the
 observed data and its consistency with the prediction of the SM or signs 
 of new physics. In particular, we measure
 
@@ -897,7 +891,7 @@ of new physics. In particular, we measure
 \end{itemize}
 
 We also place constraints on hypothetical new physics using the kinematic
-distributions of selected \WZ events with a VBS topology. 
+distributions of selected \WZjj events with a VBS topology. 
 These processes would be characterized by and excess of VBS \WZ events
 with high $m_{\WZ}$, due to the modifications of the quartic VVVV interaction
 in a manner sensitive to the scattering energy.
@@ -909,5 +903,3 @@ We place limits on the production and model parameters of
   \item Anomalous quartic gauge couplings, using the language of
     dimension-eight effective field theory.
 \end{itemize}
-
-This is the first study of this process performed by the CMS Collaboration.
