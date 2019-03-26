@@ -150,6 +150,8 @@ transverse momentum imbalance associated with the vertex and clustered tracks.
 Studies of simulated $\WZ$ events demonstrate that this approach selects the
 correct $\pp$ vertex more than 99\% of the time for signal processes considered here. 
 
+\subsection{Muon system tracking}
+
 \subsection{Calorimeter clusters}
 Energy deposits in the calorimeter are the other crucial component of particle
 identification and reconstruction in the CMS detector.
@@ -158,25 +160,163 @@ Calorimeter clusters are
 \subsection{Particle flow candidates}
 
 \section{Physics objects}
-  \subsection{Muons}
-  Talk about PF muons
-  global vs. tracker
+\subsection{Muons}
+Muons selected for this analysis must be identified as global muons
+by the PF algorithm described previously. 
+They must be within the muon detector acceptance $\abs{\eta} < 2.4$
+and must have $\pt > 10\GeV$. 
+Additional reconstruction
+criteria are applied to reject \emph{nonprompt} muons, arising 
+from hadron decays, and hadron \emph{punch through} into the muon system,
+while maintaining a reconstruction efficiency greater than 96\%. 
+Following the \emph{Tight} identification criteria of Ref.~\cite{},
+with slight modifications,
+muon candidates must satisfy:
 
+\begin{itemize}
+  \item The global muon fit must satisfy $\chi^2/\text{d.o.f.} < 10$ 
+    (where d.o.f is the number of degrees of freedom in the fit) 
+  \item The distance of the track vertex from the primary vertex in the $x$-$y$
+    plane $d_{xy}$ must satisfy $d_{xy} < 0.2\unit{mm}$
+  \item The longitudunal distance (in the $z$ plane) of the track vertex from the primary vertex 
+    plane $d_{z}$ must satisfy $d_{z} < 1\unit{mm}$
+  \item At least one hit in the pixel detector
+  \item More than five hits in the strip tracker
+  \item At least six hits in the tracker must be used in the track fit.
+\end{itemize}
+
+To reject muons from decays of hadrons in jets,
+selected muons are required to be isolated from other PF objects
+in the event. The relative muon isolation, the ratio of the sum of
+the \pt in an $\eta$-$\phi$ region $\Delta R \def \sqrt{\eta^{2} + \phi^{2}} < 0.4$
+around the muon is defined as
+\begin{equation}
+  I_{\mu,rel} = \frac{1}{\pt^{\mu}}\sum_{\Delta R < 0.4}\left[\pt^{h^{\pm,PV}} -  
+        \max\left(\pt^{h^{0,PV}}+\pt^{\gamma} - \frac{1}{2}\pt^{h^{\pm, PU}}, 0\right)\right] \,.
+\end{equation}
+Here $\pt^{h^{\pm,PV}}$ and $\pt^{h^{0}}$ are, respectively, the charged and neutral hadrons
+identified by the PF algorithm. The tracks of charged hadron candidates allow them to be
+associated to the primary vertex, $h^{\pm,PV}$ or to pileup interactions, $h^{\pm, PU}$.
+Such an assignment cannot be made reliably for neutral hadrons and photons, therefore,
+all neutral hadrons and are included in the sum. To account for the expected pileup contribution,
+the sum is corrected by the term $\pt^{h^{\pm}}/2$, because particle production in 
+pileup interactions is expected to be dominated by charged hadron production at nearly this
+ratio. A rough estimation of hadron production spit evenly beween $\pi^{+}$, $\pi^{-}$ and $\pi^{0}$ 
+gives exactly this ratio, and detailed simulations confirm this expectation.
+
+The $I_{\mu,rel}$ is used to define a baseline, or \emph{loose muon ID}, and
+a signal, or \emph{tight muon ID}. Explicitly, the criteria $I_{\mu, rel} < 0.4 (0.15)$
+is used for loose (tight) ID. Muons satifying the loose ID, but not the tight ID,
+are to estimate the residual contamination from nonprompt muons in the event selection. 
+Tight muons are used for to select signal-like events. Further description
+of the approach is given in Chapter~\ref{ch:analysis}.
 
 \subsection{Electrons}
 \label{sec:ereco}
+Electron selection for this analysis begins with the GSF tracks linked
+to the ECAL clusters by the PF algorithm. However, unlike for muons,
+selected electrons are not uniquely a subset of the PF electrons candidates.
+In particular, the BDT discriminant used by the PF algorithm to
+categorize electrons and photons is not considered. Instead,
+binary selections are applied to specific characteristics of the
+electron candidate tracks and associated clusters.
+
+As for muons, a baseline selection is applied to electrons. Electrons
+satisfying the baseline selection are used to estimate the residual
+contribution from nonprompt electrons, while electrons satisfying the 
+full \emph{tight ID} are selected as signal candidate events in the analysis.
+The baseline selection was originally designed to mimic the electron selections applied
+at the HLT level for the tightest trigger paths used in this analysis,
+however, stronger conditions were applied at the HLT towards the end 
+of data collection. Nonetheless, the efficiency loss is recovered by additional
+trigger paths as described in Chapter~\ref{ch:analysis}.
+The requirements placed on the selected \empf{loose} and \empf{tight} electron
+candidates are summarized in Table~\ref{tab:elecID}. The definitions and 
+purposes of the variables shown are discussed in the following.
+
+Conditions on the GSF track and linked PF superclusters in the ECAL and HCAL
+are applied to select candidates of interest. 
+The track and cluster positions must be consistent, using a condition on the 
+variables $\abs{\Delta\eta_{seed}}$ and $\abs{\Delta\phi_{in}}$.
+The $\Delta\eta_{seed}$ is the difference between the $\eta$ direction
+specified by the track seed and the $\eta$ of the PF cluster that seeds
+the ECAL supercluster, and $\Delta\phi_{in}$ is the difference between
+the track seed extrapolated to the supercluster and the supercluster $\phi$.
+The energy threshold for electron detection ensures that the electron
+mass is negligible, so the momentum measured by the track curvature and 
+energy measured by the ECAL should be nearly equal. This is ensured by requiring
+the variable $\pt^{track}-E^{SC}$, where $E^{SC}$ is the energy of the supercluster,
+be close to zero. Electrons deposit the majority of their energy in the ECAL. 
+Therefore, the ratio of the hadronic to electromagnetic energy $H/E$, measured
+in terms of the PF ECAL and HCAL clusters, should be small.
+To ensure a well-reconstructed track,
+the baseline (loose) electron selection requires a good GSF track $\chi^2$.
+For the tight identification, the track is required to have at most one
+missing hit in the tracker, and the electron candidate is rejected if
+any tracks consistent with a photon-to-\EE conversion are found.
+
+The variable $\sigma_{i\eta i\eta}$ is used to assess the shape of the shower
+in the $\eta$. It is defined as
+\begin{equation}
+  \sigma_{i\eta i\eta} = \sqrt{\sum_{i\in 5\times5}\frac{ w_{i}(i\eta_{i} - \bar{i\eta})}{w_i^2}}\,,
+\end{equation}
+where the sum is over the $5\times5$ block of ECAL crystals centered around the
+cluster seed, and the weights $w_i$ are defined as
+\begin{equation}
+  w_i = \max\left(0, 4.7+\ln{\frac{E_i}{E_{5\times5}}}\right)\,.
+\end{equation}
+The variable $i\eta_i$ is the $\eta$ of each crystal in the sum,
+expressed in integer units numbering the crystals, a choice that allows the variable
+gaps between crystals to be ignored. In the endcaps, the arrangement of crystals
+is in the $x$-$y$ plane, and $i\eta\def \sqrt{ix^2+iy^2}$ with crystal integer 
+numbering $ix$. The $\bar{i\eta}$ is the $i\eta$ of the $5\times5$ cluster,
+$E_i$ is the energy of the $i$th crystal, and $E_{5\times5}$ ise the energy 
+sum of the $5\times5$ cluster.
+
+As for muons, selected electrons must be isolated from other event activity.
+The definition of the isolation depends on the physics objects considered in the sum,
+and the approach to pileup substraction.
+For the loose electrons selection, the isolation is defined in terms of the tracks,
+and the PF energy clusters in the ECAL and HCAL contained in a cone defined by 
+$\Delta R < 0.3$ around the electron. The sum of ECAL and HCAL cluster energies 
+are corrected by estimated the pileup energy contribution per event using the 
+\emph{effective area} technique proposed for jets in Ref. 
+The isolation is defined as
+\begin{equation}
+  I_{\mu,rel} = \frac{1}{\pt^{\mu}}\sum_{\Delta R < 0.3}\left[\pt^{h^{\pm,PV}} -  
+        \max\left(\pt^{h^{0,PV}}+\pt^{\gamma} - \frac{1}{2}\pt^{h^{\pm, PU}}, 0\right)\right] \,.
+\end{equation}
+
+
+
+Because the ECAL measurement is more complex, and because the pileup contributions
+are larger in the ECAL than in the muon system, a more complex method of pileup subtracking is applied.
+
+
+
 
 \begin{table}[htbp]
     \centering
     \caption[]{
             }
-    \begin{tabular}{lccc} 
-    Variable  & Loose ID  & Tight ID \\
+    \begin{tabular}{lcccc} 
+                        & \multicolumn{2}{c}{Baseline ID} & \multicolumn{2}{c}{Tight ID}  \\
+      Variable                & ECAL barrel & ECAL endcap & ECAL barrel & ECAL endcap        \\
+    \hline
+      $\abs{\Delta\eta_{seed}}$ & 0.004     & ---         & 0.00308     & 0.0605 \\
+      $\abs{\Delta\phi_{in}}$   & 0.020     & ---         & 0.0816      & 0.0394 \\
+      $\abs{E_{SC}^{-1} - p_{track}^{-1}}$  & \multicolumn{2}{c}{0.013} & 0.0129 & 0.0129 \\
+      $\sigma_{i\eta i\eta}$  & 0.011       & 0.031       & 0.00998     & 0.0298 \\
+      $H/E$                   & 0.060     & 0.065       & 0.0414      & 0.0641 \\
+      $I^{ECAL}$        & 0.160     & 0.120       & \multicolumn{2}{c}{1} \\
+      $I^{HCAL}$        & \multicolumn{2}{c}{0.120} & \multicolumn{2}{c}{1} \\
+      $I^{track}$       & \multicolumn{2}{c}{0.08} & \multicolumn{2}{c}{1} \\
+      $I_{e,rel}^{PF,corr}$     & \multicolumn{2}{c}{---} & 0.0588      & 0.0571 \\
+      GSF track $\chi^{2}/\text{d.o.f.}$  & ---                     & 3.0         & \multicolumn{2}{c}{---} \\
+      Max missing tracker hits  & \multicolumn{2}{c}{---} & \multicolumn{2}{c}{1} \\
     \hline 
-
-    
      \end{tabular}
-    \label{tab:control_regions}
+    \label{tab:elecID}
 \end{table}
   \subsection{Charged and neutral hadrons}
   \subsection{Jets}
