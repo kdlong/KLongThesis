@@ -8,7 +8,7 @@ and neutral hadrons. Each can be distinguished by the likelihood of interaction
 and interaction characteristics with the detector components:
 all charged particles leave tracks in the tracker,
 charged hadrons deposit energy in the calorimeters, photons
-and electrons primarily deposite energy in the ECAL, and neutral
+and electrons primarily deposit energy in the ECAL, and neutral
 hadrons interact primarily with the HCAL.
 The reality is more subtle than this idealized picture, illustrated
 in Fig.~\ref{fig:particleFlow}, but this forms the guiding principles
@@ -152,6 +152,37 @@ correct $\pp$ vertex more than 99\% of the time for signal processes considered 
 
 \subsection{Muon system tracking}
 
+Charged particles traversing the muon system ionize
+the gas, leading to electrical signals on the wires and strips of the
+detector systems that are reconstructed as hits. As for the tracker,
+the hits are used to infer the paths and momenta of the interacting particles.
+All charged objects will be reconstructed by the system, but
+the large material presented by the tracker, ECAL, HCAL, and the support
+structure and magnet in front of the muon system, ensures that the vast majority
+of the objects reaching the system are muons.
+
+Hits in the individual DTs, CSCs, and RPCs are reconstructed using the
+principles described in Chapter~\ref{ch:lhcAndCMS}. 
+Straight-line tracks, known as ``segments,'' are built by fitting
+the hits across each chamber for the CSC and DT subsystems, which
+are built from multiple layers of independent gas volumes.
+The efficiency for the muon systems to reconstruct hits or segments
+from real muons traversing the system is evaluated using the ``tag-and-probe''
+technique, for which the momentum and identification of selected
+events can be inferred from independent characteristics to calibrate
+the detector performance. The hit efficiency of DTs is found to be
+greater than 97\% over the entire system; for RPCs, it is greater than
+94\% (96\%) in the barrel (endcap).
+The trigger requirement for the CSC chambers requires several
+consistent tracks, which biases efficiency measurements for individual
+hits. The efficiency to reconstruct segments through the chambers is
+instead considered. It is evaluated to be 97.4\% efficient for real muons,
+determined from the percentage of ``probe'' muons reconstructed in 
+the tracker that traverse the CSC detector to those with a reconstructed segment in the CSC chamber.
+Groups of DT and CSC segments are used to seed a Kalman-filter based
+tracking algorithm that builds ``standalone'' muon tracks from hits 
+in the muon system~\cite{Sirunyan:2018fpa}.
+
 \subsection{Calorimeter clusters}
 Energy deposits in the calorimeter are the other crucial component of particle
 identification and reconstruction in the CMS detector.
@@ -213,30 +244,33 @@ of the approach is given in Chapter~\ref{ch:analysis}.
 
 \subsection{Electrons}
 \label{sec:ereco}
-Electron selection for this analysis begins with the GSF tracks linked
+Electron identification for this analysis begins with the GSF tracks linked
 to the ECAL clusters by the PF algorithm. However, unlike for muons,
 selected electrons are not uniquely a subset of the PF electrons candidates.
 In particular, the BDT discriminant used by the PF algorithm to
 categorize electrons and photons is not considered. Instead,
-binary selections are applied to specific characteristics of the
+conditional criteria (referred to as ``cuts'') are applied to specific characteristics of the
 electron candidate tracks and associated clusters.
 
-As for muons, a baseline selection is applied to electrons. Electrons
+Electron candidates must be within the ECAL detector acceptance $\abs{\eta} < 2.5$
+and must have $\pt > 10\GeV$. 
+As for muons, baseline (\emph{loose}) and \emph{tight} selections is 
+are defined. Electrons
 satisfying the baseline selection are used to estimate the residual
-contribution from nonprompt electrons, while electrons satisfying the 
-full \emph{tight ID} are selected as signal candidate events in the analysis.
+contribution from nonprompt electrons, while electrons satisfying the both the loose selection
+and the full \emph{tight} criteria are selected as signal candidate events in the analysis.
 The baseline selection was originally designed to mimic the electron selections applied
 at the HLT level for the tightest trigger paths used in this analysis,
 however, stronger conditions were applied at the HLT towards the end 
 of data collection. Nonetheless, the efficiency loss is recovered by additional
 trigger paths as described in Chapter~\ref{ch:analysis}.
-The requirements placed on the selected \empf{loose} and \empf{tight} electron
+The requirements placed on the selected \emph{loose} and \emph{tight} electron
 candidates are summarized in Table~\ref{tab:elecID}. The definitions and 
-purposes of the variables shown are discussed in the following.
+motivations of the variables shown are discussed in the following.
 
 Conditions on the GSF track and linked PF superclusters in the ECAL and HCAL
 are applied to select candidates of interest. 
-The track and cluster positions must be consistent, using a condition on the 
+The track and cluster positions must be consistent, defined by a the
 variables $\abs{\Delta\eta_{seed}}$ and $\abs{\Delta\phi_{in}}$.
 The $\Delta\eta_{seed}$ is the difference between the $\eta$ direction
 specified by the track seed and the $\eta$ of the PF cluster that seeds
@@ -245,7 +279,7 @@ the track seed extrapolated to the supercluster and the supercluster $\phi$.
 The energy threshold for electron detection ensures that the electron
 mass is negligible, so the momentum measured by the track curvature and 
 energy measured by the ECAL should be nearly equal. This is ensured by requiring
-the variable $\pt^{track}-E^{SC}$, where $E^{SC}$ is the energy of the supercluster,
+the variable $1/\pt^{track}-1/E^{SC}$, where $E^{SC}$ is the energy of the supercluster,
 be close to zero. Electrons deposit the majority of their energy in the ECAL. 
 Therefore, the ratio of the hadronic to electromagnetic energy $H/E$, measured
 in terms of the PF ECAL and HCAL clusters, should be small.
@@ -274,33 +308,49 @@ $E_i$ is the energy of the $i$th crystal, and $E_{5\times5}$ ise the energy
 sum of the $5\times5$ cluster.
 
 As for muons, selected electrons must be isolated from other event activity.
-The definition of the isolation depends on the physics objects considered in the sum,
-and the approach to pileup substraction.
-For the loose electrons selection, the isolation is defined in terms of the tracks,
-and the PF energy clusters in the ECAL and HCAL contained in a cone defined by 
-$\Delta R < 0.3$ around the electron. The sum of ECAL and HCAL cluster energies 
-are corrected by estimated the pileup energy contribution per event using the 
-\emph{effective area} technique proposed for jets in Ref. 
-The isolation is defined as
+The isolation is defined as 
 \begin{equation}
-  I_{\mu,rel} = \frac{1}{\pt^{\mu}}\sum_{\Delta R < 0.3}\left[\pt^{h^{\pm,PV}} -  
-        \max\left(\pt^{h^{0,PV}}+\pt^{\gamma} - \frac{1}{2}\pt^{h^{\pm, PU}}, 0\right)\right] \,.
+I^{\ell} = \left( \sum  \pt^\text{charged} + \text{max}\left[ 0, \sum \pt^\text{neutral}
+                                 +  \sum \pt^{\gamma} - \pt^{\mathrm{PU}}  \right] \right) /  \pt^{\ell}\,,
 \end{equation}
-
-
-
-Because the ECAL measurement is more complex, and because the pileup contributions
-are larger in the ECAL than in the muon system, a more complex method of pileup subtracking is applied.
-
-
-
+where the sum considers objects contained in a cone of $\Delta R < 0.3$ around the electron.
+The exact definition depends on the physics objects considered in the sum,
+and the approach to pileup subtraction.
+For the loose electron selection, the isolation defined in terms of the tracks and
+in terms of the PF energy clusters in the ECAL and HCAL are considered separately.
+The track isolation considers only charged tracks in the tracker, neglecting the
+neutral component and neglecting corrections for the isolation.
+For the PF cluster isolations, the
+sum of ECAL and HCAL cluster energies 
+are corrected by estimated the pileup energy contribution per event using the 
+``jet area'' technique proposed for jets in Ref.~\cite{Cacciari:2007fd}.
+In this approach,
+$\pt^{\mathrm{PU}} \equiv \rho \, A_\text{eff}$,
+where the average transverse momentum $\rho$ is calculated from
+the median of the ratio of the jet transverse momentum to the jet area, $\pt^{\jet}/A_{\jet}$,
+for all pileup jets in the event.
+The effective area $ A_\text{eff}$ is the geometric area of the isolation 
+cone times an $\eta$-dependent correction factor
+that accounts for the residual dependence of the isolation on the pileup.
+The $A_\text{eff}$ is calculated separately for the terms (e.g., neutral or charged)
+considered in the pileup subtraction.
+For the tight electron identification criteria, the PF objects are used. Charged PF candidates
+are required to be associated with the primary vertex. Because the neutral objects cannot be
+directly associated with a vertex, so the pileup correction considers only the neutral
+component.
 
 \begin{table}[htbp]
     \centering
-    \caption[]{
+    \caption[Identification criteria for selected electrons]{
+      The identification criteria used to select electrons for used to estimate
+      nonprompt backgrounds (loose ID) and to select signal events (tight ID).
+      The variable of interest specified in the leftmost column must be smaller
+      than the values indicated to the right. The conditions on the barrel region
+      ($\abs{\eta} < 1.479$) and the endcap ($1.479 < \abs{\eta} < 2.5$) are optimized
+      independently.
             }
     \begin{tabular}{lcccc} 
-                        & \multicolumn{2}{c}{Baseline ID} & \multicolumn{2}{c}{Tight ID}  \\
+                        & \multicolumn{2}{c}{Loose ID} & \multicolumn{2}{c}{Tight ID}  \\
       Variable                & ECAL barrel & ECAL endcap & ECAL barrel & ECAL endcap        \\
     \hline
       $\abs{\Delta\eta_{seed}}$ & 0.004     & ---         & 0.00308     & 0.0605 \\
@@ -319,7 +369,157 @@ are larger in the ECAL than in the muon system, a more complex method of pileup 
     \label{tab:elecID}
 \end{table}
   \subsection{Charged and neutral hadrons}
-  \subsection{Jets}
-  \subsection{Identification b-jets}
-  \subsection{Missing transverse momentum}
+\subsection{Jets}
+As introduced in Chapter~\ref{cp:phenomenology} and discussed
+in Chapter~\ref{ch:simulation}, partons produced in the hard interaction
+are observed in the detector as clusters of hadronized particles known
+as jets. Perturbative predictions rely on a clustering algorithm that
+is insensitive to the low-angle and low-energy behaviour of partons. 
+A variety of such ``infrared-safe'' algorithms have been developed
+and studied; an overview can be found in Ref.~\cite{Salam:2009jx}.
+Because it is advantageous to use a common jet-clustering algorithm for experimental
+measurements and theoretical predictions, the anti-$\kt$ algorithm~\cite{Cacciari:2008gp}
+is used by both the ATLAS and CMS Collaboration.
 
+The anti-$\kt$ algorithm sequentially clusters objects into composite jets
+based on their separation in rapidity $y$ and azimuthal angle $phi$. A weighted distance
+parameter is defined by
+\begin{equation}
+  d_{ij} = \frac{\min(k{\text{T}i}^{-2}, k_{\text{T}j}^{-2})\Delta R^2_{ij}}{R^2}\,.
+\end{equation}
+where $R$ is the radius parameter, $k_{\text{T}i}$ and $k_{\text{T}j}$ index the transverse momentum of the objects considered
+in the comparison, and $\Delta R^2 = (y_i - y_j)^2 + (\phi_i-\phi_j)^2$.
+A parameter $d_{iB} = k_{\text{T}i}^2$ is defined as the $\pt$ of the $i$th object
+with respect to the beamline.
+The values of $d_{ij}$ and $d_{iB}$ are computed for all objects in the event.
+If a value $d_{ij}$ is the minimum parameter, the $i$th and $j$th objects are
+merged into a composite objects by summing the four vectors. If $d_{iB}$ is
+the minimum, the object is removed from further iterations. The procedure
+is repeated until all objects in the event are clustered.
+
+The anti-$\kt$ algorithm has several favorable theoretical and experimental properties: it is infrared safe,
+results in a jet that is circular in the $y$-$\phi$ plane for hard partons $i$ and $j$ with
+$\Delta R_{ij} > 2R$, and is computationally fast in the 
+\texttt{FastJet}~\cite{Cacciari:2011ma} implementation.
+A radius parameter of $R=0.4$ is used for this analysis. This is the choice made by 
+the majority of 13\TeV studies made by the ATLAS and CMS Collaborations,
+as it is found to be
+a good balance between minimizing the jet size to reduce contributions from pileup
+and maximizing the jet size to capture all hadrons associated with the fragmentation
+of hard partons.
+
+Selected jets used in this analysis are defined by clustering the PF
+candidates reconstructed in Section~\ref{sec:pfcandidates}. To reduce the contributions
+from pileup, charged hadrons unambiguously not associated to the primary vertex
+are removed from the PF candidates collection before clustering~\cite{CMS-PAS-JME-14-001}
+(referred to as charged-hadron subtracted, or CHS jets). 
+Leptons are not removed from the subset of PF candidates considered,
+however, clustered jets with $\Delta R(\jet, \ell) < 0.4$ are removed from the jet collection.
+The contribution from neutral pileup is subtracted from the jet energy using the jet area method
+described for lepton isolation. 
+
+The energy scale and resolution of the jets is corrected in data and simulation 
+to account for the complex detector response and inefficiencies. 
+The detector response is nonlinear and dependent on the jet composition,
+which may not be well-modeled by MC simulations, so the energy corrections
+are derived and applied to the clustered jets rather than the individual PF constituents.
+The corrections are primarily derived from MC simulation, using ratios
+of ``generator'' jets formed by clustering all stable ($c\tau > 1\unit{m}$) 
+hadronized particles in the MC simulation to jets of PF CHS jets in the reconstructed simulation.
+The ratios are used to correct the energy of reconstructed jets in the MC simulation
+and in data. Residual differences in data and MC simulations are corrected for by
+measuring the jet energies in data and MC for samples of $\Zpj$, $\gamma+$jet,
+and dijet events. For single jet events, the energy of the $\PZ$ bosons (with decays to electrons or muons)
+or $\gamma$ should be balanced with the momentum of the recoiling jet.
+For dijet events, a well-measured jet in the central part of the detector
+is balanced with a forward jet to derive energy corrections in the region
+beyond the tracker acceptance~\cite{Khachatryan:2016kdb}. 
+
+\begin{figure}[htbp]
+  \centering
+   \includegraphics[width=0.49\textwidth]{figures/Reconstruction/JECUncertaintyEta.png}
+   \includegraphics[width=0.49\textwidth]{figures/Reconstruction/JECUncertaintyPt.png}
+  \caption[The uncertainty in the jet energy corrections vs. jet $\eta$ and $\pt$]{
+    The uncertainty in the jet energy corrections (JEC) for PF charged-haron-subtracked (CHS) jets
+    vs. jet $\pt$ (left) and jet $\eta$ (right) for fixed
+    jet $\pt=30\GeV$. The total uncertainty and the uncertainty by component of the
+    energy correction type are shown.
+        }
+ \label{fig:jecUnc}
+\end{figure}
+
+The uncertainty in the procedure is estimated by assessing the uncertainty
+in each component of correction, including comparisons
+of the residual corrections in data and MC simulation with different data samples and 
+variations of the pileup subtracting estimation~\cite{CMS-DP-2018-028}. The total uncertainty and 
+the uncertainty by correction component are shown in Fig.~\ref{fig:jecUnc}.
+As illustrated, the uncertainty increases at high $\eta$ to 5-6\% for $\pt=30\GeV$ jets.
+Because forward jets are a key component of this analysis, the jet energy
+scale and resolution uncertainties are the leading contributions to the measurement uncertainty.
+
+\subsection{Heavy-flavor jets}
+
+The hadronization of $\cPqb$ quarks primarily produces
+baryons and mesons with larger masses and lifetimes
+than pions or other first- and second-generation hadrons. The 
+decay lengths of such B-hadrons (e.g., B$^{0}$, a $\cPqd\cPaqb$ bound state) 
+produced at the LHC are typically on the order of
+centimeters~\cite{Tanabashi:2018oca}. The decay products of such B hadrons
+will be dispaced from the primary vertex by this amount, which is within
+the resolution of the track reconstruction to be distinguished from the primary
+vertex. This observation is exploited to distinguish jets arising from the 
+hadronization of $\cPqb$-quarks. Because the branching ratio 
+$\mathcal{BR}(t\to\PW\cPqb)~1$, b-quark tagging is an effective means to identify
+top-quark production, a major background for this analysis.
+
+The $\cPqb$ quark jets are identified in this analysis via
+the combined secondary vertex \cPqb-tagging algorithm~\cite{Chatrchyan:2012jua} with the 
+\textit{tight} working point defined in Ref.~\cite{Sirunyan:2017ezt}. 
+The algorithm using information on the PF candidate tracks and their
+associated vertices in the jet to train a multivariate discriminant,
+which is trained to distinguish b hadrons in MC simulation.
+The efficiency for selecting {\cPqb} quark jets 
+with $\pt>30\GeV$ and $\abs{\eta} < 2.4$
+with the tight working point is $\approx$49\% with
+a misidentification probability of $\approx$4\% for {\cPqc} 
+quark jets and $\approx$0.1\% for light-quark and gluon jets.
+
+\subsection{Missing transverse momentum}
+
+Neutrinos produced in the hard scattering interaction are inferred
+from the total imbalance in transverse momentum of the event,
+referred to as the \emph{missing transverse momentum} $\ptvecmiss$.
+It is reconstructed from the sum of all the PF candidates
+in the event,
+\begin{equation}
+  \ptvecmiss = - \sum_{\text{PF cands}} \vec{p}_{T,cand}\,.
+\end{equation}
+Pileup collisions, which are generally soft hadronic interactions,
+do not produce significant $\ptvecmiss$. Therefore, all PF candidates
+in the event are used in the sum, even those not associated with
+the primary vertex. 
+
+The measurement of the $\ptvecmiss$ is improved by correcting
+jet energies with the procedure described in the previous section. 
+The PF candidates that are clustered into jets are subtracted from
+the $\ptvecmiss$ sum and replaced by the corrected energies,
+\begin{equation}
+  \vec{p}_{T,corr}^{\kern1pt\text{miss}} = \ptvecmiss - 
+        \left(\pt^{\jet} - \sum_{\text{cand}\in\jet} \vec{p}_{T,cand}\right)\,.
+\end{equation}
+The uncertainty in the corrected $\ptmiss$, used for this analysis, is dominated by the uncertainty in the 
+jet energy corrections. A smaller uncertainty is associated with the
+\emph{unclustered energy} of PF candidates not associated with a jet~\cite{Sirunyan:2019kia}.
+
+Spurious $\ptvecmiss$ arises in events in which an object is significantly
+mismeasured, biasing the momentum sum of the event. Events with 
+features of detector noise, such as large spikes in a
+single ECAL crystal or HCAL readout, as well as those with muon interactions
+in the calorimeters and CSC chambers that are symmetric in $\phi$, indicative
+of $\emph{beam halo}$ muons produce in proton beam interactions with the 
+beam pipe material, are vetoed. 
+
+Because the $\eta$ direction of the $\ptvecmiss$ vector is unknown,
+its magnitude $\ptmiss$ is generally considered. In this analysis,
+the $\ptmiss$ is used to select events with a tectonically decaying $\PW$
+boson giving rise to $\ptmiss\approx m_{\PW}/2$.
