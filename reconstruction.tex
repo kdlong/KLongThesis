@@ -4,16 +4,17 @@
 As described in Chapter~\ref{ch:lhcAndCMS}, the CMS detector
 is built from complementary detector components with sensitivity
 to stable particles: electrons, muons, photons, and charged
-and neutral hadrons. Each can be distinguished by the likelihood of interaction
+and neutral hadrons. Each can be distinguished by their likelihood of interaction
 and interaction characteristics with the detector components:
-all charged particles leave tracks in the tracker,
+all charged particles leave tracks in the inner tracker,
 charged hadrons deposit energy in the calorimeters, photons
 and electrons primarily deposit energy in the ECAL, and neutral
 hadrons interact primarily with the HCAL.
 The reality is more subtle than this idealized picture, illustrated
 in Fig.~\ref{fig:particleFlow}, but this forms the guiding principles
 in the \emph{reconstruction} of particles from their interactions in the detector.
-Unstable particles are inferred by the properties of the stable particles to 
+After stable particles have been reconstructed, 
+unstable particles are inferred from the stable particles to 
 which they decay.
 
 \begin{figure}[htbp]
@@ -29,9 +30,9 @@ When an event is accepted by the HLT, the raw, digitized data from each detector
 subsystem is stored and simultaneously forwarded to a commercial processing farm for
 further processing. Detector-specific attributes, such as signal amplitudes,
 are converted to physical properties, such as energies, using calibrations
-established from controlled independent measurements. System-wide patterns
+established from controlled, independent measurements. System-wide patterns
 are built, from which a global picture of the event and its component particles
-are inferred.
+is extracted.
 The reconstruction algorithms employed by the CMS Collaboration are built from
 work that began well before the LHC began taking data, 
 benefiting from generations of previous experiments. The development of algorithms
@@ -42,24 +43,28 @@ are shared by all analyses performed by the CMS Collaboration.
 
 A degree of ambiguity in particle identification is unavoidable. 
 Reconstruction \emph{efficiency}, or a high rate of positive identification
-and reconstruction of real particles, must be balanced alongside the rate of misconstruction.
+and reconstruction of real particles, must be balanced alongside the rate of misreconstruction
+and misidentification.
 For example, electrons with a poorly reconstructed track will mimic photons,
 but because the track reconstruction efficiency cannot be 
-accepting only very high-quality tracks will lead to a lower rate 
-of indentification 
+accepting only very high-quality tracks will lead to the rejection
+of real electrons if an interaction in the tracker is not readout.
 The optimal balance between efficiency and misidentification is dependent
 on the characteristics of the signal and background targeted by a particular
 analysis. In addition to the common reconstruction features, the identification 
 criteria used in this work are also discussed.
 
-
 \section{Global event description via particle flow}
 The general characteristics of physics object identification outlined
 above are ubiquitous amongst past, current, and future collider detector
 reconstruction algorithms. Rather than applying these criteria object by
-object, the CMS Collaboration exploits the 
-
-By applying these characteristics
+object to select particle candidates of interest, 
+the CMS Collaboration implements an ambitious \emph{particle flow} (PF)
+algorithm that seeks to reconstruct and identify all objects in an
+event as particle candidates. This approach relies on a high-granularity
+detector and accurate tracking to connect features of different detector
+subsystem, which are combined for more accurate energy, momentum, and
+spacial measurements. 
 
 \subsection{Tracks and vertices}
 Only energy deposits from charged particles traversing the pixel detector and
@@ -98,7 +103,7 @@ case of tracks seeded by the inner tracker, or inward from seeds in the muon
 chambers of calorimeter clusters. Subsequent hits are located 
 by predicting their location with using the
 Combinatorial Track Finder (CTF) alogrithm~\cite{Chatrchyan:2014fea}, 
-an adaptation of the combinatorial Kalman filter algorithm~\cite{}. 
+an adaptation of the combinatorial Kalman filter algorithm~\cite{Billoir:1989mh}. 
 At each step, the projected trajectory is updated to account for the additional
 associated seeds, simultaneously building and fitting the particle path.
 When the full trajectory through the tracker is established, the track
@@ -138,7 +143,7 @@ the collision point are identified by evaluating the common points of origin for
 of the track collection that are well-reconstructed (low $\chi^{2}$) and consistent with
 the beam spot. No additional condition on the track $\pt$ is applied
 to select this reduced track collection. The deterministic
-annealing algorithm~\cite{} is used to group the tracks into their most probably set
+annealing algorithm~\cite{Rose:726788} is used to group the tracks into their most probably set
 of common vertices, before the vertex coordinates are derived by a fit to the 
 associated tracks, considering their likelihood of misassignment to the vertex.
 
@@ -184,11 +189,89 @@ tracking algorithm that builds ``standalone'' muon tracks from hits
 in the muon system~\cite{Sirunyan:2018fpa}.
 
 \subsection{Calorimeter clusters}
-Energy deposits in the calorimeter are the other crucial component of particle
-identification and reconstruction in the CMS detector.
+The calorimeters measure both the location of an interacting
+electron, photon, or hadron, and its energy. Because energy is deposited
+in a shower with a significant depth and transverse extent, the energy
+must be collected across several crystals, scintillators, or fibers.
+An accurate energy measurement relies on collecting
+as close to 100\% of the energy as possible. In addition, the distribution
+of the energy deposit in space can be used to identify the particle
+that induced the shower.
 
-Calorimeter clusters are 
+\emph{clusters} of energy are formed separately for the 
+barrel and endcaps of the ECAL and HCAL and the 
+ECAL preshower by combining the energy measurements in segmented
+components of the detectors. 
+Reconstruction is seeded by detector elements with a measured energy deposit
+$E>E_{seed}$, from which \emph{superclusters} are formed
+by aggregating neighboring detector cells with the seed cell that exceed
+energy threshold of twice the noise level. The $E_{seed}$ values are optimized 
+independently for the detector regions 
+from simulation studies of photons and hadrons.
+The values range 
+from a few hundred MeV for the ECAL barrel and endcap up to over 1\GeV in the HCAL
+endcap; the exact values are given in Table 2 of Ref.~\cite{CMS-PRF-14-001}
+Clusters are formed from the superclusters by assuming the energy
+deposit from an interaction is Gaussian distributed. The number of interactions
+contributing to the supercluster is obtained from a maximum likelihood fit
+that considers the number of Gaussian energy deposits and their amplitudes.
+In the case of multiple deposits, the distributions obtained from the fit
+are used to divide decompose the supercluster into individual clusters.
+Because of the rough segmentation in the
+forward region, HF clusters consist of a single segmented area.
+
 \subsection{Particle flow candidates}
+\label{sec:pfcandidates}
+
+The principle role of the PF algorithm is to \emph{link} the
+the inner tracks, muon system tracks, and calorimeter clusters to form 
+\emph{PF candidates}. The PF candidates are categorized as neutral or charged
+hadrons, electrons, muons, and photons
+that are be used in to correct the energy response
+of the detector in a particle-specific way and to
+build the identified objects selected for analysis. 
+The link algorithm evaluates to consistency of tracks and clusters by
+extrapolating the from the last hit of each inner track to:
+\begin{itemize}
+  \item The depth in the ECAL of the expected maximum energy deposit a typical electromagnetic shower
+  \item The plane of the ECAL preshower layers
+  \item One hadronic interaction length into the HCAL
+\end{itemize}
+Tracks and clusters are linked if a cluster is found within one
+ECAL or HCAL crystal. In the case of multiple matches, the cluster
+with its maximum closest to the track position is taken.
+Clusters in the ECAL and HCAL are linked if the ECAL clusters overlaps
+the HCAL cluster. For GSF tracks linked to an ECAL cluster, 
+energy deposits in the ECAL consistent with photon radiation at 
+a tangent to the GSF at a silicon layer are collected and linked to the
+GSF track and ECAL cluster.
+
+The linked tracks and energy clusters, referred to as \emph{PF blocks},
+are further analyzed to be cauterized as a specific particle candidate
+that is used in the final selection of events of interest. 
+First, muons are identified by linked tracks in the tracker and muon system.
+Electrons and photons are then considered simultaneously. Electrons
+are seeded by GSF tracks linked to ECAL clusters whereas photons are seeded 
+by ECAL clusters with no linked track. Candidates are classified as PF
+electrons based on a multivariate regression trained on characteristics
+of the GSF track and the energy cluster. The PF photons are categorized
+by isolation and the ratio of energy in linked ECAL and HCAL clusters.
+
+For each step, PF blocks associated with PF candidates are removed before
+further categorization. After removing muons, electrons, and photons,
+remaining blocks are categorized as charged and neutral hadrons.
+Neutral hadrons are formed from clusters in the HCAL that are not linked
+to ECAL deposts, whereas charged hadrons require an ECAL and HCAL
+cluster link. 
+The momentum of tracks linked to HCAL clusters is used to improve the poor
+resolution of the HCAL for a significant improvement below several hundred GeV.
+Because the most ubiquitous neutral hadron, $\pi^{0}$, decays
+to two photons, neutral candidates are dominated by photons, which much
+better energy resolution than neutral hadrons.
+In the HF, the ratio of energy deposits in the long fibers to short fibers
+is used to categorize clusters as HF photon and charged hadron candidates.
+The PF identification is used to correct the energy assignment based on
+object-specific calibrations in the calorimeters.
 
 \section{Physics objects}
 \subsection{Muons}
@@ -200,7 +283,7 @@ Additional reconstruction
 criteria are applied to reject \emph{nonprompt} muons, arising 
 from hadron decays, and hadron \emph{punch through} into the muon system,
 while maintaining a reconstruction efficiency greater than 96\%. 
-Following the \emph{Tight} identification criteria of Ref.~\cite{},
+Following the \emph{Tight} identification criteria of Ref.~\cite{CMS-DP-2017-007},
 with slight modifications,
 muon candidates must satisfy:
 
@@ -219,11 +302,11 @@ muon candidates must satisfy:
 To reject muons from decays of hadrons in jets,
 selected muons are required to be isolated from other PF objects
 in the event. The relative muon isolation, the ratio of the sum of
-the \pt in an $\eta$-$\phi$ region $\Delta R \def \sqrt{\eta^{2} + \phi^{2}} < 0.4$
+the \pt in an $\eta$-$\phi$ region $\Delta R < 0.4$
 around the muon is defined as
 \begin{equation}
   I_{\mu,rel} = \frac{1}{\pt^{\mu}}\sum_{\Delta R < 0.4}\left[\pt^{h^{\pm,PV}} -  
-        \max\left(\pt^{h^{0,PV}}+\pt^{\gamma} - \frac{1}{2}\pt^{h^{\pm, PU}}, 0\right)\right] \,.
+        \max\left(\pt^{h^{0}}+\pt^{\gamma} - \frac{1}{2}\pt^{h^{\pm, PU}}, 0\right)\right] \,.
 \end{equation}
 Here $\pt^{h^{\pm,PV}}$ and $\pt^{h^{0}}$ are, respectively, the charged and neutral hadrons
 identified by the PF algorithm. The tracks of charged hadron candidates allow them to be
@@ -368,9 +451,10 @@ component.
      \end{tabular}
     \label{tab:elecID}
 \end{table}
-  \subsection{Charged and neutral hadrons}
+
 \subsection{Jets}
-As introduced in Chapter~\ref{cp:phenomenology} and discussed
+\label{sec:jreco}
+As introduced in Chapter~\ref{ch:phenomenology} and discussed
 in Chapter~\ref{ch:simulation}, partons produced in the hard interaction
 are observed in the detector as clusters of hadronized particles known
 as jets. Perturbative predictions rely on a clustering algorithm that
@@ -385,7 +469,7 @@ The anti-$\kt$ algorithm sequentially clusters objects into composite jets
 based on their separation in rapidity $y$ and azimuthal angle $phi$. A weighted distance
 parameter is defined by
 \begin{equation}
-  d_{ij} = \frac{\min(k{\text{T}i}^{-2}, k_{\text{T}j}^{-2})\Delta R^2_{ij}}{R^2}\,.
+  d_{ij} = \min(k_{\text{T}i}^{-2}, k_{\text{T}j}^{-2})\frac{\Delta R^2_{ij}}{R^2}\,.
 \end{equation}
 where $R$ is the radius parameter, $k_{\text{T}i}$ and $k_{\text{T}j}$ index the transverse momentum of the objects considered
 in the comparison, and $\Delta R^2 = (y_i - y_j)^2 + (\phi_i-\phi_j)^2$.
@@ -522,4 +606,4 @@ beam pipe material, are vetoed.
 Because the $\eta$ direction of the $\ptvecmiss$ vector is unknown,
 its magnitude $\ptmiss$ is generally considered. In this analysis,
 the $\ptmiss$ is used to select events with a tectonically decaying $\PW$
-boson giving rise to $\ptmiss\approx m_{\PW}/2$.
+boson giving rise to $\ptmiss\sim m_{\PW}/2$.
