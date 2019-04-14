@@ -91,12 +91,20 @@ are known as spinors, whereas spin-1 objects are vectors.
 
 A major success of the quantum theory is the resolution of an apparent
 conflict between the wave-like and particle-like nature of light:
-in quantum mechanics, all particles are associated with fields, giving
+in relativistic quantum mechanics (quantum field theory, or QFT), all particles are associated with fields, giving
 them both wave-like and particle-like properties. 
-By the early 1940s, a relativistic quantum gauge theory of the electromagnetic force,
-quantum electrodynamics (QED), had
-been developed. Electromagnetic interactions 
-between particles in QED are communicated by the exchange of photons ($\gamma$),
+By the early 1940s, a relativistic quantum theory of the charged particles
+and their interactions via the electromagnetic force had been developed in 
+this language. 
+Quantum electrodynamics (QED) is a QFT in which interactions 
+follow from the invariance of a spin-1 field under a class of transformation of the field properties
+known as \emph{gauge transformations}.
+In such a quantum gauge theory, the \empf{gauge symmetry} of the spin-1 field leads to interactions between the fermions
+a boson fields.
+In the theory of quantum electrodynamics (QED),
+electromagnetic interactions 
+between fermions are communicated by the 
+exchange of the spin-1 photon ($\gamma$),
 the particle of light. After overcoming initial mathematical challenges, 
 the predictive power of QED was astounding.
 
@@ -124,7 +132,7 @@ Because the energy distribution of electrons in $\beta$ decay is not constant,
 a two-body decay is insufficient. Fermi adopted a hypothesis of Pauli
 that a third particle, of very low mass and uncharged, also participated
 in the interaction, 
-He prosed a direct four-fermion interaction in which the
+He proposed a direct four-fermion interaction in which the
 fermions could be created or destroyed,
 motivated by photon emission in atomic transitions.
 His unconventional proposals proved correct;
@@ -132,7 +140,14 @@ the neutrino was discovered in 1942 via the inverse process of $\beta$ decay~\ci
 While his theory must be extended
 to describe higher energy interactions (and expanded to consider the parity
 violations, discussed in Section~\ref{sec:particles}), it is a low-energy limit of the 
-modern theory of the weak interaction. 
+modern theory of the weak interaction. The connection of theories that are valid
+only for low-energy interactions to more complete theories has important implications for experimental
+inferences, which are increasingly challenges at higher energies.
+The techniques used in this thesis to study interactions beyond the directly accessible
+energy scale are heavily influenced by this work.
+
+Such low-energy versions of a more complete theory
+are a valuable calculation al tool, and give insight to the high-energy theory. 
 
 New equipment, such as the cloud chamber developed by Charles Wilson
 in 1911~\cite{doi:10.1098/rspa.1912.0081},
@@ -143,14 +158,15 @@ outside the atmosphere. The discoveries of the positron in 1932~\cite{Anderson:1
 and the muon in 1936~\cite{Street:1937me} by Anderson and others were made from such studies.
 Both had important implications for the burgeoning field of particle
 physics. The positron, a mirror image of the electron but with 
-positive charge, had been predicted by Dirac a year earlier~\cite{Dirac:1928hu}, but
-his proposal of \emph{antiparticle} partners to the fermions,
-with equal mass but opposite quantum numbers, 
-was too outlandish for many to take seriously.
+positive charge, had been predicted a year earlier by Dirac 
+in his relativistic theory of the fermions~\cite{Dirac:1928hu}. 
+His proposal of \emph{antiparticle} partners to the observed matter particles,
+with equal mass but opposite quantum numbers,
+was too outlandish for many to take seriously but proved prescient.
 Further studies demonstrated that the muon behaves like a heavier
 partner to the electron, the first sign of \emph{generations} of fermions.
 Because the particle seemingly played no role
-in the atomic theory, the existence of the muon was completely unexpected. 
+in the structure of the atomic, the existence of the muon was completely unexpected. 
 Given the new breadth of the seemingly-fundamental particles
 observed, not all closely associated with the atomic theory,
 the field of particle physics was fully its own domain
@@ -172,24 +188,29 @@ a concentrated positive charge at the center of atoms,
 the atomic nucleus~\cite{Rutherford:1911zz}.
 Inferring information about the properties and interactions of particles based on their
 behaviour when scattered---referred to as a ``scattering experiment''---is still central 
-to particle physics experiment today.
+to particle physics experiments today.
 
-This thesis concerns measurements of \pp scattering. We focus on protons collided
+This thesis concerns measurements of proton-proton (\pp) scattering. 
+A study of scattering experiments in which protons colliding
 at sufficiently high energy to overcome the electromagnetic repelling force 
-to allow a direct interaction of the quarks and gluons that compose the protons.
+to allow a direct interaction of the quarks and gluons that compose the protons is performed.
 Fig.~\ref{fig:scattering} gives a sketch of the scattering experiment approach
 to an important process in $\pp$ collisions, the details of which are not important: 
-the production of the Higgs particle particle in decays to two photons ($\gamma$). 
+the production of the Higgs particle in decays to two photons ($\gamma$). 
 Protons of known energy and momentum are brought to collisions and the
 outgoing particles---photons, in this example---are detected. Measurements 
 of the outgoing particles (the photons), along with knowledge of the incoming particles, are used to infer
 information about the unseen interaction. As discussed in Chapters~\ref{ch:phenomenology}
 and \ref{ch:simulation}, such diagrams are not just useful visualizations of the 
-interaction (in this case, the production and decay of the Higgs boson), they can be
+interaction (in this case, the production and decay of the Higgs boson); they can be
 connected to mathematical expressions used to predict explicit properties of
-the outgoing particles. In this example, predictions of photon properties with
+the outgoing particles. In this example, predictions of photon properties both with
 and without the existence of the Higgs boson can be compared to the experimental observation,
 which conclusively favors the with-Higgs-boson scenario.
+In collisions of interest to this work, the quark and gluon interactions produce massive 
+vector bosons of the weak force that themselves interact. The consistency of these 
+events with their expected properties is measured and used to test theories 
+of new particles or new interactions.
 
 \begin{figure}[htbp]
   \centering
@@ -249,14 +270,16 @@ the first particle accelerators, which have come to define the field ever since.
 An electrostatic accelerator was developed at the Cavendish Laboratory
 in Cambridge, England by John Crockcroft and Ernest Walton and
 was used to split Lithium into Helium atoms in 1932~\cite{CrockcroftWalton}.
-Concurrently, Ernest Lawrence developed the cyclotron in California~\cite{PhysRev.40.19},
+Concurrently in California, Ernest Lawrence developed the cyclotron to 
+accelerate charged particles along a helical trajectory
+through electric and magnetic fields~\cite{PhysRev.40.19},
 which became a model for many future accelerator facilities.
 These inventions triggered an explosion in the field, marked by a continual 
 effort to collide particles at higher and higher energies, capable of exploring
 the structure of matter and increasingly smaller distance scales.
 
 Accelerators provided a new means to produce particles in the laboratory.
-Combined with improved tools for detection, they announced a new era
+Combined with improved tools for detection, they introduced a new era
 of exploration.
 By the 1950s, particle physicists were faced with a ``particle zoo''
 of seemingly fundamental objects spanning a huge range of masses. 
@@ -373,11 +396,11 @@ where $c=\hbar=1$ are used. Here $c$ is the speed of light, and $\hbar$ is the
 Planck constant.
 In this paradigm, the units of eV are used to express
 mass, energy, and momentum.
-Mass determines how particles interact with gravity.
-However, a quantum description of gravity has not yet been achieved,
-and a description of gravity is outside the scope of the SM.
-Furthermore, the gravitational forces on all particles produced at the LHC are
-many orders of magnitutde lower than even the weak interaction and are not considered.
+Mass determines how particles interact with gravity, of which
+a quantum description has not yet been achieved. 
+The description of gravity is outside the scope of the SM, and
+the gravitational forces on all particles produced at the LHC are
+many orders of magnitude lower than even the weak interaction and are not considered.
 The particle masses, which span orders of magnitude and do not follow a
 conclusive pattern, are not predicted by the SM but must be experimentally
 established. Predictive power with respect to particle masses would be a highly
@@ -385,7 +408,7 @@ desirable feature of an extension to the SM.
 
 Each particle in the SM has an associated antiparticle, with the same
 mass but opposite quantum numbers. 
-Antiparticles are represented by explicitly specificying the charge, e.g. $e^{+}$ for the positron,
+Antiparticles are represented by explicitly specifying the charge, e.g. $e^{+}$ for the positron,
 or with an overbar, such as $\Paq$ for a generic antiquark.
 It is possible for a particle to be
 its own antiparticle, as is the case with the photon and $\PZ$ boson,
@@ -393,7 +416,7 @@ and possibly the neutrino~\cite{Balantekin:2018azf}.
 Particles and antiparticles are otherwise expected to have equivalent
 properties, which has been experimentally validated, even for bound states 
 such as antihydrogen~\cite{Ahmadi:2016fir}.
-The predominance of matter of antimatter is one of the most profound
+The predominance of matter over antimatter in the universe is one of the most profound
 open questions in physics~\cite{Canetti:2012zc}.
 
 \begin{figure}[htbp]
@@ -409,7 +432,7 @@ The fermions can be
 subdivided into ``quarks,'' highlighted in green in Fig.~\ref{fig:theparticles},
 and ``leptons,'' highlighted in purple, depending on whether they carry the charge
 associated with the strong force, known as ``color.''
-Their are three generations each of the fermions, divided by columns in
+There are three generations of fermions, divided by columns in
 Fig.~\ref{fig:theparticles}. The first generation consists of regular matter:
 the up-quark ($\cPqu$), down quark ($\cPqd$), and electron (e$^{-}$).
 Second and third generation particles have similar properties
@@ -465,11 +488,11 @@ interactions mediated by the $\PW$ boson, which leads to the characteristic
 parity violation.
 
 The Higgs particle, shown in yellow,
-has a unique role in the SM. It arises as a consequence the spin 0 Higgs field, 
+has a unique role in the SM. It arises as a consequence of the spin-0 Higgs field, 
 the only fundamental scalar in the SM.
-The presence of the Higgs leads to the {\PW} and {\PZ} bosons obtaining 
+The presence of the Higgs field leads to the {\PW} and {\PZ} bosons obtaining 
 mass, through a process known as electroweak symmetry breaking (EWSB),
-Experimental evidence suggests that the Higgs field is also responsible for the masses of the
+and experimental evidence suggests that the Higgs field is also responsible for the masses of the
 quarks and leptons~\cite{Tanabashi:2018oca}.
 Understanding the nature of the Higgs bosons and the scalar sector of the SM
 is a major focus of particle physics today.
@@ -479,16 +502,16 @@ properties of these particles and their interactions, as well as an explicit
 discussion of EWSB, will be presented in Chapter~\ref{ch:phenomenology}. 
 
 \section{Overview of this work}
-This thesis presents measurements of the production of particles
+This thesis presents measurements of particle production
 in $\pp$ collisions at the CERN LHC.
-Collisions producing a final state with
+Collisions giving rise to 
 a total of three electrons or muons,
 two forward ``jets'' of clustered hadronic particles,
 and an imbalance of transverse momentum---characteristic of undetected neutrinos---are selected to 
 isolate contributions involving the simultaneous
 production of a $\PW^{+}$ or $\PW^{-}$ and a $\PZ$ boson, the heavy particles
 that communicate the weak force.
-Selected collisions of interested, referred to as events, are used
+Selected collisions of interest, referred to as events, are used
 to measure the rate of production of processes predicted by the standard
 model (SM) of particle physics, the most complete theoretical expression
 of the known particles and forces of the universe, and to search for hypothetical extensions
@@ -497,10 +520,13 @@ of the SM.
 A dedicated search
 for a rare, previously unobserved SM process, referred to as electroweak (EW)
 WZ production (or \EWWZ production), is presented. 
+This class of processes includes direct interact interactions of the $\Wpm$ and $\PZ$
+bosons, which are precisely predicted by the SM.
 The presence and production rate of the \EWWZ process is intimately connected to the 
 mathematical structure of the weak interactions
 of the massive vector bosons,
 as well as the phenomenon of EW symmetry breaking (EWSB)~\cite{Quigg:2009vq}.
+
 The discovery of a scalar boson with couplings consistent with those of the SM
 Higgs boson by the ATLAS and CMS Collaborations~\cite{Aad:2012tfa,Chatrchyan:2012xdj,Chatrchyan:2013lba} 
 provides evidence that the {\PW} and {\cPZ} bosons acquire mass through the

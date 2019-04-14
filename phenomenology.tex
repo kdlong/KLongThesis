@@ -1,4 +1,4 @@
-\chapter{Vector boson scattering in the standard model and beyond}
+\chapter{Diboson production and scattering in the standard model and beyond}
 \label{ch:phenomenology}
 
 \section{Mathematical formalism of the standard model}
@@ -18,7 +18,7 @@ Particles in QFT arise as excitations in quantum fields.
 The equations of motion and interactions for the quantum fields of the SM can
 be extracted from the SM Lagrangian, which can be divided into 
 terms governing the propagation of the free fields of the spin $1/2$ 
-fermions (quarks and leptons), the spin 0 Higgs field, and the vector boson fields:
+fermions (quarks and leptons), the spin-0 Higgs field, and the vector boson fields:
 \begin{equation}
   \mathcal{L}_{SM} = \mathcal{L}_{\text{gauge}} + \mathcal{L}_{\text{leptons}} + 
       \mathcal{L}_{\text{quarks}} + \mathcal{L}_{\text{scalar}} \,.
@@ -81,7 +81,7 @@ and gauge fields that are impacted by the rotation: the $\SUthree$ transformatio
 concerns only objects with color charge (quarks and gluons), and the $\SUtwo$
 and $\Uone$ rotations concern weak isospin charge, carried only by 
 the left-handed fermions, and weak hypercharge.
-The measurements in this thesis are probe the structure of the 
+The measurements in this thesis probe the structure of the 
 electroweak force, so it is instructive to consider this in more detail.
 
 The left-handed leptons form doublets under the $\SUtwo$ isospin rotation:
@@ -258,7 +258,7 @@ leptons obtain mass.
 \section{Particle scattering and perturbative calculations}
 
 With the full SM Lagrangian in hand, the principle of least action can
-can be used to to derive the equations of motion of the SM fields. For the kinetic
+can be used to derive the equations of motion of the SM fields. For the kinetic
 terms, exact solutions can be obtained, however, closed-form equations of motion
 do not exist when the interaction terms are also relevant.
 The strength of these interaction is set by the coupling constants $g_i$
@@ -270,7 +270,7 @@ a range of the interaction communicated by the gauge field,
 this treatment is particularly well suited for scattering experiments.
 Free, non-interacting particles of the fields are brought together in collision 
 from a large separation, where the distance scale of the interaction 
-is proportional to the energy of the collision. After interaction,
+is inversely proportional to the energy of the collision. After interaction,
 free particles, possibly of different type than those brought to collision,
 emanate from the interaction point.
 
@@ -373,7 +373,11 @@ terms---in particular, the masses and couplings of the theory. This procedure,
 known as \emph{renormalization}, is closely connected to the energy scale of the process
 and the structure of the fields themselves. In this approach, the coupling constant 
 captures the neglected contributions from diagrams contributing at higher perturbative orders,
-becoming an effective coupling at the energy scale considered.
+becoming an effective coupling at the energy scale considered. The effective coupling
+is a function only of the energy scale probed. Furthermore, the energy dependence of the
+effective coupling is a fundamental aspect of the theory that can be calculated to high
+accuracy. Thus, once the effective coupling is experimentally established for some assessible energy
+scale in a well-measured process, it can be applied in many other calculations.
 
 \begin{figure}[htbp]
   \centering
@@ -395,7 +399,11 @@ with energy, whereas the QCD coupling decreases, leading to the
 confinement of quarks and gluons into bound states, such as the proton and neutron,
 at low energies. At the energy scale probed in LHC collisions, the QCD coupling is
 sufficiently small for perturbative calculations, however, higher-order corrections
-are often significant. The scale dependence of the EW coupling is minimal, so
+are often significant: in diboson processes, typical corrections are $\mathcal{O}$(100\%)
+from the lowest order in perturbation theory (leading order, or LO) to the 
+next-to-leading (NLO) order, and 5--10\% from NLO to next-to-next-to-leading 
+order (NNLO)~\cite{Grazzini:2017mhc}.
+The scale dependence of the EW coupling is minimal, so
 higher-order EW corrections are often not essential to accurate calculations.
 Perturbative calculations are discussed in more detail in Chapter~\ref{ch:simulation}.
 
@@ -409,7 +417,7 @@ all flavors of quarks but the heaviest, the top quark.
 Therefore, the initial state of fundamental particles in the interactions studied at the LHC is always
 composed of quarks and gluons, collectively dubbed ``partons.'' The energy of the colliding 
 protons is controlled, but the flavor and energy of the interacting partons can only 
-be inferred based on these properties, as discussed in Chapter~\ref{ch:simulation}.
+be stochastically determined based on these properties, as discussed in Chapter~\ref{ch:simulation}.
 
 The dominant modes of $\pp\to\WZ\to\threelnu$ 
 (were $\ell,\ell'=\mathrm{e},\mu$) production are shown in Fig.~\ref{fig:wz3lfeynman}.
@@ -442,14 +450,11 @@ the number of hadronic objects to the number of partons in a Feynamn diagram.
 The solution is to cluster the partons, or hadrons, using algorithms that are
 well-behaved for low energy partons. We refer to these clustered hadronic objects as
 ``jets,'' (\jet) and a close correspondence between experimental measurements and theoretical
-predictions has been demonstrated for several so-called jet-clustering algorithms.
+predictions has been demonstrated for several so-called jet-clustering algorithms~\cite{Cacciari:2008gd}.
 The specific algorithms used in this analysis will be discussed in Chapter~\ref{ch:reconstruction}.
 
 The focus of this thesis is the process
 $\pp\to\WZjj$, an important subcomponent of the inclusive $\pp\to\WZ$ process
-Here, and throughout this thesis, $\WZjj$ refers to $\WZ$ production,
-with leptonic decays,
-associated with at least two jets in the event, e.g., a final state of $3\ell\nu\jet\jet$.
 While it is often useful to relate the $\WZ+2$ partons calculation and the $\WZ+2$ jets (\WZjj)
 experimental state, it is important to note that the relationship is most appropriate
 when using a common jet clustering algorithm.
@@ -474,9 +479,10 @@ states also contribute, slightly enhancing the total $\WZjj$ production rate.
  \label{fig:feynmanDiagramsVBS}
 \end{figure}
 
-Another contribution at $\mathcal{O}(\alpha_s^{0})$ emerges, of
+In addition to these contributions to the \WZjj production,
+another contribution at $\mathcal{O}(\alpha_s^{0})$ contributes, of
 order $\mathcal{O}(\alpha_s^{4})$. 
-The subclass of processes with only EW couplings at tree level has a rich
+This subclass of processes with only EW couplings at tree level has a rich
 and important phenomenology.
 It includes contributions from vector boson scattering (VBS), 
 where vector bosons are radiated from the incoming quarks before interacting,
@@ -496,7 +502,8 @@ in the \EW sector, such as heavy new scalar Higgs bosons, would lead to addition
 contributions, modifying the effective rate of production of \EWWZ events.
 
 The existence of the Higgs boson has strong implications for VBS VV production.
-The longitudinally polarized component of the diagrams of Fig.~\ref{fig:feynmanDiagramsVBS} 
+In perturbative calculations of longitudinally polarized VV scattering,
+the production rate involving the diagrams of Fig.~\ref{fig:feynmanDiagramsVBS} 
 that do not involve the Higgs
 couplings increase with the scattering energy without bound.
 In 1987, an analysis of VBS production of $\PW{+}\PW^{-}$ in $\pp$ collisions
@@ -589,7 +596,7 @@ $s_{\PH}^2 \equiv \sin^2{\theta_{\PH}}$, where $\sin{\theta_{\PH}} = 2\sqrt{2}v_
 the ratio
 of the vacuum expectation value (vev) of the triplet fields to the SM vev. 
 The $\WZjj$ state probed in this thesis is well-suited for further probes of this model, 
-which is significantly less constrained than those charged Higgs with predominantly
+which is significantly less constrained than models predicting charged Higgs bosons with predominantly
 leptonic decays.
 
 \subsection{Generalizing new interactions with effective field theory}
@@ -609,14 +616,18 @@ or lack thereof, may be more meaningful than sensitivity to a particular model.
 
 Effective field theory (EFT) is well suited for a broad characterization
 of new physics at a high energy scale. In EFT, the SM is assumed to describe the
-field content of the universe below some scale $\Lambda$. 
+field content of the universe below some energy scale $\Lambda$. 
 Additional fields may exist, but they are only directly accessible (e.g., 
-resonant production at a collider) above $\Lambda$. Below this scale,
+can be produced at a collider) above $\Lambda$. Below this scale,
 their effect on the low-energy world can be parameterized in terms of the known
-SM field content. These interactions are realized by adding additional terms
-to the SM Lagrangian, built from the SM fields, of mass dimension $>$4. In order
-to restore calculability of these interactions, a dimensionful coupling must also,
-which is proportional to the inverse of the scale $\Lambda$.
+SM field content. The effective interactions are captured by 
+extending the SM Lagrangian with additional terms of mass dimensions $d>4$
+that are built from the SM fields. The effective 
+terms are suppressed by dimensionful couplings
+proportional to the $1/\Lambda^{4-d}$, leading to the expected
+energy dependence of the interactions. The treatment breaks down as the energy
+scale approaches $\Lambda$, but for energies $\ll$$\Lambda$ all effective interactions
+can be described.
 
 The bottom-up approach to EFT described here, in which
 new interactions are parameterized in terms of the low-energy field content,
@@ -699,9 +710,9 @@ by measuring $\pp\to\WZ\to\ell'\ell'\ell\nu$ process, corrected for the
 independently-measured leptonic branching ratios (the percentage of events with
 $\PW\to\ell\nu$ and $\PZ\to\ell'\ell'$ to all other decay channels), to obtain a total
 rate for the process $\pp\to\WZ$. Theoretical predictions are shown at 
-next-to-leading order (NLO) in QCD, in which all contributions to the process 
+NLO in QCD, in which all contributions to the process 
 up to $\alpha^{2}\alpha_s$ are considered in the calculation,
-and at next-to-next-to-leading order (NNLO), which considers contributions up 
+and at NNLO, which considers contributions up 
 to $\alpha^{2}\alpha_s^{2}$. The predictions are obtained using the programs
 MCFM~\cite{Campbell:2011bn,Campbell:2015qma} and MATRIX~\cite{Grazzini:2016swo,Grazzini:2017mhc}.
 The data exhibit a slight preference for the higher-order prediction, demonstrating
