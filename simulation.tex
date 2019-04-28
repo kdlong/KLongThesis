@@ -40,7 +40,7 @@ in the diphoton channel where achieved with the SM $\pp\to\gamma\gamma$
 expectation parameterized as a falling exponential distribution,
 not with an ab initio simulation of the distribution~\cite{Aad:2014eha,Khachatryan:2014ira}.
 
-The results in this thesis exploit the data constrain important backgrounds.
+The results in this thesis exploit the data to constrain important backgrounds.
 However, the \EWWZ and \QCDWZ processes are only distinguishable by their kinematic
 distributions, which cannot be independently observed. 
 Determining the production mechanism
@@ -65,17 +65,26 @@ therefore the incoming state directed to collision and the outgoing particles
 that interact with the detector---have non-perturbative properties.
 
 The uncomfortable dichotomy between the regime of most physical phenomena and calculability
-is averted by the concept of factorization, which allows a separation of short-distance
-interactions from long-distance interactions, or equivalently, interactions governed
-by energy scales large or small with respect to $\lqcd\approx 200\MeV$.
+is averted by the concept of factorization, which allows a separation of long-distance
+interactions from short-distance interactions, governed
+by energy scales small or large with respect to $\lqcd\approx 200\MeV$, respectively.
 Factorization states that the interaction
 of hadrons can be reduced to structure functions describing the distribution of quarks
 and gluons in hadrons, known as parton distribution functions (PDF), convoluted
 with the parton-parton interaction cross section. At high momentum transfer,
-the parton-parton interaction can be described perturbatively. Furthermore,
-the evolution of the interaction from outgoing quarks, gluons, and leptons
-can be factorized from the formation of bound states, described by 
-parton-to-hadron fragmentation functions, and their decay. The concept is illustrated
+the parton-parton interaction can be described perturbatively. 
+The evolution of the interaction from outgoing quarks and gluons
+to the formation of bound hadronic states, described by 
+non-perturbative parton-to-hadron fragmentation functions or
+models, occurs at lower energy and larger time and length scales.
+Along with the decays of bound states, they are separable from the perturbative
+interactions and can be built from phenomenological
+models tuned to independent measurements.
+The interactions of stable particles with the detector material
+are separated from their production in time and space, allowing them to be
+treated independently with sophisticated models of particle interactions in matter 
+implemented in the \GEANTfour package~\cite{GEANT, Geant2}.
+The concept is illustrated
 for \pp collisions in Fig.~\ref{fig:factorization}.
 Factorization 
 is formally established under certain conditions~\cite{Collins:1989gx}, and it 
@@ -215,7 +224,8 @@ expectation in many cases~\cite{Altarelli:1979ub,Campbell:2011bn,Dittmaier:2011t
 The majority of production processes at the LHC require a calculation at least to NLO in QCD for percent-level accuracy.
 Theoretical tools have advanced to allow automated computation of all 
 SM processes at NLO~\cite{Gleisberg:2008ta,MGatNLO,Recola},
-and many processes have recently been computed at NNLO in QCD~\cite{Grazzini:2017mhc}.
+and many processes have recently been computed at NNLO in QCD~\cite{Grazzini:2017mhc}
+or N$^{3}$LO~\cite{Dreyer:2016oyx,Anastasiou:2015ema}.
 Calculations
 at LO in the EW theory are often sufficient for percent-level accuracy. However,
 some processes are susceptible to anomalously large EW corrections, including
@@ -537,14 +547,21 @@ have more impact on the dijet kinematics of \WZjj events, which are critical
 to the analyses considered in this thesis, 
 than does hadronziation process.
 
-Multi-parton interactions (MPI) and pileup are also important for a
-realistic picture of particle formation in LHC collisions. The MPI is primarily
+Multi-parton interactions (MPI), remnants of the interacting protons, 
+and pileup events from additional $\pp$ interactions are important for a
+realistic picture of particle formation in LHC collisions. 
+The MPI is primarily
 soft; it does not generally result in easily identifiable jets, but
 it impacts the total energy transfer in a scatter event and affects the color
-connections of the scatter partons and proton remnants, leading to a more complex
-hadronization stage~\cite{Buckley:2011ms}. The MPI is modeled in \Pythia, with parameters tuned 
+connections of the scattered partons and proton remnants. 
+The MPI and the remnants of the proton after the hard interaction 
+impact the hadronization of the event; together they 
+are referred to as the ``underlying event.'' 
+For simulations in this thesis, the underlying event is modeled in \Pythia, with parameters tuned 
 by the CMS experiment using 7 and 8\TeV data as presented in Ref.~\cite{Khachatryan:2015pea},
-referred to as the CUEP8M1 tune. Pileup is simulated using large datasets of 
+referred to as the CUEP8M1 tune,
+or with the default underlying event tunes of \Herwig or \Sherpa.
+Pileup is simulated using large datasets of 
 events of elastic and low-energy transfer \pp scattering events, referred
 to as minimum bias events, simulated with \PYTHIA 8. Events are sampled randomly
 from the dataset and mixed into the simulated sample of hard-scattering events
@@ -624,7 +641,8 @@ features of the \EWWZ and \QCDWZ processes that we exploit for this analysis
 are theoretically well understood.
 Much of this work was performed
 in collaboration with experts in the theoretical community at the Les Houches 2017
-workshop, and reported in Ref.~\cite{leshouches2017}.
+workshop, and reported in Ref.~\cite{leshouches2017},
+in a study the author of this thesis proposed and co-convened.
 
 Following this work, results are presented for the following event selection,
 referred to as the fiducial region.
@@ -824,3 +842,12 @@ predictions, are discussed in Chapter~\ref{ch:analysis}.
   from \MG after selecting \WZjj events.}
  \label{fig:qcdwzHadronization}
 \end{figure}
+
+These studies of the MC simulations considered in this work have established
+that reliable predictions and uncertainties are observed for several variables sensitive to 
+distinguishing the \EWWZ and \QCDWZ processes. In particular, we exploit the 
+\etajj, \mjj, and \zepl in the extraction of results using the central predictions
+of \MG. The uncertainty in these predictions is in the range of 10--20\% for
+the \QCDWZ process, modeled with \MG at LO with MLM merging, and 5--10\% for
+the \EWWZ process modeled with \MG at LO. The uncertainties are discussed in
+more detail in Chapter~\ref{ch:analysis}.
