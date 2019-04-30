@@ -79,13 +79,13 @@ satisfying the \EWWZ signal selection.
 
 The component of the \WZjj process considered as signal or background
 is adjusted for the interpretation of results. For the \WZjj fiducial
-cross section measurement, all \WZjj production mechanisms are considered 
+cross section measurement, all SM \WZjj production mechanisms are considered 
 signal.
 For the \EWWZ measurement,
 the \EWWZ process is considered signal, and the \QCDWZ process is considered
 background. The \QCDWZ process is the dominant background in this search,
 with a ratio of $~3:1$ to the \EWWZ process in the signal region.
-For new physics searches, all \WZjj processes are considered background.
+For new physics searches, all SM \WZjj processes are considered background.
 The ratio of \EWWZ and \QCDWZ processes is assumed to be consistent with the SM
 expectation.
 
@@ -97,7 +97,7 @@ The \pt threshold for the single lepton trigger is 25 (20)\GeV for the electron 
 For the dilepton triggers, with the same or different flavors, the minimum \pt of the leading and subleading leptons are 17\,(17) and 12\,(8)\GeV
 for electrons (muons), respectively.
 The combination of these trigger paths brings the trigger efficiency for three-lepton events
-to nearly 100\%.
+satisfying the minimum $\pt$ requirements to nearly 100\%.
 However, partial mistiming of signals in the forward region of the electromagnetic calorimeter (ECAL) endcaps
 ($2.5 < \left|\eta\right| < 3.0$) led to a reduction in the level 1 trigger efficiency. 
 
@@ -122,10 +122,11 @@ crossing, producing an event missing the leptonic signature of \WZ events.
 The triggered event is likely to be rejected by the HLT, while the correctly-timed
 event is rejected by the restriction against successive triggered events.
 
-A correction for this efficiency loss was determined using an unbiased sample
-of events where the event pre-firing is prevented by additional trigger conditions.
+A correction for this efficiency loss with respect to the expectation in the MC simulation 
+is determined using an unbiased sample
+of events in which the event pre-firing is prevented by additional trigger conditions.
 In particular, a sample of events is selected where the trigger conditions
-preventing the readout of events separated by less than three bunch crossings 
+restricting the readout of events separated by less than three bunch crossings 
 prevented the mistimed electromagnetic
 signal from firing the trigger, but did not prevent the correctly timed event
 from triggering. This sample of events is formed by selecting 
@@ -215,12 +216,14 @@ The invariant mass of any dilepton
 pair $m_{\ell\ell}$ must be greater than 4\GeV.
 Such a requirement is necessary in theoretical calculations to avoid divergences
 from collinear emission of same-flavor opposite-sign
-dilepton pairs, and 4\GeV is chosen to avoid low mass resonances.
+dilepton pairs, and 4\GeV is chosen to avoid low mass resonances
+and double semileptonic decays of B and D hadrons.
 The selection is extended to all dilepton pairs to
 reduce contributions from backgrounds with soft leptons while having a negligible effect on signal efficiency.
 The trilepton invariant mass, $m_{3\ell}$, is required to be more than 100\GeV
 to exclude a region where production of $\cPZ$ bosons with final-state photon radiation
-is expected to contribute.
+is expected to contribute. Such events enter the signal region when the radiated photon
+pair converts to electrons and one electron is lost.
 
 Distributions of events satisfying these criteria, designed to select
 $\WZ\rightarrow 3\ell\nu$ events, are shown in Fig.~\ref{fig:WselectionPlots}.
@@ -392,7 +395,9 @@ In addition to the \EWWZ and \QCDWZ process, which at tree level are
 $\mathcal{O}(\alpha^4)$ and $\mathcal{O}(\alpha^2\alpha_{S}^2)$ respectively,
 a smaller contribution at $\mathcal{O}(\alpha^3\alpha_{S})$ 
 contributes to the \WZjj state. We refer to this contribution as the 
-interference term. It is evaluated using samples of particle-level
+interference term. It amounts to less than 5\% of the signal in the \EW signal selection
+and is taken as an uncertainty on the signal contribution.
+It is evaluated using samples of particle-level
 events generated with \MG v2.6.0. Samples are generated with the dynamic $\mu_{R}$
 and $\mu_{F}$ set to the maximum of the parton transverse momenta per event, and with fixed
 scales $\mu_{R} = \mu_{F} = m_{\mathrm{W}}$, where $m_{\mathrm{W}}$ is the world average value of the 
@@ -1268,36 +1273,34 @@ used to extract results.
 
 The uncertainty in modeling the \EWWZ and \QCDWZ
 processes has a large impact in the \EWWZ measurement.
-In addition to the uncertainties from PDF and scale choice, 
+In addition to the uncertainties from scale and PDF choice,
 comparisons of alternative matrix element and parton shower generators are
 considered.
 The uncertainty in the \QCDWZ process is derived by
-comparing the predictions of the MLM-merged sample and those obtained with the \FxFx-merged sample,
-after fixing the normalization in the control region described in Section~\ref{sec:promptbackgrounds}
-to the observed data yield in this region.
+comparing the predictions of the MLM-merged simulation and those obtained with the \FxFx-merged simulation,
+after fixing the normalization to the observed data
+in the \QCDWZ sideband region.
 Differences between the predictions of the MC simulations
 in the signal region and in the ratio
-of the control region to the signal region event yields
+of the \QCDWZ sideband to the signal region event yields
 are considered in the comparisons.
-The differences in predictions are generally found to be
-within the scale and PDF uncertainties of the samples,
-as shown in Fig~\ref{fig:backgroundControl} for events
-in the non-VBS background control region,
+The differences in predictions are generally
+within the scale and PDF uncertainties of the MC simulations,
 and a 10\% normalization uncertainty is assigned to account for
 the observed discrepancies.
-The results obtained using the \POWHEG sample,
-which predicts a slightly softer {\mjj} spectrum, are also largely contained 
+The results obtained using the \POWHEG simulation,
+which predicts a slightly softer {\mjj} spectrum, are also largely contained
 within the theoretical uncertainties considered.
-However, because \WZjj events from this sample arise from
-soft radiation from the parton shower, it is 
+However, because \WZjj events from this simulation arise from
+soft radiation from the parton shower, it is
 not explicitly considered in the uncertainty evaluation.
-For the \EWWZ process, the samples described in Section~\ref{sec:promptbackgrounds}
-are found to agree within
-the theoretical uncertainties from the PDF and the choice of 
-$\mu_{\mathrm{R}}$ and $\mu_{\mathrm{F}}$ 
+For the \EWWZ process, the MC simulations described in Section~\ref{sec:mc}
+agree within
+the theoretical uncertainties from the PDF and the choice of
+$\muR$ and $\muF$
 for the kinematic variables considered in the analysis,
 so no additional uncertainty is
-assigned. 
+assigned.
 
 The interference term is evaluated using MC simulation of particle-level events
 selected from the samples described in Section~\ref{sec:promptbackgrounds}. 
@@ -1315,21 +1318,21 @@ on the observed \EWWZ signal strength.
 
 Higher-order EW corrections in VBS processes are known to be negative and at
 the level of tens of percent, with the correction increasing in magnitude 
-with increasing {\mjj}~\cite{Biedermann:2016yds}.
-While this behavior is expected to be a general feature of VBS processes, 
-calculations have not yet been performed for the final state considered 
-in this letter, and they are therefore not applied to the EW WZ MC simulation. 
-However, with the exception of the highest values of {\mjj}, modifications 
-are expected to be contained within the theoretical uncertainties and 
-we have confirmed that the \EWWZ measurement is 
-insensitive to corrections of the shape and magnitude calculated for 
-other EW production processes
+with increasing {\mjj}~\cite{Biedermann:2016yds} and $m_{\mathrm{VV}}$.
+We do not apply corrections to the \WZjj MC simulation, but we have verified that the 
+significance of the \EWWZ measurement is insensitive to higher-order EW corrections by 
+performing the signal extraction described in Section~\ref{sec:SMWZ} with the \mjj predicted 
+by the \EWWZ MC simulation modified by the corrections from Ref.~\cite{Denner:2019tmn}. 
+As the relative effect of the EW corrections on SM and anomalous \WZjj production is unknown, 
+we do not apply corrections to the SM backgrounds or new physics signals for our results. 
+Because corrections to the SM \WZjj production that decrease the expected number of events 
+at high $m_{\WZ}$ lead to more stringent limits on new physics, this is a conservative approach.
 
-Uncertainties related to the finite number of simulated events, or to the limited 
-number of events in data control regions, affect the signal and background predictions. 
-They are uncorrelated 
-across different samples, and across bins of a single distribution. 
-The limited event count in the control regions of the
+The uncertainties related to the finite number of simulated events, or to the limited
+number of events in data control regions, affect the signal and background predictions.
+They are uncorrelated
+across different samples, and across bins of a single distribution.
+The limited number of events in the relaxed lepton control samples used for the
 nonprompt background estimate is the dominant contribution to this uncertainty.
 
 The nonprompt background estimate is also affected by systematic uncertainties
@@ -1339,9 +1342,20 @@ for both electrons and muons, uncorrelated between channels.
 It covers the largest difference observed
 between the estimated and measured
 numbers of events in data control samples enriched in
-$\ttbar$ and Drell--Yan contributions and the differences between 
+$\ttbar$ contributions, which have enhanced contributions from heavy-flavor jets, and
+Drell--Yan contributions, dominated by light-flavor jets, and the differences between 
 using transfer factors derived in \Zpj and dijet events.
 
+Systematic uncertainties are less than 1\% for the trigger efficiency and 1--3\% for the
+lepton identification and isolation requirements, depending on the lepton flavors.
+Other systematic uncertainties are related to the use of simulated samples:
+1\% for the effects of pileup and  1--2\% for the \ETmiss reconstruction,
+which is estimated by varying the energies of the PF objects within their uncertainties.
+The uncertainty in the b-quark jet content in $\PW\PZ$ events is 2\%
+and accounts for differences in b-tagging efficiencies between data and MC.
+The uncertainty in the integrated luminosity of the data sample is 2.5\%~\cite{CMS:2017sdi}.
+This uncertainty affects both the signal and the simulated portion of the background estimation,
+but does not affect the background estimation from data.
 
 \begin{table}[htbp]
      \centering
@@ -1364,7 +1378,7 @@ using transfer factors derived in \Zpj and dijet events.
                                       & $\sigma_{\WZjj}$ & \EWWZ significance \\
  \hline %------------------------------------------------------------------------------------------
  \hline %------------------------------------------------------------------------------------------
- Jet energy scale                     & $+10.7\, /-8.1$ & $ 7.0 $               \\ %done
+ Jet energy scale                     & $+11\, /-8.1$ & $ 7.0 $               \\ %done
  Jet energy resolution                & $+1.9\,/-2.1$   & $< 0.1$             \\ %done
  \QCDWZ modeling                      &    N/A          & $ 2.2 $             \\
  Other background theory              &  $+2.2\,/-2.2$  & $ 0.3 $             \\ %done
