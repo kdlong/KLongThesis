@@ -46,7 +46,7 @@ Reconstruction \emph{efficiency}, or a high rate of positive identification
 and reconstruction of real particles, must be balanced alongside the rate of misreconstruction
 and misidentification.
 For example, electrons with a poorly reconstructed track will mimic photons,
-but because the track reconstruction efficiency cannot be 
+but because the track reconstruction efficiency cannot reach 100\%,
 accepting only very high-quality tracks will lead to the rejection
 of real electrons if an interaction in the tracker is not readout.
 The optimal balance between efficiency and misidentification is dependent
@@ -163,7 +163,7 @@ detector systems that are reconstructed as hits. As for the tracker,
 the hits are used to infer the paths and momenta of the interacting particles.
 All charged objects will be reconstructed by the system, but
 the large material presented by the tracker, ECAL, HCAL, and the support
-structure and magnet in front of the muon system, ensures that the vast majority
+structure and magnet in front of the muon system ensures that the vast majority
 of the objects reaching the system are muons.
 
 Hits in the individual DTs, CSCs, and RPCs are reconstructed using the
@@ -198,19 +198,20 @@ as close to 100\% of the energy as possible. In addition, the distribution
 of the energy deposit in space can be used to identify the particle
 that induced the shower.
 
-\emph{clusters} of energy are formed separately for the 
+\emph{Clusters} of energy are formed separately for the 
 barrel and endcaps of the ECAL and HCAL and the 
 ECAL preshower by combining the energy measurements in segmented
 components of the detectors. 
 Reconstruction is seeded by detector elements with a measured energy deposit
 $E>E_{seed}$, from which \emph{superclusters} are formed
-by aggregating neighboring detector cells with the seed cell that exceed
-energy threshold of twice the noise level. The $E_{seed}$ values are optimized 
+by aggregating neighboring detector cells that exceed
+energy threshold of twice the cell noise level with the seed cell. 
+The $E_{seed}$ values are optimized 
 independently for the detector regions 
 from simulation studies of photons and hadrons.
 The values range 
 from a few hundred MeV for the ECAL barrel and endcap up to over 1\GeV in the HCAL
-endcap; the exact values are given in Table 2 of Ref.~\cite{CMS-PRF-14-001}
+endcap; the exact values are given in Table 2 of Ref.~\cite{CMS-PRF-14-001}.
 Clusters are formed from the superclusters by assuming the energy
 deposit from an interaction is Gaussian distributed. The number of interactions
 contributing to the supercluster is obtained from a maximum likelihood fit
@@ -227,11 +228,11 @@ The principle role of the PF algorithm is to \emph{link} the
 the inner tracks, muon system tracks, and calorimeter clusters to form 
 \emph{PF candidates}. The PF candidates are categorized as neutral or charged
 hadrons, electrons, muons, and photons
-that are be used in to correct the energy response
+that are used in to correct the energy response
 of the detector in a particle-specific way and to
 build the identified objects selected for analysis. 
 The link algorithm evaluates to consistency of tracks and clusters by
-extrapolating the from the last hit of each inner track to:
+extrapolating from the last hit of each inner track to:
 \begin{itemize}
   \item The depth in the ECAL of the expected maximum energy deposit a typical electromagnetic shower
   \item The plane of the ECAL preshower layers
@@ -242,8 +243,8 @@ ECAL or HCAL crystal. In the case of multiple matches, the cluster
 with its maximum closest to the track position is taken.
 Clusters in the ECAL and HCAL are linked if the ECAL clusters overlaps
 the HCAL cluster. For GSF tracks linked to an ECAL cluster, 
-energy deposits in the ECAL consistent with photon radiation at 
-a tangent to the GSF at a silicon layer are collected and linked to the
+energy deposits in the ECAL consistent with photon radiation 
+tangent to the GSF at a silicon layer are collected and linked to the
 GSF track and ECAL cluster.
 
 The linked tracks and energy clusters, referred to as \emph{PF blocks},
@@ -266,7 +267,7 @@ cluster link.
 The momentum of tracks linked to HCAL clusters is used to improve the poor
 resolution of the HCAL for a significant improvement below several hundred GeV.
 Because the most ubiquitous neutral hadron, $\pi^{0}$, decays
-to two photons, neutral candidates are dominated by photons, which much
+to two photons, neutral candidates are dominated by photons, which are measured with considerably
 better energy resolution than neutral hadrons.
 In the HF, the ratio of energy deposits in the long fibers to short fibers
 is used to categorize clusters as HF photon and charged hadron candidates.
@@ -296,7 +297,7 @@ muon candidates must satisfy:
     plane $d_{z}$ must satisfy $d_{z} < 1\unit{mm}$
   \item At least one hit in the pixel detector
   \item More than five hits in the strip tracker
-  \item At least six hits in the tracker must be used in the track fit.
+  \item At least six hits in the tracker must be used in the track fit
 \end{itemize}
 
 To reject muons from decays of hadrons in jets,
@@ -591,7 +592,7 @@ the $\ptvecmiss$ sum and replaced by the corrected energies,
   \vec{p}_{T,corr}^{\kern1pt\text{miss}} = \ptvecmiss - 
         \left(\pt^{\jet} - \sum_{\text{cand}\in\jet} \vec{p}_{T,cand}\right)\,.
 \end{equation}
-The uncertainty in the corrected $\ptmiss$, used for this analysis, is dominated by the uncertainty in the 
+The corrected $\ptvecmiss$ is used in this analysis. Its uncertainty is dominated by the uncertainty in the 
 jet energy corrections. A smaller uncertainty is associated with the
 \emph{unclustered energy} of PF candidates not associated with a jet~\cite{Sirunyan:2019kia}.
 
@@ -605,5 +606,5 @@ beam pipe material, are vetoed.
 
 Because the $\eta$ direction of the $\ptvecmiss$ vector is unknown,
 its magnitude $\ptmiss$ is generally considered. In this analysis,
-the $\ptmiss$ is used to select events with a tectonically decaying $\PW$
+the $\ptmiss$ is used to select events with a leptonically decaying $\PW$
 boson giving rise to $\ptmiss\sim m_{\PW}/2$.

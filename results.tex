@@ -1,7 +1,7 @@
 \chapter{Results}
 \label{ch:results}
 
-\section{Fiducial WZjj cross section measurement}
+\section{Fiducial \WZjj cross section measurement}
 
 The cross section for \WZjj production, without separating by production mechanism,
 is measured with a combined maximum likelihood fit to the 
@@ -67,7 +67,7 @@ The \EWWZ and \QCDWZ contributions
 and their uncertainties are treated independently with the same approach as described
 for the tight fiducial region.
 
-\section{Search for EW WZ boson production}
+\section{Search for \EWWZ boson production}
 
 The rate of \EWWZ production with respect to the SM prediction
 is quantified by treating the \EWWZ process as signal and the \QCDWZ
@@ -83,7 +83,7 @@ The best-fit value for the signal strength $\mu_{\mathrm{EW}}$ is
 \begin{equation}
   \mu_{\mathrm{EW}} = 0.82^{+0.51}_{-0.43} \,,
 \end{equation}
-consistent with the SM expectation. 
+consistent with the SM expectation at LO of $\mu_{\EW,\,\mathrm{LO}} = 1$,
 
 The significance of the signal is quantified by calculating the local $p$-value
 for an upward fluctuation of the data relative to the background prediction
@@ -161,44 +161,54 @@ Table~\ref{tab:VBSYields}.
 \end{table}
 
 \subsection{Comparison with the \EWWZ measurement by the ATLAS Collaboration}
-a small degree of tension between this result and the result
+There is a small degree of tension between this result and the result
 recently submitted for publication by the ATLAS 
-Collaboration~\cite{Aaboud:2018ddq}---which 
+Collaboration~\cite{Aaboud:2018ddq}, which 
 reports observed signal strengths for the \EWWZ and \QCDWZ
-processes of $1.77^{+0.49}_{-0.43}$ and $0.56\pm0.16$, respectively---will
-be aided by additional experimental and theoretical work.
-Because the signal strength is a ratio of the predicted to observed yields,
+processes of $1.77^{+0.49}_{-0.43}$ and $0.56\pm0.16$, respectively.
+Because the independent results presented by the ATLAS and CMS Collaborations
+are each limited by large statistical uncertainties, establishing
+their mutual compatibility and compatibility with the SM will be aided by future 
+experimental studies.
+Because the measured signal strength is a ratio of the predicted to observed yields,
 it is dependent on the MC simulation used to derive the expected yields.
-Additional understanding of these simulations will provide valuable
-insight into the agreement of the two results. Measurements with reduced
+While the cross sections derived from these results are not dependent on the normalization,
+the fiducial regions used by the two analyses are not directly comparable.
+Thus, understanding the simulations used in the two independent analyses 
+in a common fiducial region will provide valuable
+insight into the agreement of the two results. 
+In addition, future measurements with reduced
 uncertainties will definitively determine if the differences are a result
 of a statistical fluctuation or if they are a consequence of different analysis
 techniques or interpretations.
 
 \begin{figure}[htbp]
   \centering
-   \includegraphics[width=0.49\textwidth]{figures/Conclusions/mjj_nMinus1_ATLASptj_Prefit.pdf}
-   \includegraphics[width=0.49\textwidth]{figures/Conclusions/mjj_nMinus1_ATLASptj_Postfit.pdf}
+   \includegraphics[width=0.49\textwidth]{figures/AnalysisResults/mjj_nMinus1_ATLASptj_Prefit.pdf}
+   \includegraphics[width=0.49\textwidth]{figures/AnalysisResults/mjj_nMinus1_ATLASptj_Postfit.pdf}
   \caption[The $\mjj$ for events selected in a fiducial region designed to approximate the selection of the ATLAS Collaboration]{
-    The $\mjj$ spectrum for events selected in a relaxed fiducial region, described in the text,
+    The $\mjj$ for events selected in a relaxed fiducial region, described in the text,
     designed to be comparable to the
     selection used by the ATLAS Collaboration in Ref.~\cite{Aaboud:2018ddq}. The distribution
-    is shown using the expected normalizations input to
+    is shown with the expected normalizations input to
     the maximum likelihood fit (left) and the with the best fit normalizations
     by bin obtained from the fit (right). The data are well described by the 
     shape and normalization predicted by the MC simulations 
     of the \EWWZ (dashed purple) and \QCDWZ (filled light purple) processes
-    discussed in Chapter~\ref{ch:simulation}
+    discussed in Chapter~\ref{ch:simulation}.
         }
  \label{fig:EWWZATLASselection}
 \end{figure}
 
-This analysis is designed to be sensitive
-to the \EWWZ process with a minimal theoretical dependence. This is highlighted in
+The analysis presented in this thesis is designed to be sensitive
+to the \EWWZ process with a minimal and explicit theoretical dependence 
+on well-studied distributions.
+The approach is emphasized in
 Fig.~\ref{fig:EWWZATLASselection}, which shows the $\mjj$ for events in a relaxed
-selection intended to mimic the fiducial region defined by the ATLAS experiment.
-The selection is defined following Table~\ref{tab:selections}, the no condition on the
-pseduorapidity separation of the jets and with the jet transverse momentum relaxed to 40\GeV. A maximum likelihood fit
+selection intended to mimic the fiducial region defined by the ATLAS Collaboration.
+The selection is defined following Table~\ref{tab:selections}, with no condition on the
+$\etajj$ or $\etas$ of the jets and with the jet transverse momentum relaxed to 40\GeV. 
+To validate the results from the nominal \EWWZ signal extraction, a maximum likelihood fit
 is performed to this distribution with the approach described in Chapter~\ref{ch:analysis}.
 While the distribution is less sensitive to the \EWWZ process than the two-dimensional
 likelihood, the central value of the \EWWZ signal strength is within 10\% of the value
@@ -207,11 +217,13 @@ presented, well within the uncertainty of the measurement. The normalization cor
 unity. The distribution is well-described by the MC simulation and background estimation,
 as illustrated in Fig.~\ref{fig:EWWZATLASselection}, which shows the distributions input 
 to the maximum likelihood fit and the resulting best-fit distributions.
+In contrast to the results of Ref.~\cite{Aaboud:2018ddq}, the distribution is
+expected normalizations for the \EWWZ and \QCDWZ processes are highly consistent with the observed data.
 Studies to determine if a multivariate discriminant, following the approach
 of the ATLAS Collaboration, results in a different categorization of the events
 as \EWWZ and \QCDWZ will be a topic of future studies.
 
-\subsection{Limits on anomalous quartic gauge couplings}
+\section{Limits on anomalous quartic gauge couplings}
 
 Events satisfying the EW signal selection are used to constrain aQGCs in the effective field theory approach~\cite{Degrande:2012wf}.
 Results are obtained following the formulation of Ref.~\cite{Eboli:2006wa} via
@@ -317,7 +329,7 @@ operators sensitive to charged interactions.
  \label{fig:aQGCCompareFS}
 \end{figure}
 
-\subsection{Limits on charged Higgs boson production}
+\section{Limits on charged Higgs boson production}
 
 The observed event yields by channel, and expected yields adjusted to the
 best-fit values obtained from a maximum likelihood fit in the charged Higgs
